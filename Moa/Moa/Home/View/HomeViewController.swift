@@ -112,6 +112,7 @@ final class HomeViewController: UIViewController, IdentifierType {
         layout.itemSize = CGSize(width: 76, height: 100)
         layout.minimumInteritemSpacing = 16
         layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         bestMemberCollectionView.collectionViewLayout = layout
         bestMemberCollectionView.register(
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
