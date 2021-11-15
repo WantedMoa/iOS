@@ -16,7 +16,7 @@ final class HomeBestMemberCell: UICollectionViewCell, IdentifierType {
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()

@@ -21,6 +21,9 @@ final class HomeViewController: UIViewController, IdentifierType {
     @IBOutlet private weak var pageControlLabel: UILabel!
     /// bestMember
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
+    /// bestTeamBuild
+    @IBOutlet private weak var bestTeamBuildCollectionView: UICollectionView!
+    @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
     
     // ViewModel
     private lazy var input = HomeViewModel.Input(
@@ -32,6 +35,7 @@ final class HomeViewController: UIViewController, IdentifierType {
     private let pagerViewDidScrolled = PublishRelay<Int>()
     private let disposeBag = DisposeBag()
     
+    // DI
     private let viewModel: HomeViewModel
 
     init() {
@@ -70,6 +74,16 @@ final class HomeViewController: UIViewController, IdentifierType {
                 cell.update(by: item)
             }
             .disposed(by: disposeBag)
+        
+        output.bestTeamBuilds
+            .drive(bestTeamBuildCollectionView.rx.items(
+                cellIdentifier: HomeBestTeamBuildCell.identifier,
+                cellType: HomeBestTeamBuildCell.self)
+            ) {
+                _, _, _ in
+                
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -84,6 +98,7 @@ final class HomeViewController: UIViewController, IdentifierType {
         preparePagerView()
         preparePageControlView()
         prepareBestMemberCollectionView()
+        prepareBestTeamBuildCollectionView()
     }
     
     private func prepareProfileImageView() {
@@ -118,5 +133,30 @@ final class HomeViewController: UIViewController, IdentifierType {
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestMemberCell.identifier
         )
+    }
+    
+    private func prepareBestTeamBuildCollectionView() {
+        bestTeamBuildCollectionView.delegate = self
+        bestTeamBuildCollectionView.register(
+            UINib(nibName: HomeBestTeamBuildCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: HomeBestTeamBuildCell.identifier
+        )
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        guard collectionView === bestTeamBuildCollectionView else {
+            return CGSize.zero
+        }
+        
+        let width: CGFloat = view.bounds.width - (14 * 2)
+        let height: CGFloat = 87
+        return CGSize(width: width, height: height)
     }
 }

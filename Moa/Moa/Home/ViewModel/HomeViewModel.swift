@@ -19,6 +19,7 @@ final class HomeViewModel: ViewModelType {
         let posters: Driver<[String]>
         let pagerControlTitle: Driver<String>
         let bestMembers: Driver<[HomeBestMember]>
+        let bestTeamBuilds: Driver<[String]>
     }
     
     private let disposeBag = DisposeBag()
@@ -37,6 +38,7 @@ final class HomeViewModel: ViewModelType {
                 (profileImage: "TestProfile6", name: "이민영")
             ]
         )
+        let bestTeamBuilds = BehaviorRelay<[String]>(value: ["A", "B", "C", "D"])
         
         input.pagerViewDidScrolled.emit { (num: Int) in
             pagerControlTitle.accept("\(num + 1) / \(posters.value.count)")
@@ -46,7 +48,8 @@ final class HomeViewModel: ViewModelType {
         return Output(
             posters: posters.asDriver(),
             pagerControlTitle: pagerControlTitle.asDriver(),
-            bestMembers: bestMembers.asDriver()
+            bestMembers: bestMembers.asDriver(),
+            bestTeamBuilds: bestTeamBuilds.asDriver()
         )
     }
 }
