@@ -20,6 +20,7 @@
 		3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */; };
 		3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B16F2742006100DDF82F /* HomeViewController.swift */; };
 		3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1702742006100DDF82F /* HomeViewController.xib */; };
+		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		3C80B16F2742006100DDF82F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3C80B1702742006100DDF82F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
+		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				3C80B14A2741FAE700DDF82F /* Moa */,
 				3C80B1492741FAE700DDF82F /* Products */,
+				63B86CDC2F0F4E4043791065 /* Pods */,
+				7A0A2FCF55781A0CC5CC06D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +111,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		63B86CDC2F0F4E4043791065 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */,
+				438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7A0A2FCF55781A0CC5CC06D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C80B15C2741FAE900DDF82F /* Build configuration list for PBXNativeTarget "Moa" */;
 			buildPhases = (
+				559F9F7D6A8B4BC30D591EEF /* [CP] Check Pods Manifest.lock */,
 				3C80B1442741FAE700DDF82F /* Sources */,
 				3C80B1452741FAE700DDF82F /* Frameworks */,
 				3C80B1462741FAE700DDF82F /* Resources */,
+				C6EF11CAD69927BF4667E4B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +202,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		559F9F7D6A8B4BC30D591EEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6EF11CAD69927BF4667E4B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moa/Pods-Moa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moa/Pods-Moa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moa/Pods-Moa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C80B1442741FAE700DDF82F /* Sources */ = {
@@ -320,6 +389,7 @@
 		};
 		3C80B15D2741FAE900DDF82F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -349,6 +419,7 @@
 		};
 		3C80B15E2741FAE900DDF82F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
