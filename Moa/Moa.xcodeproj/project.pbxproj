@@ -18,6 +18,8 @@
 		3C80B16C2741FD9600DDF82F /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1662741FD9600DDF82F /* NotoSansKR-Light.otf */; };
 		3C80B16D2741FD9600DDF82F /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1672741FD9600DDF82F /* NotoSansKR-Bold.otf */; };
 		3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */; };
+		3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B16F2742006100DDF82F /* HomeViewController.swift */; };
+		3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1702742006100DDF82F /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3C80B1662741FD9600DDF82F /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		3C80B1672741FD9600DDF82F /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		3C80B16F2742006100DDF82F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3C80B1702742006100DDF82F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				3C80B1562741FAE900DDF82F /* LaunchScreen.storyboard */,
 				3C80B1592741FAE900DDF82F /* Info.plist */,
 				3C80B15F2741FBB300DDF82F /* TestViewController.swift */,
+				3C80B16F2742006100DDF82F /* HomeViewController.swift */,
+				3C80B1702742006100DDF82F /* HomeViewController.xib */,
 			);
 			path = Moa;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
+				3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +184,7 @@
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B1602741FBB300DDF82F /* TestViewController.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
+				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
