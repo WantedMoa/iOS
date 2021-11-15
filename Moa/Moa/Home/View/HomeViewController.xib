@@ -151,7 +151,7 @@
                                             <color key="textColor" name="font3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gyi-sB-2Zd" userLabel="bestMemberCollectionView">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gyi-sB-2Zd" userLabel="bestMember CollectionView">
                                             <rect key="frame" x="0.0" y="35" width="414" height="100"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -178,7 +178,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-lV-XPM" userLabel="BestTeamBuild View">
-                                    <rect key="frame" x="0.0" y="562" width="414" height="300"/>
+                                    <rect key="frame" x="0.0" y="562" width="414" height="420"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 팀원 모집 공고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-1m-oot">
                                             <rect key="frame" x="14" y="0.0" width="131.5" height="23.5"/>
@@ -192,14 +192,30 @@
                                             <color key="textColor" name="font3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VXY-0u-2ih" userLabel="BestTeamBuild CollectionView">
+                                            <rect key="frame" x="0.0" y="35.5" width="414" height="384.5"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="384.5" id="cGH-vg-z6A"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMl-U1-DgL">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="1Ve-1m-oot" firstAttribute="leading" secondItem="3rO-lV-XPM" secondAttribute="leading" constant="14" id="0UP-l3-zbb"/>
                                         <constraint firstItem="1Ve-1m-oot" firstAttribute="top" secondItem="3rO-lV-XPM" secondAttribute="top" id="9N2-3t-2ZV"/>
+                                        <constraint firstItem="VXY-0u-2ih" firstAttribute="top" secondItem="1Ve-1m-oot" secondAttribute="bottom" constant="12" id="Cz4-7G-VT6"/>
+                                        <constraint firstAttribute="bottom" secondItem="VXY-0u-2ih" secondAttribute="bottom" id="Oqz-GV-qzi"/>
+                                        <constraint firstAttribute="trailing" secondItem="VXY-0u-2ih" secondAttribute="trailing" id="SUb-Po-D3Z"/>
                                         <constraint firstItem="KAP-rK-nfS" firstAttribute="centerY" secondItem="1Ve-1m-oot" secondAttribute="centerY" id="jDx-Yf-PgI"/>
                                         <constraint firstAttribute="trailing" secondItem="KAP-rK-nfS" secondAttribute="trailing" constant="14" id="ljp-rB-Wzg"/>
-                                        <constraint firstAttribute="height" constant="300" id="tEN-Qa-dEM"/>
+                                        <constraint firstItem="VXY-0u-2ih" firstAttribute="leading" secondItem="3rO-lV-XPM" secondAttribute="leading" id="omP-CT-YHi"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -216,7 +232,7 @@
                                 <constraint firstItem="9XU-DO-dHC" firstAttribute="top" secondItem="BZA-WS-u7o" secondAttribute="top" constant="19" id="YZj-DK-XCd"/>
                                 <constraint firstAttribute="trailing" secondItem="v1P-3i-aMe" secondAttribute="trailing" id="bR5-Vh-if2"/>
                                 <constraint firstItem="3rO-lV-XPM" firstAttribute="top" secondItem="v1P-3i-aMe" secondAttribute="bottom" constant="41" id="cfb-uM-gUW"/>
-                                <constraint firstAttribute="bottom" secondItem="3rO-lV-XPM" secondAttribute="bottom" constant="120" id="fI3-RR-j9p"/>
+                                <constraint firstAttribute="bottom" secondItem="3rO-lV-XPM" secondAttribute="bottom" id="fI3-RR-j9p"/>
                                 <constraint firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="16" id="hPS-ql-Q3v"/>
                                 <constraint firstItem="3rO-lV-XPM" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" id="paP-u8-C9o"/>
                                 <constraint firstItem="kIj-3m-wxv" firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="-13" id="smk-lw-tXK"/>
