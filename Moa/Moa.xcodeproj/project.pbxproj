@@ -27,6 +27,7 @@
 		3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1802742349400DDF82F /* HomeBestMemberCell.xib */; };
 		3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B183274253BA00DDF82F /* HomeBestTeamBuildCell.swift */; };
 		3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B184274253BA00DDF82F /* HomeBestTeamBuildCell.xib */; };
+		3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B18727425CED00DDF82F /* MoaTabBarController.swift */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		3C80B1802742349400DDF82F /* HomeBestMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBestMemberCell.xib; sourceTree = "<group>"; };
 		3C80B183274253BA00DDF82F /* HomeBestTeamBuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildCell.swift; sourceTree = "<group>"; };
 		3C80B184274253BA00DDF82F /* HomeBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBestTeamBuildCell.xib; sourceTree = "<group>"; };
+		3C80B18727425CED00DDF82F /* MoaTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaTabBarController.swift; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				3C80B1542741FAE900DDF82F /* Assets.xcassets */,
 				3C80B1562741FAE900DDF82F /* LaunchScreen.storyboard */,
 				3C80B1592741FAE900DDF82F /* Info.plist */,
+				3C80B18727425CED00DDF82F /* MoaTabBarController.swift */,
 			);
 			path = Moa;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
+				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
