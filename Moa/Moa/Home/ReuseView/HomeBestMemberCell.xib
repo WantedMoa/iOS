@@ -22,7 +22,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="158" height="111"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-4h-eET">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-4h-eET">
                         <rect key="frame" x="41" y="0.0" width="76" height="76"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="76" id="6F6-Ul-byR"/>
@@ -30,7 +30,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwr-QI-epv">
-                        <rect key="frame" x="64.5" y="95" width="29" height="16"/>
+                        <rect key="frame" x="64.5" y="83" width="29" height="16"/>
                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="11"/>
                         <color key="textColor" name="font3"/>
                         <nil key="highlightedColor"/>
@@ -40,10 +40,14 @@
             <constraints>
                 <constraint firstItem="sGA-4h-eET" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BdP-iC-Euj"/>
                 <constraint firstItem="Kwr-QI-epv" firstAttribute="centerX" secondItem="sGA-4h-eET" secondAttribute="centerX" id="LNa-lt-YQL"/>
-                <constraint firstAttribute="bottom" secondItem="Kwr-QI-epv" secondAttribute="bottom" id="PbB-Eo-ioM"/>
                 <constraint firstItem="sGA-4h-eET" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="d0s-4D-hJw"/>
+                <constraint firstItem="Kwr-QI-epv" firstAttribute="top" secondItem="sGA-4h-eET" secondAttribute="bottom" constant="7" id="jfG-PE-9g0"/>
             </constraints>
             <size key="customSize" width="158" height="111"/>
+            <connections>
+                <outlet property="nameLabel" destination="Kwr-QI-epv" id="i8R-Pc-ju4"/>
+                <outlet property="profileImageView" destination="sGA-4h-eET" id="rcL-ce-g5O"/>
+            </connections>
             <point key="canvasLocation" x="214.49275362318843" y="130.24553571428572"/>
         </collectionViewCell>
     </objects>

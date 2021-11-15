@@ -53,13 +53,22 @@ final class HomeViewController: UIViewController, IdentifierType {
     private func bind() {
         output.posters
             .drive(pagerView.rx.items(cellIdentifier: HomePagerCell.identifier)) {
-            _, item, cell in
-            cell.imageView?.image = UIImage(named: item)
-        }
-        .disposed(by: disposeBag)
+                _, item, cell in
+                cell.imageView?.image = UIImage(named: item)
+            }
+            .disposed(by: disposeBag)
         
         output.pagerControlTitle
             .drive(pageControlLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.bestMembers
+            .drive(bestMemberCollectionView.rx.items(
+                cellIdentifier: HomeBestMemberCell.identifier,
+                cellType: HomeBestMemberCell.self)
+            ) { _, item, cell in
+                cell.update(by: item)
+            }
             .disposed(by: disposeBag)
     }
     
@@ -99,6 +108,11 @@ final class HomeViewController: UIViewController, IdentifierType {
     }
     
     private func prepareBestMemberCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 76, height: 100)
+        layout.minimumInteritemSpacing = 16
+        layout.scrollDirection = .horizontal
+        bestMemberCollectionView.collectionViewLayout = layout
         bestMemberCollectionView.register(
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestMemberCell.identifier
