@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="pagerView" destination="z2A-5I-9KI" id="7aL-XF-kLV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -110,12 +111,22 @@
                                         <constraint firstItem="bxx-RH-Hqa" firstAttribute="leading" secondItem="9XU-DO-dHC" secondAttribute="leading" id="hq2-1t-tV2"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2A-5I-9KI" customClass="FSPagerView" customModule="RxFSPagerView">
+                                    <rect key="frame" x="16" y="105" width="382" height="236"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="236" id="NOf-JE-2dt"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="9XU-DO-dHC" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" constant="16" id="1io-JE-zbh"/>
                                 <constraint firstAttribute="trailing" secondItem="9XU-DO-dHC" secondAttribute="trailing" constant="16" id="9u6-wr-o9h"/>
+                                <constraint firstItem="z2A-5I-9KI" firstAttribute="top" secondItem="9XU-DO-dHC" secondAttribute="bottom" constant="30" id="FNi-YH-KUI"/>
                                 <constraint firstItem="9XU-DO-dHC" firstAttribute="top" secondItem="BZA-WS-u7o" secondAttribute="top" constant="19" id="YZj-DK-XCd"/>
+                                <constraint firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="16" id="hPS-ql-Q3v"/>
+                                <constraint firstItem="z2A-5I-9KI" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" constant="16" id="uUA-u0-oMN"/>
                             </constraints>
                         </view>
                     </subviews>

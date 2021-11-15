@@ -12,6 +12,6 @@ target 'Moa' do
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'Kingfisher', '~> 7.0'  
   # Pager
-  pod 'FSPagerView'
+  # pod 'FSPagerView'
   pod 'RxFSPagerView'
 end

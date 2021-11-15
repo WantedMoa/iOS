@@ -11,7 +11,6 @@
 		3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */; };
 		3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1542741FAE900DDF82F /* Assets.xcassets */; };
 		3C80B1582741FAE900DDF82F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1562741FAE900DDF82F /* LaunchScreen.storyboard */; };
-		3C80B1602741FBB300DDF82F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B15F2741FBB300DDF82F /* TestViewController.swift */; };
 		3C80B1692741FD9600DDF82F /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1632741FD9600DDF82F /* NotoSansKR-Medium.otf */; };
 		3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1642741FD9600DDF82F /* NotoSansKR-Regular.otf */; };
 		3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1652741FD9600DDF82F /* NotoSansKR-Black.otf */; };
@@ -20,6 +19,10 @@
 		3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */; };
 		3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B16F2742006100DDF82F /* HomeViewController.swift */; };
 		3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1702742006100DDF82F /* HomeViewController.xib */; };
+		3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1752742233D00DDF82F /* HomeViewModel.swift */; };
+		3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1782742238800DDF82F /* ViewModelType.swift */; };
+		3C80B17B2742241D00DDF82F /* HomePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B17A2742241D00DDF82F /* HomePagerViewCell.swift */; };
+		3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B17D274225F100DDF82F /* IdentifierType.swift */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +33,6 @@
 		3C80B1542741FAE900DDF82F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C80B1572741FAE900DDF82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C80B1592741FAE900DDF82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C80B15F2741FBB300DDF82F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3C80B1632741FD9600DDF82F /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		3C80B1642741FD9600DDF82F /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		3C80B1652741FD9600DDF82F /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
@@ -39,6 +41,10 @@
 		3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		3C80B16F2742006100DDF82F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3C80B1702742006100DDF82F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3C80B1752742233D00DDF82F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3C80B1782742238800DDF82F /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		3C80B17A2742241D00DDF82F /* HomePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePagerViewCell.swift; sourceTree = "<group>"; };
+		3C80B17D274225F100DDF82F /* IdentifierType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierType.swift; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,15 +83,13 @@
 		3C80B14A2741FAE700DDF82F /* Moa */ = {
 			isa = PBXGroup;
 			children = (
+				3C80B17327421FA700DDF82F /* Home */,
 				3C80B1612741FD1800DDF82F /* Support */,
 				3C80B14B2741FAE700DDF82F /* AppDelegate.swift */,
 				3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */,
 				3C80B1542741FAE900DDF82F /* Assets.xcassets */,
 				3C80B1562741FAE900DDF82F /* LaunchScreen.storyboard */,
 				3C80B1592741FAE900DDF82F /* Info.plist */,
-				3C80B15F2741FBB300DDF82F /* TestViewController.swift */,
-				3C80B16F2742006100DDF82F /* HomeViewController.swift */,
-				3C80B1702742006100DDF82F /* HomeViewController.xib */,
 			);
 			path = Moa;
 			sourceTree = "<group>";
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				3C80B1622741FD8A00DDF82F /* Fonts */,
+				3C80B1782742238800DDF82F /* ViewModelType.swift */,
+				3C80B17D274225F100DDF82F /* IdentifierType.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -111,13 +117,47 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		3C80B17327421FA700DDF82F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B1742742232E00DDF82F /* View */,
+				3C80B1772742234000DDF82F /* ViewModel */,
+				3C80B17C2742242000DDF82F /* ReuseView */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3C80B1742742232E00DDF82F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B16F2742006100DDF82F /* HomeViewController.swift */,
+				3C80B1702742006100DDF82F /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C80B1772742234000DDF82F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B1752742233D00DDF82F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3C80B17C2742242000DDF82F /* ReuseView */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B17A2742241D00DDF82F /* HomePagerViewCell.swift */,
+			);
+			path = ReuseView;
+			sourceTree = "<group>";
+		};
 		63B86CDC2F0F4E4043791065 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */,
 				438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -251,9 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
-				3C80B1602741FBB300DDF82F /* TestViewController.swift in Sources */,
+				3C80B17B2742241D00DDF82F /* HomePagerViewCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
+				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
+				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
+				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
