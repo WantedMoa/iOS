@@ -20,6 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="pageControlLabel" destination="x8Q-ko-GVf" id="45t-FH-wH1"/>
+                <outlet property="pageControlView" destination="kIj-3m-wxv" id="86B-kR-pak"/>
                 <outlet property="pagerView" destination="z2A-5I-9KI" id="7aL-XF-kLV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -118,14 +120,32 @@
                                         <constraint firstAttribute="height" constant="236" id="NOf-JE-2dt"/>
                                     </constraints>
                                 </view>
+                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIj-3m-wxv" userLabel="PageControl View">
+                                    <rect key="frame" x="337" y="308" width="48" height="20"/>
+                                    <color key="backgroundColor" red="0.30588235294117649" green="0.30588235294117649" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="V7E-pP-b76"/>
+                                        <constraint firstAttribute="height" constant="20" id="pYl-dB-aU3"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-ko-GVf">
+                                    <rect key="frame" x="349" y="309.5" width="24" height="17.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="kIj-3m-wxv" firstAttribute="bottom" secondItem="z2A-5I-9KI" secondAttribute="bottom" constant="-13" id="1MB-rw-67b"/>
                                 <constraint firstItem="9XU-DO-dHC" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" constant="16" id="1io-JE-zbh"/>
                                 <constraint firstAttribute="trailing" secondItem="9XU-DO-dHC" secondAttribute="trailing" constant="16" id="9u6-wr-o9h"/>
+                                <constraint firstItem="x8Q-ko-GVf" firstAttribute="centerY" secondItem="kIj-3m-wxv" secondAttribute="centerY" id="Bzb-ws-471"/>
                                 <constraint firstItem="z2A-5I-9KI" firstAttribute="top" secondItem="9XU-DO-dHC" secondAttribute="bottom" constant="30" id="FNi-YH-KUI"/>
+                                <constraint firstItem="x8Q-ko-GVf" firstAttribute="centerX" secondItem="kIj-3m-wxv" secondAttribute="centerX" id="J21-Ls-Kuc"/>
                                 <constraint firstItem="9XU-DO-dHC" firstAttribute="top" secondItem="BZA-WS-u7o" secondAttribute="top" constant="19" id="YZj-DK-XCd"/>
                                 <constraint firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="16" id="hPS-ql-Q3v"/>
+                                <constraint firstItem="kIj-3m-wxv" firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="-13" id="smk-lw-tXK"/>
                                 <constraint firstItem="z2A-5I-9KI" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" constant="16" id="uUA-u0-oMN"/>
                             </constraints>
                         </view>
