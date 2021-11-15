@@ -21,8 +21,10 @@
 		3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1702742006100DDF82F /* HomeViewController.xib */; };
 		3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1752742233D00DDF82F /* HomeViewModel.swift */; };
 		3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1782742238800DDF82F /* ViewModelType.swift */; };
-		3C80B17B2742241D00DDF82F /* HomePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B17A2742241D00DDF82F /* HomePagerViewCell.swift */; };
+		3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B17A2742241D00DDF82F /* HomePagerCell.swift */; };
 		3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B17D274225F100DDF82F /* IdentifierType.swift */; };
+		3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B17F2742349400DDF82F /* HomeBestMemberCell.swift */; };
+		3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1802742349400DDF82F /* HomeBestMemberCell.xib */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +45,10 @@
 		3C80B1702742006100DDF82F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		3C80B1752742233D00DDF82F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3C80B1782742238800DDF82F /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		3C80B17A2742241D00DDF82F /* HomePagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePagerViewCell.swift; sourceTree = "<group>"; };
+		3C80B17A2742241D00DDF82F /* HomePagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePagerCell.swift; sourceTree = "<group>"; };
 		3C80B17D274225F100DDF82F /* IdentifierType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierType.swift; sourceTree = "<group>"; };
+		3C80B17F2742349400DDF82F /* HomeBestMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestMemberCell.swift; sourceTree = "<group>"; };
+		3C80B1802742349400DDF82F /* HomeBestMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBestMemberCell.xib; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +151,9 @@
 		3C80B17C2742242000DDF82F /* ReuseView */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B17A2742241D00DDF82F /* HomePagerViewCell.swift */,
+				3C80B17A2742241D00DDF82F /* HomePagerCell.swift */,
+				3C80B17F2742349400DDF82F /* HomeBestMemberCell.swift */,
+				3C80B1802742349400DDF82F /* HomeBestMemberCell.xib */,
 			);
 			path = ReuseView;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 			files = (
 				3C80B16C2741FD9600DDF82F /* NotoSansKR-Light.otf in Resources */,
 				3C80B16D2741FD9600DDF82F /* NotoSansKR-Bold.otf in Resources */,
+				3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */,
 				3C80B1692741FD9600DDF82F /* NotoSansKR-Medium.otf in Resources */,
 				3C80B1582741FAE900DDF82F /* LaunchScreen.storyboard in Resources */,
 				3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */,
@@ -291,7 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
-				3C80B17B2742241D00DDF82F /* HomePagerViewCell.swift in Sources */,
+				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
+				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,

@@ -13,15 +13,22 @@ import RxFSPagerView
 
 final class HomeViewController: UIViewController, IdentifierType {
     // MARK: - IBOutlet
+    /// profile
+    @IBOutlet private weak var profileImageView: UIImageView!
+    /// pagerView
     @IBOutlet private weak var pagerView: FSPagerView!
     @IBOutlet private weak var pageControlView: UIView!
     @IBOutlet private weak var pageControlLabel: UILabel!
+    /// bestMember
+    @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
     
+    // ViewModel
     private lazy var input = HomeViewModel.Input(
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
+    // Event
     private let pagerViewDidScrolled = PublishRelay<Int>()
     private let disposeBag = DisposeBag()
     
@@ -45,7 +52,7 @@ final class HomeViewController: UIViewController, IdentifierType {
     
     private func bind() {
         output.posters
-            .drive(pagerView.rx.items(cellIdentifier: HomePagerViewCell.identifier)) {
+            .drive(pagerView.rx.items(cellIdentifier: HomePagerCell.identifier)) {
             _, item, cell in
             cell.imageView?.image = UIImage(named: item)
         }
@@ -64,14 +71,21 @@ final class HomeViewController: UIViewController, IdentifierType {
     }
     
     private func configureUI() {
+        prepareProfileImageView()
         preparePagerView()
         preparePageControlView()
+        prepareBestMemberCollectionView()
+    }
+    
+    private func prepareProfileImageView() {
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 56 / 2
     }
     
     private func preparePagerView() {
         pagerView.register(
-            HomePagerViewCell.self,
-            forCellWithReuseIdentifier: HomePagerViewCell.identifier
+            HomePagerCell.self,
+            forCellWithReuseIdentifier: HomePagerCell.identifier
         )
         pagerView.isInfinite = true
         pagerView.automaticSlidingInterval = 3.0
@@ -82,5 +96,12 @@ final class HomeViewController: UIViewController, IdentifierType {
     private func preparePageControlView() {
         pageControlView.layer.masksToBounds = true
         pageControlView.layer.cornerRadius = 10
+    }
+    
+    private func prepareBestMemberCollectionView() {
+        bestMemberCollectionView.register(
+            UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: HomeBestMemberCell.identifier
+        )
     }
 }

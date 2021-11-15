@@ -9,4 +9,4 @@ import UIKit
 
 import RxFSPagerView
 
-final class HomePagerViewCell: FSPagerViewCell, IdentifierType {}
+final class HomePagerCell: FSPagerViewCell, IdentifierType {}

@@ -20,9 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="bestMemberCollectionView" destination="Gyi-sB-2Zd" id="UFv-Zs-2PL"/>
                 <outlet property="pageControlLabel" destination="x8Q-ko-GVf" id="45t-FH-wH1"/>
                 <outlet property="pageControlView" destination="kIj-3m-wxv" id="86B-kR-pak"/>
                 <outlet property="pagerView" destination="z2A-5I-9KI" id="7aL-XF-kLV"/>
+                <outlet property="profileImageView" destination="bxx-RH-Hqa" id="LAB-On-Z8p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -79,7 +81,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-DO-dHC" userLabel="Profile View">
                                     <rect key="frame" x="16" y="19" width="382" height="56"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestProfile" translatesAutoresizingMaskIntoConstraints="NO" id="bxx-RH-Hqa">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestProfile1" translatesAutoresizingMaskIntoConstraints="NO" id="bxx-RH-Hqa">
                                             <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="56" id="eXw-Px-w0T"/>
@@ -128,12 +130,53 @@
                                         <constraint firstAttribute="height" constant="20" id="pYl-dB-aU3"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-ko-GVf">
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 / 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-ko-GVf" userLabel="PageControl Label">
                                     <rect key="frame" x="349" y="309.5" width="24" height="17.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1P-3i-aMe" userLabel="BestMember View">
+                                    <rect key="frame" x="16" y="386" width="382" height="135"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 팀원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-So-eYq">
+                                            <rect key="frame" x="0.0" y="0.0" width="63.5" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                            <color key="textColor" name="font1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vph-3r-amf">
+                                            <rect key="frame" x="346" y="2.5" width="36" height="19"/>
+                                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                            <color key="textColor" name="font3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gyi-sB-2Zd">
+                                            <rect key="frame" x="0.0" y="35" width="382" height="100"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="eKK-zC-HCG"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ree-uV-Vj8">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Gyi-sB-2Zd" secondAttribute="trailing" id="7zb-sl-RL1"/>
+                                        <constraint firstAttribute="bottom" secondItem="Gyi-sB-2Zd" secondAttribute="bottom" id="8jT-mE-2Y1"/>
+                                        <constraint firstItem="Il2-So-eYq" firstAttribute="leading" secondItem="v1P-3i-aMe" secondAttribute="leading" id="Hwa-xg-CuG"/>
+                                        <constraint firstItem="Gyi-sB-2Zd" firstAttribute="leading" secondItem="v1P-3i-aMe" secondAttribute="leading" id="RaH-Fv-Fll"/>
+                                        <constraint firstItem="Il2-So-eYq" firstAttribute="top" secondItem="v1P-3i-aMe" secondAttribute="top" id="TMM-N6-6OW"/>
+                                        <constraint firstAttribute="height" constant="135" id="aX8-qP-R03"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vph-3r-amf" secondAttribute="trailing" id="dgq-Gp-uGg"/>
+                                        <constraint firstItem="Vph-3r-amf" firstAttribute="centerY" secondItem="Il2-So-eYq" secondAttribute="centerY" id="eNH-9B-gb8"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -143,7 +186,10 @@
                                 <constraint firstItem="x8Q-ko-GVf" firstAttribute="centerY" secondItem="kIj-3m-wxv" secondAttribute="centerY" id="Bzb-ws-471"/>
                                 <constraint firstItem="z2A-5I-9KI" firstAttribute="top" secondItem="9XU-DO-dHC" secondAttribute="bottom" constant="30" id="FNi-YH-KUI"/>
                                 <constraint firstItem="x8Q-ko-GVf" firstAttribute="centerX" secondItem="kIj-3m-wxv" secondAttribute="centerX" id="J21-Ls-Kuc"/>
+                                <constraint firstItem="v1P-3i-aMe" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" constant="16" id="MFK-r3-03B"/>
+                                <constraint firstItem="v1P-3i-aMe" firstAttribute="top" secondItem="z2A-5I-9KI" secondAttribute="bottom" constant="45" id="WB2-Ix-mBQ"/>
                                 <constraint firstItem="9XU-DO-dHC" firstAttribute="top" secondItem="BZA-WS-u7o" secondAttribute="top" constant="19" id="YZj-DK-XCd"/>
+                                <constraint firstAttribute="trailing" secondItem="v1P-3i-aMe" secondAttribute="trailing" constant="16" id="bR5-Vh-if2"/>
                                 <constraint firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="16" id="hPS-ql-Q3v"/>
                                 <constraint firstItem="kIj-3m-wxv" firstAttribute="trailing" secondItem="z2A-5I-9KI" secondAttribute="trailing" constant="-13" id="smk-lw-tXK"/>
                                 <constraint firstItem="z2A-5I-9KI" firstAttribute="leading" secondItem="BZA-WS-u7o" secondAttribute="leading" constant="16" id="uUA-u0-oMN"/>
@@ -178,9 +224,12 @@
         <image name="MoaIcon" width="76" height="40"/>
         <image name="MoaNotification" width="24" height="24"/>
         <image name="MoaSearch" width="24" height="24"/>
-        <image name="TestProfile" width="76" height="76"/>
+        <image name="TestProfile1" width="137" height="91"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font3">
+            <color red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
