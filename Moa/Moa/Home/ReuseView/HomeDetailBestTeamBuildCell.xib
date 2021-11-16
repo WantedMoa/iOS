@@ -45,19 +45,16 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGk-0z-xx8" userLabel="Tag StackView">
-                        <rect key="frame" x="0.0" y="455" width="31.5" height="15"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KGk-0z-xx8" userLabel="Tag StackView">
+                        <rect key="frame" x="0.0" y="459" width="31.5" height="11"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dsadsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-Zx-plH">
-                                <rect key="frame" x="0.0" y="0.0" width="31.5" height="15"/>
+                                <rect key="frame" x="0.0" y="0.0" width="31.5" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="uEt-SO-RI2"/>
-                        </constraints>
                     </stackView>
                 </subviews>
             </view>
@@ -67,11 +64,16 @@
                 <constraint firstItem="3kQ-rB-bxH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BP1-su-Aw8"/>
                 <constraint firstItem="3kQ-rB-bxH" firstAttribute="top" secondItem="vDb-ll-8FX" secondAttribute="bottom" constant="10" id="J9e-Jb-qSN"/>
                 <constraint firstAttribute="bottom" secondItem="ZgM-Zx-plH" secondAttribute="bottom" id="LTP-ee-pQQ"/>
+                <constraint firstItem="KGk-0z-xx8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QkS-eA-C2t"/>
                 <constraint firstItem="ZgM-Zx-plH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZhZ-G4-dFa"/>
                 <constraint firstItem="vDb-ll-8FX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bIt-fI-ere"/>
                 <constraint firstItem="vDb-ll-8FX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="h4T-VU-XCX"/>
+                <constraint firstAttribute="bottom" secondItem="KGk-0z-xx8" secondAttribute="bottom" id="sfm-Hq-dPb"/>
             </constraints>
             <size key="customSize" width="260" height="470"/>
+            <connections>
+                <outlet property="tagStackView" destination="KGk-0z-xx8" id="6bC-9f-pi0"/>
+            </connections>
             <point key="canvasLocation" x="30" y="218"/>
         </collectionViewCell>
     </objects>

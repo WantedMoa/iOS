@@ -16,7 +16,7 @@ final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
-        updateTagStackView(by: ["iOS 경험자", "꾸준히 참여", "C"])
+        updateTagStackView(by: ["iOS 경험자", "꾸준히 참여"])
     }
     
     private func configureUI() {
