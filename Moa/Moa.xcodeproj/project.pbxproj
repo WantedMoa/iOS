@@ -34,6 +34,9 @@
 		3C80B1932742664000DDF82F /* TeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1912742664000DDF82F /* TeamMemberViewController.xib */; };
 		3C80B1972742665200DDF82F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1952742665200DDF82F /* SettingViewController.swift */; };
 		3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1962742665200DDF82F /* SettingViewController.xib */; };
+		3C80B19C2743338E00DDF82F /* BestMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B19A2743338E00DDF82F /* BestMemberViewController.swift */; };
+		3C80B19D2743338E00DDF82F /* BestMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B19B2743338E00DDF82F /* BestMemberViewController.xib */; };
+		3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		3C80B1912742664000DDF82F /* TeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamMemberViewController.xib; sourceTree = "<group>"; };
 		3C80B1952742665200DDF82F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3C80B1962742665200DDF82F /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		3C80B19A2743338E00DDF82F /* BestMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMemberViewController.swift; sourceTree = "<group>"; };
+		3C80B19B2743338E00DDF82F /* BestMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestMemberViewController.xib; sourceTree = "<group>"; };
+		3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaNavigationController.swift; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				3C80B1622741FD8A00DDF82F /* Fonts */,
 				3C80B1782742238800DDF82F /* ViewModelType.swift */,
 				3C80B17D274225F100DDF82F /* IdentifierType.swift */,
+				3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -158,6 +165,8 @@
 			children = (
 				3C80B16F2742006100DDF82F /* HomeViewController.swift */,
 				3C80B1702742006100DDF82F /* HomeViewController.xib */,
+				3C80B19A2743338E00DDF82F /* BestMemberViewController.swift */,
+				3C80B19B2743338E00DDF82F /* BestMemberViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +307,7 @@
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* TeamMemberViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
+				3C80B19D2743338E00DDF82F /* BestMemberViewController.xib in Resources */,
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
 				3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */,
 			);
@@ -354,6 +364,7 @@
 			files = (
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
+				3C80B19C2743338E00DDF82F /* BestMemberViewController.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C80B1972742665200DDF82F /* SettingViewController.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
@@ -362,6 +373,7 @@
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3C80B1922742664000DDF82F /* TeamMemberViewController.swift in Sources */,
 				3C80B18D2742660600DDF82F /* MessageViewController.swift in Sources */,
+				3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
@@ -514,6 +526,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,6 +557,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

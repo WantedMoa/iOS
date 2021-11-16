@@ -21,6 +21,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Moa" customModuleProvider="target">
             <connections>
                 <outlet property="bestMemberCollectionView" destination="Gyi-sB-2Zd" id="UFv-Zs-2PL"/>
+                <outlet property="bestMemberDetailButtonLabel" destination="Vph-3r-amf" id="d2N-pk-WCL"/>
                 <outlet property="bestTeamBuildCollectionView" destination="VXY-0u-2ih" id="dcr-ng-A0h"/>
                 <outlet property="bestTeamBuildCollectionViewHeight" destination="cGH-vg-z6A" id="9Zl-vo-bq9"/>
                 <outlet property="pageControlLabel" destination="x8Q-ko-GVf" id="45t-FH-wH1"/>
@@ -78,7 +79,7 @@
                     <rect key="frame" x="0.0" y="84" width="414" height="1014"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-WS-u7o" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="982"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="985.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-DO-dHC" userLabel="Profile View">
                                     <rect key="frame" x="16" y="19" width="382" height="56"/>
@@ -107,11 +108,20 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenStatus" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-U2-28b">
+                                            <rect key="frame" x="40" y="40" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="8gI-ry-Umy"/>
+                                                <constraint firstAttribute="width" constant="16" id="JWi-i8-Bop"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstItem="l7q-U2-28b" firstAttribute="trailing" secondItem="bxx-RH-Hqa" secondAttribute="trailing" id="4KD-z2-Cxa"/>
                                         <constraint firstItem="bxx-RH-Hqa" firstAttribute="top" secondItem="9XU-DO-dHC" secondAttribute="top" id="5Nl-hx-1f6"/>
                                         <constraint firstItem="bur-wr-jNY" firstAttribute="centerY" secondItem="9XU-DO-dHC" secondAttribute="centerY" id="JNc-Se-9Zr"/>
+                                        <constraint firstItem="l7q-U2-28b" firstAttribute="bottom" secondItem="bxx-RH-Hqa" secondAttribute="bottom" id="XU8-kb-dBg"/>
                                         <constraint firstItem="bur-wr-jNY" firstAttribute="leading" secondItem="bxx-RH-Hqa" secondAttribute="trailing" constant="14" id="bqa-Wp-2XB"/>
                                         <constraint firstAttribute="height" constant="56" id="goB-xb-rT2"/>
                                         <constraint firstItem="bxx-RH-Hqa" firstAttribute="leading" secondItem="9XU-DO-dHC" secondAttribute="leading" id="hq2-1t-tV2"/>
@@ -147,7 +157,7 @@
                                             <color key="textColor" name="font1"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vph-3r-amf">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vph-3r-amf">
                                             <rect key="frame" x="364" y="2.5" width="36" height="19"/>
                                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                             <color key="textColor" name="font3"/>
@@ -180,7 +190,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-lV-XPM" userLabel="BestTeamBuild View">
-                                    <rect key="frame" x="0.0" y="562" width="414" height="420"/>
+                                    <rect key="frame" x="0.0" y="562" width="414" height="423.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 팀원 모집 공고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-1m-oot">
                                             <rect key="frame" x="14" y="0.0" width="131.5" height="23.5"/>
@@ -195,16 +205,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VXY-0u-2ih" userLabel="BestTeamBuild CollectionView">
-                                            <rect key="frame" x="0.0" y="35.5" width="414" height="384.5"/>
+                                            <rect key="frame" x="0.0" y="23.5" width="414" height="400"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="384.5" id="cGH-vg-z6A"/>
+                                                <constraint firstAttribute="height" constant="400" id="cGH-vg-z6A"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMl-U1-DgL">
-                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="itemSize" width="0.0" height="0.0"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="sectionInset" minX="14" minY="12" maxX="14" maxY="14"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
                                     </subviews>
@@ -212,7 +222,7 @@
                                     <constraints>
                                         <constraint firstItem="1Ve-1m-oot" firstAttribute="leading" secondItem="3rO-lV-XPM" secondAttribute="leading" constant="14" id="0UP-l3-zbb"/>
                                         <constraint firstItem="1Ve-1m-oot" firstAttribute="top" secondItem="3rO-lV-XPM" secondAttribute="top" id="9N2-3t-2ZV"/>
-                                        <constraint firstItem="VXY-0u-2ih" firstAttribute="top" secondItem="1Ve-1m-oot" secondAttribute="bottom" constant="12" id="Cz4-7G-VT6"/>
+                                        <constraint firstItem="VXY-0u-2ih" firstAttribute="top" secondItem="1Ve-1m-oot" secondAttribute="bottom" id="Cz4-7G-VT6"/>
                                         <constraint firstAttribute="bottom" secondItem="VXY-0u-2ih" secondAttribute="bottom" id="Oqz-GV-qzi"/>
                                         <constraint firstAttribute="trailing" secondItem="VXY-0u-2ih" secondAttribute="trailing" id="SUb-Po-D3Z"/>
                                         <constraint firstItem="KAP-rK-nfS" firstAttribute="centerY" secondItem="1Ve-1m-oot" secondAttribute="centerY" id="jDx-Yf-PgI"/>
@@ -269,6 +279,7 @@
         </view>
     </objects>
     <resources>
+        <image name="GreenStatus" width="16.5" height="16"/>
         <image name="MoaIcon" width="76" height="40"/>
         <image name="MoaNotification" width="24" height="24"/>
         <image name="MoaSearch" width="24" height="24"/>

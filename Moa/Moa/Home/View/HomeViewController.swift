@@ -7,9 +7,10 @@
 
 import UIKit
 
-import RxSwift
 import RxCocoa
 import RxFSPagerView
+import RxGesture
+import RxSwift
 
 final class HomeViewController: UIViewController, IdentifierType {
     // MARK: - IBOutlet
@@ -21,6 +22,7 @@ final class HomeViewController: UIViewController, IdentifierType {
     @IBOutlet private weak var pageControlLabel: UILabel!
     /// bestMember
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
+    @IBOutlet private weak var bestMemberDetailButtonLabel: UILabel!
     /// bestTeamBuild
     @IBOutlet private weak var bestTeamBuildCollectionView: UICollectionView!
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
@@ -52,6 +54,11 @@ final class HomeViewController: UIViewController, IdentifierType {
         configureUI()
         bindUI()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func bind() {
@@ -91,6 +98,15 @@ final class HomeViewController: UIViewController, IdentifierType {
             .distinctUntilChanged()
             .bind(to: pagerViewDidScrolled)
             .disposed(by: disposeBag)
+        
+        bestMemberDetailButtonLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = BestMemberViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {
@@ -127,7 +143,7 @@ final class HomeViewController: UIViewController, IdentifierType {
         layout.itemSize = CGSize(width: 76, height: 100)
         layout.minimumInteritemSpacing = 16
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         bestMemberCollectionView.collectionViewLayout = layout
         bestMemberCollectionView.register(
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
@@ -155,7 +171,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize.zero
         }
         
-        let width: CGFloat = view.bounds.width - (14 * 2)
+        let width: CGFloat = view.bounds.width - (16 * 2)
         let height: CGFloat = 87
         return CGSize(width: width, height: height)
     }

@@ -20,16 +20,28 @@ final class MoaTabBarController: UITabBarController {
     
     init() {
         let homeVC = HomeViewController()
-        let messageVc = MessageViewController()
+        let messageVC = MessageViewController()
         let teamMemberVC = TeamMemberViewController()
         let settingVC = SettingViewController()
         
-        childVCs = [homeVC, messageVc, teamMemberVC, settingVC]
+        childVCs = [
+            MoaNavigationController(rootViewController: homeVC),
+            messageVC,
+            teamMemberVC,
+            settingVC
+        ]
         
         let imageInset = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         let imageNames = ["Home", "Message", "TeamMember", "Setting"]
         
-        for (vc, name) in zip(childVCs, imageNames) {
+        for (childVC, name) in zip(childVCs, imageNames) {
+            var vc = childVC
+            
+            if let navVC = childVC as? UINavigationController,
+               let firstVC = navVC.viewControllers.first {
+                vc = firstVC
+            }
+            
             let image = UIImage(named: name)
             vc.tabBarItem = UITabBarItem(title: nil, image: image, tag: 0)
             vc.tabBarItem.imageInsets = imageInset
