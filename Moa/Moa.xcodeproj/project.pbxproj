@@ -39,6 +39,8 @@
 		3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */; };
 		3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */; };
 		3C80B1A4274346CB00DDF82F /* BestMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1A3274346CB00DDF82F /* BestMemberViewModel.swift */; };
+		3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1A9274350EC00DDF82F /* HomeBestMemberReusableView.swift */; };
+		3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1AA274350EC00DDF82F /* HomeBestMemberReusableView.xib */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaNavigationController.swift; sourceTree = "<group>"; };
 		3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMemberSectionModel.swift; sourceTree = "<group>"; };
 		3C80B1A3274346CB00DDF82F /* BestMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMemberViewModel.swift; sourceTree = "<group>"; };
+		3C80B1A9274350EC00DDF82F /* HomeBestMemberReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestMemberReusableView.swift; sourceTree = "<group>"; };
+		3C80B1AA274350EC00DDF82F /* HomeBestMemberReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBestMemberReusableView.xib; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				3C80B1802742349400DDF82F /* HomeBestMemberCell.xib */,
 				3C80B183274253BA00DDF82F /* HomeBestTeamBuildCell.swift */,
 				3C80B184274253BA00DDF82F /* HomeBestTeamBuildCell.xib */,
+				3C80B1A9274350EC00DDF82F /* HomeBestMemberReusableView.swift */,
+				3C80B1AA274350EC00DDF82F /* HomeBestMemberReusableView.xib */,
 			);
 			path = ReuseView;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* TeamMemberViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
+				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* BestMemberViewController.xib in Resources */,
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
 				3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */,
@@ -378,6 +385,7 @@
 			files = (
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
+				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* BestMemberViewController.swift in Sources */,
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,

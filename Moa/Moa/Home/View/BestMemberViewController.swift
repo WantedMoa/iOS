@@ -60,6 +60,11 @@ final class BestMemberViewController: UIViewController, IdentifierType {
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestMemberCell.identifier
         )
+        bestMemberCollectionView.register(
+            UINib(nibName: HomeBestMemberReusableView.identifier, bundle: nil),
+            forSupplementaryViewOfKind: HomeBestMemberReusableView.headerElementKind,
+            withReuseIdentifier: HomeBestMemberReusableView.identifier
+        )
     }
 }
 
@@ -80,17 +85,18 @@ extension BestMemberViewController {
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
             group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             
-//            let headerSize = NSCollectionLayoutSize(
-//              widthDimension: .fractionalWidth(1.0),
-//              heightDimension: .estimated(44))
-//            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-//              layoutSize: headerSize,
-//              elementKind: AlbumsViewController.sectionHeaderElementKind,
-//              alignment: .top)
+            let headerSize = NSCollectionLayoutSize(
+              widthDimension: .fractionalWidth(1.0),
+              heightDimension: .estimated(44))
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+              layoutSize: headerSize,
+              elementKind: HomeBestMemberReusableView.headerElementKind,
+              alignment: .top
+            )
 
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 26
-            // section.boundarySupplementaryItems = [sectionHeader]
+            section.boundarySupplementaryItems = [sectionHeader]
             section.orthogonalScrollingBehavior = .groupPaging
             section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
             return section
@@ -113,6 +119,17 @@ extension BestMemberViewController {
             
             cell.update(by: dataSource[indexPath])
             return cell
+        }, configureSupplementaryView: { dataSource, collectionView, kind, indexPath in
+            guard let reuseView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: HomeBestMemberReusableView.identifier,
+                for: indexPath
+            ) as? HomeBestMemberReusableView
+            else {
+                return UICollectionReusableView()
+            }
+            
+            return reuseView
         })
     }
 }
