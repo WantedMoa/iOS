@@ -37,6 +37,7 @@
 		3C80B19C2743338E00DDF82F /* BestMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B19A2743338E00DDF82F /* BestMemberViewController.swift */; };
 		3C80B19D2743338E00DDF82F /* BestMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B19B2743338E00DDF82F /* BestMemberViewController.xib */; };
 		3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */; };
+		3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		3C80B19A2743338E00DDF82F /* BestMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMemberViewController.swift; sourceTree = "<group>"; };
 		3C80B19B2743338E00DDF82F /* BestMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestMemberViewController.xib; sourceTree = "<group>"; };
 		3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaNavigationController.swift; sourceTree = "<group>"; };
+		3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMemberSectionModel.swift; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				3C80B1742742232E00DDF82F /* View */,
 				3C80B1772742234000DDF82F /* ViewModel */,
 				3C80B17C2742242000DDF82F /* ReuseView */,
+				3C80B1A2274343AC00DDF82F /* SectionModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -216,6 +219,14 @@
 				3C80B1962742665200DDF82F /* SettingViewController.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		3C80B1A2274343AC00DDF82F /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */,
+			);
+			path = SectionModel;
 			sourceTree = "<group>";
 		};
 		63B86CDC2F0F4E4043791065 /* Pods */ = {
@@ -365,6 +376,7 @@
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* BestMemberViewController.swift in Sources */,
+				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C80B1972742665200DDF82F /* SettingViewController.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
