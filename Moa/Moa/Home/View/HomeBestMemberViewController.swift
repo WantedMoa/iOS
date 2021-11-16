@@ -81,19 +81,24 @@ extension HomeBestMemberViewController {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             let groupSize = NSCollectionLayoutSize(
-              widthDimension: .absolute(76),
-              heightDimension: .absolute(100)
+                widthDimension: .absolute(76),
+                heightDimension: .absolute(100)
             )
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let group = NSCollectionLayoutGroup.vertical(
+                layoutSize: groupSize,
+                subitem: item,
+                count: 1
+            )
+            group.contentInsets = NSDirectionalEdgeInsets.zero
             
             let headerSize = NSCollectionLayoutSize(
-              widthDimension: .fractionalWidth(1.0),
-              heightDimension: .estimated(23))
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .estimated(23)
+            )
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-              layoutSize: headerSize,
-              elementKind: HomeBestMemberReusableView.headerElementKind,
-              alignment: .top
+                layoutSize: headerSize,
+                elementKind: HomeBestMemberReusableView.headerElementKind,
+                alignment: .top
             )
             
             let section = NSCollectionLayoutSection(group: group)
