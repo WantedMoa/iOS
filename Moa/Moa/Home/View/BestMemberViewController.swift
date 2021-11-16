@@ -12,6 +12,7 @@ import RxDataSources
 import RxSwift
 
 final class BestMemberViewController: UIViewController, IdentifierType {
+    // MARK: - IBOutlet
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
     
     // ViewModel

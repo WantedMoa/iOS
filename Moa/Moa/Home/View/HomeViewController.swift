@@ -26,7 +26,8 @@ final class HomeViewController: UIViewController, IdentifierType {
     /// bestTeamBuild
     @IBOutlet private weak var bestTeamBuildCollectionView: UICollectionView!
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
-    
+    @IBOutlet private weak var bestTeamBuildDetailButtonLabel: UILabel!
+
     // ViewModel
     private lazy var input = HomeViewModel.Input(
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal()
@@ -86,8 +87,7 @@ final class HomeViewController: UIViewController, IdentifierType {
             .drive(bestTeamBuildCollectionView.rx.items(
                 cellIdentifier: HomeBestTeamBuildCell.identifier,
                 cellType: HomeBestTeamBuildCell.self)
-            ) {
-                _, _, _ in
+            ) { _, _, _ in
                 
             }
             .disposed(by: disposeBag)
@@ -104,6 +104,15 @@ final class HomeViewController: UIViewController, IdentifierType {
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
                 guard let self = self else { return }
                 let vc = BestMemberViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        bestTeamBuildDetailButtonLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = BestTeamBuildViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
