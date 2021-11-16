@@ -57,6 +57,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType {
     
     private func prepareBestMemberCollectionView() {
         bestMemberCollectionView.collectionViewLayout = generateLayout()
+        bestMemberCollectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         bestMemberCollectionView.register(
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestMemberCell.identifier
@@ -94,7 +95,7 @@ extension HomeBestMemberViewController {
               elementKind: HomeBestMemberReusableView.headerElementKind,
               alignment: .top
             )
-
+            
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 26
             section.boundarySupplementaryItems = [sectionHeader]
@@ -102,7 +103,7 @@ extension HomeBestMemberViewController {
             section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
             return section
         }
-                
+        
         return layout
     }
 }
