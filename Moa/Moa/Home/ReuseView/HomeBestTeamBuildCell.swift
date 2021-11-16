@@ -16,6 +16,7 @@ final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+        updateTagStackView(by: ["iOS 경험자", "꾸준히 참여", "C"])
     }
     
     private func configureUI() {
@@ -27,5 +28,28 @@ final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
         layer.shadowOffset = CGSize(width: 0, height: 1.0)
         layer.shadowOpacity = 0.15
         layer.shadowRadius = 4.0
+    }
+    
+    private func updateTagStackView(by tags: [String]) {
+        for subView in tagStackView.arrangedSubviews {
+            subView.removeFromSuperview()
+        }
+        
+        for tag in tags {
+            let label = generateTagLabel()
+            label.text = "  " + tag + "  "
+            tagStackView.addArrangedSubview(label)
+        }
+    }
+    
+    private func generateTagLabel() -> UILabel {
+        let font = UIFont(name: "NotoSansKR-Regular", size: 9) ?? UIFont.systemFont(ofSize: 9)
+        let label = UILabel()
+        label.font = font
+        label.textColor = .white
+        label.backgroundColor = .black
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 4
+        return label
     }
 }
