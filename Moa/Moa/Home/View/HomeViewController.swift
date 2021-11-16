@@ -98,7 +98,7 @@ final class HomeViewController: UIViewController, IdentifierType {
             .distinctUntilChanged()
             .bind(to: pagerViewDidScrolled)
             .disposed(by: disposeBag)
-        
+                
         bestMemberDetailButtonLabel.rx.tapGesture()
             .when(.recognized)
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
@@ -123,6 +123,7 @@ final class HomeViewController: UIViewController, IdentifierType {
     }
     
     private func preparePagerView() {
+        pagerView.delegate = self
         pagerView.register(
             HomePagerCell.self,
             forCellWithReuseIdentifier: HomePagerCell.identifier
@@ -157,6 +158,7 @@ final class HomeViewController: UIViewController, IdentifierType {
             UINib(nibName: HomeBestTeamBuildCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestTeamBuildCell.identifier
         )
+        bestTeamBuildCollectionView.isScrollEnabled = false
     }
 }
 
@@ -174,5 +176,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = view.bounds.width - (16 * 2)
         let height: CGFloat = 87
         return CGSize(width: width, height: height)
+    }
+}
+
+// MARK: - FSPagerViewDelegate
+extension HomeViewController: FSPagerViewDelegate {
+    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+        return false
     }
 }
