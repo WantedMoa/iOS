@@ -46,6 +46,7 @@
 		3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B12743765000DDF82F /* HomeDetailBestTeamBuildCell.swift */; };
 		3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */; };
 		3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */; };
+		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		3C80B1B12743765000DDF82F /* HomeDetailBestTeamBuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailBestTeamBuildCell.swift; sourceTree = "<group>"; };
 		3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailBestTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildViewModel.swift; sourceTree = "<group>"; };
+		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				3C80B1782742238800DDF82F /* ViewModelType.swift */,
 				3C80B17D274225F100DDF82F /* IdentifierType.swift */,
 				3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */,
+				3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3C80B1922742664000DDF82F /* MatchViewController.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
+				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
 				3C80B18D2742660600DDF82F /* CommunityViewController.swift in Sources */,
 				3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
