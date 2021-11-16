@@ -87,7 +87,7 @@ extension BestMemberViewController {
             
             let headerSize = NSCollectionLayoutSize(
               widthDimension: .fractionalWidth(1.0),
-              heightDimension: .estimated(44))
+              heightDimension: .estimated(23))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
               layoutSize: headerSize,
               elementKind: HomeBestMemberReusableView.headerElementKind,
@@ -117,9 +117,11 @@ extension BestMemberViewController {
                 return UICollectionViewCell()
             }
             
-            cell.update(by: dataSource[indexPath])
+            cell.update(by: dataSource[indexPath], isHiddenStatus: false)
             return cell
-        }, configureSupplementaryView: { dataSource, collectionView, kind, indexPath in
+        }, configureSupplementaryView: {
+            [weak self] dataSource, collectionView, kind, indexPath in
+            guard let self = self else { return UICollectionReusableView() }
             guard let reuseView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: HomeBestMemberReusableView.identifier,
@@ -129,6 +131,8 @@ extension BestMemberViewController {
                 return UICollectionReusableView()
             }
             
+            let title = self.viewModel.sectionTitles[indexPath.section]
+            reuseView.update(by: title)
             return reuseView
         })
     }

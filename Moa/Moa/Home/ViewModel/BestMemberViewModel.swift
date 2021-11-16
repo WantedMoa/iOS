@@ -19,6 +19,8 @@ final class BestMemberViewModel: ViewModelType {
         let sections: Driver<[BestMemberSectionModel]>
     }
     
+    var sectionTitles = ["인기 PM", "인기 디자이너", "인기 기획자", "인기 개발자"]
+    
     private let disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
