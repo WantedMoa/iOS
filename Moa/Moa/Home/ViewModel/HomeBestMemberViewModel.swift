@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class BestMemberViewModel: ViewModelType {
+final class HomeBestMemberViewModel: ViewModelType {
     struct Input {
         
     }

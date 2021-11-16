@@ -11,26 +11,26 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class BestMemberViewController: UIViewController, IdentifierType {
+final class HomeBestMemberViewController: UIViewController, IdentifierType {
     // MARK: - IBOutlet
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
     
     // ViewModel
-    private lazy var input = BestMemberViewModel.Input()
+    private lazy var input = HomeBestMemberViewModel.Input()
     private lazy var output = viewModel.transform(input: input)
     
     private let disposeBag = DisposeBag()
     
     // DI
-    private let viewModel: BestMemberViewModel
+    private let viewModel: HomeBestMemberViewModel
 
     init() {
-        self.viewModel = BestMemberViewModel()
-        super.init(nibName: BestMemberViewController.identifier, bundle: nil)
+        self.viewModel = HomeBestMemberViewModel()
+        super.init(nibName: HomeBestMemberViewController.identifier, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ final class BestMemberViewController: UIViewController, IdentifierType {
 }
 
 // MAKR: - Generate CollectionView Layout
-extension BestMemberViewController {
+extension HomeBestMemberViewController {
     private func generateLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { _, _ in
             let itemSize = NSCollectionLayoutSize(
@@ -107,7 +107,7 @@ extension BestMemberViewController {
     }
 }
 
-extension BestMemberViewController {
+extension HomeBestMemberViewController {
     private func dataSource() -> RxCollectionViewSectionedReloadDataSource<BestMemberSectionModel> {
         return RxCollectionViewSectionedReloadDataSource(configureCell: {
             dataSource, collectionView, indexPath, _ in

@@ -47,7 +47,7 @@ final class HomeViewController: UIViewController, IdentifierType {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -103,7 +103,7 @@ final class HomeViewController: UIViewController, IdentifierType {
             .when(.recognized)
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                let vc = BestMemberViewController()
+                let vc = HomeBestMemberViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
@@ -112,7 +112,7 @@ final class HomeViewController: UIViewController, IdentifierType {
             .when(.recognized)
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                let vc = BestTeamBuildViewController()
+                let vc = HomeBestTeamBuildViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
