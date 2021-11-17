@@ -4,13 +4,24 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="profileImageView" destination="bvn-QM-C3p" id="qMu-vG-2vH"/>
+                <outlet property="profileView" destination="Ii0-4i-7Z7" id="FoN-tL-Cgz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +29,98 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Tyz-EK-fOj" userLabel="Header Title Stack View">
+                    <rect key="frame" x="16" y="74" width="235.5" height="83.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upP-cL-wTH" userLabel="First Stack View">
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="26.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유정 님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwI-wQ-3a7">
+                                    <rect key="frame" x="0.0" y="0.0" width="55" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 만든" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pN-Z4-a8R">
+                                    <rect key="frame" x="55" y="0.0" width="55" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 모집 공고 조건을 바탕으로" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOg-hQ-ejV">
+                            <rect key="frame" x="0.0" y="28.5" width="235.5" height="26.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
+                            <color key="textColor" name="font1"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUr-hn-1uL" userLabel="Second Stack View">
+                            <rect key="frame" x="0.0" y="57" width="199" height="26.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멋진 팀원을 매칭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94Q-ND-DJT">
+                                    <rect key="frame" x="0.0" y="0.0" width="126.5" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해줄게요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-xa-EYl">
+                                    <rect key="frame" x="126.5" y="0.0" width="72.5" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii0-4i-7Z7" userLabel="Profile View">
+                    <rect key="frame" x="170" y="411" width="74" height="74"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestProfile1" translatesAutoresizingMaskIntoConstraints="NO" id="bvn-QM-C3p" userLabel="Profile Image View">
+                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="74" id="GJC-aR-LOZ"/>
+                                <constraint firstAttribute="width" constant="74" id="lPG-r0-h6E"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenStatus" translatesAutoresizingMaskIntoConstraints="NO" id="XlK-ev-edC" userLabel="Status Image View">
+                            <rect key="frame" x="53" y="53" width="21" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="2hU-8r-alJ"/>
+                                <constraint firstAttribute="width" constant="21" id="ph5-CX-EUv"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="XlK-ev-edC" firstAttribute="bottom" secondItem="bvn-QM-C3p" secondAttribute="bottom" id="02H-tT-2S0"/>
+                        <constraint firstItem="XlK-ev-edC" firstAttribute="trailing" secondItem="bvn-QM-C3p" secondAttribute="trailing" id="0SI-M7-Gtd"/>
+                        <constraint firstItem="bvn-QM-C3p" firstAttribute="centerY" secondItem="Ii0-4i-7Z7" secondAttribute="centerY" id="1yY-We-fq5"/>
+                        <constraint firstItem="bvn-QM-C3p" firstAttribute="centerX" secondItem="Ii0-4i-7Z7" secondAttribute="centerX" id="GJq-A3-wSs"/>
+                        <constraint firstAttribute="width" constant="74" id="MJV-Ac-ofg"/>
+                        <constraint firstAttribute="height" constant="74" id="vbn-qY-ZzL"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ii0-4i-7Z7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3v3-pA-bOo"/>
+                <constraint firstItem="Tyz-EK-fOj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6dI-pG-6eb"/>
+                <constraint firstItem="Ii0-4i-7Z7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="73d-KX-ZYl"/>
+                <constraint firstItem="Tyz-EK-fOj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="nVA-JP-Hga"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="83"/>
         </view>
     </objects>
     <resources>
+        <image name="GreenStatus" width="16.5" height="16"/>
+        <image name="TestProfile1" width="137" height="91"/>
+        <namedColor name="font1">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
