@@ -15,17 +15,21 @@ typealias MatchCircleContent = (
     duration: CFTimeInterval
 )
 
-final class MatchViewController: UIViewController {
+final class MatchViewController: UIViewController, UnderLineNavBar {
     
     private var isFirstLoaded = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        test()
+    }
+    
+    func test() {
         if isFirstLoaded {
             let contents: [MatchCircleContent] = [
                 (view: UIView(), radius: 128 / 2, startAngle: 90, duration: 0),
@@ -47,6 +51,11 @@ final class MatchViewController: UIViewController {
             
             isFirstLoaded = false
         }
+    }
+    
+    private func configureUI() {
+        navigationItem.title = "팀원 매칭"
+        addUnderLineOnNavBar()
     }
 }
 

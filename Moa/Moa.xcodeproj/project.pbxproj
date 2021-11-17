@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17357F2745461D00C9895E /* UnderLineNavBar.swift */; };
 		3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14B2741FAE700DDF82F /* AppDelegate.swift */; };
 		3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */; };
 		3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1542741FAE900DDF82F /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C17357F2745461D00C9895E /* UnderLineNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineNavBar.swift; sourceTree = "<group>"; };
 		3C80B1482741FAE700DDF82F /* Moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C80B14B2741FAE700DDF82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				3C80B17D274225F100DDF82F /* IdentifierType.swift */,
 				3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */,
 				3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */,
+				3C17357F2745461D00C9895E /* UnderLineNavBar.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3C80B1922742664000DDF82F /* MatchViewController.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
+				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
 				3C80B18D2742660600DDF82F /* CommunityViewController.swift in Sources */,
 				3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */,
