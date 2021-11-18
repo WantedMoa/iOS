@@ -12,8 +12,12 @@ import RxGesture
 import RxSwift
 
 final class CommunityViewController: UIViewController, IdentifierType, UnderLineNavBar {
+    // MARK: - IBOutlet
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var teambuildCollectionView: UICollectionView!
+    @IBOutlet private weak var addButtonView: UIView!
+    
     
     // ViewModel
     private lazy var input = CommunityViewModel.Input()
@@ -37,6 +41,7 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
         super.viewDidLoad()
         configureUI()
         bind()
+        updateTagStackView(by: ["Figma", "인공지능", "해커톤", "기획능력", "UX/UI"])
     }
     
     private func bind() {
@@ -54,6 +59,7 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
         addUnderLineOnNavBar()
         prepareSearchBar()
         prepareTeambuildCollectionView()
+        prepareAddButtonView()
     }
     
     private func prepareSearchBar() {
@@ -81,6 +87,11 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
             forCellWithReuseIdentifier: CommunityTeamBuildCell.identifier
         )
     }
+    
+    private func prepareAddButtonView() {
+        addButtonView.layer.masksToBounds = true
+        addButtonView.layer.cornerRadius = 66 / 2
+    }
 }
 
 extension CommunityViewController: UICollectionViewDelegateFlowLayout {
@@ -92,5 +103,28 @@ extension CommunityViewController: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = view.bounds.width - (15 * 2)
         let height: CGFloat = 94
         return CGSize(width: width, height: height)
+    }
+}
+
+// MARK: - TagStackView
+extension CommunityViewController {
+    private func updateTagStackView(by tags: [String]) {
+        for subView in tagStackView.arrangedSubviews {
+            subView.removeFromSuperview()
+        }
+        
+        for tag in tags {
+            let label = generateTagLabel()
+            label.text = "#" + tag
+            tagStackView.addArrangedSubview(label)
+        }
+    }
+    
+    private func generateTagLabel() -> UILabel {
+        let font = UIFont(name: "NotoSansKR-Normal", size: 11) ?? UIFont.systemFont(ofSize: 11)
+        let label = UILabel()
+        label.font = font
+        label.textColor = UIColor(rgb: 0xb8b8b8)
+        return label
     }
 }
