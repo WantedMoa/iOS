@@ -64,7 +64,9 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
             NSAttributedString.Key.font: font
         ]
         
+        searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 5, vertical: 0)
         searchBar.backgroundImage = UIImage()
+        searchBar.setImage(UIImage(named: "MoaSearch"), for: .search, state: .normal)
         searchBar[keyPath: \.searchTextField].font = font
         searchBar[keyPath: \.searchTextField].attributedPlaceholder = NSAttributedString(
             string: "공모전/팀원 이름, 기술스택/파트를 검색할 수 있어요",
