@@ -57,7 +57,19 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     }
     
     private func prepareSearchBar() {
+        let font = UIFont(name: "NotoSansKR-Regular", size: 13) ?? .systemFont(ofSize: 15)
+        
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: font
+        ]
+        
         searchBar.backgroundImage = UIImage()
+        searchBar[keyPath: \.searchTextField].font = font
+        searchBar[keyPath: \.searchTextField].attributedPlaceholder = NSAttributedString(
+            string: "공모전/팀원 이름, 기술스택/파트를 검색할 수 있어요",
+            attributes:attributes
+        )
     }
     
     private func prepareTeambuildCollectionView() {
