@@ -102,10 +102,20 @@ extension HomeBestMemberViewController {
                 alignment: .top
             )
             
-            let section = NSCollectionLayoutSection(group: group)
+            let horizontalGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: .init(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .estimated(23)
+                ),
+                subitems: [group, group, group, group]
+            )
+            horizontalGroup.interItemSpacing = .flexible(10)
+            
+            let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.interGroupSpacing = 26
             section.boundarySupplementaryItems = [sectionHeader]
-            section.orthogonalScrollingBehavior = .groupPaging
+            section.orthogonalScrollingBehavior = .none
+            // section.orthogonalScrollingBehavior = .groupPaging
             section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
             return section
         }
