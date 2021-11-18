@@ -108,9 +108,10 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindUI()
         bind()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateContents()
@@ -128,6 +129,17 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             
         }
         .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        innerMatchCountView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = HomeBestMemberViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {
@@ -222,6 +234,8 @@ extension MatchViewController {
     }
     
     private func generateCircleContents() -> [MatchCircleContent] {
+        let duration: CGFloat = 9
+        
         let contents = [
             MatchCircleContent(
                 view: UIView(),
@@ -234,35 +248,35 @@ extension MatchViewController {
                 view: innerFirstProfileImageView,
                 radius: 234 / 2,
                 startAngle: 225,
-                duration: 9,
+                duration: duration,
                 isHiddenLayer: false
             ),
             MatchCircleContent(
                 view: innerMatchCountView,
                 radius: 234 / 2,
                 startAngle: 45,
-                duration: 9,
+                duration: duration,
                 isHiddenLayer: true
             ),
             MatchCircleContent(
                 view: outterFirstProfileImageView,
                 radius: 336 / 2,
                 startAngle: -30,
-                duration: 9,
+                duration: duration,
                 isHiddenLayer: false
             ),
             MatchCircleContent(
                 view: outterSecondProfileImageView,
                 radius: 336 / 2,
                 startAngle: 180,
-                duration: 9,
+                duration: duration,
                 isHiddenLayer: true
             ),
             MatchCircleContent(
                 view: outterThirdProfileImageView,
                 radius: 336 / 2,
                 startAngle: 95,
-                duration: 9,
+                duration: duration,
                 isHiddenLayer: true
             )
         ]
