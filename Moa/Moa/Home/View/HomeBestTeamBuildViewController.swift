@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class HomeBestTeamBuildViewController: UIViewController, IdentifierType {
+final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, UnderLineNavBar {
     // MARK: - IBOutlet
     @IBOutlet private weak var bestTeamBuildCollectionView: UICollectionView!
     
@@ -56,6 +56,7 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType {
     
     private func configureUI() {
         navigationItem.title = "인기 팀원 모집 공고"
+        addUnderLineOnNavBar()
         prepareBestTeamBuildCollectionView()
     }
     

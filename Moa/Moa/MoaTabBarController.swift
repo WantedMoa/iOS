@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum MoaTab: String, CaseIterable {
+    case home = "Home"
+    case community = "Community"
+    case match = "Match"
+    case setting = "Setting"
+}
+
 final class MoaTabBarController: UITabBarController {
     lazy var lineView: UIView = {
         let width = view.bounds.width
@@ -20,21 +27,20 @@ final class MoaTabBarController: UITabBarController {
     
     init() {
         let homeVC = HomeViewController()
-        let messageVC = MessageViewController()
-        let teamMemberVC = TeamMemberViewController()
+        let communityVC = CommunityViewController()
+        let matchVC = MatchViewController()
         let settingVC = SettingViewController()
         
         childVCs = [
             MoaNavigationController(rootViewController: homeVC),
-            messageVC,
-            teamMemberVC,
+            communityVC,
+            MoaNavigationController(rootViewController: matchVC),
             settingVC
         ]
         
         let imageInset = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
-        let imageNames = ["Home", "Message", "TeamMember", "Setting"]
         
-        for (childVC, name) in zip(childVCs, imageNames) {
+        for (childVC, tab) in zip(childVCs, MoaTab.allCases) {
             var vc = childVC
             
             if let navVC = childVC as? UINavigationController,
@@ -42,7 +48,7 @@ final class MoaTabBarController: UITabBarController {
                 vc = firstVC
             }
             
-            let image = UIImage(named: name)
+            let image = UIImage(named: tab.rawValue)
             vc.tabBarItem = UITabBarItem(title: nil, image: image, tag: 0)
             vc.tabBarItem.imageInsets = imageInset
         }

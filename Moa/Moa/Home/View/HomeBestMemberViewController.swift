@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class HomeBestMemberViewController: UIViewController, IdentifierType {
+final class HomeBestMemberViewController: UIViewController, IdentifierType, UnderLineNavBar {
     // MARK: - IBOutlet
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
     
@@ -52,6 +52,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType {
     
     private func configureUI() {
         navigationItem.title = "인기팀원"
+        addUnderLineOnNavBar()
         prepareBestMemberCollectionView()
     }
     
@@ -81,25 +82,40 @@ extension HomeBestMemberViewController {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             let groupSize = NSCollectionLayoutSize(
-              widthDimension: .absolute(76),
-              heightDimension: .absolute(100)
+                widthDimension: .absolute(76),
+                heightDimension: .absolute(100)
             )
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let group = NSCollectionLayoutGroup.vertical(
+                layoutSize: groupSize,
+                subitem: item,
+                count: 1
+            )
+            group.contentInsets = NSDirectionalEdgeInsets.zero
             
             let headerSize = NSCollectionLayoutSize(
-              widthDimension: .fractionalWidth(1.0),
-              heightDimension: .estimated(23))
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .estimated(23)
+            )
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-              layoutSize: headerSize,
-              elementKind: HomeBestMemberReusableView.headerElementKind,
-              alignment: .top
+                layoutSize: headerSize,
+                elementKind: HomeBestMemberReusableView.headerElementKind,
+                alignment: .top
             )
             
-            let section = NSCollectionLayoutSection(group: group)
+            let horizontalGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: .init(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .estimated(23)
+                ),
+                subitems: [group, group, group, group]
+            )
+            horizontalGroup.interItemSpacing = .flexible(10)
+            
+            let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.interGroupSpacing = 26
             section.boundarySupplementaryItems = [sectionHeader]
-            section.orthogonalScrollingBehavior = .groupPaging
+            section.orthogonalScrollingBehavior = .none
+            // section.orthogonalScrollingBehavior = .groupPaging
             section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
             return section
         }
