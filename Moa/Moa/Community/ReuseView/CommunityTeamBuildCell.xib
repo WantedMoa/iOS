@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="CommunityTeamBuildCell" customModule="Moa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="199"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="394" height="199"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Fzq-cz-Uhz" userLabel="TeamInfo StackView">
+                        <rect key="frame" x="110" y="0.0" width="284" height="56"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/19~11/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBH-9k-QmI">
+                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="13.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="9"/>
+                                <color key="textColor" name="font2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="눈바디 AI 챌린지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-aK-9eB">
+                                <rect key="frame" x="0.0" y="13.5" width="110.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                <color key="textColor" name="font1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같이 참여하실 성실한 개발자 2분을 모시고 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-8A-dL9">
+                                <rect key="frame" x="0.0" y="37" width="283.5" height="19"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                <color key="textColor" name="font3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestPoster2" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-PB-ehj">
+                        <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="8Vg-bi-EX2"/>
+                            <constraint firstAttribute="height" constant="94" id="mf8-tJ-Gbz"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1분 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-5a-quj">
+                        <rect key="frame" x="369.5" y="0.0" width="24.5" height="13.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="9"/>
+                        <color key="textColor" name="font3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q35-k3-Dka" userLabel="Tag StackView">
+                        <rect key="frame" x="110" y="79" width="50" height="15"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXz-9X-GG2">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="38K-AV-rrz"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="q35-k3-Dka" firstAttribute="bottom" secondItem="p2V-PB-ehj" secondAttribute="bottom" id="0VF-2l-Bqe"/>
+                <constraint firstItem="Fzq-cz-Uhz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2mg-nO-CE8"/>
+                <constraint firstItem="p2V-PB-ehj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8Ma-3P-vWp"/>
+                <constraint firstAttribute="trailing" secondItem="Fzq-cz-Uhz" secondAttribute="trailing" id="8xE-cX-mzT"/>
+                <constraint firstItem="p2V-PB-ehj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dbx-GP-oAR"/>
+                <constraint firstItem="qa4-5a-quj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E3b-OC-p1c"/>
+                <constraint firstItem="q35-k3-Dka" firstAttribute="leading" secondItem="p2V-PB-ehj" secondAttribute="trailing" constant="16" id="jTk-JH-tIz"/>
+                <constraint firstAttribute="trailing" secondItem="qa4-5a-quj" secondAttribute="trailing" id="wrt-iY-R8P"/>
+                <constraint firstItem="Fzq-cz-Uhz" firstAttribute="leading" secondItem="p2V-PB-ehj" secondAttribute="trailing" constant="16" id="xCg-Mb-AJF"/>
+            </constraints>
+            <size key="customSize" width="394" height="199"/>
+            <connections>
+                <outlet property="competitionDateLabel" destination="mBH-9k-QmI" id="w6Q-Zk-BMs"/>
+                <outlet property="competitionImageView" destination="p2V-PB-ehj" id="eHd-ew-TnK"/>
+                <outlet property="competitionTitleLabel" destination="rh3-aK-9eB" id="Fa8-s0-vB2"/>
+                <outlet property="tagStackView" destination="q35-k3-Dka" id="9NE-yt-T47"/>
+            </connections>
+            <point key="canvasLocation" x="433.33333333333337" y="131.58482142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="TestPoster2" width="382" height="236"/>
+        <namedColor name="font1">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font2">
+            <color red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font3">
+            <color red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

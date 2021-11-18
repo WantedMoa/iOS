@@ -33,7 +33,7 @@ final class MoaTabBarController: UITabBarController {
         
         childVCs = [
             MoaNavigationController(rootViewController: homeVC),
-            communityVC,
+            MoaNavigationController(rootViewController: communityVC),
             MoaNavigationController(rootViewController: matchVC),
             settingVC
         ]

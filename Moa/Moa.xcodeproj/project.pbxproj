@@ -11,6 +11,9 @@
 		3C1735842745E1C700C9895E /* MatchMyTeamBuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1735822745E1C700C9895E /* MatchMyTeamBuildCell.swift */; };
 		3C1735852745E1C800C9895E /* MatchMyTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1735832745E1C700C9895E /* MatchMyTeamBuildCell.xib */; };
 		3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1735872745E4BF00C9895E /* MatchViewModel.swift */; };
+		3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17358D2746021E00C9895E /* CommunityTeamBuildCell.swift */; };
+		3C1735902746021E00C9895E /* CommunityTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17358E2746021E00C9895E /* CommunityTeamBuildCell.xib */; };
+		3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1735922746044500C9895E /* CommunityViewModel.swift */; };
 		3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14B2741FAE700DDF82F /* AppDelegate.swift */; };
 		3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */; };
 		3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1542741FAE900DDF82F /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		3C1735822745E1C700C9895E /* MatchMyTeamBuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMyTeamBuildCell.swift; sourceTree = "<group>"; };
 		3C1735832745E1C700C9895E /* MatchMyTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchMyTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C1735872745E4BF00C9895E /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		3C17358D2746021E00C9895E /* CommunityTeamBuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTeamBuildCell.swift; sourceTree = "<group>"; };
+		3C17358E2746021E00C9895E /* CommunityTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTeamBuildCell.xib; sourceTree = "<group>"; };
+		3C1735922746044500C9895E /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
 		3C80B1482741FAE700DDF82F /* Moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C80B14B2741FAE700DDF82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +150,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		3C17358C2746017000C9895E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B18B2742660600DDF82F /* CommunityViewController.swift */,
+				3C80B18C2742660600DDF82F /* CommunityViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C1735912746022200C9895E /* ReuseView */ = {
+			isa = PBXGroup;
+			children = (
+				3C17358D2746021E00C9895E /* CommunityTeamBuildCell.swift */,
+				3C17358E2746021E00C9895E /* CommunityTeamBuildCell.xib */,
+			);
+			path = ReuseView;
+			sourceTree = "<group>";
+		};
+		3C1735942746046500C9895E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3C1735922746044500C9895E /* CommunityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3C80B13F2741FAE700DDF82F = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +197,7 @@
 		3C80B14A2741FAE700DDF82F /* Moa */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B18F2742661300DDF82F /* Message */,
+				3C80B18F2742661300DDF82F /* Community */,
 				3C80B17327421FA700DDF82F /* Home */,
 				3C80B1612741FD1800DDF82F /* Support */,
 				3C80B1942742664300DDF82F /* Match */,
@@ -256,13 +288,14 @@
 			path = ReuseView;
 			sourceTree = "<group>";
 		};
-		3C80B18F2742661300DDF82F /* Message */ = {
+		3C80B18F2742661300DDF82F /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B18B2742660600DDF82F /* CommunityViewController.swift */,
-				3C80B18C2742660600DDF82F /* CommunityViewController.xib */,
+				3C17358C2746017000C9895E /* View */,
+				3C1735912746022200C9895E /* ReuseView */,
+				3C1735942746046500C9895E /* ViewModel */,
 			);
-			path = Message;
+			path = Community;
 			sourceTree = "<group>";
 		};
 		3C80B1942742664300DDF82F /* Match */ = {
@@ -376,6 +409,7 @@
 				3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */,
 				3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */,
 				3C80B1692741FD9600DDF82F /* NotoSansKR-Medium.otf in Resources */,
+				3C1735902746021E00C9895E /* CommunityTeamBuildCell.xib in Resources */,
 				3C80B1582741FAE900DDF82F /* LaunchScreen.storyboard in Resources */,
 				3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */,
 				3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */,
@@ -447,10 +481,12 @@
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
+				3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */,
 				3C80B1972742665200DDF82F /* SettingViewController.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
 				3C80B1A4274346CB00DDF82F /* HomeBestMemberViewModel.swift in Sources */,
+				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
 				3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
