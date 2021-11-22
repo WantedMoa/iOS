@@ -18,7 +18,6 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     @IBOutlet private weak var teambuildCollectionView: UICollectionView!
     @IBOutlet private weak var addButtonView: UIView!
     
-    
     // ViewModel
     private lazy var input = CommunityViewModel.Input()
     private lazy var output = viewModel.transform(input: input)
