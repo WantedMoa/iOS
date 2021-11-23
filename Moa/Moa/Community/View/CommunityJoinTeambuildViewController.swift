@@ -64,26 +64,6 @@ final class CommunityJoinTeambuildViewController: UIViewController {
             .map { !$0 }
             .bind(to: joinMessagePlaceholderLabel.rx.isHidden)
             .disposed(by: disposeBag)
-        
-//        joinMessageTextView.rx.didBeginEditing
-//            .subscribe { [weak self] (_: Void) in
-//                guard let self = self else { return }
-//                if self.joinMessageTextView.textColor == .moaDarkColor {
-//                    self.joinMessageTextView.text = nil
-//                    self.joinMessageTextView.textColor = .black
-//                }
-//            }
-//            .disposed(by: disposeBag)
-//
-//        joinMessageTextView.rx.didEndEditing
-//            .subscribe { [weak self] (_: Void) in
-//                guard let self = self else { return }
-//                if self.joinMessageTextView.text.isEmpty {
-//                    self.joinMessageTextView.text = "궁금한 점을 적어주세요"
-//                    self.joinMessageTextView.textColor = .moaDarkColor
-//                }
-//            }
-//            .disposed(by: disposeBag)
     }
     
     private func prepareJoinTitleTextField() {

@@ -18,6 +18,8 @@
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
 		3C2DD435274CA316007DBC58 /* MoaButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD434274CA316007DBC58 /* MoaButtonView.xib */; };
+		3C2DD438274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */; };
+		3C2DD439274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */; };
 		3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14B2741FAE700DDF82F /* AppDelegate.swift */; };
 		3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */; };
 		3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1542741FAE900DDF82F /* Assets.xcassets */; };
@@ -73,6 +75,8 @@
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
 		3C2DD434274CA316007DBC58 /* MoaButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoaButtonView.xib; sourceTree = "<group>"; };
+		3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRegisterTeambuildViewController.swift; sourceTree = "<group>"; };
+		3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityRegisterTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C80B1482741FAE700DDF82F /* Moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C80B14B2741FAE700DDF82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				3C80B18C2742660600DDF82F /* CommunityViewController.xib */,
 				3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */,
 				3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */,
+				3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */,
+				3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
 				3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */,
 				3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */,
+				3C2DD439274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +532,7 @@
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
 				3C80B1A4274346CB00DDF82F /* HomeBestMemberViewModel.swift in Sources */,
+				3C2DD438274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift in Sources */,
 				3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */,
 				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
@@ -686,6 +694,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모아";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -717,6 +726,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모아";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
