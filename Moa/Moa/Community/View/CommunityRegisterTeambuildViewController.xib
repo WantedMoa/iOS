@@ -20,8 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityRegisterTeambuildViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="competitionTitleTextField" destination="rEg-e1-wLJ" id="pNu-ud-Tuk"/>
                 <outlet property="photoImageView" destination="ez7-gj-A1T" id="Wom-NS-Ggx"/>
                 <outlet property="photoSelectView" destination="9jP-aC-QaF" id="wBh-A0-Yfa"/>
+                <outlet property="teambuildContentPlaceholderLabel" destination="xtJ-Sg-2YV" id="Wb3-yx-YBZ"/>
+                <outlet property="teambuildContentTextView" destination="1c4-gq-4tO" id="phv-bn-oav"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -71,7 +74,7 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="EK8-Ns-DCg" userLabel="Date Stack View">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EK8-Ns-DCg" userLabel="Date Stack View">
                                     <rect key="frame" x="137.5" y="70.5" width="260.5" height="24"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="sXv-l8-L8v">
@@ -82,7 +85,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="34t-uc-45N">
-                                            <rect key="frame" x="69" y="0.0" width="122.5" height="24"/>
+                                            <rect key="frame" x="69" y="0.5" width="122.5" height="23.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -318,12 +321,21 @@
                                 <constraint firstItem="xp2-DQ-arf" firstAttribute="trailing" secondItem="wIx-Jr-HcY" secondAttribute="trailing" id="yl3-I6-2s5"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공모전에 대한 내용과 미래의 팀원에게 바라는 기술스택 및 스킬셋 등의 기타 사항을 간단히 적어주세요" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtJ-Sg-2YV">
+                            <rect key="frame" x="20" y="683.5" width="378" height="46.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="t9m-nC-NTG" secondAttribute="bottom" priority="250" id="6yB-7W-YXd"/>
+                        <constraint firstItem="xtJ-Sg-2YV" firstAttribute="trailing" secondItem="1c4-gq-4tO" secondAttribute="trailing" id="C7Q-WH-3Dp"/>
+                        <constraint firstItem="xtJ-Sg-2YV" firstAttribute="top" secondItem="1c4-gq-4tO" secondAttribute="top" constant="8" id="Yrb-M5-ej7"/>
                         <constraint firstAttribute="trailing" secondItem="t9m-nC-NTG" secondAttribute="trailing" id="jnr-PL-hpU"/>
                         <constraint firstItem="t9m-nC-NTG" firstAttribute="top" secondItem="CgH-Ec-gUx" secondAttribute="top" id="pKr-10-xBC"/>
                         <constraint firstItem="t9m-nC-NTG" firstAttribute="leading" secondItem="CgH-Ec-gUx" secondAttribute="leading" id="sOM-ke-sDu"/>
+                        <constraint firstItem="xtJ-Sg-2YV" firstAttribute="leading" secondItem="1c4-gq-4tO" secondAttribute="leading" constant="4" id="tfB-dA-0cM"/>
                     </constraints>
                 </scrollView>
             </subviews>

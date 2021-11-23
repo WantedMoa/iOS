@@ -16,7 +16,10 @@ typealias PickerDelegate = UIImagePickerControllerDelegate & UINavigationControl
 final class CommunityRegisterTeambuildViewController: UIViewController, UnderLineNavBar {
     @IBOutlet private weak var photoSelectView: UIView!
     @IBOutlet private weak var photoImageView: UIImageView!
-    
+    @IBOutlet private weak var competitionTitleTextField: UITextField!
+    @IBOutlet private weak var teambuildContentTextView: UITextView!
+    @IBOutlet private weak var teambuildContentPlaceholderLabel: UILabel!
+
     private lazy var imagePicker: UIImagePickerController = {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -48,17 +51,47 @@ final class CommunityRegisterTeambuildViewController: UIViewController, UnderLin
                 self.present(self.imagePicker, animated: true)
             }
             .disposed(by: disposeBag)
+        
+        teambuildContentTextView.rx.text
+            .map { !($0?.isEmpty ?? true) }
+            .bind(to: teambuildContentPlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 
     private func configureUI() {
         navigationItem.title = "팀원 모집하기"
         addUnderLineOnNavBar()
         preparePhotoSelectView()
+        prepareCompetitionTitleTextField()
+        prepareTeambuildContentTextView()
     }
     
     private func preparePhotoSelectView() {
-        photoSelectView?.layer.masksToBounds = true
-        photoSelectView?.layer.cornerRadius = 10
+        photoSelectView.layer.masksToBounds = true
+        photoSelectView.layer.cornerRadius = 10
+    }
+    
+    private func prepareCompetitionTitleTextField() {
+        let font = UIFont(name: "NotoSansKR-Regular", size: 16) ?? .systemFont(ofSize: 16)
+
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: font
+        ]
+
+        competitionTitleTextField.font = font
+        competitionTitleTextField.attributedPlaceholder = NSAttributedString(
+            string: "공모전의 제목을 작성해주세요",
+            attributes: attributes
+        )
+    }
+    
+    private func prepareTeambuildContentTextView() {
+        teambuildContentTextView.layer.masksToBounds = true
+        teambuildContentTextView.layer.cornerRadius = 10
+        teambuildContentTextView.layer.borderWidth = 1
+        teambuildContentTextView.layer.borderColor = UIColor(rgb: 0xdddddd).cgColor
+        teambuildContentTextView.textColor = .moaDarkColor
     }
 }
 
@@ -71,12 +104,11 @@ extension CommunityRegisterTeambuildViewController: PickerDelegate {
         
         if let editedImage = info[.editedImage] as? UIImage {
             selectedImage = editedImage
-            self.photoImageView.image = selectedImage!
-            picker.dismiss(animated: true, completion: nil)
         } else if let originalImage = info[.originalImage] as? UIImage {
             selectedImage = originalImage
-            self.photoImageView.image = selectedImage!
-            picker.dismiss(animated: true, completion: nil)
         }
+        
+        photoImageView.image = selectedImage
+        picker.dismiss(animated: true)
     }
 }

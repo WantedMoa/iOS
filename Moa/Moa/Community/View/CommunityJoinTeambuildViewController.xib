@@ -242,7 +242,7 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공모전이 끝날 때까지 성실하게 테스크를 수행할 수 있는 분을 원합니다. 해커톤 경험이 있으시다면 더 좋을 것 같습니다." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-2o-J4a">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공모전이 끝날 때까지 성실하게 테스크를 수행할 수 있는 분을 원합니다. 해커톤 경험이 있으시다면 더 좋을 것 같습니다." lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-2o-J4a">
                                     <rect key="frame" x="16" y="422" width="390" height="70"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                     <color key="textColor" name="font1"/>

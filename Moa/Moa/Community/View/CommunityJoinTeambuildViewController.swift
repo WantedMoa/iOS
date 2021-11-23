@@ -60,8 +60,7 @@ final class CommunityJoinTeambuildViewController: UIViewController {
             .disposed(by: disposeBag)
         
         joinMessageTextView.rx.text
-            .map { $0?.isEmpty ?? true }
-            .map { !$0 }
+            .map { !($0?.isEmpty ?? true) }
             .bind(to: joinMessagePlaceholderLabel.rx.isHidden)
             .disposed(by: disposeBag)
     }
