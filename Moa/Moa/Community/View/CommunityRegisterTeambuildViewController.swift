@@ -21,6 +21,9 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
     @IBOutlet private weak var teambuildContentTextView: UITextView!
     @IBOutlet private weak var teambuildContentPlaceholderLabel: UILabel!
     
+    // Tag
+    @IBOutlet private weak var tagStackView: UIStackView!
+    
     // Date
     @IBOutlet private weak var teambuildEndDateStackView: UIStackView!
     @IBOutlet private weak var teambuildEndDateLabel: UILabel!
@@ -41,14 +44,18 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
     private lazy var input = CommunityRegisterTeambuildViewModel.Input(
         changeTeambuildEndDate: changeTeambuildEndDate.asSignal(),
         changeCompetitionStartDate: changeCompetitionStartDate.asSignal(),
-        changeCompetitionEndDate: changeCompetitionEndDate.asSignal()
+        changeCompetitionEndDate: changeCompetitionEndDate.asSignal(),
+        addTag: addTag.asSignal(),
+        removeTag: removeTag.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
-
+    
     // Event
     private let changeTeambuildEndDate = PublishRelay<Date>()
     private let changeCompetitionStartDate = PublishRelay<Date>()
     private let changeCompetitionEndDate = PublishRelay<Date>()
+    private let addTag = PublishRelay<String?>()
+    private let removeTag = PublishRelay<String?>()
     private let disposeBag = DisposeBag()
 
     // DI
@@ -68,6 +75,7 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         configureUI()
         bindUI()
         bind()
+        updateTagStackView(by: viewModel.tags)
     }
     
     private func bind() {
@@ -191,5 +199,64 @@ extension CommunityRegisterTeambuildViewController: PickerDelegate {
         
         photoImageView.image = selectedImage
         picker.dismiss(animated: true)
+    }
+}
+
+// MARK: - Update Tag
+extension CommunityRegisterTeambuildViewController {
+    private func updateTagStackView(by tags: [String]) {
+        for subView in tagStackView.arrangedSubviews {
+            subView.removeFromSuperview()
+        }
+        
+        for tag in tags {
+            let label = generateTagLabel(title: tag)
+            tagStackView.addArrangedSubview(label)
+        }
+    }
+    
+    private func generateTagLabel(title: String) -> UIView {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = UIColor(rgb: 0xf2f2f2)
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 16
+        
+        let font = UIFont(name: "NotoSansKR-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = font
+        label.text = title
+        label.textColor = UIColor(rgb: 0xb8b8b8)
+        
+        contentView.addSubview(label)
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalToConstant: CGFloat(56 + (8 * title.count))),
+            contentView.heightAnchor.constraint(equalToConstant: 32),
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+        
+        contentView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                if let view = tapGesture.view,
+                   let label = view.subviews.first as? UILabel {
+                    
+                    if view.backgroundColor == .black {
+                        view.backgroundColor = UIColor(rgb: 0xf2f2f2)
+                        label.textColor = UIColor(rgb: 0xb8b8b8)
+                        self.removeTag.accept(label.text)
+                    } else {
+                        view.backgroundColor = .black
+                        label.textColor = .white
+                        self.addTag.accept(label.text)
+                    }
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        return contentView
     }
 }

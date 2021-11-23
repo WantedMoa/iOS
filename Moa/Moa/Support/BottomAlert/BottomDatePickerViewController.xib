@@ -34,6 +34,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="213"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="631191600">
+                                <!--2021-01-01 11:00:00 +0000-->
+                            </date>
+                            <date key="maximumDate" timeIntervalSinceReferenceDate="725713200">
+                                <!--2023-12-31 11:00:00 +0000-->
+                            </date>
                             <locale key="locale" localeIdentifier="ko"/>
                         </datePicker>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ib1-V8-htV" userLabel="Line View">
