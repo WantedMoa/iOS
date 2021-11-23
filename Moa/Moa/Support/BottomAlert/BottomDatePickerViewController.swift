@@ -17,7 +17,10 @@ final class BottomDatePickerViewController: UIViewController {
     @IBOutlet private weak var cancelView: UIView!
     
     private let disposeBag = DisposeBag()
+    
+    // DI
     var blurVC: BackgroundBlur?
+    var datePickerHandler: ((Date) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()

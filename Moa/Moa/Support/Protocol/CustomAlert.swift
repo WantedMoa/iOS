@@ -15,12 +15,12 @@ extension CustomAlert {
         return nc
     }
     
-    public func presentBottomDatePicker(completion: (() -> Void)? = nil) {
+    public func presentBottomDatePicker(datePickerHandler: ((Date) -> Void)? = nil) {
         let vc = BottomDatePickerViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
+        vc.datePickerHandler = datePickerHandler
         vc.blurVC = blurVC
-        
         navigationController?.tabBarController?.present(vc, animated: true)
     }
 }

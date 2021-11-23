@@ -12,14 +12,23 @@ import RxGesture
 import RxSwift
 
 typealias PickerDelegate = UIImagePickerControllerDelegate & UINavigationControllerDelegate
+typealias MoaSupport = UnderLineNavBar & CustomAlert & IdentifierType
 
-final class CommunityRegisterTeambuildViewController: UIViewController, UnderLineNavBar, CustomAlert {
+final class CommunityRegisterTeambuildViewController: UIViewController, MoaSupport {
     @IBOutlet private weak var photoSelectView: UIView!
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var competitionTitleTextField: UITextField!
     @IBOutlet private weak var teambuildContentTextView: UITextView!
     @IBOutlet private weak var teambuildContentPlaceholderLabel: UILabel!
-
+    
+    // Date
+    @IBOutlet private weak var teambuildEndDateStackView: UIStackView!
+    @IBOutlet private weak var teambuildEndDateLabel: UILabel!
+    @IBOutlet private weak var competitionStartDateStackView: UIStackView!
+    @IBOutlet private weak var competitionStartDateLabel: UILabel!
+    @IBOutlet private weak var competitionEndDateStackView: UIStackView!
+    @IBOutlet private weak var competitionEndDateLabel: UILabel!
+    
     private lazy var imagePicker: UIImagePickerController = {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -28,17 +37,28 @@ final class CommunityRegisterTeambuildViewController: UIViewController, UnderLin
         return vc
     }()
     
+    // ViewModel
+    private lazy var input = CommunityRegisterTeambuildViewModel.Input()
+    private lazy var output = viewModel.transform(input: input)
+    
     private let disposeBag = DisposeBag()
-
+    
+    // DI
+    private let viewModel: CommunityRegisterTeambuildViewModel
+    
+    init() {
+        self.viewModel = CommunityRegisterTeambuildViewModel()
+        super.init(nibName: CommunityRegisterTeambuildViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presentBottomDatePicker(completion: nil)
     }
     
     private func bindUI() {

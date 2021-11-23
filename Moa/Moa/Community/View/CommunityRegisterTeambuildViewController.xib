@@ -20,11 +20,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityRegisterTeambuildViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="competitionEndDateLabel" destination="ioZ-qY-c5g" id="TSD-QG-JQa"/>
+                <outlet property="competitionEndDateStackView" destination="Dgb-1F-gcI" id="4yt-Mr-5ef"/>
+                <outlet property="competitionStartDateLabel" destination="QKj-KH-dWW" id="o7j-xu-Fbe"/>
+                <outlet property="competitionStartDateStackView" destination="wIx-Jr-HcY" id="hSi-uv-kZV"/>
                 <outlet property="competitionTitleTextField" destination="rEg-e1-wLJ" id="pNu-ud-Tuk"/>
                 <outlet property="photoImageView" destination="ez7-gj-A1T" id="Wom-NS-Ggx"/>
                 <outlet property="photoSelectView" destination="9jP-aC-QaF" id="wBh-A0-Yfa"/>
                 <outlet property="teambuildContentPlaceholderLabel" destination="xtJ-Sg-2YV" id="Wb3-yx-YBZ"/>
                 <outlet property="teambuildContentTextView" destination="1c4-gq-4tO" id="phv-bn-oav"/>
+                <outlet property="teambuildEndDateLabel" destination="34t-uc-45N" id="PUk-U0-rN5"/>
+                <outlet property="teambuildEndDateStackView" destination="EK8-Ns-DCg" id="Gm2-Yh-jdI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
