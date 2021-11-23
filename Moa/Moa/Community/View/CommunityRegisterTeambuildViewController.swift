@@ -35,6 +35,7 @@ final class CommunityRegisterTeambuildViewController: UIViewController, UnderLin
     
     private func bindUI() {
         photoSelectView.rx.tapGesture()
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
@@ -56,8 +57,8 @@ final class CommunityRegisterTeambuildViewController: UIViewController, UnderLin
     }
     
     private func preparePhotoSelectView() {
-        photoSelectView.layer.masksToBounds = true
-        photoSelectView.layer.cornerRadius = 10
+        photoSelectView?.layer.masksToBounds = true
+        photoSelectView?.layer.cornerRadius = 10
     }
 }
 
