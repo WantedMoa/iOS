@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MoaNavigationController: UINavigationController {
+final class MoaNavigationController: UINavigationController, BackgroundBlur {
     lazy var lineView: UIView = {
         let width = view.bounds.width
         let height = 0.5

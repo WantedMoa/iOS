@@ -13,7 +13,7 @@ import RxSwift
 
 typealias PickerDelegate = UIImagePickerControllerDelegate & UINavigationControllerDelegate
 
-final class CommunityRegisterTeambuildViewController: UIViewController, UnderLineNavBar {
+final class CommunityRegisterTeambuildViewController: UIViewController, UnderLineNavBar, CustomAlert {
     @IBOutlet private weak var photoSelectView: UIView!
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var competitionTitleTextField: UITextField!
@@ -34,6 +34,11 @@ final class CommunityRegisterTeambuildViewController: UIViewController, UnderLin
         super.viewDidLoad()
         configureUI()
         bindUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presentBottomDatePicker(completion: nil)
     }
     
     private func bindUI() {
