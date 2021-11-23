@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityRegisterTeambuildViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="photoImageView" destination="i78-b1-cmw" id="5pi-o0-dhR"/>
+                <outlet property="photoSelectView" destination="nff-4F-QHH" id="d0F-eX-APs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,13 +32,20 @@
                                 <constraint firstAttribute="height" constant="24" id="u88-sC-PMg"/>
                             </constraints>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i78-b1-cmw">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" name="3"/>
                     <constraints>
+                        <constraint firstItem="i78-b1-cmw" firstAttribute="leading" secondItem="nff-4F-QHH" secondAttribute="leading" id="DA0-QO-usC"/>
+                        <constraint firstAttribute="bottom" secondItem="i78-b1-cmw" secondAttribute="bottom" id="G8g-1O-OcU"/>
                         <constraint firstAttribute="height" constant="94" id="LHG-Ai-1c1"/>
                         <constraint firstAttribute="width" constant="94" id="dhZ-ZY-zEL"/>
+                        <constraint firstAttribute="trailing" secondItem="i78-b1-cmw" secondAttribute="trailing" id="f1r-x3-9sg"/>
                         <constraint firstItem="9W9-hY-nKx" firstAttribute="centerX" secondItem="nff-4F-QHH" secondAttribute="centerX" id="fbG-NL-a6V"/>
                         <constraint firstItem="9W9-hY-nKx" firstAttribute="centerY" secondItem="nff-4F-QHH" secondAttribute="centerY" id="uJw-mJ-Ria"/>
+                        <constraint firstItem="i78-b1-cmw" firstAttribute="top" secondItem="nff-4F-QHH" secondAttribute="top" id="wFt-55-BCq"/>
                     </constraints>
                 </view>
             </subviews>
