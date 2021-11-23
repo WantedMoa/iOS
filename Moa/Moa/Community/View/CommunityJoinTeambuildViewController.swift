@@ -20,7 +20,12 @@ final class CommunityJoinTeambuildViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navVC?.tintColor = .black
+    }
+    
     private func configureUI() {
         navVC?.tintColor = .white
         navigationItem.title = "지원하기"
