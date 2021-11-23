@@ -22,7 +22,7 @@ final class HomeDetailBestTeamBuildCell: UICollectionViewCell, IdentifierType {
         
         for tag in tags {
             let label = generateTagLabel()
-            label.text = "  " + tag + "  "
+            label.text = "   " + tag + "   "
             tagStackView.addArrangedSubview(label)
         }
     }
@@ -34,7 +34,7 @@ final class HomeDetailBestTeamBuildCell: UICollectionViewCell, IdentifierType {
         label.textColor = .white
         label.backgroundColor = .black
         label.layer.masksToBounds = true
-        label.layer.cornerRadius = 4
+        label.layer.cornerRadius = 6
         return label
     }
 }
