@@ -39,6 +39,7 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindUI()
         bind()
         updateTagStackView(by: ["Figma", "인공지능", "해커톤", "기획능력", "UX/UI"])
     }
@@ -51,6 +52,16 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
             
         }
         .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        teambuildCollectionView.rx.modelSelected(String.self)
+            .subscribe { [weak self] (model: String) in
+                guard let self = self else { return }
+                let vc = CommunityJoinTeambuildViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {
