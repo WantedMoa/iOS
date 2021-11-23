@@ -16,7 +16,8 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     @IBOutlet private weak var joinTitleTextField: UITextField!
     @IBOutlet private weak var joinMessageTextView: UITextView!
     @IBOutlet private weak var joinMessagePlaceholderLabel: UILabel!
-    
+    @IBOutlet private weak var profileImageView: UIImageView!
+
     private var navVC: MoaNavigationController? {
         return navigationController as? MoaNavigationController
     }
@@ -44,6 +45,7 @@ final class CommunityJoinTeambuildViewController: UIViewController {
         navigationItem.title = "지원하기"
         prepareJoinTitleTextField()
         prepareJoinMessageTextView()
+        prepareProfileImageView()
     }
     
     private func bind() {
@@ -86,6 +88,11 @@ final class CommunityJoinTeambuildViewController: UIViewController {
         joinMessageTextView.layer.borderWidth = 1
         joinMessageTextView.layer.borderColor = UIColor(rgb: 0xdddddd).cgColor
         joinMessageTextView.textColor = .moaDarkColor
+    }
+    
+    private func prepareProfileImageView() {
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 56 / 2
     }
 }
 

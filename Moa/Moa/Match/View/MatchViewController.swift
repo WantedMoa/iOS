@@ -212,7 +212,7 @@ extension MatchViewController {
         animation.duration = duration
         animation.repeatCount = 0 // MAXFLOAT
         animation.path = circlePath.cgPath
-        animation.isRemovedOnCompletion = true // 사용자가 멈추기 가능
+        animation.isRemovedOnCompletion = false // 사용자가 멈추기 가능
         
         let circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath

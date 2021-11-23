@@ -149,7 +149,7 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wIx-Jr-HcY" userLabel="Date Stack View">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wIx-Jr-HcY" userLabel="Date Stack View">
                                     <rect key="frame" x="16" y="323.5" width="218.5" height="24"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-cY-uge">
@@ -174,6 +174,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="width" constant="218.5" id="1kv-jR-eM5"/>
                                         <constraint firstAttribute="height" constant="24" id="lZZ-WN-qWb"/>
                                     </constraints>
                                 </stackView>
@@ -193,7 +194,7 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Dgb-1F-gcI" userLabel="Date Stack View">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Dgb-1F-gcI" userLabel="Date Stack View">
                                     <rect key="frame" x="16" y="440.5" width="218.5" height="24"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-ry-KVT">
@@ -219,6 +220,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="6Me-gC-p4F"/>
+                                        <constraint firstAttribute="width" constant="218.5" id="ko1-ad-Wdk"/>
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8aG-nw-ZoK" userLabel="Under Line View">
