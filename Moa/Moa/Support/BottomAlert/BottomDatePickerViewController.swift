@@ -35,7 +35,7 @@ final class BottomDatePickerViewController: UIViewController {
     }
     
     private func bindUI() {
-        view.rx.tapGesture()
+        cancelView.rx.tapGesture()
             .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
@@ -43,11 +43,10 @@ final class BottomDatePickerViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        cancelView.rx.tapGesture()
-            .when(.recognized)
-            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+        datePicker.rx.date
+            .subscribe { [weak self] (date: Date) in
                 guard let self = self else { return }
-                self.dismissAndFadeOut()
+                self.datePickerHandler?(date)
             }
             .disposed(by: disposeBag)
     }

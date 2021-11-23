@@ -23,10 +23,33 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
         let competitionEndDateTitle: Driver<String>
     }
     
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
+    private let disposeBag = DisposeBag()
+    
     func transform(input: Input) -> Output {
         let teambuildEndDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let competitionStartDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let competitionEndDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
+        
+        input.changeTeambuildEndDate
+            .map { self.dateFormatter.string(from: $0) }
+            .emit(to: teambuildEndDateTitle)
+            .disposed(by: disposeBag)
+        
+        input.changeCompetitionStartDate
+            .map { self.dateFormatter.string(from: $0) }
+            .emit(to: competitionStartDateTitle)
+            .disposed(by: disposeBag)
+        
+        input.changeCompetitionEndDate
+            .map { self.dateFormatter.string(from: $0) }
+            .emit(to: competitionEndDateTitle)
+            .disposed(by: disposeBag)
         
         return Output(
             teambuildEndDateTitle: teambuildEndDateTitle.asDriver(),

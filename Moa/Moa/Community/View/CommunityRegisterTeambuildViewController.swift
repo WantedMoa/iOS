@@ -38,11 +38,19 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
     }()
     
     // ViewModel
-    private lazy var input = CommunityRegisterTeambuildViewModel.Input()
+    private lazy var input = CommunityRegisterTeambuildViewModel.Input(
+        changeTeambuildEndDate: changeTeambuildEndDate.asSignal(),
+        changeCompetitionStartDate: changeCompetitionStartDate.asSignal(),
+        changeCompetitionEndDate: changeCompetitionEndDate.asSignal()
+    )
     private lazy var output = viewModel.transform(input: input)
-    
+
+    // Event
+    private let changeTeambuildEndDate = PublishRelay<Date>()
+    private let changeCompetitionStartDate = PublishRelay<Date>()
+    private let changeCompetitionEndDate = PublishRelay<Date>()
     private let disposeBag = DisposeBag()
-    
+
     // DI
     private let viewModel: CommunityRegisterTeambuildViewModel
     
@@ -59,6 +67,21 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         super.viewDidLoad()
         configureUI()
         bindUI()
+        bind()
+    }
+    
+    private func bind() {
+        output.teambuildEndDateTitle
+            .drive(teambuildEndDateLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.competitionEndDateTitle
+            .drive(competitionEndDateLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.competitionStartDateTitle
+            .drive(competitionStartDateLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -80,6 +103,39 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         teambuildContentTextView.rx.text
             .map { !($0?.isEmpty ?? true) }
             .bind(to: teambuildContentPlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        teambuildEndDateStackView.rx.tapGesture()
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomDatePicker { date in
+                    self.changeTeambuildEndDate.accept(date)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        competitionStartDateStackView.rx.tapGesture()
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomDatePicker { date in
+                    self.changeCompetitionStartDate.accept(date)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        competitionEndDateStackView.rx.tapGesture()
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomDatePicker { date in
+                    self.changeCompetitionEndDate.accept(date)
+                }
+            }
             .disposed(by: disposeBag)
     }
 
