@@ -35,13 +35,17 @@ final class CommunityJoinTeambuildViewController: UIViewController {
         updateTagStackView(by: ["개발자", "디자이너", "기획자"])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navVC?.tintColor = .white
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navVC?.tintColor = .black
     }
     
     private func configureUI() {
-        navVC?.tintColor = .white
         navigationItem.title = "지원하기"
         prepareJoinTitleTextField()
         prepareJoinMessageTextView()
@@ -64,6 +68,16 @@ final class CommunityJoinTeambuildViewController: UIViewController {
         joinMessageTextView.rx.text
             .map { !($0?.isEmpty ?? true) }
             .bind(to: joinMessagePlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        profileImageView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = CommunityUserProfileViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
             .disposed(by: disposeBag)
     }
     
@@ -104,20 +118,34 @@ extension CommunityJoinTeambuildViewController {
         }
         
         for tag in tags {
-            let label = generateTagLabel()
-            label.text = "   " + tag + "   "
+            let label = generateTagLabel(title: tag)
             tagStackView.addArrangedSubview(label)
         }
     }
     
-    private func generateTagLabel() -> UILabel {
+    private func generateTagLabel(title: String) -> UIView {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = .black
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 16
+        
         let font = UIFont(name: "NotoSansKR-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = font
+        label.text = title
         label.textColor = .white
-        label.backgroundColor = .black
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 11
-        return label
+        label.sizeToFit()
+        
+        contentView.addSubview(label)
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalToConstant: CGFloat(20 + label.bounds.width)),
+            contentView.heightAnchor.constraint(equalToConstant: 32),
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+        
+        return contentView
     }
 }

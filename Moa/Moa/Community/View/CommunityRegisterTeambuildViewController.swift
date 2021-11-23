@@ -228,10 +228,11 @@ extension CommunityRegisterTeambuildViewController {
         label.font = font
         label.text = title
         label.textColor = UIColor(rgb: 0xb8b8b8)
+        label.sizeToFit()
         
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
-            contentView.widthAnchor.constraint(equalToConstant: CGFloat(56 + (8 * title.count))),
+            contentView.widthAnchor.constraint(equalToConstant: CGFloat(20 + label.bounds.width)),
             contentView.heightAnchor.constraint(equalToConstant: 32),
             label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)

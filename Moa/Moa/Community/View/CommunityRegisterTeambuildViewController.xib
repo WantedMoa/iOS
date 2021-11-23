@@ -44,7 +44,7 @@
                     <rect key="frame" x="0.0" y="59" width="414" height="876"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9m-nC-NTG" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="914"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="901.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jP-aC-QaF" userLabel="Picker View">
                                     <rect key="frame" x="15" y="29.5" width="94" height="94"/>
@@ -240,7 +240,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQO-gJ-8TT">
-                                    <rect key="frame" x="16" y="640.5" width="24" height="19"/>
+                                    <rect key="frame" x="16" y="628" width="24" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="v6k-T8-iiv"/>
                                     </constraints>
@@ -249,7 +249,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1c4-gq-4tO">
-                                    <rect key="frame" x="16" y="675.5" width="382" height="128"/>
+                                    <rect key="frame" x="16" y="663" width="382" height="128"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="128" id="Lk6-nc-rPc"/>
@@ -260,25 +260,22 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bx-GJ-vmd" customClass="MoaButtonView" customModule="Moa" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="828" width="382" height="56"/>
+                                    <rect key="frame" x="16" y="815.5" width="382" height="56"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="sr0-6d-y4e"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X0I-cW-Ktl">
-                                    <rect key="frame" x="16" y="559" width="41.5" height="33"/>
+                                    <rect key="frame" x="16" y="559" width="41.5" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U5-6j-DI7">
-                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="33"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="33" id="NqP-5q-yTR"/>
-                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -331,7 +328,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공모전에 대한 내용과 미래의 팀원에게 바라는 기술스택 및 스킬셋 등의 기타 사항을 간단히 적어주세요" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtJ-Sg-2YV">
-                            <rect key="frame" x="20" y="683.5" width="378" height="46.5"/>
+                            <rect key="frame" x="20" y="671" width="378" height="46.5"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

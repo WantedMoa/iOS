@@ -66,6 +66,8 @@
 		3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */; };
 		3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */; };
 		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
+		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
+		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +133,8 @@
 		3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailBestTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildViewModel.swift; sourceTree = "<group>"; };
 		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
+		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
+		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */,
 				3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */,
 				3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */,
+				3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */,
+				3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */,
 				3C80B1B02743704400DDF82F /* HomeBestTeamBuildViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
+				3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */,
 				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* HomeBestMemberViewController.xib in Resources */,
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
@@ -577,6 +584,7 @@
 				3C80B18D2742660600DDF82F /* CommunityViewController.swift in Sources */,
 				3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
+				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 				3C80B1AF2743704400DDF82F /* HomeBestTeamBuildViewController.swift in Sources */,
