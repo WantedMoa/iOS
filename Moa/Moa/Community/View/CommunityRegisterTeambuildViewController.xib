@@ -133,7 +133,7 @@
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oi-0a-Vbp">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oi-0a-Vbp" userLabel="Line View">
                                     <rect key="frame" x="16" y="238.5" width="382" height="1"/>
                                     <color key="backgroundColor" name="4"/>
                                     <constraints>

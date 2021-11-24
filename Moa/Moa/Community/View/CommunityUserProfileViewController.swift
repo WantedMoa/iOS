@@ -32,7 +32,12 @@ final class CommunityUserProfileViewController: UIViewController {
     @IBOutlet private weak var profileViewHeightContraint: NSLayoutConstraint!
     @IBOutlet private weak var profileExpandButtonImageView: UIImageView!
     @IBOutlet private weak var profileView: UIView!
-     
+    
+    // message
+    @IBOutlet private weak var messageTitleTextField: UITextField!
+    @IBOutlet private weak var messageTextView: UITextView!
+    @IBOutlet private weak var messagePlaceholderLabel: UILabel!
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -58,21 +63,22 @@ final class CommunityUserProfileViewController: UIViewController {
             .disposed(by: disposeBag)
         
         profileExpandButtonImageView.rx.tapGesture()
+            .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
                 var height: CGFloat = 0
                 var alpha: CGFloat = 0
                 
                 if self.userProfileExpand == .open { // close
-                    self.profileExpandButtonImageView.image = self.userProfileExpand.image
                     height = 0
                     alpha = 0
                     self.userProfileExpand = .close
-                } else { // open
                     self.profileExpandButtonImageView.image = self.userProfileExpand.image
+                } else { // open
                     height = self.profileViewHeight
                     alpha = 1
                     self.userProfileExpand = .open
+                    self.profileExpandButtonImageView.image = self.userProfileExpand.image
                 }
                 
                 self.profileViewHeightContraint.constant = height
@@ -83,15 +89,45 @@ final class CommunityUserProfileViewController: UIViewController {
                 }
             }
             .disposed(by: disposeBag)
+        
+        messageTextView.rx.text
+            .map { !($0?.isEmpty ?? true) }
+            .bind(to: messagePlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {
         prepareProfileImageView()
+        prepareMessageTextView()
+        prepareMessageTitleTextField()
     }
     
     private func prepareProfileImageView() {
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = 128 / 2
+    }
+    
+    private func prepareMessageTitleTextField() {
+        let font = UIFont(name: "NotoSansKR-Regular", size: 16) ?? .systemFont(ofSize: 16)
+
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: font
+        ]
+
+        messageTitleTextField.font = font
+        messageTitleTextField.attributedPlaceholder = NSAttributedString(
+            string: "쪽지 제목을 적어주세요",
+            attributes: attributes
+        )
+    }
+    
+    private func prepareMessageTextView() {
+        messageTextView.layer.masksToBounds = true
+        messageTextView.layer.cornerRadius = 10
+        messageTextView.layer.borderWidth = 1
+        messageTextView.layer.borderColor = UIColor(rgb: 0xdddddd).cgColor
+        messageTextView.textColor = .moaDarkColor
     }
 }
 
