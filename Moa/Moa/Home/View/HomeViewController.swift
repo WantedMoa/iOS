@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var bestTeamBuildCollectionView: UICollectionView!
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var bestTeamBuildDetailButtonLabel: UILabel!
-
+    
     // ViewModel
     private lazy var input = HomeViewModel.Input(
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal()
@@ -91,6 +91,14 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 cellType: HomeBestTeamBuildCell.self)
             ) { _, _, _ in
                 
+            }
+            .disposed(by: disposeBag)
+        
+        output.bestTeamBuilds
+            .drive { [weak self] (posters: [String]) in
+                guard let self = self else { return }
+                let height = CGFloat(30 + (posters.count * 100))
+                self.bestTeamBuildCollectionViewHeight.constant = height
             }
             .disposed(by: disposeBag)
     }
