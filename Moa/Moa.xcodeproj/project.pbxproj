@@ -11,6 +11,21 @@
 		3C1735842745E1C700C9895E /* MatchMyTeamBuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1735822745E1C700C9895E /* MatchMyTeamBuildCell.swift */; };
 		3C1735852745E1C800C9895E /* MatchMyTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1735832745E1C700C9895E /* MatchMyTeamBuildCell.xib */; };
 		3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1735872745E4BF00C9895E /* MatchViewModel.swift */; };
+		3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C17358D2746021E00C9895E /* CommunityTeamBuildCell.swift */; };
+		3C1735902746021E00C9895E /* CommunityTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C17358E2746021E00C9895E /* CommunityTeamBuildCell.xib */; };
+		3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1735922746044500C9895E /* CommunityViewModel.swift */; };
+		3C1DEDB7274CE0FD00F0EA58 /* BottomDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDB5274CE0FD00F0EA58 /* BottomDatePickerViewController.swift */; };
+		3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1DEDB6274CE0FD00F0EA58 /* BottomDatePickerViewController.xib */; };
+		3C1DEDBA274CE44500F0EA58 /* UIView+RoundConer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDB9274CE44500F0EA58 /* UIView+RoundConer.swift */; };
+		3C1DEDBC274CE7B600F0EA58 /* BackgroundBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDBB274CE7B600F0EA58 /* BackgroundBlur.swift */; };
+		3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDBD274CE7CD00F0EA58 /* CustomAlert.swift */; };
+		3C1DEDC1274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDC0274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift */; };
+		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
+		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
+		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
+		3C2DD435274CA316007DBC58 /* MoaButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD434274CA316007DBC58 /* MoaButtonView.xib */; };
+		3C2DD438274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */; };
+		3C2DD439274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */; };
 		3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14B2741FAE700DDF82F /* AppDelegate.swift */; };
 		3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */; };
 		3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1542741FAE900DDF82F /* Assets.xcassets */; };
@@ -51,6 +66,10 @@
 		3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */; };
 		3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */; };
 		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
+		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
+		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
+		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
+		3CD639CB274DFE3900114CB4 /* BottomAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C9274DFE3900114CB4 /* BottomAlertViewController.xib */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +78,21 @@
 		3C1735822745E1C700C9895E /* MatchMyTeamBuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMyTeamBuildCell.swift; sourceTree = "<group>"; };
 		3C1735832745E1C700C9895E /* MatchMyTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchMyTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C1735872745E4BF00C9895E /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		3C17358D2746021E00C9895E /* CommunityTeamBuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTeamBuildCell.swift; sourceTree = "<group>"; };
+		3C17358E2746021E00C9895E /* CommunityTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTeamBuildCell.xib; sourceTree = "<group>"; };
+		3C1735922746044500C9895E /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
+		3C1DEDB5274CE0FD00F0EA58 /* BottomDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDatePickerViewController.swift; sourceTree = "<group>"; };
+		3C1DEDB6274CE0FD00F0EA58 /* BottomDatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomDatePickerViewController.xib; sourceTree = "<group>"; };
+		3C1DEDB9274CE44500F0EA58 /* UIView+RoundConer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundConer.swift"; sourceTree = "<group>"; };
+		3C1DEDBB274CE7B600F0EA58 /* BackgroundBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlur.swift; sourceTree = "<group>"; };
+		3C1DEDBD274CE7CD00F0EA58 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		3C1DEDC0274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRegisterTeambuildViewModel.swift; sourceTree = "<group>"; };
+		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
+		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
+		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
+		3C2DD434274CA316007DBC58 /* MoaButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoaButtonView.xib; sourceTree = "<group>"; };
+		3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRegisterTeambuildViewController.swift; sourceTree = "<group>"; };
+		3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityRegisterTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C80B1482741FAE700DDF82F /* Moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C80B14B2741FAE700DDF82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +135,10 @@
 		3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailBestTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildViewModel.swift; sourceTree = "<group>"; };
 		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
+		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
+		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
+		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
+		3CD639C9274DFE3900114CB4 /* BottomAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomAlertViewController.xib; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +182,81 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		3C17358C2746017000C9895E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B18B2742660600DDF82F /* CommunityViewController.swift */,
+				3C80B18C2742660600DDF82F /* CommunityViewController.xib */,
+				3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */,
+				3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */,
+				3C2DD436274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift */,
+				3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */,
+				3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */,
+				3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C1735912746022200C9895E /* ReuseView */ = {
+			isa = PBXGroup;
+			children = (
+				3C17358D2746021E00C9895E /* CommunityTeamBuildCell.swift */,
+				3C17358E2746021E00C9895E /* CommunityTeamBuildCell.xib */,
+			);
+			path = ReuseView;
+			sourceTree = "<group>";
+		};
+		3C1735942746046500C9895E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3C1735922746044500C9895E /* CommunityViewModel.swift */,
+				3C1DEDC0274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3C1DEDBF274CE7EB00F0EA58 /* BottomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				3C1DEDB5274CE0FD00F0EA58 /* BottomDatePickerViewController.swift */,
+				3C1DEDB6274CE0FD00F0EA58 /* BottomDatePickerViewController.xib */,
+				3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */,
+				3CD639C9274DFE3900114CB4 /* BottomAlertViewController.xib */,
+			);
+			path = BottomAlert;
+			sourceTree = "<group>";
+		};
+		3C2DD431274CA2D3007DBC58 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */,
+				3C1DEDB9274CE44500F0EA58 /* UIView+RoundConer.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3C2DD432274CA2F1007DBC58 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B17D274225F100DDF82F /* IdentifierType.swift */,
+				3C17357F2745461D00C9895E /* UnderLineNavBar.swift */,
+				3C80B1782742238800DDF82F /* ViewModelType.swift */,
+				3C1DEDBB274CE7B600F0EA58 /* BackgroundBlur.swift */,
+				3C1DEDBD274CE7CD00F0EA58 /* CustomAlert.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		3C2DD433274CA300007DBC58 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */,
+				3C2DD434274CA316007DBC58 /* MoaButtonView.xib */,
+				3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
 		3C80B13F2741FAE700DDF82F = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +278,7 @@
 		3C80B14A2741FAE700DDF82F /* Moa */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B18F2742661300DDF82F /* Message */,
+				3C80B18F2742661300DDF82F /* Community */,
 				3C80B17327421FA700DDF82F /* Home */,
 				3C80B1612741FD1800DDF82F /* Support */,
 				3C80B1942742664300DDF82F /* Match */,
@@ -184,11 +297,10 @@
 			isa = PBXGroup;
 			children = (
 				3C80B1622741FD8A00DDF82F /* Fonts */,
-				3C80B1782742238800DDF82F /* ViewModelType.swift */,
-				3C80B17D274225F100DDF82F /* IdentifierType.swift */,
-				3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */,
-				3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */,
-				3C17357F2745461D00C9895E /* UnderLineNavBar.swift */,
+				3C2DD431274CA2D3007DBC58 /* Extension */,
+				3C2DD432274CA2F1007DBC58 /* Protocol */,
+				3C2DD433274CA300007DBC58 /* UIComponent */,
+				3C1DEDBF274CE7EB00F0EA58 /* BottomAlert */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -256,13 +368,14 @@
 			path = ReuseView;
 			sourceTree = "<group>";
 		};
-		3C80B18F2742661300DDF82F /* Message */ = {
+		3C80B18F2742661300DDF82F /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B18B2742660600DDF82F /* CommunityViewController.swift */,
-				3C80B18C2742660600DDF82F /* CommunityViewController.xib */,
+				3C17358C2746017000C9895E /* View */,
+				3C1735912746022200C9895E /* ReuseView */,
+				3C1735942746046500C9895E /* ViewModel */,
 			);
-			path = Message;
+			path = Community;
 			sourceTree = "<group>";
 		};
 		3C80B1942742664300DDF82F /* Match */ = {
@@ -375,19 +488,26 @@
 				3C1735852745E1C800C9895E /* MatchMyTeamBuildCell.xib in Resources */,
 				3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */,
 				3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */,
+				3C2DD435274CA316007DBC58 /* MoaButtonView.xib in Resources */,
 				3C80B1692741FD9600DDF82F /* NotoSansKR-Medium.otf in Resources */,
+				3C1735902746021E00C9895E /* CommunityTeamBuildCell.xib in Resources */,
 				3C80B1582741FAE900DDF82F /* LaunchScreen.storyboard in Resources */,
 				3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */,
 				3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */,
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* MatchViewController.xib in Resources */,
+				3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */,
 				3C80B1B02743704400DDF82F /* HomeBestTeamBuildViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
+				3CD639CB274DFE3900114CB4 /* BottomAlertViewController.xib in Resources */,
+				3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */,
 				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* HomeBestMemberViewController.xib in Resources */,
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
+				3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */,
 				3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */,
+				3C2DD439274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,21 +566,33 @@
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
+				3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
+				3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */,
 				3C80B1972742665200DDF82F /* SettingViewController.swift in Sources */,
+				3C1DEDBC274CE7B600F0EA58 /* BackgroundBlur.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
+				3C1DEDB7274CE0FD00F0EA58 /* BottomDatePickerViewController.swift in Sources */,
+				3C1DEDC1274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift in Sources */,
 				3C80B1A4274346CB00DDF82F /* HomeBestMemberViewModel.swift in Sources */,
+				3C2DD438274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift in Sources */,
+				3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */,
+				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
+				3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */,
 				3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
+				3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */,
 				3C80B1922742664000DDF82F /* MatchViewController.swift in Sources */,
+				3C1DEDBA274CE44500F0EA58 /* UIView+RoundConer.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
 				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
 				3C80B18D2742660600DDF82F /* CommunityViewController.swift in Sources */,
 				3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
+				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 				3C80B1AF2743704400DDF82F /* HomeBestTeamBuildViewController.swift in Sources */,
@@ -610,6 +742,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모아";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -641,6 +774,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모아";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

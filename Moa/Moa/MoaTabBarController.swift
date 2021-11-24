@@ -14,7 +14,7 @@ enum MoaTab: String, CaseIterable {
     case setting = "Setting"
 }
 
-final class MoaTabBarController: UITabBarController {
+final class MoaTabBarController: UITabBarController, BackgroundBlur {
     lazy var lineView: UIView = {
         let width = view.bounds.width
         let height = 0.5
@@ -33,7 +33,7 @@ final class MoaTabBarController: UITabBarController {
         
         childVCs = [
             MoaNavigationController(rootViewController: homeVC),
-            communityVC,
+            MoaNavigationController(rootViewController: communityVC),
             MoaNavigationController(rootViewController: matchVC),
             settingVC
         ]

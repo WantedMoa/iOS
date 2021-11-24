@@ -117,10 +117,6 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         animateContents()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-    }
-    
     private func bind() {
         output.myTeambuilds.drive(myTeamBuildCollectionView.rx.items(
             cellIdentifier: MatchMyTeamBuildCell.identifier,
@@ -212,7 +208,8 @@ extension MatchViewController {
         animation.duration = duration
         animation.repeatCount = 0 // MAXFLOAT
         animation.path = circlePath.cgPath
-        animation.isRemovedOnCompletion = false
+        animation.isRemovedOnCompletion = false // 사용자가 멈추기 가능
+        animation.fillMode = .forwards
         
         let circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath
@@ -221,20 +218,28 @@ extension MatchViewController {
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineDashPattern = [4, 4]
         
-        target.frame = CGRect(
-            x: circlePath.currentPoint.x - (target.bounds.width / 2),
-            y: circlePath.currentPoint.y - (target.bounds.height / 2),
-            width: target.bounds.width,
-            height: target.bounds.height
-        )
-        
+        let countDown = duration * 11
         view.layer.addSublayer(circleLayer)
         view.addSubview(target)
         target.layer.add(animation, forKey: nil)
+        
+        _ = Observable<Int>
+            .timer(.milliseconds(0), period: .milliseconds(100), scheduler: MainScheduler.instance)
+            .take(Int(countDown) + 1)
+            .subscribe { (_: Int) in
+                if let location = target.layer.presentation()?.frame {
+                    target.frame = CGRect(
+                        x: location.origin.x,
+                        y: location.origin.y,
+                        width: location.size.width,
+                        height: location.size.height
+                    )
+                }
+            }
     }
     
     private func generateCircleContents() -> [MatchCircleContent] {
-        let duration: CGFloat = 9
+        let duration: CGFloat = 8
         
         let contents = [
             MatchCircleContent(

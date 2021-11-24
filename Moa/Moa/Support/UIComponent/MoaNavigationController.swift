@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MoaNavigationController: UINavigationController {
+final class MoaNavigationController: UINavigationController, BackgroundBlur {
     lazy var lineView: UIView = {
         let width = view.bounds.width
         let height = 0.5
@@ -22,7 +22,22 @@ final class MoaNavigationController: UINavigationController {
         prepareNavigationBar()
     }
     
-    func prepareNavigationBar() {
+    override var childForStatusBarStyle: UIViewController? {
+        return topViewController
+    }
+    
+    var tintColor: UIColor {
+        get {
+            return navigationBar.tintColor
+        }
+        set(color) {
+            navigationBar.tintColor = color
+            let textAttributes = [NSAttributedString.Key.foregroundColor: color]
+            navigationBar.titleTextAttributes = textAttributes
+        }
+    }
+    
+    private func prepareNavigationBar() {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.backgroundColor = UIColor.clear

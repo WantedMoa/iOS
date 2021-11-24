@@ -24,4 +24,8 @@ public extension UIColor {
             blue: rgb & 0xFF
         )
     }
+    
+    static var moaDarkColor: UIColor {
+        return .init(rgb: 0x000001)
+    }
 }

@@ -1,20 +1,29 @@
 //
-//  HomeDetailBestTeamBuildCell.swift
+//  CommunityTeamBuildCell.swift
 //  Moa
 //
-//  Created by won heo on 2021/11/16.
+//  Created by won heo on 2021/11/18.
 //
 
 import UIKit
 
-final class HomeDetailBestTeamBuildCell: UICollectionViewCell, IdentifierType {
+final class CommunityTeamBuildCell: UICollectionViewCell, IdentifierType {
+    @IBOutlet private weak var competitionImageView: UIImageView!
+    @IBOutlet private weak var competitionDateLabel: UILabel!
+    @IBOutlet private weak var competitionTitleLabel: UILabel!
     @IBOutlet private weak var tagStackView: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
         updateTagStackView(by: ["iOS 경험자", "꾸준히 참여"])
     }
     
+    private func configureUI() {
+        competitionImageView.layer.masksToBounds = true
+        competitionImageView.layer.cornerRadius = 5
+    }
+
     private func updateTagStackView(by tags: [String]) {
         for subView in tagStackView.arrangedSubviews {
             subView.removeFromSuperview()
@@ -34,7 +43,7 @@ final class HomeDetailBestTeamBuildCell: UICollectionViewCell, IdentifierType {
         label.textColor = .white
         label.backgroundColor = .black
         label.layer.masksToBounds = true
-        label.layer.cornerRadius = 6
+        label.layer.cornerRadius = 7
         return label
     }
 }
