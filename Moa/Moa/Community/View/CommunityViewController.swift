@@ -16,6 +16,7 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var teambuildCollectionView: UICollectionView!
+    @IBOutlet private weak var teambuildCollectionHeightLayout: NSLayoutConstraint!
     @IBOutlet private weak var addButtonView: UIView!
     
     // ViewModel
@@ -45,13 +46,22 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     }
     
     private func bind() {
-        output.teambuilds.drive(teambuildCollectionView.rx.items(
-            cellIdentifier: CommunityTeamBuildCell.identifier,
-            cellType: CommunityTeamBuildCell.self)
-        ) { _, _, _ in
-            
-        }
-        .disposed(by: disposeBag)
+        output.teambuilds
+            .drive(teambuildCollectionView.rx.items(
+                cellIdentifier: CommunityTeamBuildCell.identifier,
+                cellType: CommunityTeamBuildCell.self)
+            ) { _, _, _ in
+                
+            }
+            .disposed(by: disposeBag)
+        
+        output.teambuilds
+            .drive { [weak self] (teambuilds: [String]) in
+                guard let self = self else { return }
+                let height = CGFloat(30 + teambuilds.count * 110)
+                self.teambuildCollectionHeightLayout.constant = height
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {

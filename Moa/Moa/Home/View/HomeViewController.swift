@@ -60,8 +60,6 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        // test
-        presentBottomAlert(message: "테스트 입니다")
     }
     
     private func bind() {
@@ -97,7 +95,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         output.bestTeamBuilds
             .drive { [weak self] (posters: [String]) in
                 guard let self = self else { return }
-                let height = CGFloat(30 + (posters.count * 100))
+                let height = CGFloat(30 + posters.count * 100)
                 self.bestTeamBuildCollectionViewHeight.constant = height
             }
             .disposed(by: disposeBag)

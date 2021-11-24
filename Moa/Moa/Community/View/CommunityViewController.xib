@@ -14,6 +14,7 @@
                 <outlet property="addButtonView" destination="2jZ-4t-LBb" id="dWr-WR-6l0"/>
                 <outlet property="searchBar" destination="6UI-UN-xon" id="LN1-wp-8n5"/>
                 <outlet property="tagStackView" destination="f9D-Pf-sfG" id="Xrc-nL-ayX"/>
+                <outlet property="teambuildCollectionHeightLayout" destination="tJR-PM-zkd" id="1AY-64-dox"/>
                 <outlet property="teambuildCollectionView" destination="rMN-Bo-chr" id="OBy-Jt-AdO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,6 +37,9 @@
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Bo-chr">
                                     <rect key="frame" x="0.0" y="121" width="414" height="775"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="775" id="tJR-PM-zkd"/>
+                                    </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="gD1-Uq-BTG">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
