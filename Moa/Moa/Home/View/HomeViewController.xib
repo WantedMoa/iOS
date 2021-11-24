@@ -284,7 +284,7 @@
         <image name="MoaIcon" width="76" height="40"/>
         <image name="MoaNotification" width="24" height="24"/>
         <image name="MoaSearch" width="24" height="24"/>
-        <image name="TestProfile1" width="137" height="91"/>
+        <image name="TestProfile1" width="76" height="76"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

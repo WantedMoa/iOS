@@ -38,7 +38,13 @@ final class HomeViewModel: ViewModelType {
                 (profileImage: "TestProfile6", name: "이민영")
             ]
         )
-        let bestTeamBuilds = BehaviorRelay<[String]>(value: ["A", "B", "C", "D", "A", "B", "C", "D"])
+        let bestTeamBuilds = BehaviorRelay<[String]>(value: [
+            "TestSquarePoster1",
+            "TestSquarePoster2",
+            "TestSquarePoster3",
+            "TestSquarePoster4",
+            "TestSquarePoster5"
+        ])
         
         input.pagerViewDidScrolled.emit { (num: Int) in
             pagerControlTitle.accept("\(num + 1) / \(posters.value.count)")

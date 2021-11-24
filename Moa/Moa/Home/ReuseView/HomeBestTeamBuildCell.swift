@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
-    @IBOutlet private weak var competitionImageView: UIImageView!
+    @IBOutlet private(set) weak var competitionImageView: UIImageView!
     @IBOutlet private weak var competitionDateLabel: UILabel!
     @IBOutlet private weak var competitionTitleLabel: UILabel!
     @IBOutlet private weak var tagStackView: UIStackView!

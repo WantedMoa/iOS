@@ -87,8 +87,8 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             .drive(bestTeamBuildCollectionView.rx.items(
                 cellIdentifier: HomeBestTeamBuildCell.identifier,
                 cellType: HomeBestTeamBuildCell.self)
-            ) { _, _, _ in
-                
+            ) { _, item, cell in
+                cell.competitionImageView.image = UIImage(named: item)
             }
             .disposed(by: disposeBag)
         

@@ -7,11 +7,10 @@
 
 import UIKit
 
-class SettingProfileViewController: UIViewController {
+final class SettingProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
         // Do any additional setup after loading the view.
     }
 
