@@ -404,10 +404,10 @@
 			children = (
 				3C80B1952742665200DDF82F /* SettingViewController.swift */,
 				3C80B1962742665200DDF82F /* SettingViewController.xib */,
-				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
-				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
 				3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */,
 				3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */,
+				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
+				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -757,7 +757,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
@@ -790,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
