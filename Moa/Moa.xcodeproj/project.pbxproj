@@ -71,6 +71,9 @@
 		3CB06080274E5D8100FF4A6D /* SettingProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */; };
 		3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */; };
 		3CB06084274E5D8B00FF4A6D /* SettingMyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */; };
+		3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */; };
+		3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */; };
+		3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */; };
 		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
 		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
 		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
@@ -145,6 +148,9 @@
 		3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileViewController.xib; sourceTree = "<group>"; };
 		3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyPageViewController.swift; sourceTree = "<group>"; };
 		3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingMyPageViewController.xib; sourceTree = "<group>"; };
+		3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyPageViewModel.swift; sourceTree = "<group>"; };
+		3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyTeambuildCell.swift; sourceTree = "<group>"; };
+		3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingMyTeambuildCell.xib; sourceTree = "<group>"; };
 		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
 		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
 		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
@@ -402,12 +408,9 @@
 		3C80B1992742665700DDF82F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B1952742665200DDF82F /* SettingViewController.swift */,
-				3C80B1962742665200DDF82F /* SettingViewController.xib */,
-				3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */,
-				3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */,
-				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
-				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
+				3CC18A48274E915E007C02F4 /* View */,
+				3CC18A4B274E9171007C02F4 /* ViewModel */,
+				3CC18A50274E9352007C02F4 /* ReuseView */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -418,6 +421,36 @@
 				3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */,
 			);
 			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		3CC18A48274E915E007C02F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B1952742665200DDF82F /* SettingViewController.swift */,
+				3C80B1962742665200DDF82F /* SettingViewController.xib */,
+				3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */,
+				3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */,
+				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
+				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CC18A4B274E9171007C02F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3CC18A50274E9352007C02F4 /* ReuseView */ = {
+			isa = PBXGroup;
+			children = (
+				3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */,
+				3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */,
+			);
+			path = ReuseView;
 			sourceTree = "<group>";
 		};
 		63B86CDC2F0F4E4043791065 /* Pods */ = {
@@ -512,6 +545,7 @@
 				3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */,
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
+				3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* MatchViewController.xib in Resources */,
 				3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */,
 				3C80B1B02743704400DDF82F /* HomeBestTeamBuildViewController.xib in Resources */,
@@ -599,6 +633,7 @@
 				3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */,
 				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
+				3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */,
 				3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */,
 				3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
@@ -607,6 +642,7 @@
 				3C1DEDBA274CE44500F0EA58 /* UIView+RoundConer.swift in Sources */,
 				3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
+				3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */,
 				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
 				3C80B18D2742660600DDF82F /* CommunityViewController.swift in Sources */,

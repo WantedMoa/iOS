@@ -308,7 +308,7 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
         
         let indexPath = myTeamBuildCollectionView.indexPathForItem(at: targetPoint) ?? currentIndexPath
         currentIndexPath = indexPath
-            
+        
         myTeamBuildCollectionView.scrollToItem(
             at: indexPath,
             at: .centeredHorizontally,

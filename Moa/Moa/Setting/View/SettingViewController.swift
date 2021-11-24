@@ -121,6 +121,12 @@ final class SettingViewController: UIViewController, UnderLineNavBar {
         pageViewController.willMove(toParent: self)
         contentView.addSubview(pageViewController.view)
         constaintPageViewControllerView()
+        
+        for view in self.pageViewController.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
     }
     
     private func constaintPageViewControllerView() {
