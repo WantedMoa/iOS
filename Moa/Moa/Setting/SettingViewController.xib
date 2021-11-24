@@ -8,9 +8,21 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="hPd-hh-hBC" id="Tu1-l5-JNT"/>
+                <outlet property="headerView" destination="oEM-z0-1Jg" id="TBu-iE-Py8"/>
+                <outlet property="myPageLabel" destination="vEX-94-lpj" id="sAm-ti-3Fz"/>
+                <outlet property="profileLabel" destination="8Tf-90-lpn" id="fk3-Lo-Emr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +30,53 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEM-z0-1Jg" userLabel="Header View">
+                    <rect key="frame" x="0.0" y="59" width="414" height="46"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NQB-T0-Eb5">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEX-94-lpj">
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="46"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tf-90-lpn">
+                                    <rect key="frame" x="207" y="0.0" width="207" height="46"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Bsy-ER-BMA"/>
+                        <constraint firstItem="NQB-T0-Eb5" firstAttribute="top" secondItem="oEM-z0-1Jg" secondAttribute="top" id="M39-cx-Lq5"/>
+                        <constraint firstAttribute="trailing" secondItem="NQB-T0-Eb5" secondAttribute="trailing" id="bws-zq-36f"/>
+                        <constraint firstAttribute="bottom" secondItem="NQB-T0-Eb5" secondAttribute="bottom" id="h7R-m9-OfT"/>
+                        <constraint firstItem="NQB-T0-Eb5" firstAttribute="leading" secondItem="oEM-z0-1Jg" secondAttribute="leading" id="yG3-H6-zgA"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPd-hh-hBC" userLabel="Root View">
+                    <rect key="frame" x="0.0" y="105" width="414" height="757"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="hPd-hh-hBC" firstAttribute="top" secondItem="oEM-z0-1Jg" secondAttribute="bottom" id="04s-O3-Bpo"/>
+                <constraint firstItem="oEM-z0-1Jg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FMj-7k-P5P"/>
+                <constraint firstItem="hPd-hh-hBC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Flb-Qd-xr7"/>
+                <constraint firstItem="oEM-z0-1Jg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="M3W-GM-p3J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oEM-z0-1Jg" secondAttribute="trailing" id="UNd-Me-lfY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hPd-hh-hBC" secondAttribute="bottom" id="YDc-Ct-6Zx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hPd-hh-hBC" secondAttribute="trailing" id="khA-Gl-3iU"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="90"/>
         </view>
     </objects>

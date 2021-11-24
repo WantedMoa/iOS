@@ -35,7 +35,7 @@ final class MoaTabBarController: UITabBarController, BackgroundBlur {
             MoaNavigationController(rootViewController: homeVC),
             MoaNavigationController(rootViewController: communityVC),
             MoaNavigationController(rootViewController: matchVC),
-            settingVC
+            MoaNavigationController(rootViewController: settingVC)
         ]
         
         let imageInset = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)

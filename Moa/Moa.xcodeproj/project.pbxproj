@@ -66,6 +66,11 @@
 		3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */; };
 		3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */; };
 		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
+		3CB0607C274E4D4000FF4A6D /* UIFont+NotoSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */; };
+		3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */; };
+		3CB06080274E5D8100FF4A6D /* SettingProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */; };
+		3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */; };
+		3CB06084274E5D8B00FF4A6D /* SettingMyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */; };
 		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
 		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
 		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
@@ -135,6 +140,11 @@
 		3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailBestTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildViewModel.swift; sourceTree = "<group>"; };
 		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
+		3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+NotoSans.swift"; sourceTree = "<group>"; };
+		3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
+		3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileViewController.xib; sourceTree = "<group>"; };
+		3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyPageViewController.swift; sourceTree = "<group>"; };
+		3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingMyPageViewController.xib; sourceTree = "<group>"; };
 		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
 		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
 		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +241,7 @@
 			children = (
 				3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */,
 				3C1DEDB9274CE44500F0EA58 /* UIView+RoundConer.swift */,
+				3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -393,6 +404,10 @@
 			children = (
 				3C80B1952742665200DDF82F /* SettingViewController.swift */,
 				3C80B1962742665200DDF82F /* SettingViewController.xib */,
+				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
+				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
+				3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */,
+				3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -486,6 +501,7 @@
 				3C80B16D2741FD9600DDF82F /* NotoSansKR-Bold.otf in Resources */,
 				3C80B18E2742660600DDF82F /* CommunityViewController.xib in Resources */,
 				3C1735852745E1C800C9895E /* MatchMyTeamBuildCell.xib in Resources */,
+				3CB06084274E5D8B00FF4A6D /* SettingMyPageViewController.xib in Resources */,
 				3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */,
 				3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */,
 				3C2DD435274CA316007DBC58 /* MoaButtonView.xib in Resources */,
@@ -501,6 +517,7 @@
 				3C80B1B02743704400DDF82F /* HomeBestTeamBuildViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
 				3CD639CB274DFE3900114CB4 /* BottomAlertViewController.xib in Resources */,
+				3CB06080274E5D8100FF4A6D /* SettingProfileViewController.xib in Resources */,
 				3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */,
 				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* HomeBestMemberViewController.xib in Resources */,
@@ -562,6 +579,8 @@
 			files = (
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
+				3CB0607C274E4D4000FF4A6D /* UIFont+NotoSans.swift in Sources */,
+				3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */,
 				3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */,
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
@@ -586,6 +605,7 @@
 				3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */,
 				3C80B1922742664000DDF82F /* MatchViewController.swift in Sources */,
 				3C1DEDBA274CE44500F0EA58 /* UIView+RoundConer.swift in Sources */,
+				3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
 				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
@@ -665,7 +685,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -720,7 +740,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -745,6 +765,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -777,6 +798,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

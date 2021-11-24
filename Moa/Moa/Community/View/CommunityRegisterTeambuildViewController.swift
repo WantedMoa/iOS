@@ -32,11 +32,10 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
     @IBOutlet private weak var competitionEndDateStackView: UIStackView!
     @IBOutlet private weak var competitionEndDateLabel: UILabel!
     
-    private lazy var imagePicker: UIImagePickerController = {
+    private let imagePicker: UIImagePickerController = {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.allowsEditing = true
-        vc.delegate = self
         return vc
     }()
     
@@ -153,6 +152,7 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         preparePhotoSelectView()
         prepareCompetitionTitleTextField()
         prepareTeambuildContentTextView()
+        prepareImagePicker()
     }
     
     private func preparePhotoSelectView() {
@@ -181,6 +181,10 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         teambuildContentTextView.layer.borderWidth = 1
         teambuildContentTextView.layer.borderColor = UIColor(rgb: 0xdddddd).cgColor
         teambuildContentTextView.textColor = .moaDarkColor
+    }
+    
+    private func prepareImagePicker() {
+        imagePicker.delegate = self
     }
 }
 
