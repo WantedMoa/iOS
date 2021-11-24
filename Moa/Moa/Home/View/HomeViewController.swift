@@ -12,7 +12,7 @@ import RxFSPagerView
 import RxGesture
 import RxSwift
 
-final class HomeViewController: UIViewController, IdentifierType {
+final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     // MARK: - IBOutlet
     /// profile
     @IBOutlet private weak var profileImageView: UIImageView!
@@ -60,6 +60,8 @@ final class HomeViewController: UIViewController, IdentifierType {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        // test
+        presentBottomAlert(message: "테스트 입니다")
     }
     
     private func bind() {

@@ -68,6 +68,8 @@
 		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
 		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
 		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
+		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
+		3CD639CB274DFE3900114CB4 /* BottomAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C9274DFE3900114CB4 /* BottomAlertViewController.xib */; };
 		64CD1BFDB251EC56E7D7AE71 /* Pods_Moa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,8 @@
 		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
 		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
 		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
+		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
+		3CD639C9274DFE3900114CB4 /* BottomAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomAlertViewController.xib; sourceTree = "<group>"; };
 		438978EA119CA256DA37A4B4 /* Pods-Moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.release.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.release.xcconfig"; sourceTree = "<group>"; };
 		540EB34A85DAA2A5109FB4A7 /* Pods_Moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C0E082EDB23930135F1216 /* Pods-Moa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moa.debug.xcconfig"; path = "Target Support Files/Pods-Moa/Pods-Moa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 			children = (
 				3C1DEDB5274CE0FD00F0EA58 /* BottomDatePickerViewController.swift */,
 				3C1DEDB6274CE0FD00F0EA58 /* BottomDatePickerViewController.xib */,
+				3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */,
+				3CD639C9274DFE3900114CB4 /* BottomAlertViewController.xib */,
 			);
 			path = BottomAlert;
 			sourceTree = "<group>";
@@ -494,6 +500,7 @@
 				3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */,
 				3C80B1B02743704400DDF82F /* HomeBestTeamBuildViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
+				3CD639CB274DFE3900114CB4 /* BottomAlertViewController.xib in Resources */,
 				3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */,
 				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* HomeBestMemberViewController.xib in Resources */,
@@ -576,6 +583,7 @@
 				3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */,
 				3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
+				3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */,
 				3C80B1922742664000DDF82F /* MatchViewController.swift in Sources */,
 				3C1DEDBA274CE44500F0EA58 /* UIView+RoundConer.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
