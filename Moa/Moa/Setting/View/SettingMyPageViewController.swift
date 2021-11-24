@@ -14,7 +14,8 @@ import RxSwift
 final class SettingMyPageViewController: UIViewController, IdentifierType {
 
     @IBOutlet private weak var myTeamBuildCollectionView: UICollectionView!
-
+    @IBOutlet private weak var myTeamBuildLabel: UILabel!
+    
     // ViewModel
     private lazy var input = SettingMyPageViewModel.Input(
         
@@ -23,7 +24,7 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
     private let disposeBag = DisposeBag()
     
     private var currentIndexPath = IndexPath(item: 0, section: 0)
-
+    
     // DI
     private let viewModel: SettingMyPageViewModel
     
@@ -35,6 +36,7 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindUI()
         bind()
     }
     
@@ -55,6 +57,17 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
             cell.subTitleLabel.text = item.1
         }
         .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        myTeamBuildLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = SettingDetailMyTeambuildViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func prepareMyTeamBuildCollectionView() {

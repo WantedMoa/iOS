@@ -32,6 +32,7 @@ final class CommunityUserProfileViewController: UIViewController {
     @IBOutlet private weak var profileViewHeightContraint: NSLayoutConstraint!
     @IBOutlet private weak var profileExpandButtonImageView: UIImageView!
     @IBOutlet private weak var profileView: UIView!
+    @IBOutlet private weak var moaButtonView: MoaButtonView!
     
     // message
     @IBOutlet private weak var messageTitleTextField: UITextField!
@@ -97,6 +98,7 @@ final class CommunityUserProfileViewController: UIViewController {
     }
     
     private func configureUI() {
+        moaButtonView.titleLabel.text = "쪽지 보내기"
         prepareProfileImageView()
         prepareMessageTextView()
         prepareMessageTitleTextField()

@@ -24,6 +24,7 @@
                 <outlet property="messagePlaceholderLabel" destination="aXw-aj-gzr" id="aQY-kv-mYK"/>
                 <outlet property="messageTextView" destination="J7K-zU-Nt9" id="225-BK-EzY"/>
                 <outlet property="messageTitleTextField" destination="lhv-KP-3RJ" id="did-T5-agN"/>
+                <outlet property="moaButtonView" destination="Qpe-Af-1cL" id="sjD-vP-8fO"/>
                 <outlet property="profileExpandButtonImageView" destination="ObX-Ck-qgY" id="4lT-jr-Cjf"/>
                 <outlet property="profileImageView" destination="fQG-mF-euh" id="Sap-Z3-o2L"/>
                 <outlet property="profileView" destination="i95-ON-H86" id="i2n-5X-3yH"/>

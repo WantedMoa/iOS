@@ -74,6 +74,10 @@
 		3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */; };
 		3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */; };
 		3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */; };
+		3CC18A53274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */; };
+		3CC18A54274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */; };
+		3CC18A57274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */; };
+		3CC18A58274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */; };
 		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
 		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
 		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
@@ -151,6 +155,10 @@
 		3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyPageViewModel.swift; sourceTree = "<group>"; };
 		3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyTeambuildCell.swift; sourceTree = "<group>"; };
 		3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingMyTeambuildCell.xib; sourceTree = "<group>"; };
+		3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailMyTeambuildViewController.swift; sourceTree = "<group>"; };
+		3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDetailMyTeambuildViewController.xib; sourceTree = "<group>"; };
+		3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailMyTeambuildCell.swift; sourceTree = "<group>"; };
+		3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDetailMyTeambuildCell.xib; sourceTree = "<group>"; };
 		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
 		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
 		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +440,8 @@
 				3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */,
 				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
 				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
+				3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */,
+				3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,6 +459,8 @@
 			children = (
 				3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */,
 				3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */,
+				3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */,
+				3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */,
 			);
 			path = ReuseView;
 			sourceTree = "<group>";
@@ -533,8 +545,10 @@
 				3C80B16C2741FD9600DDF82F /* NotoSansKR-Light.otf in Resources */,
 				3C80B16D2741FD9600DDF82F /* NotoSansKR-Bold.otf in Resources */,
 				3C80B18E2742660600DDF82F /* CommunityViewController.xib in Resources */,
+				3CC18A58274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib in Resources */,
 				3C1735852745E1C800C9895E /* MatchMyTeamBuildCell.xib in Resources */,
 				3CB06084274E5D8B00FF4A6D /* SettingMyPageViewController.xib in Resources */,
+				3CC18A54274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib in Resources */,
 				3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */,
 				3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */,
 				3C2DD435274CA316007DBC58 /* MoaButtonView.xib in Resources */,
@@ -630,11 +644,13 @@
 				3C1DEDC1274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift in Sources */,
 				3C80B1A4274346CB00DDF82F /* HomeBestMemberViewModel.swift in Sources */,
 				3C2DD438274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift in Sources */,
+				3CC18A57274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift in Sources */,
 				3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */,
 				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
 				3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */,
 				3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */,
+				3CC18A53274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift in Sources */,
 				3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */,

@@ -16,7 +16,7 @@ final class SettingMyTeambuildCell: UICollectionViewCell, IdentifierType {
         super.awakeFromNib()
         configureUI()
     }
-
+    
     private func configureUI() {
         backgroundColor = .white
         contentView.layer.masksToBounds = false

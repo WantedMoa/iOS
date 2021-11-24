@@ -21,6 +21,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingMyPageViewController" customModule="Moa" customModuleProvider="target">
             <connections>
                 <outlet property="myTeamBuildCollectionView" destination="rr3-xO-TYC" id="nrJ-4c-LiC"/>
+                <outlet property="myTeamBuildLabel" destination="HMY-fT-JrN" id="aoy-Rr-L8A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
