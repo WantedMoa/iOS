@@ -23,6 +23,13 @@ final class CommunityTeamBuildCell: UICollectionViewCell, IdentifierType {
         competitionImageView.layer.masksToBounds = true
         competitionImageView.layer.cornerRadius = 5
     }
+    
+    func update(data: TestbestMembers) {
+        competitionImageView.image = UIImage(named: data.image)
+        competitionDateLabel.text = data.date
+        competitionTitleLabel.text = data.title
+        updateTagStackView(by: data.tags)
+    }
 
     private func updateTagStackView(by tags: [String]) {
         for subView in tagStackView.arrangedSubviews {
@@ -30,20 +37,34 @@ final class CommunityTeamBuildCell: UICollectionViewCell, IdentifierType {
         }
         
         for tag in tags {
-            let label = generateTagLabel()
-            label.text = "   " + tag + "   "
+            let label = generateTagLabel(title: tag)
             tagStackView.addArrangedSubview(label)
         }
     }
     
-    private func generateTagLabel() -> UILabel {
-        let font = UIFont(name: "NotoSansKR-Regular", size: 9) ?? UIFont.systemFont(ofSize: 9)
+    private func generateTagLabel(title: String) -> UIView {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = .black
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 7
+        
+        let font = UIFont.notoSansRegular(size: 9)
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = font
+        label.text = title
         label.textColor = .white
-        label.backgroundColor = .black
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 7
-        return label
+        label.sizeToFit()
+        
+        contentView.addSubview(label)
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalToConstant: CGFloat(10 + label.bounds.width)),
+            contentView.heightAnchor.constraint(equalToConstant: 15),
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+        
+        return contentView
     }
 }

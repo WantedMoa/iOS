@@ -121,8 +121,8 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         output.myTeambuilds.drive(myTeamBuildCollectionView.rx.items(
             cellIdentifier: MatchMyTeamBuildCell.identifier,
             cellType: MatchMyTeamBuildCell.self)
-        ) { _, _, _ in
-            
+        ) { _, item, cell in
+            cell.update(data: item)
         }
         .disposed(by: disposeBag)
     }

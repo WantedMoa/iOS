@@ -120,7 +120,7 @@
                                 <constraint firstAttribute="width" constant="36" id="XVt-oJ-oqn"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임현석" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kr-c7-CNi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이유정" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kr-c7-CNi">
                             <rect key="frame" x="190" y="240" width="44.5" height="23.5"/>
                             <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                             <color key="textColor" name="2"/>
@@ -417,7 +417,7 @@
     <resources>
         <image name="ChevronDown" width="24" height="24"/>
         <image name="GreenStatus" width="16.5" height="16"/>
-        <image name="TestProfile1" width="137" height="91"/>
+        <image name="TestProfile1" width="76" height="76"/>
         <image name="WhiteEmptyBookmark" width="16" height="16"/>
         <image name="WhiteEmptyHeart" width="16" height="16"/>
         <image name="XmarkWithCircle" width="30" height="30"/>

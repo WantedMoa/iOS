@@ -130,7 +130,7 @@ extension CommunityJoinTeambuildViewController {
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 16
         
-        let font = UIFont(name: "NotoSansKR-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
+        let font = UIFont.notoSansRegular(size: 16)
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = font
