@@ -26,6 +26,7 @@ final class HomeBestTeamBuildViewModel: ViewModelType {
             value: .init([.topten(items: ["A", "B", "C", "D", "E", "F", "G"])])
         )
         
+        
         return Output(
             teamBuildes: teamBuildes.asDriver()
         )

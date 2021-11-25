@@ -151,7 +151,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             cellIdentifier: MatchMyTeamBuildCell.identifier,
             cellType: MatchMyTeamBuildCell.self)
         ) { _, item, cell in
-            cell.update(data: item)
+            // cell.update(data: item)
         }
         .disposed(by: disposeBag)
     }

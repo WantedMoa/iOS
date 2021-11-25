@@ -90,6 +90,7 @@
             </constraints>
             <size key="customSize" width="394" height="199"/>
             <connections>
+                <outlet property="competitionContentLabel" destination="aKN-8A-dL9" id="aDv-sZ-LCZ"/>
                 <outlet property="competitionDateLabel" destination="mBH-9k-QmI" id="w6Q-Zk-BMs"/>
                 <outlet property="competitionImageView" destination="p2V-PB-ehj" id="eHd-ew-TnK"/>
                 <outlet property="competitionTitleLabel" destination="rh3-aK-9eB" id="Fa8-s0-vB2"/>

@@ -12,6 +12,7 @@ public enum MoaAPI {
     case homePopularUsers
     case homePopularUsersDetail
     case homePopularRecruits
+    case communityRecruits
 }
 
 extension MoaAPI: TargetType {
@@ -29,12 +30,18 @@ extension MoaAPI: TargetType {
             return "/homes/popular-users/details"
         case .homePopularRecruits:
             return "/homes/popular-recruits"
+        case .communityRecruits:
+            return "/app/recruits"
         }
     }
     
     public var method: Method {
         switch self {
-        case .homeContests, .homePopularUsers, .homePopularUsersDetail, .homePopularRecruits:
+        case .homeContests,
+             .homePopularUsers,
+             .homePopularUsersDetail,
+             .homePopularRecruits,
+             .communityRecruits:
             return .get
         }
     }
@@ -45,12 +52,16 @@ extension MoaAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .homeContests, .homePopularUsers, .homePopularUsersDetail, .homePopularRecruits:
+        case .homeContests,
+            .homePopularUsers,
+            .homePopularUsersDetail,
+            .homePopularRecruits,
+            .communityRecruits:
             return .requestPlain
         }
     }
     
     public var headers: [String : String]? {
-        return nil
+        return ["x-access-token": PrivateKey.testToken]
     }
 }

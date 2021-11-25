@@ -13,6 +13,7 @@ final class CommunityTeamBuildCell: UICollectionViewCell, IdentifierType {
     @IBOutlet private weak var competitionImageView: UIImageView!
     @IBOutlet private weak var competitionDateLabel: UILabel!
     @IBOutlet private weak var competitionTitleLabel: UILabel!
+    @IBOutlet private weak var competitionContentLabel: UILabel!
     @IBOutlet private weak var tagStackView: UIStackView!
     
     override func awakeFromNib() {
@@ -25,11 +26,11 @@ final class CommunityTeamBuildCell: UICollectionViewCell, IdentifierType {
         competitionImageView.layer.cornerRadius = 5
     }
     
-    func update(by homePopularRecruit: HomePopularRecruit) {
-        competitionImageView.kf.setImage(with: URL(string: homePopularRecruit.pictureURL))
-        competitionDateLabel.text = homePopularRecruit.startDate + "-" + homePopularRecruit.endDate
-        competitionTitleLabel.text = homePopularRecruit.title
-        updateTagStackView(by: homePopularRecruit.tags)
+    func update(by communityRecruit: CommunityRecruit) {
+        competitionImageView.kf.setImage(with: URL(string: communityRecruit.pictureURL))
+        competitionDateLabel.text = communityRecruit.startDate + "-" + communityRecruit.endDate
+        competitionTitleLabel.text = communityRecruit.title
+        // updateTagStackView(by: homePopularRecruit.tags)
     }
 
     private func updateTagStackView(by tags: [String]) {
