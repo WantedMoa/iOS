@@ -27,6 +27,7 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
     
     // DI
     private let viewModel: SettingMyPageViewModel
+    weak var settingNaviagtionController: UINavigationController?
     
     init() {
         self.viewModel = SettingMyPageViewModel()
@@ -60,21 +61,12 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
     }
     
     private func bindUI() {
-        myTeamBuildLabel.rx.tapGesture()
-            .when(.recognized)
-            .subscribe { [weak self] (_: UITapGestureRecognizer) in
-                guard let self = self else { return }
-                let vc = SettingDetailMyTeambuildViewController()
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            .disposed(by: disposeBag)
-        
         myTeamBuildCollectionView.rx.modelSelected((String, String).self)
             .subscribe { [weak self] (_: (String, String)) in
                 guard let self = self else { return }
                 let vc = SettingTeamMemberViewController()
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+                self.settingNaviagtionController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
     }

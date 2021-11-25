@@ -12,10 +12,11 @@ import RxDataSources
 import RxSwift
 import RxGesture
 
-final class SettingTeamMemberViewController: UIViewController, IdentifierType {
+final class SettingTeamMemberViewController: UIViewController, IdentifierType, UnderLineNavBar {
     @IBOutlet private weak var teamMemberCollectionView: UICollectionView!
-    @IBOutlet private weak var dismissImageView: UIImageView!
-
+    @IBOutlet private weak var teamMemberCollectionViewHeightLayout: NSLayoutConstraint!
+    @IBOutlet private weak var teamView: UIView!
+    
     // ViewModel
     private lazy var input = SettingTeamMemberViewModel.Input()
     private lazy var output = viewModel.transform(input: input)
@@ -44,17 +45,20 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType {
         output.sections
             .drive(teamMemberCollectionView.rx.items(dataSource: dataSource()))
             .disposed(by: disposeBag)
+        
+        output.sections
+            .compactMap { $0.first?.items.count }
+            .drive { [weak self] (count: Int) in
+                guard let self = self else { return }
+                let empty = count % 4
+                let line = count / 4 + (empty == 0 ? 0 : 1)
+                let height = CGFloat(30 + 110 * line)
+                self.teamMemberCollectionViewHeightLayout.constant = height
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
-        dismissImageView.rx.tapGesture()
-            .when(.recognized)
-            .subscribe { [weak self] (_: UITapGestureRecognizer) in
-                guard let self = self else { return }
-                self.dismiss(animated: true)
-            }
-            .disposed(by: disposeBag)
-        
         teamMemberCollectionView.rx.modelSelected(HomeBestMember.self)
             .subscribe { [weak self] (_: HomeBestMember) in
                 guard let self = self else { return }
@@ -66,7 +70,10 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType {
     }
     
     private func configureUI() {
+        navigationItem.title = "나의 팀"
+        addUnderLineOnNavBar()
         prepareTeamMemberCollectionView()
+        prepareTeamView()
     }
     
     private func prepareTeamMemberCollectionView() {
@@ -76,6 +83,15 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType {
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestMemberCell.identifier
         )
+    }
+    
+    private func prepareTeamView() {
+        teamView.layer.masksToBounds = false
+        teamView.layer.cornerRadius = 10
+        teamView.layer.shadowColor = UIColor.black.cgColor
+        teamView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        teamView.layer.shadowOpacity = 0.15
+        teamView.layer.shadowRadius = 4.0
     }
 }
 
@@ -110,9 +126,9 @@ extension SettingTeamMemberViewController {
             horizontalGroup.interItemSpacing = .flexible(10)
             
             let section = NSCollectionLayoutSection(group: horizontalGroup)
-            section.interGroupSpacing = 26
+            section.interGroupSpacing = 20
             section.orthogonalScrollingBehavior = .none
-            section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
+            section.contentInsets = .init(top: 10, leading: 10, bottom: 5, trailing: 10)
             return section
         }
         

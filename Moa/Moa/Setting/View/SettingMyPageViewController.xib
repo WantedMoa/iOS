@@ -78,15 +78,24 @@
                                                 <constraint firstAttribute="width" constant="24" id="XcC-Ij-9fK"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreyCircleCamera" translatesAutoresizingMaskIntoConstraints="NO" id="XwQ-Aj-EWU">
+                                            <rect key="frame" x="68" y="74" width="34" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" id="eBY-sM-ACP"/>
+                                                <constraint firstAttribute="height" constant="34" id="lBn-kM-irv"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="Q7G-y2-gfD" firstAttribute="centerY" secondItem="UyI-zz-nJK" secondAttribute="centerY" multiplier="1.1" id="2Qw-aB-uAf"/>
                                         <constraint firstItem="BBf-UZ-YfL" firstAttribute="centerY" secondItem="yYC-Bs-5D9" secondAttribute="centerY" id="4sY-jh-gYA"/>
+                                        <constraint firstItem="XwQ-Aj-EWU" firstAttribute="trailing" secondItem="yYC-Bs-5D9" secondAttribute="trailing" constant="12" id="EE0-hx-MfV"/>
                                         <constraint firstItem="yYC-Bs-5D9" firstAttribute="top" secondItem="Vom-kl-oWX" secondAttribute="top" constant="25" id="Ko6-vP-Mqu"/>
+                                        <constraint firstItem="XwQ-Aj-EWU" firstAttribute="bottom" secondItem="yYC-Bs-5D9" secondAttribute="bottom" constant="9" id="Mnp-5B-IYT"/>
                                         <constraint firstAttribute="trailing" secondItem="BBf-UZ-YfL" secondAttribute="trailing" constant="10" id="RSg-fD-k3K"/>
                                         <constraint firstItem="KHQ-xq-et9" firstAttribute="centerY" secondItem="yYC-Bs-5D9" secondAttribute="centerY" id="Rdo-KI-pW6"/>
-                                        <constraint firstAttribute="height" constant="136" id="a3N-lG-JYo"/>
+                                        <constraint firstAttribute="bottom" secondItem="yYC-Bs-5D9" secondAttribute="bottom" constant="37" id="SLy-oC-Lhu"/>
                                         <constraint firstItem="yYC-Bs-5D9" firstAttribute="leading" secondItem="Vom-kl-oWX" secondAttribute="leading" constant="16" id="gpJ-h7-863"/>
                                         <constraint firstItem="KHQ-xq-et9" firstAttribute="leading" secondItem="yYC-Bs-5D9" secondAttribute="trailing" constant="29" id="suv-v9-fS7"/>
                                         <constraint firstItem="Q7G-y2-gfD" firstAttribute="leading" secondItem="UyI-zz-nJK" secondAttribute="trailing" constant="8" id="vXo-pO-HfU"/>
@@ -311,6 +320,7 @@
         <image name="Document" width="24" height="24"/>
         <image name="EmptyHeart" width="24" height="24"/>
         <image name="GreenStatus" width="16.5" height="16"/>
+        <image name="GreyCircleCamera" width="34" height="34"/>
         <image name="MoaChevronRight" width="24" height="24"/>
         <image name="TestProfile1" width="76" height="76"/>
         <namedColor name="3">

@@ -109,9 +109,10 @@ final class SettingViewController: UIViewController, UnderLineNavBar {
     
     private func preparePageViewController() {
         let myPageVC = SettingMyPageViewController()
+        myPageVC.settingNaviagtionController = navigationController
         let profileVC = SettingProfileViewController()
         pages = [myPageVC, profileVC]
-        
+    
         pageViewController.delegate = self
         pageViewController.dataSource = self
         pageViewController.setViewControllers([profileVC], direction: .forward, animated: true)

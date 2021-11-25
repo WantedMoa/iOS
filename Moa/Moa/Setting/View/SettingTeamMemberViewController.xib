@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NotoSansKR-Bold.otf">
-            <string>NotoSansKR-Bold</string>
-        </array>
         <array key="NotoSansKR-Medium.otf">
             <string>NotoSansKR-Medium</string>
         </array>
@@ -23,8 +20,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingTeamMemberViewController" customModule="Moa" customModuleProvider="target">
             <connections>
-                <outlet property="dismissImageView" destination="8Pm-oh-Y6a" id="oHB-XP-pWE"/>
                 <outlet property="teamMemberCollectionView" destination="kdc-of-yMh" id="Rec-xf-aZ0"/>
+                <outlet property="teamMemberCollectionViewHeightLayout" destination="55c-N2-OEu" id="N6n-x3-sCY"/>
+                <outlet property="teamView" destination="Zr2-cl-VLI" id="Q6t-Ji-jPY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,66 +31,62 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="XmarkWithCircle" translatesAutoresizingMaskIntoConstraints="NO" id="8Pm-oh-Y6a">
-                    <rect key="frame" x="368" y="49" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="KVa-8r-NtC"/>
-                        <constraint firstAttribute="height" constant="30" id="SUM-aJ-8ZR"/>
-                    </constraints>
-                </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j5K-ae-33d" userLabel="TeamInfo StackView">
-                    <rect key="frame" x="20" y="151.5" width="214.5" height="44.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zr2-cl-VLI" userLabel="Team View">
+                    <rect key="frame" x="16" y="89" width="382" height="256.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원티드 해커톤해, 커리어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3h-QY-ZMj">
-                            <rect key="frame" x="0.0" y="0.0" width="160.5" height="23.5"/>
-                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
-                            <color key="textColor" name="font1"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 15일에 공고 완료 되어 만들어진 팀입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-pi-IKE">
-                            <rect key="frame" x="0.0" y="28.5" width="214.5" height="16"/>
-                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="11"/>
-                            <color key="textColor" name="font2"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j5K-ae-33d" userLabel="TeamInfo StackView">
+                            <rect key="frame" x="15" y="13" width="214.5" height="44.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원티드 해커톤해, 커리어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3h-QY-ZMj">
+                                    <rect key="frame" x="0.0" y="0.0" width="160.5" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 15일에 공고 완료 되어 만들어진 팀입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-pi-IKE">
+                                    <rect key="frame" x="0.0" y="28.5" width="214.5" height="16"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="11"/>
+                                    <color key="textColor" name="font2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-of-yMh">
+                            <rect key="frame" x="0.0" y="77.5" width="382" height="169"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="169" id="55c-N2-OEu"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="g1f-Vh-XpM">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
-                </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀원 평가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiB-yw-Ejk">
-                    <rect key="frame" x="160.5" y="64" width="93" height="23.5"/>
-                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
-                    <color key="textColor" name="font1"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-of-yMh">
-                    <rect key="frame" x="0.0" y="208" width="414" height="654"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1f-Vh-XpM">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <constraints>
+                        <constraint firstItem="j5K-ae-33d" firstAttribute="top" secondItem="Zr2-cl-VLI" secondAttribute="top" constant="13" id="0WS-W5-qzy"/>
+                        <constraint firstItem="kdc-of-yMh" firstAttribute="leading" secondItem="Zr2-cl-VLI" secondAttribute="leading" id="41K-kH-2ua"/>
+                        <constraint firstItem="j5K-ae-33d" firstAttribute="leading" secondItem="Zr2-cl-VLI" secondAttribute="leading" constant="15" id="PlT-JR-KIn"/>
+                        <constraint firstAttribute="trailing" secondItem="kdc-of-yMh" secondAttribute="trailing" id="TzP-lI-nMb"/>
+                        <constraint firstItem="kdc-of-yMh" firstAttribute="top" secondItem="mJL-pi-IKE" secondAttribute="bottom" constant="20" id="nS5-Pm-Xmn"/>
+                        <constraint firstAttribute="bottom" secondItem="kdc-of-yMh" secondAttribute="bottom" constant="10" id="yjp-Ry-LIf"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="j5K-ae-33d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4m9-VY-XlC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Pm-oh-Y6a" secondAttribute="trailing" constant="16" id="5lP-yF-iDa"/>
-                <constraint firstItem="j5K-ae-33d" firstAttribute="top" secondItem="qiB-yw-Ejk" secondAttribute="bottom" constant="64" id="EzT-xR-TSN"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kdc-of-yMh" secondAttribute="bottom" id="KaJ-MT-TXX"/>
-                <constraint firstItem="qiB-yw-Ejk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T0J-8N-RpH"/>
-                <constraint firstItem="kdc-of-yMh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W5q-qH-uzJ"/>
-                <constraint firstItem="kdc-of-yMh" firstAttribute="top" secondItem="mJL-pi-IKE" secondAttribute="bottom" constant="12" id="aCR-Mu-SDu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kdc-of-yMh" secondAttribute="trailing" id="h2F-2L-l1j"/>
-                <constraint firstItem="qiB-yw-Ejk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="vmK-Jb-Dw5"/>
-                <constraint firstItem="8Pm-oh-Y6a" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="ycs-aq-4KC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zr2-cl-VLI" secondAttribute="trailing" constant="16" id="eyF-7k-qm6"/>
+                <constraint firstItem="Zr2-cl-VLI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45" id="fgo-PM-IFB"/>
+                <constraint firstItem="Zr2-cl-VLI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kjA-bQ-cWG"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
         </view>
     </objects>
     <resources>
-        <image name="XmarkWithCircle" width="30" height="30"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
