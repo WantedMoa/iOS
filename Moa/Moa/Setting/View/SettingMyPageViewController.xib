@@ -34,12 +34,12 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2eg-WV-u6e" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="672.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="660.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vom-kl-oWX" userLabel="Header View">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestProfile1" translatesAutoresizingMaskIntoConstraints="NO" id="yYC-Bs-5D9" userLabel="Profile Image View">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeeYu" translatesAutoresizingMaskIntoConstraints="NO" id="yYC-Bs-5D9" userLabel="Profile Image View">
                                             <rect key="frame" x="16" y="25" width="74" height="74"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="74" id="7ee-sG-5e7"/>
@@ -95,21 +95,21 @@
                                         <constraint firstItem="XwQ-Aj-EWU" firstAttribute="bottom" secondItem="yYC-Bs-5D9" secondAttribute="bottom" constant="9" id="Mnp-5B-IYT"/>
                                         <constraint firstAttribute="trailing" secondItem="BBf-UZ-YfL" secondAttribute="trailing" constant="10" id="RSg-fD-k3K"/>
                                         <constraint firstItem="KHQ-xq-et9" firstAttribute="centerY" secondItem="yYC-Bs-5D9" secondAttribute="centerY" id="Rdo-KI-pW6"/>
-                                        <constraint firstAttribute="bottom" secondItem="yYC-Bs-5D9" secondAttribute="bottom" constant="37" id="SLy-oC-Lhu"/>
+                                        <constraint firstAttribute="bottom" secondItem="yYC-Bs-5D9" secondAttribute="bottom" constant="25" id="SLy-oC-Lhu"/>
                                         <constraint firstItem="yYC-Bs-5D9" firstAttribute="leading" secondItem="Vom-kl-oWX" secondAttribute="leading" constant="16" id="gpJ-h7-863"/>
                                         <constraint firstItem="KHQ-xq-et9" firstAttribute="leading" secondItem="yYC-Bs-5D9" secondAttribute="trailing" constant="29" id="suv-v9-fS7"/>
                                         <constraint firstItem="Q7G-y2-gfD" firstAttribute="leading" secondItem="UyI-zz-nJK" secondAttribute="trailing" constant="8" id="vXo-pO-HfU"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OJ-2i-FQp" userLabel="Line View">
-                                    <rect key="frame" x="0.0" y="136" width="414" height="10"/>
+                                    <rect key="frame" x="0.0" y="124" width="414" height="10"/>
                                     <color key="backgroundColor" name="3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="W8O-Wh-1FR"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jou-4i-K00" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="146" width="414" height="500"/>
+                                    <rect key="frame" x="0.0" y="134" width="414" height="500"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 팀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMY-fT-JrN">
                                             <rect key="frame" x="16" y="25" width="49" height="23.5"/>
@@ -321,8 +321,8 @@
         <image name="EmptyHeart" width="24" height="24"/>
         <image name="GreenStatus" width="16.5" height="16"/>
         <image name="GreyCircleCamera" width="34" height="34"/>
+        <image name="LeeYu" width="74" height="74"/>
         <image name="MoaChevronRight" width="24" height="24"/>
-        <image name="TestProfile1" width="76" height="76"/>
         <namedColor name="3">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
