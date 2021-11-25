@@ -78,8 +78,8 @@
             filePath = "Moa/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "transform(input:)"
             landmarkType = "7">
          </BreakpointContent>

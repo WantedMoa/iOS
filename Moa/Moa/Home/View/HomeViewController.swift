@@ -32,13 +32,15 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     // ViewModel
     private lazy var input = HomeViewModel.Input(
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
-        fetchPosters: fetchPosters.asSignal()
+        fetchPosters: fetchPosters.asSignal(),
+        fetchBestMembers: fetchBestMembers.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     // Event
     private let pagerViewDidScrolled = PublishRelay<Int>()
     private let fetchPosters = PublishRelay<Void>()
+    private let fetchBestMembers = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -60,6 +62,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         bind()
         
         fetchPosters.accept(())
+        fetchBestMembers.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {

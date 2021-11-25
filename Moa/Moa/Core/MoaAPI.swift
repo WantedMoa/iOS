@@ -8,7 +8,8 @@
 import Moya
 
 public enum MoaAPI {
-    case homeContest
+    case homeContests
+    case homePopularUsers
 }
 
 extension MoaAPI: TargetType {
@@ -18,14 +19,16 @@ extension MoaAPI: TargetType {
     
     public var path: String {
         switch self {
-        case .homeContest:
+        case .homeContests:
             return "/homes/contests"
+        case .homePopularUsers:
+            return "/homes/popular-users"
         }
     }
     
     public var method: Method {
         switch self {
-        case .homeContest:
+        case .homeContests, .homePopularUsers:
             return .get
         }
     }
@@ -36,7 +39,7 @@ extension MoaAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .homeContest:
+        case .homeContests, .homePopularUsers:
             return .requestPlain
         }
     }

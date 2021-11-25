@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeContestResponse: Codable {
+struct HomeContestsResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String

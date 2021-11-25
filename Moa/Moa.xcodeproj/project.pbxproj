@@ -26,8 +26,9 @@
 		3C240430274FC24B0011333C /* Acumin-BdPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C24042F274FC24B0011333C /* Acumin-BdPro.otf */; };
 		3C240432274FC2840011333C /* MoaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240431274FC2840011333C /* MoaAPI.swift */; };
 		3C240435274FC2D70011333C /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240434274FC2D70011333C /* PrivateKey.swift */; };
-		3C240437274FC4600011333C /* HomeContestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240436274FC4600011333C /* HomeContestResponse.swift */; };
+		3C240437274FC4600011333C /* HomeContestsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240436274FC4600011333C /* HomeContestsResponse.swift */; };
 		3C24043A274FC61B0011333C /* MoaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240439274FC61B0011333C /* MoaError.swift */; };
+		3C24043C274FD0E70011333C /* HomePopularUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24043B274FD0E70011333C /* HomePopularUsersResponse.swift */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -123,8 +124,9 @@
 		3C24042F274FC24B0011333C /* Acumin-BdPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Acumin-BdPro.otf"; sourceTree = "<group>"; };
 		3C240431274FC2840011333C /* MoaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaAPI.swift; sourceTree = "<group>"; };
 		3C240434274FC2D70011333C /* PrivateKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
-		3C240436274FC4600011333C /* HomeContestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContestResponse.swift; sourceTree = "<group>"; };
+		3C240436274FC4600011333C /* HomeContestsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContestsResponse.swift; sourceTree = "<group>"; };
 		3C240439274FC61B0011333C /* MoaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaError.swift; sourceTree = "<group>"; };
+		3C24043B274FD0E70011333C /* HomePopularUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePopularUsersResponse.swift; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -300,7 +302,8 @@
 		3C240438274FC50C0011333C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3C240436274FC4600011333C /* HomeContestResponse.swift */,
+				3C240436274FC4600011333C /* HomeContestsResponse.swift */,
+				3C24043B274FD0E70011333C /* HomePopularUsersResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
 				3CB0607C274E4D4000FF4A6D /* UIFont+NotoSans.swift in Sources */,
+				3C24043C274FD0E70011333C /* HomePopularUsersResponse.swift in Sources */,
 				3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */,
 				3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */,
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
@@ -747,7 +751,7 @@
 				3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
 				3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */,
-				3C240437274FC4600011333C /* HomeContestResponse.swift in Sources */,
+				3C240437274FC4600011333C /* HomeContestsResponse.swift in Sources */,
 				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C24043A274FC61B0011333C /* MoaError.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
