@@ -24,6 +24,8 @@
                 <outlet property="joinMessageTextView" destination="Gmj-yG-Dd5" id="meG-38-iUZ"/>
                 <outlet property="joinTitleTextField" destination="je7-PI-C2W" id="Cy7-cP-13I"/>
                 <outlet property="profileImageView" destination="1YZ-Bt-xgJ" id="1S6-c2-lsz"/>
+                <outlet property="scrollView" destination="UWF-pM-VUf" id="cw8-We-Cqr"/>
+                <outlet property="scrollViewBottomLayout" destination="ecD-2c-Bxc" id="qNp-hW-UNN"/>
                 <outlet property="tagStackView" destination="rBw-ZO-hCY" id="cVA-vl-YuF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

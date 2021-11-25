@@ -9,6 +9,7 @@ import UIKit
 
 import RxCocoa
 import RxGesture
+import RxKeyboard
 import RxSwift
 
 final class CommunityJoinTeambuildViewController: UIViewController {
@@ -17,6 +18,8 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     @IBOutlet private weak var joinMessageTextView: UITextView!
     @IBOutlet private weak var joinMessagePlaceholderLabel: UILabel!
     @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollViewBottomLayout: NSLayoutConstraint!
 
     private var navVC: MoaNavigationController? {
         return navigationController as? MoaNavigationController
@@ -79,6 +82,20 @@ final class CommunityJoinTeambuildViewController: UIViewController {
                 self.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
+                
+        RxKeyboard.instance.visibleHeight
+          .drive(onNext: { [weak self] keyboardVisibleHeight in
+              guard let self = self else { return }
+              guard self.joinMessageTextView.isFirstResponder else { return }
+              
+              let scrollOffset: CGFloat = keyboardVisibleHeight > 0 ? 150 : -150
+              self.scrollView.contentOffset.y += scrollOffset
+
+              UIView.animate(withDuration: 0.1) {
+                  self.view.layoutIfNeeded()
+              }
+          })
+          .disposed(by: disposeBag)
     }
     
     private func prepareJoinTitleTextField() {
