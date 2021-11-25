@@ -35,6 +35,8 @@
 		3C240446274FE6050011333C /* RegisterPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C240444274FE6050011333C /* RegisterPasswordViewController.xib */; };
 		3C240449274FE6CB0011333C /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240447274FE6CB0011333C /* RegisterNameViewController.swift */; };
 		3C24044A274FE6CB0011333C /* RegisterNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C240448274FE6CB0011333C /* RegisterNameViewController.xib */; };
+		3C24044E274FE96B0011333C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24044D274FE96B0011333C /* SplashView.swift */; };
+		3C240452274FE9790011333C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C240451274FE9790011333C /* SplashView.xib */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -139,6 +141,8 @@
 		3C240444274FE6050011333C /* RegisterPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPasswordViewController.xib; sourceTree = "<group>"; };
 		3C240447274FE6CB0011333C /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
 		3C240448274FE6CB0011333C /* RegisterNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterNameViewController.xib; sourceTree = "<group>"; };
+		3C24044D274FE96B0011333C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		3C240451274FE9790011333C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 				3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */,
 				3C2DD434274CA316007DBC58 /* MoaButtonView.xib */,
 				3C80B19E274333FC00DDF82F /* MoaNavigationController.swift */,
+				3C24044D274FE96B0011333C /* SplashView.swift */,
+				3C240451274FE9790011333C /* SplashView.xib */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -662,6 +668,7 @@
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
 				3CC18A5C274EA3CD007C02F4 /* SettingTeamMemberViewController.xib in Resources */,
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
+				3C240452274FE9790011333C /* SplashView.xib in Resources */,
 				3C24042E274FBE7C0011333C /* RegisterEmailViewController.xib in Resources */,
 				3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* MatchViewController.xib in Resources */,
@@ -743,6 +750,7 @@
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
 				3C240449274FE6CB0011333C /* RegisterNameViewController.swift in Sources */,
+				3C24044E274FE96B0011333C /* SplashView.swift in Sources */,
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
 				3CC18A5E274EA676007C02F4 /* SettingTeamMemberViewModel.swift in Sources */,
 				3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */,

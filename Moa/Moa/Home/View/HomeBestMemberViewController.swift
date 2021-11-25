@@ -72,6 +72,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
             forSupplementaryViewOfKind: HomeBestMemberReusableView.headerElementKind,
             withReuseIdentifier: HomeBestMemberReusableView.identifier
         )
+        bestMemberCollectionView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
     }
 }
 

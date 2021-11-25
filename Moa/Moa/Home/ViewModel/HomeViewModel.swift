@@ -61,6 +61,7 @@ final class HomeViewModel: ViewModelType {
                 
                 if let result = response.result {
                     posters.accept(result)
+                    pagerControlTitle.accept("1 / \(result.count)")
                 }
         
             }, onError: { error in

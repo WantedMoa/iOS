@@ -29,6 +29,16 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var bestTeamBuildDetailButtonLabel: UILabel!
     
+    private let splashView: UIView = {
+        let splashView = SplashView()
+        splashView.translatesAutoresizingMaskIntoConstraints = false
+        return splashView
+    }()
+    
+    private var tabVC: UITabBarController? {
+        return navigationController?.tabBarController
+    }
+    
     // ViewModel
     private lazy var input = HomeViewModel.Input(
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
@@ -63,6 +73,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         bindUI()
         bind()
         
+        prepareSplashView()
         fetchPosters.accept(())
         fetchBestMembers.accept(())
         fetchPopularRecruits.accept(())
@@ -78,7 +89,15 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             .drive(pagerView.rx.items(cellIdentifier: HomePagerCell.identifier)) {
                 _, poster, cell in
                 cell.imageView?.contentMode = .scaleToFill
-                cell.imageView?.kf.setImage(with: URL(string: poster.pictureURL))
+                cell.imageView?.kf.setImage(
+                    with: URL(string: poster.pictureURL),
+                    completionHandler: { [weak self] result in
+                        guard let self = self else { return }
+                        UIView.animate(withDuration: 0.15) {
+                            self.splashView.alpha = 0
+                        }
+                    }
+                )
             }
             .disposed(by: disposeBag)
         
@@ -158,7 +177,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             forCellWithReuseIdentifier: HomePagerCell.identifier
         )
         pagerView.isInfinite = true
-        pagerView.automaticSlidingInterval = 3.0
+        pagerView.automaticSlidingInterval = 6.0
         pagerView.layer.masksToBounds = true
         pagerView.layer.cornerRadius = 10
     }
@@ -188,6 +207,18 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             forCellWithReuseIdentifier: HomeBestTeamBuildCell.identifier
         )
         bestTeamBuildCollectionView.isScrollEnabled = false
+    }
+    
+    private func prepareSplashView() {
+        guard let tabVC = tabVC else { return }
+        tabVC.view.addSubview(splashView)
+        
+        NSLayoutConstraint.activate([
+            splashView.leadingAnchor.constraint(equalTo: tabVC.view.leadingAnchor),
+            splashView.trailingAnchor.constraint(equalTo: tabVC.view.trailingAnchor),
+            splashView.topAnchor.constraint(equalTo: tabVC.view.topAnchor),
+            splashView.bottomAnchor.constraint(equalTo: tabVC.view.bottomAnchor)
+        ])
     }
 }
 
