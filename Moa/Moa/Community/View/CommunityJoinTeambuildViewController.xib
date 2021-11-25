@@ -326,8 +326,8 @@
                                         <constraint firstAttribute="height" constant="16" id="Cia-VR-2jY"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이든" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-AA-Sqd">
-                                    <rect key="frame" x="37" y="146" width="20.5" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김민정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqK-AA-Sqd">
+                                    <rect key="frame" x="32" y="146" width="30.5" height="16"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="11"/>
                                     <color key="textColor" name="font2"/>
                                     <nil key="highlightedColor"/>
@@ -427,7 +427,7 @@
         <image name="BlackCalendar" width="24" height="24"/>
         <image name="GreenStatus" width="16.5" height="16"/>
         <image name="TestPoster" width="382" height="236"/>
-        <image name="TestProfile1" width="137" height="91"/>
+        <image name="TestProfile1" width="76" height="76"/>
         <image name="WhiteEmptyBookmark" width="16" height="16"/>
         <image name="WhiteEmptyHeart" width="16" height="16"/>
         <namedColor name="2">

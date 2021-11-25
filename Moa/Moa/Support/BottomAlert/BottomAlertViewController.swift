@@ -41,7 +41,7 @@ final class BottomAlertViewController: UIViewController {
     }
     
     private func configureUI() {
-        moaButtonView.titleLabel.text = "닫기"
+        moaButtonView.titleLabel.text = "확인"
         messageTitle.text = message
         prepareAlertView()
     }

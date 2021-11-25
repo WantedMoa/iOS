@@ -28,14 +28,22 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     // MyTeamBuild
     @IBOutlet private weak var myTeamBuildCollectionView: UICollectionView!
     
+    /// innerFirstProfileView
     private let innerFirstProfileImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        imageView.image = UIImage(named: "TestProfile1")
+        imageView.image = UIImage(named: "TestProfile9")
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 32 / 2
         return imageView
     }()
     
+    private lazy var innerFirstProfileView: UIView = {
+        let contentView = generateShadowView(cgRect: innerFirstProfileImageView.frame, radius: 32 / 2)
+        contentView.addSubview(innerFirstProfileImageView)
+        return contentView
+    }()
+    
+    /// innerMatchCountView
     private let innerMatchCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +66,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         return countView
     }()
     
+    /// outterFirstProfileView
     private let outterFirstProfileImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
         imageView.image = UIImage(named: "TestProfile2")
@@ -66,6 +75,13 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         return imageView
     }()
     
+    private lazy var outterFirstProfileView: UIView = {
+        let contentView = generateShadowView(cgRect: outterFirstProfileImageView.frame, radius: 54 / 2)
+        contentView.addSubview(outterFirstProfileImageView)
+        return contentView
+    }()
+    
+    /// outterSecondProfileView
     private let outterSecondProfileImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 42, height: 42))
         imageView.image = UIImage(named: "TestProfile3")
@@ -74,6 +90,13 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         return imageView
     }()
     
+    private lazy var outterSecondProfileView: UIView = {
+        let contentView = generateShadowView(cgRect: outterSecondProfileImageView.frame, radius: 42 / 2)
+        contentView.addSubview(outterSecondProfileImageView)
+        return contentView
+    }()
+    
+    /// outterThirdProfileView
     private let outterThirdProfileImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
         imageView.image = UIImage(named: "TestProfile4")
@@ -82,6 +105,12 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         return imageView
     }()
         
+    private lazy var outterThirdProfileView: UIView = {
+        let contentView = generateShadowView(cgRect: outterThirdProfileImageView.frame, radius: 54 / 2)
+        contentView.addSubview(outterThirdProfileImageView)
+        return contentView
+    }()
+    
     private var currentIndexPath = IndexPath(item: 0, section: 0)
     private var isFirstLoaded = true
 
@@ -121,8 +150,8 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         output.myTeambuilds.drive(myTeamBuildCollectionView.rx.items(
             cellIdentifier: MatchMyTeamBuildCell.identifier,
             cellType: MatchMyTeamBuildCell.self)
-        ) { _, _, _ in
-            
+        ) { _, item, cell in
+            cell.update(data: item)
         }
         .disposed(by: disposeBag)
     }
@@ -153,11 +182,11 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     
     private func prepareProfileView() {
         profileView.backgroundColor = .clear
-        profileView.clipsToBounds = false
-        profileView.layer.shadowColor = UIColor.black.cgColor
-        profileView.layer.shadowOpacity = 0.2
-        profileView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        profileView.layer.shadowRadius = 74 / 2
+        profileView.layer.masksToBounds = false
+        profileView.layer.cornerRadius = 83 / 2
+        profileView.layer.shadowOffset = .zero
+        profileView.layer.shadowRadius = 5
+        profileView.layer.shadowOpacity = 0.3
     }
     
     private func prepareMyTeamBuildCollectionView() {
@@ -250,36 +279,36 @@ extension MatchViewController {
                 isHiddenLayer: false
             ),
             MatchCircleContent(
-                view: innerFirstProfileImageView,
-                radius: 234 / 2,
+                view: innerFirstProfileView,
+                radius: 210 / 2,
                 startAngle: 225,
                 duration: duration,
                 isHiddenLayer: false
             ),
             MatchCircleContent(
                 view: innerMatchCountView,
-                radius: 234 / 2,
+                radius: 210 / 2,
                 startAngle: 45,
                 duration: duration,
                 isHiddenLayer: true
             ),
             MatchCircleContent(
-                view: outterFirstProfileImageView,
-                radius: 336 / 2,
+                view: outterFirstProfileView,
+                radius: 310 / 2,
                 startAngle: -30,
                 duration: duration,
                 isHiddenLayer: false
             ),
             MatchCircleContent(
-                view: outterSecondProfileImageView,
-                radius: 336 / 2,
+                view: outterSecondProfileView,
+                radius: 310 / 2,
                 startAngle: 180,
                 duration: duration,
                 isHiddenLayer: true
             ),
             MatchCircleContent(
-                view: outterThirdProfileImageView,
-                radius: 336 / 2,
+                view: outterThirdProfileView,
+                radius: 310 / 2,
                 startAngle: 95,
                 duration: duration,
                 isHiddenLayer: true
@@ -287,6 +316,17 @@ extension MatchViewController {
         ]
         
         return contents
+    }
+    
+    private func generateShadowView(cgRect: CGRect, radius: CGFloat) -> UIView {
+        let backgroundView = UIView(frame: cgRect)
+        backgroundView.backgroundColor = .clear
+        backgroundView.layer.masksToBounds = false
+        backgroundView.layer.cornerRadius = radius
+        backgroundView.layer.shadowOffset = .zero
+        backgroundView.layer.shadowRadius = 5
+        backgroundView.layer.shadowOpacity = 0.25
+        return backgroundView
     }
 }
 
@@ -308,7 +348,7 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
         
         let indexPath = myTeamBuildCollectionView.indexPathForItem(at: targetPoint) ?? currentIndexPath
         currentIndexPath = indexPath
-            
+        
         myTeamBuildCollectionView.scrollToItem(
             at: indexPath,
             at: .centeredHorizontally,

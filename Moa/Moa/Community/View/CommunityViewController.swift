@@ -50,13 +50,13 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
             .drive(teambuildCollectionView.rx.items(
                 cellIdentifier: CommunityTeamBuildCell.identifier,
                 cellType: CommunityTeamBuildCell.self)
-            ) { _, _, _ in
-                
+            ) { _, item, cell in
+                cell.update(data: item)
             }
             .disposed(by: disposeBag)
         
         output.teambuilds
-            .drive { [weak self] (teambuilds: [String]) in
+            .drive { [weak self] (teambuilds: [TestbestMembers]) in
                 guard let self = self else { return }
                 let height = CGFloat(30 + teambuilds.count * 110)
                 self.teambuildCollectionHeightLayout.constant = height
@@ -65,8 +65,8 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     }
     
     private func bindUI() {
-        teambuildCollectionView.rx.modelSelected(String.self)
-            .subscribe { [weak self] (model: String) in
+        teambuildCollectionView.rx.modelSelected(TestbestMembers.self)
+            .subscribe { [weak self] (model: TestbestMembers) in
                 guard let self = self else { return }
                 let vc = CommunityJoinTeambuildViewController()
                 self.navigationController?.pushViewController(vc, animated: true)

@@ -49,7 +49,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jP-aC-QaF" userLabel="Picker View">
                                     <rect key="frame" x="15" y="29.5" width="94" height="94"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCamera" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-hG-yzc" userLabel="Black Camera">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackCamera" translatesAutoresizingMaskIntoConstraints="NO" id="0jx-hG-yzc" userLabel="Black Camera">
                                             <rect key="frame" x="35" y="35" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="5mc-Vp-AfJ"/>
@@ -97,7 +97,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCaretDown" translatesAutoresizingMaskIntoConstraints="NO" id="5Cq-JJ-KXO">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackCaretDown" translatesAutoresizingMaskIntoConstraints="NO" id="5Cq-JJ-KXO">
                                             <rect key="frame" x="236.5" y="0.0" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="0Xk-aH-EjB"/>
@@ -165,7 +165,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCaretDown" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-bI-OeI">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackCaretDown" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-bI-OeI">
                                             <rect key="frame" x="194.5" y="0.0" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="7p3-im-nai"/>
@@ -210,7 +210,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCaretDown" translatesAutoresizingMaskIntoConstraints="NO" id="JRa-7J-Lrh">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackCaretDown" translatesAutoresizingMaskIntoConstraints="NO" id="JRa-7J-Lrh">
                                             <rect key="frame" x="194.5" y="0.0" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="Fc3-8P-RFE"/>
@@ -361,8 +361,8 @@
     </objects>
     <resources>
         <image name="BlackCalendar" width="24" height="24"/>
-        <image name="BlackCamera" width="24" height="24"/>
-        <image name="BlackCaretDown" width="24" height="24"/>
+        <image name="blackCamera" width="24" height="24"/>
+        <image name="blackCaretDown" width="24" height="24"/>
         <namedColor name="3">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

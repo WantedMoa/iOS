@@ -87,13 +87,13 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             .drive(bestTeamBuildCollectionView.rx.items(
                 cellIdentifier: HomeBestTeamBuildCell.identifier,
                 cellType: HomeBestTeamBuildCell.self)
-            ) { _, _, _ in
-                
+            ) { _, item, cell in
+                cell.update(data: item)
             }
             .disposed(by: disposeBag)
         
         output.bestTeamBuilds
-            .drive { [weak self] (posters: [String]) in
+            .drive { [weak self] (posters: [TestbestMembers]) in
                 guard let self = self else { return }
                 let height = CGFloat(30 + posters.count * 100)
                 self.bestTeamBuildCollectionViewHeight.constant = height

@@ -28,17 +28,17 @@
                     <rect key="frame" x="0.0" y="59" width="414" height="803"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3I-9q-bbn" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="521"/>
                             <subviews>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6UI-UN-xon">
                                     <rect key="frame" x="10" y="0.0" width="394" height="51"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Bo-chr">
-                                    <rect key="frame" x="0.0" y="121" width="414" height="775"/>
+                                    <rect key="frame" x="0.0" y="121" width="414" height="400"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="775" id="tJR-PM-zkd"/>
+                                        <constraint firstAttribute="height" constant="400" id="tJR-PM-zkd"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="gD1-Uq-BTG">
                                         <size key="itemSize" width="128" height="128"/>
@@ -103,7 +103,6 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="b3I-9q-bbn" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="250" id="7g8-f7-Otw"/>
                 <constraint firstItem="tGB-1W-Sbc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8mK-Hz-uqS"/>
                 <constraint firstItem="tGB-1W-Sbc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="DWx-CE-9jf"/>
                 <constraint firstItem="b3I-9q-bbn" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Ewk-5a-2q9"/>

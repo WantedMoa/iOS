@@ -85,7 +85,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-DO-dHC" userLabel="Profile View">
                                     <rect key="frame" x="16" y="19" width="382" height="56"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestProfile1" translatesAutoresizingMaskIntoConstraints="NO" id="bxx-RH-Hqa">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeeYu" translatesAutoresizingMaskIntoConstraints="NO" id="bxx-RH-Hqa">
                                             <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="56" id="eXw-Px-w0T"/>
@@ -281,10 +281,10 @@
     </objects>
     <resources>
         <image name="GreenStatus" width="16.5" height="16"/>
+        <image name="LeeYu" width="74" height="74"/>
         <image name="MoaIcon" width="76" height="40"/>
         <image name="MoaNotification" width="24" height="24"/>
         <image name="MoaSearch" width="24" height="24"/>
-        <image name="TestProfile1" width="137" height="91"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

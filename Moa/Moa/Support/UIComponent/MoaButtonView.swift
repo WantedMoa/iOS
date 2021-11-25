@@ -10,7 +10,8 @@ import UIKit
 @IBDesignable
 final class MoaButtonView: UIView, IdentifierType {
     @IBOutlet private(set) weak var titleLabel: UILabel!
-    
+    @IBOutlet private(set) weak var contentView: UIView!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initFromNib()

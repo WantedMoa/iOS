@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="SettingDetailMyTeambuildCell" customModule="Moa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="270"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="270"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ijg-y2-DsU" userLabel="TeamInfo StackView">
+                        <rect key="frame" x="20" y="14" width="214.5" height="39.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원티드 해커톤해, 커리어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YD-TW-TdE">
+                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                <color key="textColor" name="font1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 15일에 공고 완료 되어 만들어진 팀입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLu-Cj-1Lu">
+                                <rect key="frame" x="0.0" y="23.5" width="214.5" height="16"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="11"/>
+                                <color key="textColor" name="font2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="wmh-1f-cKj">
+                        <rect key="frame" x="20" y="66.5" width="41.5" height="37"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P72-cL-MTq">
+                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="gmM-qE-Y9F"/>
+                        </constraints>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcT-RP-O7H" customClass="MoaButtonView" customModule="Moa" customModuleProvider="target">
+                        <rect key="frame" x="14" y="192" width="327" height="56"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="PRO-fL-0dH"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OptionsVertical" translatesAutoresizingMaskIntoConstraints="NO" id="SoM-09-VAT">
+                        <rect key="frame" x="329" y="14" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="CKc-e5-h7d"/>
+                            <constraint firstAttribute="height" constant="24" id="LnB-Yz-7Ti"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="hcT-RP-O7H" secondAttribute="trailing" constant="14" id="5bD-Hw-icU"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="SoM-09-VAT" secondAttribute="trailing" constant="2" id="8hN-lv-OPz"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="hcT-RP-O7H" secondAttribute="bottom" constant="22" id="Y3f-cT-aTz"/>
+                <constraint firstItem="ijg-y2-DsU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="Zik-zd-jyF"/>
+                <constraint firstItem="ijg-y2-DsU" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="fZf-5i-Cb2"/>
+                <constraint firstItem="wmh-1f-cKj" firstAttribute="top" secondItem="FLu-Cj-1Lu" secondAttribute="bottom" constant="13" id="hUA-Um-fJ3"/>
+                <constraint firstItem="wmh-1f-cKj" firstAttribute="leading" secondItem="ijg-y2-DsU" secondAttribute="leading" id="mTG-nc-FSy"/>
+                <constraint firstItem="SoM-09-VAT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="owi-Lk-mhc"/>
+                <constraint firstItem="hcT-RP-O7H" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="14" id="uUV-Rk-v8Q"/>
+            </constraints>
+            <size key="customSize" width="355" height="270"/>
+            <connections>
+                <outlet property="moaButtonView" destination="hcT-RP-O7H" id="QdR-Ao-QgY"/>
+                <outlet property="subTitleLabel" destination="FLu-Cj-1Lu" id="7xU-Oo-ibM"/>
+                <outlet property="teamMemberStackView" destination="wmh-1f-cKj" id="PyT-Lv-ZhG"/>
+                <outlet property="titleLabel" destination="6YD-TW-TdE" id="K42-NU-tgX"/>
+            </connections>
+            <point key="canvasLocation" x="358.69565217391306" y="161.38392857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="OptionsVertical" width="24" height="24"/>
+        <namedColor name="font1">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font2">
+            <color red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

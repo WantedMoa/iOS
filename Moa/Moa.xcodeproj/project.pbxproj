@@ -66,6 +66,23 @@
 		3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */; };
 		3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */; };
 		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
+		3C9F2176274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F2174274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift */; };
+		3C9F2177274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F2175274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib */; };
+		3CB0607C274E4D4000FF4A6D /* UIFont+NotoSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */; };
+		3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */; };
+		3CB06080274E5D8100FF4A6D /* SettingProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */; };
+		3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */; };
+		3CB06084274E5D8B00FF4A6D /* SettingMyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */; };
+		3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */; };
+		3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */; };
+		3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */; };
+		3CC18A53274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */; };
+		3CC18A54274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */; };
+		3CC18A57274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */; };
+		3CC18A58274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */; };
+		3CC18A5B274EA3CD007C02F4 /* SettingTeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */; };
+		3CC18A5C274EA3CD007C02F4 /* SettingTeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */; };
+		3CC18A5E274EA676007C02F4 /* SettingTeamMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */; };
 		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
 		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
 		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
@@ -135,6 +152,23 @@
 		3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailBestTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildViewModel.swift; sourceTree = "<group>"; };
 		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
+		3C9F2174274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReviewTeamMemberViewController.swift; sourceTree = "<group>"; };
+		3C9F2175274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingReviewTeamMemberViewController.xib; sourceTree = "<group>"; };
+		3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+NotoSans.swift"; sourceTree = "<group>"; };
+		3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
+		3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileViewController.xib; sourceTree = "<group>"; };
+		3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyPageViewController.swift; sourceTree = "<group>"; };
+		3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingMyPageViewController.xib; sourceTree = "<group>"; };
+		3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyPageViewModel.swift; sourceTree = "<group>"; };
+		3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyTeambuildCell.swift; sourceTree = "<group>"; };
+		3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingMyTeambuildCell.xib; sourceTree = "<group>"; };
+		3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailMyTeambuildViewController.swift; sourceTree = "<group>"; };
+		3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDetailMyTeambuildViewController.xib; sourceTree = "<group>"; };
+		3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailMyTeambuildCell.swift; sourceTree = "<group>"; };
+		3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDetailMyTeambuildCell.xib; sourceTree = "<group>"; };
+		3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTeamMemberViewController.swift; sourceTree = "<group>"; };
+		3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTeamMemberViewController.xib; sourceTree = "<group>"; };
+		3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTeamMemberViewModel.swift; sourceTree = "<group>"; };
 		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
 		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
 		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +265,7 @@
 			children = (
 				3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */,
 				3C1DEDB9274CE44500F0EA58 /* UIView+RoundConer.swift */,
+				3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -391,8 +426,9 @@
 		3C80B1992742665700DDF82F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				3C80B1952742665200DDF82F /* SettingViewController.swift */,
-				3C80B1962742665200DDF82F /* SettingViewController.xib */,
+				3CC18A48274E915E007C02F4 /* View */,
+				3CC18A4B274E9171007C02F4 /* ViewModel */,
+				3CC18A50274E9352007C02F4 /* ReuseView */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -403,6 +439,45 @@
 				3C80B1A0274343A900DDF82F /* BestMemberSectionModel.swift */,
 			);
 			path = SectionModel;
+			sourceTree = "<group>";
+		};
+		3CC18A48274E915E007C02F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C80B1952742665200DDF82F /* SettingViewController.swift */,
+				3C80B1962742665200DDF82F /* SettingViewController.xib */,
+				3CB06081274E5D8B00FF4A6D /* SettingMyPageViewController.swift */,
+				3CB06082274E5D8B00FF4A6D /* SettingMyPageViewController.xib */,
+				3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */,
+				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
+				3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */,
+				3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */,
+				3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */,
+				3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */,
+				3C9F2174274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift */,
+				3C9F2175274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CC18A4B274E9171007C02F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */,
+				3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3CC18A50274E9352007C02F4 /* ReuseView */ = {
+			isa = PBXGroup;
+			children = (
+				3CC18A4C274E926A007C02F4 /* SettingMyTeambuildCell.swift */,
+				3CC18A4D274E926A007C02F4 /* SettingMyTeambuildCell.xib */,
+				3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */,
+				3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */,
+			);
+			path = ReuseView;
 			sourceTree = "<group>";
 		};
 		63B86CDC2F0F4E4043791065 /* Pods */ = {
@@ -485,22 +560,29 @@
 				3C80B16C2741FD9600DDF82F /* NotoSansKR-Light.otf in Resources */,
 				3C80B16D2741FD9600DDF82F /* NotoSansKR-Bold.otf in Resources */,
 				3C80B18E2742660600DDF82F /* CommunityViewController.xib in Resources */,
+				3CC18A58274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib in Resources */,
 				3C1735852745E1C800C9895E /* MatchMyTeamBuildCell.xib in Resources */,
+				3CB06084274E5D8B00FF4A6D /* SettingMyPageViewController.xib in Resources */,
+				3CC18A54274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib in Resources */,
 				3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */,
 				3C80B1822742349400DDF82F /* HomeBestMemberCell.xib in Resources */,
 				3C2DD435274CA316007DBC58 /* MoaButtonView.xib in Resources */,
 				3C80B1692741FD9600DDF82F /* NotoSansKR-Medium.otf in Resources */,
 				3C1735902746021E00C9895E /* CommunityTeamBuildCell.xib in Resources */,
 				3C80B1582741FAE900DDF82F /* LaunchScreen.storyboard in Resources */,
+				3C9F2177274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib in Resources */,
 				3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */,
 				3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */,
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
+				3CC18A5C274EA3CD007C02F4 /* SettingTeamMemberViewController.xib in Resources */,
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
+				3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* MatchViewController.xib in Resources */,
 				3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */,
 				3C80B1B02743704400DDF82F /* HomeBestTeamBuildViewController.xib in Resources */,
 				3C80B16B2741FD9600DDF82F /* NotoSansKR-Black.otf in Resources */,
 				3CD639CB274DFE3900114CB4 /* BottomAlertViewController.xib in Resources */,
+				3CB06080274E5D8100FF4A6D /* SettingProfileViewController.xib in Resources */,
 				3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */,
 				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* HomeBestMemberViewController.xib in Resources */,
@@ -562,10 +644,13 @@
 			files = (
 				3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */,
 				3C80B17B2742241D00DDF82F /* HomePagerCell.swift in Sources */,
+				3CB0607C274E4D4000FF4A6D /* UIFont+NotoSans.swift in Sources */,
+				3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */,
 				3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */,
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
+				3CC18A5E274EA676007C02F4 /* SettingTeamMemberViewModel.swift in Sources */,
 				3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */,
@@ -573,20 +658,26 @@
 				3C1DEDBC274CE7B600F0EA58 /* BackgroundBlur.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
+				3C9F2176274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift in Sources */,
 				3C1DEDB7274CE0FD00F0EA58 /* BottomDatePickerViewController.swift in Sources */,
 				3C1DEDC1274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift in Sources */,
 				3C80B1A4274346CB00DDF82F /* HomeBestMemberViewModel.swift in Sources */,
 				3C2DD438274CB125007DBC58 /* CommunityRegisterTeambuildViewController.swift in Sources */,
+				3CC18A57274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift in Sources */,
 				3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */,
 				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
+				3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */,
 				3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */,
+				3CC18A53274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift in Sources */,
 				3C80B1B32743765000DDF82F /* HomeDetailBestTeamBuildCell.swift in Sources */,
 				3C80B17E274225F100DDF82F /* IdentifierType.swift in Sources */,
 				3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */,
 				3C80B1922742664000DDF82F /* MatchViewController.swift in Sources */,
 				3C1DEDBA274CE44500F0EA58 /* UIView+RoundConer.swift in Sources */,
+				3CB06083274E5D8B00FF4A6D /* SettingMyPageViewController.swift in Sources */,
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
+				3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */,
 				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
 				3C80B18D2742660600DDF82F /* CommunityViewController.swift in Sources */,
@@ -594,6 +685,7 @@
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
 				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
+				3CC18A5B274EA3CD007C02F4 /* SettingTeamMemberViewController.swift in Sources */,
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 				3C80B1AF2743704400DDF82F /* HomeBestTeamBuildViewController.swift in Sources */,
 				3C1735842745E1C700C9895E /* MatchMyTeamBuildCell.swift in Sources */,
@@ -665,7 +757,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -720,7 +812,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -737,7 +829,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
@@ -745,6 +837,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -769,7 +862,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
@@ -777,6 +870,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "팀 빌딩을 위한 공모전 이미지를 추가하기 위해서 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoaButtonView" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="2lm-v7-AhF" id="368-cu-LiY"/>
                 <outlet property="titleLabel" destination="4He-pI-QZq" id="WKY-MV-g7H"/>
             </connections>
         </placeholder>
@@ -23,17 +24,29 @@
             <rect key="frame" x="0.0" y="0.0" width="251" height="87"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지원하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4He-pI-QZq">
-                    <rect key="frame" x="96" y="32" width="59" height="23.5"/>
-                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
-                    <color key="textColor" name="2"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lm-v7-AhF">
+                    <rect key="frame" x="0.0" y="0.0" width="251" height="87"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지원하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4He-pI-QZq">
+                            <rect key="frame" x="96" y="32" width="59" height="23.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                            <color key="textColor" name="2"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="4He-pI-QZq" firstAttribute="centerY" secondItem="2lm-v7-AhF" secondAttribute="centerY" id="lDX-8A-Lii"/>
+                        <constraint firstItem="4He-pI-QZq" firstAttribute="centerX" secondItem="2lm-v7-AhF" secondAttribute="centerX" id="tYh-aT-hqR"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="4He-pI-QZq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9qN-Ql-X7g"/>
-                <constraint firstItem="4He-pI-QZq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X0j-ZX-kKt"/>
+                <constraint firstItem="2lm-v7-AhF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CHa-GU-JRQ"/>
+                <constraint firstItem="2lm-v7-AhF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I57-YT-Z6u"/>
+                <constraint firstAttribute="bottom" secondItem="2lm-v7-AhF" secondAttribute="bottom" id="ady-wd-Po6"/>
+                <constraint firstAttribute="trailing" secondItem="2lm-v7-AhF" secondAttribute="trailing" id="qPV-yD-dXX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="26.811594202898554" y="-203.90625"/>
