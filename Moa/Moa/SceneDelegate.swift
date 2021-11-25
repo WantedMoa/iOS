@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let tabVC = MoaTabBarController()
         let testVC = LoginViewController()
-        window?.rootViewController = testVC
+        window?.rootViewController = tabVC
         window?.makeKeyAndVisible()
     }
 }

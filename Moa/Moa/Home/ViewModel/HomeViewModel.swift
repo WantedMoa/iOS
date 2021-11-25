@@ -28,7 +28,7 @@ final class HomeViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let posters = BehaviorRelay<[String]>(
-            value: ["TestPoster1", "TestPoster2", "TestPoster3"]
+            value: ["TestPoster1", "Test1", "Test2"]
         )
         let pagerControlTitle = BehaviorRelay<String>(value: "1 / \(posters.value.count)")
         let bestMembers = BehaviorRelay<[HomeBestMember]>(

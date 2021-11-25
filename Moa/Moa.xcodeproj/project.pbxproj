@@ -21,6 +21,9 @@
 		3C1DEDBE274CE7CD00F0EA58 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDBD274CE7CD00F0EA58 /* CustomAlert.swift */; };
 		3C1DEDC1274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1DEDC0274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift */; };
 		3C24042A274FB0480011333C /* String+EmailRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240429274FB0480011333C /* String+EmailRegex.swift */; };
+		3C24042D274FBE7C0011333C /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24042B274FBE7C0011333C /* RegisterEmailViewController.swift */; };
+		3C24042E274FBE7C0011333C /* RegisterEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C24042C274FBE7C0011333C /* RegisterEmailViewController.xib */; };
+		3C240430274FC24B0011333C /* Acumin-BdPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C24042F274FC24B0011333C /* Acumin-BdPro.otf */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -111,6 +114,9 @@
 		3C1DEDBD274CE7CD00F0EA58 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		3C1DEDC0274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRegisterTeambuildViewModel.swift; sourceTree = "<group>"; };
 		3C240429274FB0480011333C /* String+EmailRegex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EmailRegex.swift"; sourceTree = "<group>"; };
+		3C24042B274FBE7C0011333C /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
+		3C24042C274FBE7C0011333C /* RegisterEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterEmailViewController.xib; sourceTree = "<group>"; };
+		3C24042F274FC24B0011333C /* Acumin-BdPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Acumin-BdPro.otf"; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 				3C80B1672741FD9600DDF82F /* NotoSansKR-Bold.otf */,
 				3C80B1662741FD9600DDF82F /* NotoSansKR-Light.otf */,
 				3C80B1632741FD9600DDF82F /* NotoSansKR-Medium.otf */,
+				3C24042F274FC24B0011333C /* Acumin-BdPro.otf */,
 				3C80B1642741FD9600DDF82F /* NotoSansKR-Regular.otf */,
 				3C80B1682741FD9600DDF82F /* NotoSansKR-Thin.otf */,
 			);
@@ -463,6 +470,8 @@
 			children = (
 				3C9F2178274F78D700C3C606 /* LoginViewController.swift */,
 				3C9F2179274F78D700C3C606 /* LoginViewController.xib */,
+				3C24042B274FBE7C0011333C /* RegisterEmailViewController.swift */,
+				3C24042C274FBE7C0011333C /* RegisterEmailViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -603,6 +612,7 @@
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
 				3CC18A5C274EA3CD007C02F4 /* SettingTeamMemberViewController.xib in Resources */,
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
+				3C24042E274FBE7C0011333C /* RegisterEmailViewController.xib in Resources */,
 				3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* MatchViewController.xib in Resources */,
 				3C1DEDB8274CE0FD00F0EA58 /* BottomDatePickerViewController.xib in Resources */,
@@ -614,6 +624,7 @@
 				3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */,
 				3C80B1AC274350EC00DDF82F /* HomeBestMemberReusableView.xib in Resources */,
 				3C80B19D2743338E00DDF82F /* HomeBestMemberViewController.xib in Resources */,
+				3C240430274FC24B0011333C /* Acumin-BdPro.otf in Resources */,
 				3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */,
 				3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */,
 				3C80B1722742006100DDF82F /* HomeViewController.xib in Resources */,
@@ -718,6 +729,7 @@
 				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
 				3CC18A5B274EA3CD007C02F4 /* SettingTeamMemberViewController.swift in Sources */,
+				3C24042D274FBE7C0011333C /* RegisterEmailViewController.swift in Sources */,
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 				3C80B1AF2743704400DDF82F /* HomeBestTeamBuildViewController.swift in Sources */,
 				3C1735842745E1C700C9895E /* MatchMyTeamBuildCell.swift in Sources */,
@@ -861,7 +873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
@@ -894,7 +906,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
