@@ -30,7 +30,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     
     private let innerFirstProfileImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        imageView.image = UIImage(named: "TestProfile1")
+        imageView.image = UIImage(named: "TestProfile9")
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 32 / 2
         return imageView
@@ -251,35 +251,35 @@ extension MatchViewController {
             ),
             MatchCircleContent(
                 view: innerFirstProfileImageView,
-                radius: 234 / 2,
+                radius: 210 / 2,
                 startAngle: 225,
                 duration: duration,
                 isHiddenLayer: false
             ),
             MatchCircleContent(
                 view: innerMatchCountView,
-                radius: 234 / 2,
+                radius: 210 / 2,
                 startAngle: 45,
                 duration: duration,
                 isHiddenLayer: true
             ),
             MatchCircleContent(
                 view: outterFirstProfileImageView,
-                radius: 336 / 2,
+                radius: 310 / 2,
                 startAngle: -30,
                 duration: duration,
                 isHiddenLayer: false
             ),
             MatchCircleContent(
                 view: outterSecondProfileImageView,
-                radius: 336 / 2,
+                radius: 310 / 2,
                 startAngle: 180,
                 duration: duration,
                 isHiddenLayer: true
             ),
             MatchCircleContent(
                 view: outterThirdProfileImageView,
-                radius: 336 / 2,
+                radius: 310 / 2,
                 startAngle: 95,
                 duration: duration,
                 isHiddenLayer: true

@@ -78,6 +78,9 @@
 		3CC18A54274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */; };
 		3CC18A57274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */; };
 		3CC18A58274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */; };
+		3CC18A5B274EA3CD007C02F4 /* SettingTeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */; };
+		3CC18A5C274EA3CD007C02F4 /* SettingTeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */; };
+		3CC18A5E274EA676007C02F4 /* SettingTeamMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */; };
 		3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */; };
 		3CD639C7274D3D6500114CB4 /* CommunityUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */; };
 		3CD639CA274DFE3900114CB4 /* BottomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */; };
@@ -159,6 +162,9 @@
 		3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDetailMyTeambuildViewController.xib; sourceTree = "<group>"; };
 		3CC18A55274E9E36007C02F4 /* SettingDetailMyTeambuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailMyTeambuildCell.swift; sourceTree = "<group>"; };
 		3CC18A56274E9E36007C02F4 /* SettingDetailMyTeambuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDetailMyTeambuildCell.xib; sourceTree = "<group>"; };
+		3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTeamMemberViewController.swift; sourceTree = "<group>"; };
+		3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTeamMemberViewController.xib; sourceTree = "<group>"; };
+		3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTeamMemberViewModel.swift; sourceTree = "<group>"; };
 		3CD639C4274D3D6500114CB4 /* CommunityUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewController.swift; sourceTree = "<group>"; };
 		3CD639C5274D3D6500114CB4 /* CommunityUserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityUserProfileViewController.xib; sourceTree = "<group>"; };
 		3CD639C8274DFE3900114CB4 /* BottomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomAlertViewController.swift; sourceTree = "<group>"; };
@@ -442,6 +448,8 @@
 				3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */,
 				3CC18A51274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.swift */,
 				3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */,
+				3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */,
+				3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -450,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */,
+				3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -558,6 +567,7 @@
 				3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */,
 				3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */,
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
+				3CC18A5C274EA3CD007C02F4 /* SettingTeamMemberViewController.xib in Resources */,
 				3C80B186274253BA00DDF82F /* HomeBestTeamBuildCell.xib in Resources */,
 				3CC18A4F274E926A007C02F4 /* SettingMyTeambuildCell.xib in Resources */,
 				3C80B1932742664000DDF82F /* MatchViewController.xib in Resources */,
@@ -633,6 +643,7 @@
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
+				3CC18A5E274EA676007C02F4 /* SettingTeamMemberViewModel.swift in Sources */,
 				3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */,
@@ -666,6 +677,7 @@
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
 				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
+				3CC18A5B274EA3CD007C02F4 /* SettingTeamMemberViewController.swift in Sources */,
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 				3C80B1AF2743704400DDF82F /* HomeBestTeamBuildViewController.swift in Sources */,
 				3C1735842745E1C700C9895E /* MatchMyTeamBuildCell.swift in Sources */,
@@ -809,7 +821,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
@@ -842,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
