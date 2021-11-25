@@ -90,7 +90,7 @@ final class CommunityJoinTeambuildViewController: UIViewController {
               
               let scrollOffset: CGFloat = keyboardVisibleHeight > 0 ? 150 : -150
               self.scrollView.contentOffset.y += scrollOffset
-
+              
               UIView.animate(withDuration: 0.1) {
                   self.view.layoutIfNeeded()
               }

@@ -116,7 +116,7 @@ extension HomeBestMemberViewController {
             section.boundarySupplementaryItems = [sectionHeader]
             section.orthogonalScrollingBehavior = .none
             // section.orthogonalScrollingBehavior = .groupPaging
-            section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
+            section.contentInsets = .init(top: 16, leading: 16, bottom: 50, trailing: 16)
             return section
         }
         

@@ -9,12 +9,14 @@ import UIKit
 
 import RxCocoa
 import RxGesture
+import RxKeyboard
 import RxSwift
 
 typealias PickerDelegate = UIImagePickerControllerDelegate & UINavigationControllerDelegate
 typealias MoaSupport = UnderLineNavBar & CustomAlert & IdentifierType
 
 final class CommunityRegisterTeambuildViewController: UIViewController, MoaSupport {
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var photoSelectView: UIView!
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var competitionTitleTextField: UITextField!
@@ -144,6 +146,28 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
                 }
             }
             .disposed(by: disposeBag)
+        
+        view.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.view.endEditing(true)
+            }
+            .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+          .drive(onNext: { [weak self] keyboardVisibleHeight in
+              guard let self = self else { return }
+              guard self.teambuildContentTextView.isFirstResponder else { return }
+              
+              let scrollOffset: CGFloat = keyboardVisibleHeight > 0 ? 170 : -170
+              self.scrollView.contentOffset.y += scrollOffset
+              
+              UIView.animate(withDuration: 0.1) {
+                  self.view.layoutIfNeeded()
+              }
+          })
+          .disposed(by: disposeBag)
     }
 
     private func configureUI() {

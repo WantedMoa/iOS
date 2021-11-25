@@ -268,7 +268,7 @@ extension MatchViewController {
     }
     
     private func generateCircleContents() -> [MatchCircleContent] {
-        let duration: CGFloat = 8
+        let duration: CGFloat = 6
         
         let contents = [
             MatchCircleContent(

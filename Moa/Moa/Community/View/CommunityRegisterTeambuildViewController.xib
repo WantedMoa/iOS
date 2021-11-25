@@ -27,6 +27,7 @@
                 <outlet property="competitionTitleTextField" destination="rEg-e1-wLJ" id="pNu-ud-Tuk"/>
                 <outlet property="photoImageView" destination="ez7-gj-A1T" id="Wom-NS-Ggx"/>
                 <outlet property="photoSelectView" destination="9jP-aC-QaF" id="wBh-A0-Yfa"/>
+                <outlet property="scrollView" destination="CgH-Ec-gUx" id="izB-ZX-f27"/>
                 <outlet property="tagStackView" destination="X0I-cW-Ktl" id="A4A-QS-oJi"/>
                 <outlet property="teambuildContentPlaceholderLabel" destination="xtJ-Sg-2YV" id="Wb3-yx-YBZ"/>
                 <outlet property="teambuildContentTextView" destination="1c4-gq-4tO" id="phv-bn-oav"/>
@@ -73,7 +74,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모집 마감 날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4B-mx-xm1">
-                                    <rect key="frame" x="137" y="29.5" width="79.5" height="19"/>
+                                    <rect key="frame" x="137" y="43.5" width="79.5" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="VII-rG-XAV"/>
                                     </constraints>
@@ -82,7 +83,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EK8-Ns-DCg" userLabel="Date Stack View">
-                                    <rect key="frame" x="137.5" y="70.5" width="260.5" height="24"/>
+                                    <rect key="frame" x="137.5" y="82.5" width="260.5" height="24"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="sXv-l8-L8v">
                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -110,7 +111,7 @@
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrC-bd-44j" userLabel="Under Line View">
-                                    <rect key="frame" x="137.5" y="102.5" width="260.5" height="1"/>
+                                    <rect key="frame" x="137.5" y="114.5" width="260.5" height="1"/>
                                     <color key="backgroundColor" name="4"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="abh-za-oVc"/>
@@ -293,7 +294,7 @@
                                 <constraint firstItem="Dgb-1F-gcI" firstAttribute="leading" secondItem="t9m-nC-NTG" secondAttribute="leading" constant="16" id="DEe-cK-Q8g"/>
                                 <constraint firstItem="HrC-bd-44j" firstAttribute="leading" secondItem="EK8-Ns-DCg" secondAttribute="leading" id="E0P-UR-8OA"/>
                                 <constraint firstItem="73o-x2-hng" firstAttribute="leading" secondItem="t9m-nC-NTG" secondAttribute="leading" constant="16" id="FUR-hI-7OK"/>
-                                <constraint firstItem="EK8-Ns-DCg" firstAttribute="top" secondItem="U4B-mx-xm1" secondAttribute="bottom" constant="22" id="Hfl-yd-uJG"/>
+                                <constraint firstItem="EK8-Ns-DCg" firstAttribute="top" secondItem="U4B-mx-xm1" secondAttribute="bottom" constant="20" id="Hfl-yd-uJG"/>
                                 <constraint firstItem="d40-f8-bEj" firstAttribute="top" secondItem="xp2-DQ-arf" secondAttribute="bottom" constant="50" id="L16-g4-LxJ"/>
                                 <constraint firstAttribute="trailing" secondItem="0bx-GJ-vmd" secondAttribute="trailing" constant="16" id="Mv8-9c-c3R"/>
                                 <constraint firstItem="8aG-nw-ZoK" firstAttribute="leading" secondItem="Dgb-1F-gcI" secondAttribute="leading" id="NVd-Jl-Le4"/>
@@ -317,7 +318,7 @@
                                 <constraint firstItem="7oi-0a-Vbp" firstAttribute="trailing" secondItem="rEg-e1-wLJ" secondAttribute="trailing" id="mAv-nl-odM"/>
                                 <constraint firstItem="0bx-GJ-vmd" firstAttribute="top" secondItem="1c4-gq-4tO" secondAttribute="bottom" constant="24.5" id="mRa-jG-4oN"/>
                                 <constraint firstItem="DcS-fy-Jl6" firstAttribute="leading" secondItem="t9m-nC-NTG" secondAttribute="leading" constant="16" id="n4C-qV-JMF"/>
-                                <constraint firstItem="U4B-mx-xm1" firstAttribute="top" secondItem="ez7-gj-A1T" secondAttribute="top" id="ota-Ze-rlg"/>
+                                <constraint firstItem="U4B-mx-xm1" firstAttribute="top" secondItem="ez7-gj-A1T" secondAttribute="top" constant="14" id="ota-Ze-rlg"/>
                                 <constraint firstItem="7oi-0a-Vbp" firstAttribute="leading" secondItem="rEg-e1-wLJ" secondAttribute="leading" id="p7O-sD-BWL"/>
                                 <constraint firstItem="8aG-nw-ZoK" firstAttribute="trailing" secondItem="Dgb-1F-gcI" secondAttribute="trailing" id="pnp-uS-qmo"/>
                                 <constraint firstItem="X0I-cW-Ktl" firstAttribute="top" secondItem="jKH-pf-W6E" secondAttribute="bottom" constant="16.5" id="ptn-4U-ig6"/>
