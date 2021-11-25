@@ -1,18 +1,17 @@
 //
-//  RegisterEmailViewController.swift
+//  RegisterPasswordViewController.swift
 //  Moa
 //
-//  Created by won heo on 2021/11/25.
+//  Created by won heo on 2021/11/26.
 //
 
 import UIKit
 
-final class RegisterEmailViewController: UIViewController {
+final class RegisterPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
 }
