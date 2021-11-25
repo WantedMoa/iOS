@@ -9,6 +9,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import RxKeyboard
 import RxGesture
 
 final class SettingReviewTeamMemberViewController: UIViewController {
@@ -19,6 +20,7 @@ final class SettingReviewTeamMemberViewController: UIViewController {
     @IBOutlet private weak var reviewSilder: UISlider!
     @IBOutlet private weak var moaButtonView: MoaButtonView!
     @IBOutlet private weak var dismissImageView: UIImageView!
+    @IBOutlet private weak var contentViewBottomHeight: NSLayoutConstraint!
     
     private let disposeBag = DisposeBag()
     
@@ -69,6 +71,25 @@ final class SettingReviewTeamMemberViewController: UIViewController {
             .map { !($0?.isEmpty ?? true) }
             .bind(to: reviewPlaceholder.rx.isHidden)
             .disposed(by: disposeBag)
+        
+        view.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.reviewTextView.resignFirstResponder()
+            }
+            .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+          .drive(onNext: { [weak self] keyboardVisibleHeight in
+              guard let self = self else { return }
+              self.contentViewBottomHeight.constant = keyboardVisibleHeight
+              
+              UIView.animate(withDuration: 0.1) {
+                  self.view.layoutIfNeeded()
+              }
+          })
+          .disposed(by: disposeBag)
     }
     
     private func prepareProfileImageView() {

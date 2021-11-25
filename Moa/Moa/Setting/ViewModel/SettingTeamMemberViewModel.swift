@@ -23,7 +23,7 @@ final class SettingTeamMemberViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let dummy1 = [
-            (profileImage: "TestProfile2", name: "김원영"),
+            (profileImage: "TestProfile12", name: "이성민"),
             (profileImage: "TestProfile3", name: "김유진"),
             (profileImage: "TestProfile4", name: "노기태"),
             (profileImage: "TestProfile5", name: "송나영"),
