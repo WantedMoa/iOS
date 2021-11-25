@@ -31,7 +31,7 @@ final class SettingTeamMemberViewModel: ViewModelType {
         ]
         
         let sections = BehaviorRelay<[BestMemberSectionModel]>(value: [
-            .projectManager(items: dummy1)
+            // .projectManager(items: dummy1)
         ])
         
         return Output(

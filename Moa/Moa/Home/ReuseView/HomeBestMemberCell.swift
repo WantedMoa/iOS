@@ -25,6 +25,12 @@ final class HomeBestMemberCell: UICollectionViewCell, IdentifierType {
         profileStatusImageView.isHidden = isHiddenStatus
     }
     
+    func update(by homePopularUser: HomePopularUsersDetail, isHiddenStatus: Bool = true) {
+        profileImageView.kf.setImage(with: URL(string: homePopularUser.profileImageURL))
+        nameLabel.text = homePopularUser.name
+        profileStatusImageView.isHidden = isHiddenStatus
+    }
+    
     func update(by homeBestMember: HomeBestMember, isHiddenStatus: Bool = true) {
         profileImageView.image = UIImage(named: homeBestMember.profileImage)
         nameLabel.text = homeBestMember.name

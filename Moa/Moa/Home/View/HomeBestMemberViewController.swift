@@ -16,9 +16,12 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
     
     // ViewModel
-    private lazy var input = HomeBestMemberViewModel.Input()
+    private lazy var input = HomeBestMemberViewModel.Input(
+        fetchHomePopularUsersDetail: fetchHomePopularUsersDetail.asSignal()
+    )
     private lazy var output = viewModel.transform(input: input)
     
+    private let fetchHomePopularUsersDetail = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -37,6 +40,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
         super.viewDidLoad()
         configureUI()
         bind()
+        fetchHomePopularUsersDetail.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {

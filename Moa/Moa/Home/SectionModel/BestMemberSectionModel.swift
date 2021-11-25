@@ -12,14 +12,14 @@ import RxCocoa
 import RxSwift
 
 enum BestMemberSectionModel {
-    case projectManager(items: [HomeBestMember])
-    case programmer(items: [HomeBestMember])
-    case productDesigner(items: [HomeBestMember])
-    case designer(items: [HomeBestMember])
+    case projectManager(items: [HomePopularUsersDetail])
+    case programmer(items: [HomePopularUsersDetail])
+    case productDesigner(items: [HomePopularUsersDetail])
+    case marketer(items: [HomePopularUsersDetail])
 }
 
 extension BestMemberSectionModel: SectionModelType {
-    typealias Item = HomeBestMember
+    typealias Item = HomePopularUsersDetail
     
     var items: [Item] {
         switch self {
@@ -29,7 +29,7 @@ extension BestMemberSectionModel: SectionModelType {
             return items
         case .productDesigner(let items):
             return items
-        case .designer(let items):
+        case .marketer(let items):
             return items
         }
     }
@@ -42,8 +42,8 @@ extension BestMemberSectionModel: SectionModelType {
             self = .programmer(items: items)
         case .productDesigner(let items):
             self = .productDesigner(items: items)
-        case .designer(let items):
-            self = .designer(items: items)
+        case .marketer(let items):
+            self = .marketer(items: items)
         }
     }
 }

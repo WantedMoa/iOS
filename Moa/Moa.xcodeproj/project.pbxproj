@@ -29,6 +29,7 @@
 		3C240437274FC4600011333C /* HomeContestsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240436274FC4600011333C /* HomeContestsResponse.swift */; };
 		3C24043A274FC61B0011333C /* MoaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C240439274FC61B0011333C /* MoaError.swift */; };
 		3C24043C274FD0E70011333C /* HomePopularUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24043B274FD0E70011333C /* HomePopularUsersResponse.swift */; };
+		3C240440274FD46A0011333C /* HomePopularUsersDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24043F274FD46A0011333C /* HomePopularUsersDetailResponse.swift */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -127,6 +128,7 @@
 		3C240436274FC4600011333C /* HomeContestsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContestsResponse.swift; sourceTree = "<group>"; };
 		3C240439274FC61B0011333C /* MoaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaError.swift; sourceTree = "<group>"; };
 		3C24043B274FD0E70011333C /* HomePopularUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePopularUsersResponse.swift; sourceTree = "<group>"; };
+		3C24043F274FD46A0011333C /* HomePopularUsersDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePopularUsersDetailResponse.swift; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				3C240436274FC4600011333C /* HomeContestsResponse.swift */,
 				3C24043B274FD0E70011333C /* HomePopularUsersResponse.swift */,
+				3C24043F274FD46A0011333C /* HomePopularUsersDetailResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				3C80B1762742233D00DDF82F /* HomeViewModel.swift in Sources */,
 				3C80B1AF2743704400DDF82F /* HomeBestTeamBuildViewController.swift in Sources */,
 				3C1735842745E1C700C9895E /* MatchMyTeamBuildCell.swift in Sources */,
+				3C240440274FD46A0011333C /* HomePopularUsersDetailResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
