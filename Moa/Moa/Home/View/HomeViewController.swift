@@ -243,7 +243,10 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - FSPagerViewDelegate
 extension HomeViewController: FSPagerViewDelegate {
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
-        guard let url = URL(string: viewModel.homeContests[index].linkURL) else { return false }
+        let count = viewModel.homeContests.count
+        let currentIndex = index % count
+        guard currentIndex >= 0 && currentIndex < count else { return false }
+        guard let url = URL(string: viewModel.homeContests[currentIndex].linkURL) else { return false }
         let safariVC = SFSafariViewController(url: url)
         tabVC?.present(safariVC, animated: true)
         return false
