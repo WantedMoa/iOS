@@ -51,6 +51,13 @@
                                 </label>
                             </subviews>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OptionsVertical" translatesAutoresizingMaskIntoConstraints="NO" id="Iwn-vN-cVy">
+                            <rect key="frame" x="349" y="13" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="G6g-Zb-A2D"/>
+                                <constraint firstAttribute="width" constant="24" id="qaA-5u-CWb"/>
+                            </constraints>
+                        </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-of-yMh">
                             <rect key="frame" x="0.0" y="77.5" width="382" height="169"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,6 +76,8 @@
                     <constraints>
                         <constraint firstItem="j5K-ae-33d" firstAttribute="top" secondItem="Zr2-cl-VLI" secondAttribute="top" constant="13" id="0WS-W5-qzy"/>
                         <constraint firstItem="kdc-of-yMh" firstAttribute="leading" secondItem="Zr2-cl-VLI" secondAttribute="leading" id="41K-kH-2ua"/>
+                        <constraint firstAttribute="trailing" secondItem="Iwn-vN-cVy" secondAttribute="trailing" constant="9" id="6JP-ey-7RB"/>
+                        <constraint firstItem="Iwn-vN-cVy" firstAttribute="top" secondItem="Zr2-cl-VLI" secondAttribute="top" constant="13" id="KWW-NF-4VQ"/>
                         <constraint firstItem="j5K-ae-33d" firstAttribute="leading" secondItem="Zr2-cl-VLI" secondAttribute="leading" constant="15" id="PlT-JR-KIn"/>
                         <constraint firstAttribute="trailing" secondItem="kdc-of-yMh" secondAttribute="trailing" id="TzP-lI-nMb"/>
                         <constraint firstItem="kdc-of-yMh" firstAttribute="top" secondItem="mJL-pi-IKE" secondAttribute="bottom" constant="20" id="nS5-Pm-Xmn"/>
@@ -87,6 +96,7 @@
         </view>
     </objects>
     <resources>
+        <image name="OptionsVertical" width="24" height="24"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
