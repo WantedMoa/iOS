@@ -8,11 +8,15 @@
 import UIKit
 
 final class HomeDetailBestTeamBuildCell: UICollectionViewCell, IdentifierType {
+    @IBOutlet private weak var competitionImageView: UIImageView!
     @IBOutlet private weak var tagStackView: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         updateTagStackView(by: ["iOS 경험자", "꾸준히 참여"])
+        
+        competitionImageView.layer.masksToBounds = true
+        competitionImageView.layer.cornerRadius = 10
     }
     
     private func updateTagStackView(by tags: [String]) {

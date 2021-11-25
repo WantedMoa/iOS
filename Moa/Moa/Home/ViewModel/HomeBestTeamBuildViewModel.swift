@@ -16,14 +16,14 @@ final class HomeBestTeamBuildViewModel: ViewModelType {
     }
     
     struct Output {
-        let teamBuildes: Driver<[String]>
+        let teamBuildes: Driver<[HomeBestTeamBuildSectionModel]>
     }
     
     private let disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
-        let teamBuildes = BehaviorRelay<[String]>(
-            value: ["A", "B", "C", "D", "E", "F", "G"]
+        let teamBuildes = BehaviorRelay<[HomeBestTeamBuildSectionModel]>(
+            value: .init([.topten(items: ["A", "B", "C", "D", "E", "F", "G"])])
         )
         
         return Output(

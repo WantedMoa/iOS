@@ -18,7 +18,6 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, U
     // ViewModel
     private lazy var input = HomeBestTeamBuildViewModel.Input()
     private lazy var output = viewModel.transform(input: input)
-    
     private let disposeBag = DisposeBag()
     
     // DI
@@ -45,13 +44,8 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, U
     }
     
     private func bind() {
-        output.teamBuildes.drive(bestTeamBuildCollectionView.rx.items(
-            cellIdentifier: HomeDetailBestTeamBuildCell.identifier,
-            cellType: HomeDetailBestTeamBuildCell.self)
-        ) { _, _, _ in
-            
-        }
-        .disposed(by: disposeBag)
+        output.teamBuildes.drive(bestTeamBuildCollectionView.rx.items(dataSource: dataSource()))
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {
@@ -61,11 +55,16 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, U
     }
     
     private func prepareBestTeamBuildCollectionView() {
-        bestTeamBuildCollectionView.delegate = self
         bestTeamBuildCollectionView.register(
             UINib(nibName: HomeDetailBestTeamBuildCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeDetailBestTeamBuildCell.identifier
         )
+        bestTeamBuildCollectionView.register(
+            UINib(nibName: HomeBestTeamBuildReusableView.identifier, bundle: nil),
+            forSupplementaryViewOfKind: HomeBestTeamBuildReusableView.headerElementKind,
+            withReuseIdentifier: HomeBestTeamBuildReusableView.identifier
+        )
+        bestTeamBuildCollectionView.delegate = self
     }
 }
 
@@ -76,7 +75,39 @@ extension HomeBestTeamBuildViewController: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let width = (view.bounds.width - 12 - 16 * 2) / 2
-        let height = width * 1.83
+        let height = width * 1.56
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int
+    ) -> CGSize {
+        let width = (view.bounds.width - 12 - 16 * 2) / 2
+        return CGSize(width: width, height: 53)
+    }
+}
+
+extension HomeBestTeamBuildViewController {
+    private func dataSource() -> RxCollectionViewSectionedReloadDataSource<HomeBestTeamBuildSectionModel> {
+        return RxCollectionViewSectionedReloadDataSource(configureCell: {
+            dataSource, collectionView, indexPath, _ in
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: HomeDetailBestTeamBuildCell.identifier,
+                for: indexPath
+            ) as? HomeDetailBestTeamBuildCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+        }, configureSupplementaryView: { _, collectionView, kind, indexPath in
+            let reuseView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: HomeBestTeamBuildReusableView.headerElementKind,
+                withReuseIdentifier: HomeBestTeamBuildReusableView.identifier,
+                for: indexPath
+            )
+            return reuseView
+        })
     }
 }
