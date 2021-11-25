@@ -11,6 +11,7 @@ import RxCocoa
 import RxFSPagerView
 import RxGesture
 import RxSwift
+import Kingfisher
 
 final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     // MARK: - IBOutlet
@@ -30,12 +31,14 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     
     // ViewModel
     private lazy var input = HomeViewModel.Input(
-        pagerViewDidScrolled: pagerViewDidScrolled.asSignal()
+        pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
+        fetchPosters: fetchPosters.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     // Event
     private let pagerViewDidScrolled = PublishRelay<Int>()
+    private let fetchPosters = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -55,6 +58,8 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         configureUI()
         bindUI()
         bind()
+        
+        fetchPosters.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +70,9 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     private func bind() {
         output.posters
             .drive(pagerView.rx.items(cellIdentifier: HomePagerCell.identifier)) {
-                _, item, cell in
-                cell.imageView?.image = UIImage(named: item)
+                _, poster, cell in
+                cell.imageView?.contentMode = .scaleToFill
+                cell.imageView?.kf.setImage(with: URL(string: poster.pictureURL))
             }
             .disposed(by: disposeBag)
         
