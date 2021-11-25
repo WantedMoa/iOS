@@ -30,9 +30,9 @@
             filePath = "Moa/Home/ReuseView/HomeBestTeamBuildCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "update(data:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "update(by:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,8 +78,8 @@
             filePath = "Moa/Home/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "transform(input:)"
             landmarkType = "7">
          </BreakpointContent>

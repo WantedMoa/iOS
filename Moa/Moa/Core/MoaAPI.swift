@@ -11,6 +11,7 @@ public enum MoaAPI {
     case homeContests
     case homePopularUsers
     case homePopularUsersDetail
+    case homePopularRecruits
 }
 
 extension MoaAPI: TargetType {
@@ -26,12 +27,14 @@ extension MoaAPI: TargetType {
             return "/homes/popular-users"
         case .homePopularUsersDetail:
             return "/homes/popular-users/details"
+        case .homePopularRecruits:
+            return "/homes/popular-recruits"
         }
     }
     
     public var method: Method {
         switch self {
-        case .homeContests, .homePopularUsers, .homePopularUsersDetail:
+        case .homeContests, .homePopularUsers, .homePopularUsersDetail, .homePopularRecruits:
             return .get
         }
     }
@@ -42,7 +45,7 @@ extension MoaAPI: TargetType {
     
     public var task: Task {
         switch self {
-        case .homeContests, .homePopularUsers, .homePopularUsersDetail:
+        case .homeContests, .homePopularUsers, .homePopularUsersDetail, .homePopularRecruits:
             return .requestPlain
         }
     }

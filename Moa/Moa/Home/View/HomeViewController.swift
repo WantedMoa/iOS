@@ -33,7 +33,8 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     private lazy var input = HomeViewModel.Input(
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
         fetchPosters: fetchPosters.asSignal(),
-        fetchBestMembers: fetchBestMembers.asSignal()
+        fetchBestMembers: fetchBestMembers.asSignal(),
+        fetchPopularRecruits: fetchPopularRecruits.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
@@ -41,6 +42,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     private let pagerViewDidScrolled = PublishRelay<Int>()
     private let fetchPosters = PublishRelay<Void>()
     private let fetchBestMembers = PublishRelay<Void>()
+    private let fetchPopularRecruits = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -63,6 +65,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         
         fetchPosters.accept(())
         fetchBestMembers.accept(())
+        fetchPopularRecruits.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,12 +100,12 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 cellIdentifier: HomeBestTeamBuildCell.identifier,
                 cellType: HomeBestTeamBuildCell.self)
             ) { _, item, cell in
-                cell.update(data: item)
+                cell.update(by: item)
             }
             .disposed(by: disposeBag)
         
         output.bestTeamBuilds
-            .drive { [weak self] (posters: [TestbestMembers]) in
+            .drive { [weak self] (posters: [HomePopularRecruit]) in
                 guard let self = self else { return }
                 let height = CGFloat(30 + posters.count * 100)
                 self.bestTeamBuildCollectionViewHeight.constant = height

@@ -46,14 +46,14 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     }
     
     private func bind() {
-        output.teambuilds
-            .drive(teambuildCollectionView.rx.items(
-                cellIdentifier: CommunityTeamBuildCell.identifier,
-                cellType: CommunityTeamBuildCell.self)
-            ) { _, item, cell in
-                cell.update(data: item)
-            }
-            .disposed(by: disposeBag)
+//        output.teambuilds
+//            .drive(teambuildCollectionView.rx.items(
+//                cellIdentifier: CommunityTeamBuildCell.identifier,
+//                cellType: CommunityTeamBuildCell.self)
+//            ) { _, item, cell in
+//                cell.update(data: item)
+//            }
+//            .disposed(by: disposeBag)
         
         output.teambuilds
             .drive { [weak self] (teambuilds: [TestbestMembers]) in
