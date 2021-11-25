@@ -288,6 +288,17 @@ extension MatchViewController {
         
         return contents
     }
+    
+    private func generateShadowView(cgRect: CGRect, radius: CGFloat) -> UIView {
+        let backgroundView = UIView(frame: cgRect)
+        backgroundView.backgroundColor = .clear
+        backgroundView.layer.masksToBounds = false
+        backgroundView.layer.cornerRadius = radius
+        backgroundView.layer.shadowOffset = .zero
+        backgroundView.layer.shadowRadius = 5
+        backgroundView.layer.shadowOpacity = 0.5
+        return backgroundView
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

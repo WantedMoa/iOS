@@ -119,7 +119,7 @@
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 등록한 공고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN4-wl-z1u">
                     <rect key="frame" x="16" y="722.5" width="112" height="23.5"/>
-                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                     <color key="textColor" name="font1"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -142,7 +142,7 @@
     </objects>
     <resources>
         <image name="GreenStatus" width="16.5" height="16"/>
-        <image name="TestProfile1" width="137" height="91"/>
+        <image name="TestProfile1" width="76" height="76"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

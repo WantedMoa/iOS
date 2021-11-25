@@ -66,6 +66,8 @@
 		3C80B1B42743765000DDF82F /* HomeDetailBestTeamBuildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */; };
 		3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */; };
 		3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */; };
+		3C9F2176274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F2174274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift */; };
+		3C9F2177274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F2175274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib */; };
 		3CB0607C274E4D4000FF4A6D /* UIFont+NotoSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */; };
 		3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */; };
 		3CB06080274E5D8100FF4A6D /* SettingProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */; };
@@ -150,6 +152,8 @@
 		3C80B1B22743765000DDF82F /* HomeDetailBestTeamBuildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailBestTeamBuildCell.xib; sourceTree = "<group>"; };
 		3C80B1B52743788E00DDF82F /* HomeBestTeamBuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBestTeamBuildViewModel.swift; sourceTree = "<group>"; };
 		3C80B1B72743B50900DDF82F /* UIColor+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Initialize.swift"; sourceTree = "<group>"; };
+		3C9F2174274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReviewTeamMemberViewController.swift; sourceTree = "<group>"; };
+		3C9F2175274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingReviewTeamMemberViewController.xib; sourceTree = "<group>"; };
 		3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+NotoSans.swift"; sourceTree = "<group>"; };
 		3CB0607D274E5D8100FF4A6D /* SettingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
 		3CB0607E274E5D8100FF4A6D /* SettingProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileViewController.xib; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 				3CC18A52274E9D05007C02F4 /* SettingDetailMyTeambuildViewController.xib */,
 				3CC18A59274EA3CD007C02F4 /* SettingTeamMemberViewController.swift */,
 				3CC18A5A274EA3CD007C02F4 /* SettingTeamMemberViewController.xib */,
+				3C9F2174274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift */,
+				3C9F2175274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				3C80B1692741FD9600DDF82F /* NotoSansKR-Medium.otf in Resources */,
 				3C1735902746021E00C9895E /* CommunityTeamBuildCell.xib in Resources */,
 				3C80B1582741FAE900DDF82F /* LaunchScreen.storyboard in Resources */,
+				3C9F2177274F31B900C3C606 /* SettingReviewTeamMemberViewController.xib in Resources */,
 				3C80B16E2741FD9600DDF82F /* NotoSansKR-Thin.otf in Resources */,
 				3C80B1982742665200DDF82F /* SettingViewController.xib in Resources */,
 				3C80B16A2741FD9600DDF82F /* NotoSansKR-Regular.otf in Resources */,
@@ -651,6 +658,7 @@
 				3C1DEDBC274CE7B600F0EA58 /* BackgroundBlur.swift in Sources */,
 				3C80B1812742349400DDF82F /* HomeBestMemberCell.swift in Sources */,
 				3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */,
+				3C9F2176274F31B900C3C606 /* SettingReviewTeamMemberViewController.swift in Sources */,
 				3C1DEDB7274CE0FD00F0EA58 /* BottomDatePickerViewController.swift in Sources */,
 				3C1DEDC1274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift in Sources */,
 				3C80B1A4274346CB00DDF82F /* HomeBestMemberViewModel.swift in Sources */,
@@ -821,7 +829,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
@@ -854,7 +862,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moa/Info.plist;
