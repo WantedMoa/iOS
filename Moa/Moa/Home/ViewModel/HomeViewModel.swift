@@ -29,6 +29,8 @@ final class HomeViewModel: ViewModelType {
         let bestTeamBuilds: Driver<[HomePopularRecruit]>
     }
     
+    var homeContests: [HomeContest] = []
+    
     private let moaProvider: MoyaProvider<MoaAPI>
     
     init() {
@@ -56,10 +58,12 @@ final class HomeViewModel: ViewModelType {
                 return self.moaProvider.rx.request(.homeContests)
             }
             .map(HomeContestsResponse.self)
-            .subscribe(onNext: { response in
+            .subscribe(onNext: { [weak self] response in
+                guard let self = self else { return }
                 guard response.isSuccess else { return }
                 
                 if let result = response.result {
+                    self.homeContests = result
                     posters.accept(result)
                     pagerControlTitle.accept("1 / \(result.count)")
                 }

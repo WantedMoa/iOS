@@ -12,6 +12,7 @@ import RxFSPagerView
 import RxGesture
 import RxSwift
 import Kingfisher
+import SafariServices
 
 final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     // MARK: - IBOutlet
@@ -242,6 +243,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - FSPagerViewDelegate
 extension HomeViewController: FSPagerViewDelegate {
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+        guard let url = URL(string: viewModel.homeContests[index].linkURL) else { return false }
+        let safariVC = SFSafariViewController(url: url)
+        tabVC?.present(safariVC, animated: true)
         return false
     }
 }
