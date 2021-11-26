@@ -11,7 +11,7 @@ import RxCocoa
 import RxGesture
 import RxSwift
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController, IdentifierType {
     @IBOutlet private weak var idTextField: UITextField!
     @IBOutlet private weak var idBottomLineView: UIView!
     @IBOutlet private weak var idCheckImageView: UIImageView!
@@ -19,8 +19,18 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordBottomLineView: UIView!
     @IBOutlet private weak var passwordCheckImageView: UIImageView!
     @IBOutlet private weak var moaButtonView: MoaButtonView!
+    @IBOutlet private weak var registerLabel: UILabel!
     
     private let disposeBag = DisposeBag()
+    
+    init() {
+        
+        super.init(nibName: LoginViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +52,8 @@ final class LoginViewController: UIViewController {
             .map { $0.isValidEmail() }
 
         let isValidPassword = passwordTextField.rx.text
-            .compactMap { $0?.count }
-            .map { $0 > 6 && $0 < 20 }
+            .compactMap { $0 }
+            .map { $0.isValidPassword()  }
         
         let isButtonValid = Observable.combineLatest(isValidID, isValidPassword).map { $0 && $1 }
         
@@ -70,13 +80,23 @@ final class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         isButtonValid
-            .subscribeOn(MainScheduler.instance)
             .subscribe { [weak self] (isValid: Bool) in
                 guard let self = self else { return }
                 let textColor: UIColor = isValid ? .white : .black
                 let viewColor: UIColor = isValid ? .black : .init(rgb: 0xdddddd)
                 self.moaButtonView.titleLabel.textColor = textColor
                 self.moaButtonView.contentView.backgroundColor = viewColor
+            }
+            .disposed(by: disposeBag)
+        
+        registerLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = RegisterEmailViewController()
+                let nc = MoaNavigationController(rootViewController: vc)
+                nc.modalPresentationStyle = .fullScreen
+                self.present(nc, animated: true)
             }
             .disposed(by: disposeBag)
     }

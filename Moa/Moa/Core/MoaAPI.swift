@@ -14,6 +14,7 @@ public enum MoaAPI {
     case homePopularRecruits
     case communityRecruits
     case communityRegisterRecruit(formData: [MultipartFormData])
+    case communityDetailRecruit(index: Int)
 }
 
 extension MoaAPI: TargetType {
@@ -33,6 +34,8 @@ extension MoaAPI: TargetType {
             return "/homes/popular-recruits"
         case .communityRecruits, .communityRegisterRecruit:
             return "/app/recruits"
+        case .communityDetailRecruit(let index):
+            return "app/recruits/\(index)"
         }
     }
     
@@ -42,7 +45,8 @@ extension MoaAPI: TargetType {
              .homePopularUsers,
              .homePopularUsersDetail,
              .homePopularRecruits,
-             .communityRecruits:
+             .communityRecruits,
+             .communityDetailRecruit:
             return .get
         case .communityRegisterRecruit:
             return .post
@@ -59,7 +63,8 @@ extension MoaAPI: TargetType {
             .homePopularUsers,
             .homePopularUsersDetail,
             .homePopularRecruits,
-            .communityRecruits:
+            .communityRecruits,
+            .communityDetailRecruit:
             return .requestPlain
         case .communityRegisterRecruit(let formData):
             return .uploadMultipart(formData)

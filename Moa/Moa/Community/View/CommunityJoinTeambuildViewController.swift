@@ -11,8 +11,9 @@ import RxCocoa
 import RxGesture
 import RxKeyboard
 import RxSwift
+import Kingfisher
 
-final class CommunityJoinTeambuildViewController: UIViewController {
+final class CommunityJoinTeambuildViewController: UIViewController, IdentifierType {
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var joinTitleTextField: UITextField!
     @IBOutlet private weak var joinMessageTextView: UITextView!
@@ -20,6 +21,11 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var scrollViewBottomLayout: NSLayoutConstraint!
+    
+    @IBOutlet private weak var endDateLabel: UILabel!
+    @IBOutlet private weak var startDateLabel: UILabel!
+    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet private weak var deadLineLabel: UILabel!
 
     private var navVC: MoaNavigationController? {
         return navigationController as? MoaNavigationController
@@ -28,14 +34,35 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    private let disposeBag = DisposeBag()
 
+    // ViewModel
+    private lazy var input = CommunityJoinTeambuildViewModel.Input(
+        fetchTeambuild: fetchTeambuild.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+    
+    private let fetchTeambuild = PublishRelay<Void>()
+    private let disposeBag = DisposeBag()
+    
+    // DI
+    private let viewModel: CommunityJoinTeambuildViewModel
+    
+    init(index: Int) {
+        self.viewModel = CommunityJoinTeambuildViewModel(index: index)
+        super.init(nibName: CommunityJoinTeambuildViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindUI()
-        updateTagStackView(by: ["개발자", "디자이너", "기획자"])
+        bind()
+        
+        fetchTeambuild.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +83,31 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     }
     
     private func bind() {
+        output.startDateTitle
+            .drive(startDateLabel.rx.text)
+            .disposed(by: disposeBag)
         
+        output.endDateTitle
+            .drive(endDateLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.content
+            .drive(contentLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.tags
+            .drive { [weak self] (tags: [String]) in
+                guard let self = self else { return }
+                self.updateTagStackView(by: tags)
+            }
+            .disposed(by: disposeBag)
+        
+        output.profileImageURL
+            .emit { [weak self] (profileImageURL: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: profileImageURL))
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {

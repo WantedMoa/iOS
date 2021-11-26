@@ -33,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jar-mO-OGQ" userLabel="Alert View">
-                    <rect key="frame" x="50" y="328" width="314" height="250"/>
+                    <rect key="frame" x="50" y="343" width="314" height="220"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pZM-mh-vf9" userLabel="Notice Stack View">
                             <rect key="frame" x="16" y="38" width="282" height="66"/>
@@ -53,7 +53,7 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDi-1r-UqV" customClass="MoaButtonView" customModule="Moa" customModuleProvider="target">
-                            <rect key="frame" x="20" y="164" width="274" height="56"/>
+                            <rect key="frame" x="20" y="134" width="274" height="56"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="0xX-cI-lxN"/>
@@ -66,7 +66,7 @@
                         <constraint firstItem="pZM-mh-vf9" firstAttribute="top" secondItem="Jar-mO-OGQ" secondAttribute="top" constant="38" id="NUi-da-3GK"/>
                         <constraint firstAttribute="trailing" secondItem="YDi-1r-UqV" secondAttribute="trailing" constant="20" id="UGZ-tg-9uP"/>
                         <constraint firstItem="pZM-mh-vf9" firstAttribute="leading" secondItem="Jar-mO-OGQ" secondAttribute="leading" constant="16" id="YMM-mW-MRt"/>
-                        <constraint firstAttribute="height" constant="250" id="bOd-P8-9Xn"/>
+                        <constraint firstAttribute="height" constant="220" id="bOd-P8-9Xn"/>
                         <constraint firstAttribute="trailing" secondItem="pZM-mh-vf9" secondAttribute="trailing" constant="16" id="hDK-E8-wzA"/>
                         <constraint firstItem="YDi-1r-UqV" firstAttribute="leading" secondItem="Jar-mO-OGQ" secondAttribute="leading" constant="20" id="kVh-xX-4BO"/>
                         <constraint firstAttribute="bottom" secondItem="YDi-1r-UqV" secondAttribute="bottom" constant="30" id="ywR-it-j2d"/>

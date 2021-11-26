@@ -26,6 +26,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterNameViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="moaButtonView" destination="WRn-GD-ozB" id="Ccm-Ag-rd1"/>
+                <outlet property="nameBottomLineView" destination="c67-wA-LYh" id="JnZ-MI-y54"/>
+                <outlet property="nameCheckImageView" destination="igu-CM-heQ" id="RcJ-Z7-4m7"/>
+                <outlet property="nameTextField" destination="EeI-Qa-xS9" id="Fn0-bX-Ulo"/>
+                <outlet property="postionLabel" destination="374-7v-pyf" id="XsH-B7-GVh"/>
+                <outlet property="postionStackView" destination="W4h-0r-5lc" id="GeD-VB-Aj9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -103,7 +109,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="37u-9O-edm">
-                    <rect key="frame" x="16" y="419" width="382" height="68"/>
+                    <rect key="frame" x="16" y="373.5" width="382" height="68"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-4C-Fhp">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
@@ -151,7 +157,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="W4h-0r-5lc">
-                    <rect key="frame" x="16" y="538" width="191" height="58"/>
+                    <rect key="frame" x="16" y="492.5" width="191" height="58"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-K8-1de">
                             <rect key="frame" x="0.0" y="0.0" width="191" height="19"/>
@@ -183,7 +189,7 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-1H-a3n" userLabel="Line View">
-                    <rect key="frame" x="16" y="601" width="191" height="1"/>
+                    <rect key="frame" x="16" y="555.5" width="191" height="1"/>
                     <color key="backgroundColor" name="4"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="r5i-vQ-hvu"/>
@@ -208,7 +214,7 @@
                 <constraint firstItem="IgM-1H-a3n" firstAttribute="trailing" secondItem="W4h-0r-5lc" secondAttribute="trailing" id="KPt-6Y-50C"/>
                 <constraint firstItem="IgM-1H-a3n" firstAttribute="top" secondItem="W4h-0r-5lc" secondAttribute="bottom" constant="5" id="Pon-J2-7VK"/>
                 <constraint firstItem="etA-64-chx" firstAttribute="top" secondItem="uWJ-yg-XjM" secondAttribute="bottom" constant="22" id="Q3C-0h-tEc"/>
-                <constraint firstItem="37u-9O-edm" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="U5o-kq-QRR"/>
+                <constraint firstItem="37u-9O-edm" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.9" id="U5o-kq-QRR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WRn-GD-ozB" secondAttribute="bottom" constant="15" id="a8C-Q5-v5g"/>
                 <constraint firstItem="etA-64-chx" firstAttribute="leading" secondItem="uWJ-yg-XjM" secondAttribute="leading" id="aSn-61-jlz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="37u-9O-edm" secondAttribute="trailing" constant="16" id="aaX-hc-nFv"/>
