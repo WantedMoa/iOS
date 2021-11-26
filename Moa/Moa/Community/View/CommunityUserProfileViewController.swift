@@ -25,8 +25,7 @@ enum UserProfileExpand {
     }
 }
 
-final class CommunityUserProfileViewController: UIViewController {
-    @IBOutlet private weak var profileImageView: UIImageView!
+final class CommunityUserProfileViewController: UIViewController, IdentifierType {
     @IBOutlet private weak var dismissImageView: UIImageView!
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var profileViewHeightContraint: NSLayoutConstraint!
@@ -38,6 +37,14 @@ final class CommunityUserProfileViewController: UIViewController {
     @IBOutlet private weak var messageTitleTextField: UITextField!
     @IBOutlet private weak var messageTextView: UITextView!
     @IBOutlet private weak var messagePlaceholderLabel: UILabel!
+    // user
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var ratingImageView: UIImageView!
+    @IBOutlet private weak var introduceLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var experienceLabel: UILabel!
+    @IBOutlet private weak var portfolioLabel: UILabel!
+    @IBOutlet private weak var universityLabel: UILabel!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -47,12 +54,45 @@ final class CommunityUserProfileViewController: UIViewController {
     
     private let profileViewHeight: CGFloat = 650
     private var userProfileExpand = UserProfileExpand.open
+    
+    private let fetchUserProfile = PublishRelay<Void>()
      
+    private lazy var input = CommunityUserProfileViewModel.Input(
+        fetchUserProfile: fetchUserProfile.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+     
+    private let viewModel: CommunityUserProfileViewModel
+     
+    init(index: Int) {
+        self.viewModel = CommunityUserProfileViewModel(index: index)
+        super.init(nibName: CommunityUserProfileViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindUI()
+        bind()
         updateTagStackView(by: ["일러스트", "포토샵", "XD", "Sketch"])
+    }
+    
+    private func bind() {
+        output.name.drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.university.drive(universityLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.portfolio.drive(portfolioLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.experiance.drive(experienceLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {

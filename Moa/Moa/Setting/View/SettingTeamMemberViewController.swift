@@ -18,15 +18,31 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
     @IBOutlet private weak var teamView: UIView!
     
     // ViewModel
-    private lazy var input = SettingTeamMemberViewModel.Input()
-    private lazy var output = viewModel.transform(input: input)
+//    private lazy var input = SettingTeamMemberViewModel.Input(
+//        fetchSections: fetchSections.asSignal()
+//    )
+//    private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
     
+    // private let fetchSections = PublishRelay<Void>()
+    
     // DI
-    private let viewModel: SettingTeamMemberViewModel
+    // private let viewModel: SettingTeamMemberViewModel
+    
+    private let sections: Driver<[BestMemberSectionModel]>
+    private let team: SettingMyTeam
 
-    init() {
-        self.viewModel = SettingTeamMemberViewModel()
+    init(team: SettingMyTeam) {
+        // self.viewModel = SettingTeamMemberViewModel(index: index)
+        self.team = team
+        
+        let users = team.member.map {
+            HomePopularUsersDetail.init(index: $0.userIdx, profileImageURL: $0.profileImg, name: $0.name)
+        }
+        
+        self.sections = Driver<[BestMemberSectionModel]>.of([
+            .marketer(items: users)
+        ])
         super.init(nibName: SettingTeamMemberViewController.identifier, bundle: nil)
     }
     
@@ -39,14 +55,16 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
         configureUI()
         bindUI()
         bind()
+        
+        // fetchSections.accept(())
     }
     
     private func bind() {
-        output.sections
+        sections
             .drive(teamMemberCollectionView.rx.items(dataSource: dataSource()))
             .disposed(by: disposeBag)
         
-        output.sections
+        sections
             .compactMap { $0.first?.items.count }
             .drive { [weak self] (count: Int) in
                 guard let self = self else { return }

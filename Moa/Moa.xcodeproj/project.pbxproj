@@ -53,7 +53,10 @@
 		3C26B0B12750B3110095C683 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B02750B3110095C683 /* TokenManager.swift */; };
 		3C26B0B32750BB9D0095C683 /* MatchRecruitsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B22750BB9D0095C683 /* MatchRecruitsResponse.swift */; };
 		3C26B0B52750C22B0095C683 /* MatchRecommendsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B42750C22B0095C683 /* MatchRecommendsResponse.swift */; };
-		3C26B0B72750C8210095C683 /* SettingUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B62750C8210095C683 /* SettingUserProfile.swift */; };
+		3C26B0B72750C8210095C683 /* SettingProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B62750C8210095C683 /* SettingProfileResponse.swift */; };
+		3C26B0B92750E6400095C683 /* SettingMyTeamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B82750E6400095C683 /* SettingMyTeamsResponse.swift */; };
+		3C26B0BB2750EC000095C683 /* CommunityUserProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0BA2750EC000095C683 /* CommunityUserProfileResponse.swift */; };
+		3C26B0BD2750EC970095C683 /* CommunityUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0BC2750EC970095C683 /* CommunityUserProfileViewModel.swift */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -176,7 +179,10 @@
 		3C26B0B02750B3110095C683 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		3C26B0B22750BB9D0095C683 /* MatchRecruitsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecruitsResponse.swift; sourceTree = "<group>"; };
 		3C26B0B42750C22B0095C683 /* MatchRecommendsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecommendsResponse.swift; sourceTree = "<group>"; };
-		3C26B0B62750C8210095C683 /* SettingUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserProfile.swift; sourceTree = "<group>"; };
+		3C26B0B62750C8210095C683 /* SettingProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileResponse.swift; sourceTree = "<group>"; };
+		3C26B0B82750E6400095C683 /* SettingMyTeamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMyTeamsResponse.swift; sourceTree = "<group>"; };
+		3C26B0BA2750EC000095C683 /* CommunityUserProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileResponse.swift; sourceTree = "<group>"; };
+		3C26B0BC2750EC970095C683 /* CommunityUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserProfileViewModel.swift; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 				3C1735922746044500C9895E /* CommunityViewModel.swift */,
 				3C1DEDC0274CED8E00F0EA58 /* CommunityRegisterTeambuildViewModel.swift */,
 				3C26B09C275069BF0095C683 /* CommunityJoinTeambuildViewModel.swift */,
+				3C26B0BC2750EC970095C683 /* CommunityUserProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -367,7 +374,9 @@
 				3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */,
 				3C26B0B22750BB9D0095C683 /* MatchRecruitsResponse.swift */,
 				3C26B0B42750C22B0095C683 /* MatchRecommendsResponse.swift */,
-				3C26B0B62750C8210095C683 /* SettingUserProfile.swift */,
+				3C26B0B62750C8210095C683 /* SettingProfileResponse.swift */,
+				3C26B0B82750E6400095C683 /* SettingMyTeamsResponse.swift */,
+				3C26B0BA2750EC000095C683 /* CommunityUserProfileResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -814,6 +823,7 @@
 				3C240442274FD76A0011333C /* HomePopularRecruitsResponse.swift in Sources */,
 				3C24043C274FD0E70011333C /* HomePopularUsersResponse.swift in Sources */,
 				3CB0607F274E5D8100FF4A6D /* SettingProfileViewController.swift in Sources */,
+				3C26B0BD2750EC970095C683 /* CommunityUserProfileViewModel.swift in Sources */,
 				3C240445274FE6050011333C /* RegisterPasswordViewController.swift in Sources */,
 				3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */,
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
@@ -864,6 +874,7 @@
 				3C80B1B62743788E00DDF82F /* HomeBestTeamBuildViewModel.swift in Sources */,
 				3CC18A4A274E916E007C02F4 /* SettingMyPageViewModel.swift in Sources */,
 				3C240437274FC4600011333C /* HomeContestsResponse.swift in Sources */,
+				3C26B0BB2750EC000095C683 /* CommunityUserProfileResponse.swift in Sources */,
 				3C1735802745461E00C9895E /* UnderLineNavBar.swift in Sources */,
 				3C24043A274FC61B0011333C /* MoaError.swift in Sources */,
 				3C80B1B82743B50900DDF82F /* UIColor+Initialize.swift in Sources */,
@@ -873,8 +884,9 @@
 				3C80B19F274333FC00DDF82F /* MoaNavigationController.swift in Sources */,
 				3C9F2181274F8E4600C3C606 /* HomeBestTeamBuildReusableView.swift in Sources */,
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
+				3C26B0B92750E6400095C683 /* SettingMyTeamsResponse.swift in Sources */,
 				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
-				3C26B0B72750C8210095C683 /* SettingUserProfile.swift in Sources */,
+				3C26B0B72750C8210095C683 /* SettingProfileResponse.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
 				3C26B0B32750BB9D0095C683 /* MatchRecruitsResponse.swift in Sources */,
 				3C240432274FC2840011333C /* MoaAPI.swift in Sources */,

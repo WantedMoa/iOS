@@ -21,15 +21,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityUserProfileViewController" customModule="Moa" customModuleProvider="target">
             <connections>
                 <outlet property="dismissImageView" destination="k2J-pG-gjE" id="5kh-bj-Hgf"/>
+                <outlet property="experienceLabel" destination="Cmh-eM-Rrd" id="I0w-ov-5ce"/>
+                <outlet property="introduceLabel" destination="Dq4-e8-utW" id="dwS-WC-AuZ"/>
                 <outlet property="messagePlaceholderLabel" destination="aXw-aj-gzr" id="aQY-kv-mYK"/>
                 <outlet property="messageTextView" destination="J7K-zU-Nt9" id="225-BK-EzY"/>
                 <outlet property="messageTitleTextField" destination="lhv-KP-3RJ" id="did-T5-agN"/>
                 <outlet property="moaButtonView" destination="Qpe-Af-1cL" id="sjD-vP-8fO"/>
+                <outlet property="nameLabel" destination="5kr-c7-CNi" id="iPm-hy-7gR"/>
+                <outlet property="portfolioLabel" destination="Eyv-S4-qJX" id="oYP-yh-5Iy"/>
                 <outlet property="profileExpandButtonImageView" destination="ObX-Ck-qgY" id="4lT-jr-Cjf"/>
                 <outlet property="profileImageView" destination="fQG-mF-euh" id="Sap-Z3-o2L"/>
                 <outlet property="profileView" destination="i95-ON-H86" id="i2n-5X-3yH"/>
                 <outlet property="profileViewHeightContraint" destination="nxi-A5-sda" id="NJc-Qc-M6u"/>
+                <outlet property="ratingImageView" destination="yEJ-Sq-s4r" id="WVA-Of-qcc"/>
                 <outlet property="tagStackView" destination="zZY-sy-7ko" id="192-Vk-BFi"/>
+                <outlet property="universityLabel" destination="arP-55-3Ov" id="lfZ-oM-Zkp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

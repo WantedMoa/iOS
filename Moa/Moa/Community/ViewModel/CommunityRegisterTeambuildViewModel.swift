@@ -55,7 +55,7 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
     
     private var selectedTags = [String]()
     var tags = ["개발자", "디자이너", "기획자", "기타"]
-    
+        
     func transform(input: Input) -> Output {
         let teambuildEndDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let competitionStartDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")

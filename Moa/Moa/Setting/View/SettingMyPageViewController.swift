@@ -21,11 +21,13 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
     
     // ViewModel
     private lazy var input = SettingMyPageViewModel.Input(
+        fetchMyTeambuilds: fetchMyTeambuilds.asSignal(),
         fetchUserProfile: fetchUserProfile.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
-    
+     
+    private let fetchMyTeambuilds = PublishRelay<Void>()
     private let fetchUserProfile = PublishRelay<Void>()
     
     private var currentIndexPath = IndexPath(item: 0, section: 0)
@@ -45,6 +47,7 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
         bindUI()
         bind()
         
+        fetchMyTeambuilds.accept(())
         fetchUserProfile.accept(())
     }
     
@@ -61,8 +64,8 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
             cellIdentifier: SettingMyTeambuildCell.identifier,
             cellType: SettingMyTeambuildCell.self)
         ) { _, item, cell in
-            cell.titleLabel.text = item.0
-            cell.subTitleLabel.text = item.1
+            cell.titleLabel.text = item.title
+            cell.subTitleLabel.text = item.content
         }
         .disposed(by: disposeBag)
         
@@ -89,10 +92,10 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
     }
     
     private func bindUI() {
-        myTeamBuildCollectionView.rx.modelSelected((String, String).self)
-            .subscribe { [weak self] (_: (String, String)) in
+        myTeamBuildCollectionView.rx.modelSelected(SettingMyTeam.self)
+            .subscribe { [weak self] (item: SettingMyTeam) in
                 guard let self = self else { return }
-                let vc = SettingTeamMemberViewController()
+                let vc = SettingTeamMemberViewController(team: item)
                 vc.modalPresentationStyle = .fullScreen
                 self.settingNaviagtionController?.pushViewController(vc, animated: true)
             }

@@ -13,11 +13,12 @@ import Moya
 
 final class SettingMyPageViewModel: ViewModelType {
     struct Input {
+        let fetchMyTeambuilds: Signal<Void>
         let fetchUserProfile: Signal<Void>
     }
     
     struct Output {
-        let myTeambuilds: Driver<[(String, String)]>
+        let myTeambuilds: Driver<[SettingMyTeam]>
         let email: Driver<String>
         let name: Driver<String>
         let profileImageURL: Driver<String>
@@ -34,10 +35,7 @@ final class SettingMyPageViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let myTeambuilds = BehaviorRelay<[(String, String)]>(value: [
-            ("원티드 해커톤해, 커리어", "11월 15일에 공고 완료 되어 만들어진 팀입니다"),
-            ("NPHD 2021", "11월 01일 공고 완료되어 만들어진 팀입니다")
-        ])
+        let myTeambuilds = BehaviorRelay<[SettingMyTeam]>(value: [])
         
         let email = BehaviorRelay<String>(value: "")
         let name = BehaviorRelay<String>(value: "")
@@ -60,6 +58,21 @@ final class SettingMyPageViewModel: ViewModelType {
                     email.accept(user.email)
                 }
         
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        input.fetchMyTeambuilds.asObservable()
+            .flatMap { [weak self] () -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.settingMyTeams)
+            }
+            .map(SettingMyTeamsResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else { return }
+                
+                myTeambuilds.accept(response.result)
             }, onError: { error in
                 print(error)
             })

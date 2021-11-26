@@ -23,6 +23,7 @@ struct CommunityDetailRecruit: Codable {
     let endDate: String
     let content: String
     let position: [String]
+    let userIdx: Int
     
     enum CodingKeys: String, CodingKey {
         case index = "recruitIdx"
@@ -33,5 +34,6 @@ struct CommunityDetailRecruit: Codable {
         case endDate
         case content
         case position
+        case userIdx
     }
 }

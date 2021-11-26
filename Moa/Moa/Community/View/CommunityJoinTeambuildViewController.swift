@@ -132,7 +132,7 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
             .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                let vc = CommunityUserProfileViewController()
+                let vc = CommunityUserProfileViewController(index: self.viewModel.userIndex)
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true)
             }

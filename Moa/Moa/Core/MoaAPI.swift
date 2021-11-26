@@ -18,6 +18,7 @@ public enum MoaAPI {
     case communityRecruits
     case communityRegisterRecruit(formData: [MultipartFormData])
     case communityDetailRecruit(index: Int)
+    case communityUserProfile(index: Int)
     
     // Match
     case matchRecruits
@@ -25,6 +26,7 @@ public enum MoaAPI {
     
     // Setting
     case settingUserProfile
+    case settingMyTeams
 }
 
 extension MoaAPI: TargetType {
@@ -52,6 +54,10 @@ extension MoaAPI: TargetType {
             return "/recruits/\(index)/recommends"
         case .settingUserProfile:
             return "/profiles"
+        case .settingMyTeams:
+            return "/teams"
+        case .communityUserProfile(let index):
+            return "/app/users/\(index)"
         }
     }
     
@@ -65,7 +71,9 @@ extension MoaAPI: TargetType {
              .communityDetailRecruit,
              .matchRecruits,
              .matchRecommends,
-             .settingUserProfile:
+             .settingUserProfile,
+             .settingMyTeams,
+             .communityUserProfile:
             return .get
         case .communityRegisterRecruit:
             return .post
@@ -86,7 +94,9 @@ extension MoaAPI: TargetType {
             .communityDetailRecruit,
             .matchRecruits,
             .matchRecommends,
-            .settingUserProfile:
+            .settingUserProfile,
+            .settingMyTeams,
+            .communityUserProfile:
             return .requestPlain
         
         case .communityRegisterRecruit(let formData):

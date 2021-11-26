@@ -9,7 +9,6 @@ import Foundation
 
 import RxSwift
 import RxCocoa
-
 import Moya
 
 final class CommunityJoinTeambuildViewModel: ViewModelType {
@@ -29,7 +28,8 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
     
     private let moaProvider: MoyaProvider<MoaAPI>
     private let index: Int
-    
+    var userIndex: Int = 0
+
     init(index: Int) {
         let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
         let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
@@ -58,6 +58,7 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
                 guard response.isSuccess else { return }
                 
                 if let result = response.result {
+                    self.userIndex = result.userIdx
                     endDateTitle.accept(result.endDate)
                     startDateTitle.accept(result.startDate)
                     deadlineDateTitle.accept(result.deadline)
