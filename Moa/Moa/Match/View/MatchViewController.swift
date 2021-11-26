@@ -27,6 +27,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     @IBOutlet private weak var profileView: UIView!
     // MyTeamBuild
     @IBOutlet private weak var myTeamBuildCollectionView: UICollectionView!
+    @IBOutlet private weak var myTeamTitleLabel: UILabel!
     
     /// innerFirstProfileView
     private let innerFirstProfileImageView: UIImageView = {
@@ -116,10 +117,11 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
 
     // ViewModel
     private lazy var input = MatchViewModel.Input(
-        
+        fetchMyTeambuilds: fetchMyTeambuilds.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
+    private let fetchMyTeambuilds = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -139,6 +141,12 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         configureUI()
         bindUI()
         bind()
+    
+        fetchMyTeambuilds.accept(())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -151,9 +159,12 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             cellIdentifier: MatchMyTeamBuildCell.identifier,
             cellType: MatchMyTeamBuildCell.self)
         ) { _, item, cell in
-            // cell.update(data: item)
+            cell.update(by: item)
         }
         .disposed(by: disposeBag)
+        
+        output.myTeamTitle.drive(myTeamTitleLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -341,7 +352,7 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
         let heigth: CGFloat = 88
         return CGSize(width: width, height: heigth)
     }
-    
+        
     private func scrollItemToCenter(scrollView: UIScrollView) {
         let middlePoint = Int(scrollView.contentOffset.x + UIScreen.main.bounds.width / 2)
         let targetPoint = CGPoint(x: middlePoint, y: Int(myTeamBuildCollectionView.bounds.height) / 2)
@@ -354,6 +365,9 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
             at: .centeredHorizontally,
             animated: true
         )
+        
+        let title = viewModel.myTeambuilds.value[indexPath.item].title
+        myTeamTitleLabel.text = title
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

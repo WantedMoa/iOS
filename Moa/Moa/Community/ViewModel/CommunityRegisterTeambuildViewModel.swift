@@ -155,20 +155,20 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                     name: "endDate"
                 ))
                 
-                for (index, tag) in self.tags.enumerated() {
-                    formData.append(MultipartFormData(
-                        provider: .data("\(tag)".data(using: .utf8)!),
-                        name: "position[\(index)]"
-                    ))
-                }
+//                for (index, tag) in self.tags.enumerated() {
+//                    formData.append(MultipartFormData(
+//                        provider: .data("\(tag)".data(using: .utf8)!),
+//                        name: "position[\(index)]"
+//                    ))
+//                }
                 
-                let imageData = self.competitionImage.value.jpegData(compressionQuality: 1)!
+                let imageData = self.competitionImage.value.pngData()!
                 
                 formData.append(MultipartFormData(
                     provider: .data(imageData),
                     name: "image",
-                    fileName: "\(UUID().uuidString).jpeg",
-                    mimeType: "image/jpeg"
+                    fileName: "12321321.png",
+                    mimeType: "image/png"
                 ))
                 
                 return self.moaProvider.rx.request(.communityRegisterRecruit(formData: formData))

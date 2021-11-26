@@ -51,6 +51,7 @@
 		3C26B0AD2750A8E00095C683 /* BottomPositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C26B0AB2750A8E00095C683 /* BottomPositionViewController.xib */; };
 		3C26B0AF2750B2BE0095C683 /* LoginUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */; };
 		3C26B0B12750B3110095C683 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B02750B3110095C683 /* TokenManager.swift */; };
+		3C26B0B32750BB9D0095C683 /* MatchRecruitsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B22750BB9D0095C683 /* MatchRecruitsResponse.swift */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -171,6 +172,7 @@
 		3C26B0AB2750A8E00095C683 /* BottomPositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomPositionViewController.xib; sourceTree = "<group>"; };
 		3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserResponse.swift; sourceTree = "<group>"; };
 		3C26B0B02750B3110095C683 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		3C26B0B22750BB9D0095C683 /* MatchRecruitsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRecruitsResponse.swift; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				3C26B09827505E5A0095C683 /* MoaResponse.swift */,
 				3C26B09A275066B40095C683 /* CommunityDetailRecruitResponse.swift */,
 				3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */,
+				3C26B0B22750BB9D0095C683 /* MatchRecruitsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				3C80B1712742006100DDF82F /* HomeViewController.swift in Sources */,
 				3CD639C6274D3D6500114CB4 /* CommunityUserProfileViewController.swift in Sources */,
 				3C80B1792742238800DDF82F /* ViewModelType.swift in Sources */,
+				3C26B0B32750BB9D0095C683 /* MatchRecruitsResponse.swift in Sources */,
 				3C240432274FC2840011333C /* MoaAPI.swift in Sources */,
 				3CC18A5B274EA3CD007C02F4 /* SettingTeamMemberViewController.swift in Sources */,
 				3C26B09B275066B40095C683 /* CommunityDetailRecruitResponse.swift in Sources */,

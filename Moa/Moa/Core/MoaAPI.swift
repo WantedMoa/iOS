@@ -8,13 +8,19 @@
 import Moya
 
 public enum MoaAPI {
+    // Home
     case homeContests
     case homePopularUsers
     case homePopularUsersDetail
     case homePopularRecruits
+    
+    // Community
     case communityRecruits
     case communityRegisterRecruit(formData: [MultipartFormData])
     case communityDetailRecruit(index: Int)
+    
+    // Match
+    case matchRecruits
 }
 
 extension MoaAPI: TargetType {
@@ -35,7 +41,9 @@ extension MoaAPI: TargetType {
         case .communityRecruits, .communityRegisterRecruit:
             return "/app/recruits"
         case .communityDetailRecruit(let index):
-            return "app/recruits/\(index)"
+            return "/app/recruits/\(index)"
+        case .matchRecruits:
+            return "/recruits"
         }
     }
     
@@ -46,7 +54,8 @@ extension MoaAPI: TargetType {
              .homePopularUsersDetail,
              .homePopularRecruits,
              .communityRecruits,
-             .communityDetailRecruit:
+             .communityDetailRecruit,
+             .matchRecruits:
             return .get
         case .communityRegisterRecruit:
             return .post
@@ -64,8 +73,10 @@ extension MoaAPI: TargetType {
             .homePopularUsersDetail,
             .homePopularRecruits,
             .communityRecruits,
-            .communityDetailRecruit:
+            .communityDetailRecruit,
+            .matchRecruits:
             return .requestPlain
+        
         case .communityRegisterRecruit(let formData):
             return .uploadMultipart(formData)
         }
@@ -73,6 +84,15 @@ extension MoaAPI: TargetType {
     
     public var headers: [String : String]? {
         guard let jwt = TokenManager().jwt else { fatalError() }
-        return ["x-access-token": jwt]
+        
+        switch self {
+        case .communityRegisterRecruit:
+            return [
+                "x-access-token": jwt,
+                "Content-Type": "multipart / form-data"
+            ]
+        default:
+            return ["x-access-token": jwt]
+        }
     }
 }

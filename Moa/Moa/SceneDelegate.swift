@@ -17,9 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let tabVC = MoaTabBarController()
-        let loginVC = LoginViewController()
-        window?.rootViewController = loginVC
+        
+        let tokenManager = TokenManager()
+        
+        tokenManager.jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoyLCJpYXQiOjE2Mzc4MzIxNDgsImV4cCI6MTY2OTM2ODE0OCwic3ViIjoidXNlckluZm8ifQ.YZQ4bqRATOluBv9Sa-0JyXnTY5MZgWRI-Rk3jn4d2LU"
+        
+        if tokenManager.jwt == nil {
+            let loginVC = LoginViewController()
+            window?.rootViewController = loginVC
+        } else {
+            let tabVC = MoaTabBarController()
+            window?.rootViewController = tabVC
+        }
+
         window?.makeKeyAndVisible()
     }
 }
