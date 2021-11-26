@@ -183,6 +183,7 @@
                                 </imageView>
                             </subviews>
                             <constraints>
+                                <constraint firstAttribute="width" constant="191" id="827-gP-maK"/>
                                 <constraint firstAttribute="height" constant="24" id="OPa-3n-ogm"/>
                             </constraints>
                         </stackView>

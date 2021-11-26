@@ -10,6 +10,7 @@ import Moya
 public enum LoginAPI {
     case requestEmailAuth(param: [String: Any])
     case checkEmailAuth(email: String)
+    case registerUser(param: [String: Any])
 }
 
 extension LoginAPI: TargetType {
@@ -31,12 +32,14 @@ extension LoginAPI: TargetType {
             return "/app/email-send"
         case .checkEmailAuth:
             return "/app/users/check"
+        case .registerUser:
+            return "/app/users"
         }
     }
     
     public var method: Method {
         switch self {
-        case .requestEmailAuth, .checkEmailAuth:
+        case .requestEmailAuth, .checkEmailAuth, .registerUser:
             return .post
         }
     }
@@ -52,7 +55,8 @@ extension LoginAPI: TargetType {
             return .requestPlain
             
         // POST
-        case .requestEmailAuth(let param):
+        case .requestEmailAuth(let param),
+             .registerUser(let param):
             return .requestParameters(parameters: param, encoding: JSONEncoding.default)
         }
     }

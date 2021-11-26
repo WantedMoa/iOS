@@ -27,6 +27,7 @@ final class BottomPositionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindUI()
     }
 
     override func viewDidLayoutSubviews() {

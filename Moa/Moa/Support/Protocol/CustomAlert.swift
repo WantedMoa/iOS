@@ -43,12 +43,13 @@ extension CustomAlert {
         rootVC?.present(vc, animated: true)
     }
     
-    public func presentBottomAlert(message: String) {
+    public func presentBottomAlert(message: String, completion: (() -> ())? = nil) {
         let vc = BottomAlertViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         vc.blurVC = blurVC
         vc.message = message
+        vc.completion = completion
         rootVC?.present(vc, animated: true)
     }
     
@@ -57,6 +58,7 @@ extension CustomAlert {
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         vc.blurVC = blurVC
+        vc.positionHandler = positionHandler
         rootVC?.present(vc, animated: true)
     }
 }

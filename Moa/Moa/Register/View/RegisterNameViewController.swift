@@ -11,7 +11,7 @@ import RxCocoa
 import RxGesture
 import RxSwift
 
-final class RegisterNameViewController: UIViewController, IdentifierType {
+final class RegisterNameViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var nameCheckImageView: UIImageView!
     @IBOutlet private weak var nameBottomLineView: UIView!
@@ -32,7 +32,7 @@ final class RegisterNameViewController: UIViewController, IdentifierType {
     private let changeName = PublishRelay<String>()
     private let changePosition = PublishRelay<Int>()
     private let moaButtonTapped = PublishRelay<Void>()
-
+    private let isValidPosition = BehaviorRelay<Bool>(value: false)
     private let viewModel: RegisterNameViewModel
     
     init(email: String, password: String) {
@@ -48,6 +48,25 @@ final class RegisterNameViewController: UIViewController, IdentifierType {
         super.viewDidLoad()
         configureUI()
         bindUI()
+        bind()
+    }
+    
+    private func bind() {
+        output.alertMessage
+            .emit { [weak self] (message: String) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: message)
+            }
+            .disposed(by: disposeBag)
+        
+        output.nextProgress
+            .emit { [weak self] (_: Void) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "회원가입을 완료했습니다") {
+                    self.navigationController?.dismiss(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -55,14 +74,12 @@ final class RegisterNameViewController: UIViewController, IdentifierType {
             .compactMap { $0 }
             .bind(to: changeName)
             .disposed(by: disposeBag)
-        
+                
         let isValidName = nameTextField.rx.text
             .compactMap { $0?.count }
             .map { $0 >= 2 && $0 < 10 }
                   
-        let isValidButton = nameTextField.rx.text
-            .compactMap { $0?.count }
-            .map { $0 >= 2 && $0 < 10 && self.postionLabel.text != "직무를 선택해주세요" }
+        let isValidButton = Observable.combineLatest(isValidName, isValidPosition).map { $0 && $1 }
         
         isValidName
             .map { $0 ? UIColor.black : UIColor(rgb: 0xdddddd) }
@@ -82,6 +99,30 @@ final class RegisterNameViewController: UIViewController, IdentifierType {
                 let viewColor: UIColor = isValid ? .black : .init(rgb: 0xdddddd)
                 self.moaButtonView.titleLabel.textColor = textColor
                 self.moaButtonView.contentView.backgroundColor = viewColor
+            }
+            .disposed(by: disposeBag)
+        
+        postionStackView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomPosition { [weak self] (title: String, value: Int) in
+                    guard let self = self else { return }
+                    self.postionLabel.text = title
+                    self.isValidPosition.accept(true)
+                    self.changePosition.accept(value)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                
+                if self.moaButtonView.contentView.backgroundColor == .black {
+                    self.moaButtonTapped.accept(())
+                }
             }
             .disposed(by: disposeBag)
     }

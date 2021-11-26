@@ -145,7 +145,6 @@
                         <constraint firstItem="QfG-2g-gsm" firstAttribute="top" secondItem="Kom-3K-hbY" secondAttribute="bottom" constant="20" id="0O0-Sx-1PZ"/>
                         <constraint firstAttribute="trailing" secondItem="QfG-2g-gsm" secondAttribute="trailing" id="3IS-d1-Dae"/>
                         <constraint firstAttribute="bottom" secondItem="QfG-2g-gsm" secondAttribute="bottom" constant="96" id="7jj-bk-3ci"/>
-                        <constraint firstItem="NwK-SV-a7E" firstAttribute="bottom" secondItem="yaB-Vv-xlu" secondAttribute="bottom" constant="34" id="Eii-9z-2b1"/>
                         <constraint firstAttribute="height" constant="300" id="H0c-aI-OSc"/>
                         <constraint firstItem="NwK-SV-a7E" firstAttribute="top" secondItem="QfG-2g-gsm" secondAttribute="bottom" id="OfF-Ff-yFZ"/>
                         <constraint firstAttribute="bottom" secondItem="NwK-SV-a7E" secondAttribute="bottom" id="TTx-bG-JNm"/>
@@ -167,7 +166,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ks3-6z-SnN" secondAttribute="trailing" id="amF-2M-lqe"/>
                 <constraint firstItem="ks3-6z-SnN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uXM-5j-8oS"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="80.357142857142847"/>
+            <point key="canvasLocation" x="-554" y="-27"/>
         </view>
     </objects>
     <resources>

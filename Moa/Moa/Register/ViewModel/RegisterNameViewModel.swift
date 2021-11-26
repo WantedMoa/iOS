@@ -41,16 +41,39 @@ final class RegisterNameViewModel: ViewModelType {
         let alertMessage = PublishRelay<String>()
         let nextProgress = PublishRelay<Void>()
         let name = BehaviorRelay<String>(value: "")
-        
+        let position = BehaviorRelay<Int>(value: 1)
+
         input.changeName
             .emit(to: name)
             .disposed(by: disposeBag)
         
-        input.moaButtonTapped
-            .emit { [weak self] (_: Void) in
-                guard let self = self else { return }
-                
+        input.changePosition
+            .emit(to: position)
+            .disposed(by: disposeBag)
+        
+        input.moaButtonTapped.asObservable()
+            .flatMap { [weak self] () -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                let param: [String: Any] = [
+                    "email": self.email,
+                    "password": self.password,
+                    "name": name.value,
+                    "position": position.value
+                ]
+                return self.loginProvider.rx.request(.registerUser(param: param))
             }
+            .map(MoaResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else {
+                    alertMessage.accept(response.message)
+                    return
+                }
+                
+                nextProgress.accept(())
+            }, onError: { error in
+                print(error)
+                alertMessage.accept(error.localizedDescription)
+            })
             .disposed(by: disposeBag)
         
         return Output(
