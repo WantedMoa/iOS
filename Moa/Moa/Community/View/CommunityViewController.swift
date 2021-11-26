@@ -46,6 +46,10 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
         bindUI()
         bind()
         updateTagStackView(by: ["Figma", "인공지능", "해커톤", "기획능력", "UX/UI"])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchTeambuilds.accept(())
     }
     

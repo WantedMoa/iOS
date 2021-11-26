@@ -38,6 +38,8 @@
 		3C24044E274FE96B0011333C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24044D274FE96B0011333C /* SplashView.swift */; };
 		3C240452274FE9790011333C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C240451274FE9790011333C /* SplashView.xib */; };
 		3C26B09527504F510095C683 /* CommunityRecruitsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B09427504F510095C683 /* CommunityRecruitsResponse.swift */; };
+		3C26B09727505ACE0095C683 /* Date+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B09627505ACE0095C683 /* Date+Component.swift */; };
+		3C26B09927505E5A0095C683 /* MoaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B09827505E5A0095C683 /* MoaResponse.swift */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -145,6 +147,8 @@
 		3C24044D274FE96B0011333C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		3C240451274FE9790011333C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		3C26B09427504F510095C683 /* CommunityRecruitsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRecruitsResponse.swift; sourceTree = "<group>"; };
+		3C26B09627505ACE0095C683 /* Date+Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Component.swift"; sourceTree = "<group>"; };
+		3C26B09827505E5A0095C683 /* MoaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaResponse.swift; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 				3C24043F274FD46A0011333C /* HomePopularUsersDetailResponse.swift */,
 				3C240441274FD76A0011333C /* HomePopularRecruitsResponse.swift */,
 				3C26B09427504F510095C683 /* CommunityRecruitsResponse.swift */,
+				3C26B09827505E5A0095C683 /* MoaResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				3C1DEDB9274CE44500F0EA58 /* UIView+RoundConer.swift */,
 				3CB0607B274E4D4000FF4A6D /* UIFont+NotoSans.swift */,
 				3C240429274FB0480011333C /* String+EmailRegex.swift */,
+				3C26B09627505ACE0095C683 /* Date+Component.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -757,6 +763,7 @@
 				3C80B1A1274343A900DDF82F /* BestMemberSectionModel.swift in Sources */,
 				3CC18A5E274EA676007C02F4 /* SettingTeamMemberViewModel.swift in Sources */,
 				3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */,
+				3C26B09727505ACE0095C683 /* Date+Component.swift in Sources */,
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */,
 				3C9F217A274F78D700C3C606 /* LoginViewController.swift in Sources */,
@@ -773,6 +780,7 @@
 				3C240435274FC2D70011333C /* PrivateKey.swift in Sources */,
 				3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */,
 				3C1735932746044500C9895E /* CommunityViewModel.swift in Sources */,
+				3C26B09927505E5A0095C683 /* MoaResponse.swift in Sources */,
 				3C80B18927425CED00DDF82F /* MoaTabBarController.swift in Sources */,
 				3CC18A4E274E926A007C02F4 /* SettingMyTeambuildCell.swift in Sources */,
 				3C26B09527504F510095C683 /* CommunityRecruitsResponse.swift in Sources */,

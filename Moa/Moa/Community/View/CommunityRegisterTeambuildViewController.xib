@@ -25,6 +25,7 @@
                 <outlet property="competitionStartDateLabel" destination="QKj-KH-dWW" id="o7j-xu-Fbe"/>
                 <outlet property="competitionStartDateStackView" destination="wIx-Jr-HcY" id="hSi-uv-kZV"/>
                 <outlet property="competitionTitleTextField" destination="rEg-e1-wLJ" id="pNu-ud-Tuk"/>
+                <outlet property="moaButtonView" destination="0bx-GJ-vmd" id="95j-AH-4PA"/>
                 <outlet property="photoImageView" destination="ez7-gj-A1T" id="Wom-NS-Ggx"/>
                 <outlet property="photoSelectView" destination="9jP-aC-QaF" id="wBh-A0-Yfa"/>
                 <outlet property="scrollView" destination="CgH-Ec-gUx" id="izB-ZX-f27"/>
