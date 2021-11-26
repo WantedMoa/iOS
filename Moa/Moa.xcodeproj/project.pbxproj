@@ -49,6 +49,8 @@
 		3C26B0A92750A21E0095C683 /* RegisterNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0A82750A21E0095C683 /* RegisterNameViewModel.swift */; };
 		3C26B0AC2750A8E00095C683 /* BottomPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0AA2750A8E00095C683 /* BottomPositionViewController.swift */; };
 		3C26B0AD2750A8E00095C683 /* BottomPositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C26B0AB2750A8E00095C683 /* BottomPositionViewController.xib */; };
+		3C26B0AF2750B2BE0095C683 /* LoginUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */; };
+		3C26B0B12750B3110095C683 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26B0B02750B3110095C683 /* TokenManager.swift */; };
 		3C2DD42D274C7D70007DBC58 /* CommunityJoinTeambuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */; };
 		3C2DD42E274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */; };
 		3C2DD430274CA2C2007DBC58 /* MoaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */; };
@@ -167,6 +169,8 @@
 		3C26B0A82750A21E0095C683 /* RegisterNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewModel.swift; sourceTree = "<group>"; };
 		3C26B0AA2750A8E00095C683 /* BottomPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPositionViewController.swift; sourceTree = "<group>"; };
 		3C26B0AB2750A8E00095C683 /* BottomPositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomPositionViewController.xib; sourceTree = "<group>"; };
+		3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserResponse.swift; sourceTree = "<group>"; };
+		3C26B0B02750B3110095C683 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		3C2DD42B274C7D6F007DBC58 /* CommunityJoinTeambuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinTeambuildViewController.swift; sourceTree = "<group>"; };
 		3C2DD42C274C7D70007DBC58 /* CommunityJoinTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityJoinTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C2DD42F274CA2C2007DBC58 /* MoaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaButtonView.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				3C240434274FC2D70011333C /* PrivateKey.swift */,
 				3C240438274FC50C0011333C /* Model */,
 				3C240439274FC61B0011333C /* MoaError.swift */,
+				3C26B0B02750B3110095C683 /* TokenManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				3C26B09427504F510095C683 /* CommunityRecruitsResponse.swift */,
 				3C26B09827505E5A0095C683 /* MoaResponse.swift */,
 				3C26B09A275066B40095C683 /* CommunityDetailRecruitResponse.swift */,
+				3C26B0AE2750B2BE0095C683 /* LoginUserResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -813,6 +819,8 @@
 				3C80B185274253BA00DDF82F /* HomeBestTeamBuildCell.swift in Sources */,
 				3C17358F2746021E00C9895E /* CommunityTeamBuildCell.swift in Sources */,
 				3C9F217A274F78D700C3C606 /* LoginViewController.swift in Sources */,
+				3C26B0AF2750B2BE0095C683 /* LoginUserResponse.swift in Sources */,
+				3C26B0B12750B3110095C683 /* TokenManager.swift in Sources */,
 				3C26B0AC2750A8E00095C683 /* BottomPositionViewController.swift in Sources */,
 				3C80B1972742665200DDF82F /* SettingViewController.swift in Sources */,
 				3C1DEDBC274CE7B600F0EA58 /* BackgroundBlur.swift in Sources */,

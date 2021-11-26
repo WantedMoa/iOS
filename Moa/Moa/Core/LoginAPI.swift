@@ -11,6 +11,7 @@ public enum LoginAPI {
     case requestEmailAuth(param: [String: Any])
     case checkEmailAuth(email: String)
     case registerUser(param: [String: Any])
+    case loginUser(param: [String: Any])
 }
 
 extension LoginAPI: TargetType {
@@ -34,12 +35,14 @@ extension LoginAPI: TargetType {
             return "/app/users/check"
         case .registerUser:
             return "/app/users"
+        case .loginUser:
+            return "/app/login"
         }
     }
     
     public var method: Method {
         switch self {
-        case .requestEmailAuth, .checkEmailAuth, .registerUser:
+        case .requestEmailAuth, .checkEmailAuth, .registerUser, .loginUser:
             return .post
         }
     }
@@ -56,7 +59,8 @@ extension LoginAPI: TargetType {
             
         // POST
         case .requestEmailAuth(let param),
-             .registerUser(let param):
+             .registerUser(let param),
+             .loginUser(let param):
             return .requestParameters(parameters: param, encoding: JSONEncoding.default)
         }
     }

@@ -28,7 +28,7 @@ final class RegisterNameViewModel: ViewModelType {
     private let loginProvider: MoyaProvider<LoginAPI>
     private let email: String
     private let password: String
-
+    
     init(email: String, password: String) {
         let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
         let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)

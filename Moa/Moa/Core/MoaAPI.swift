@@ -72,6 +72,7 @@ extension MoaAPI: TargetType {
     }
     
     public var headers: [String : String]? {
-        return ["x-access-token": PrivateKey.testToken]
+        guard let jwt = TokenManager().jwt else { fatalError() }
+        return ["x-access-token": jwt]
     }
 }
