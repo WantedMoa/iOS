@@ -21,6 +21,7 @@ public enum MoaAPI {
     
     // Match
     case matchRecruits
+    case matchRecommends(index: Int)
 }
 
 extension MoaAPI: TargetType {
@@ -44,6 +45,8 @@ extension MoaAPI: TargetType {
             return "/app/recruits/\(index)"
         case .matchRecruits:
             return "/recruits"
+        case .matchRecommends(let index):
+            return "/recruits/\(index)/recommends"
         }
     }
     
@@ -55,7 +58,8 @@ extension MoaAPI: TargetType {
              .homePopularRecruits,
              .communityRecruits,
              .communityDetailRecruit,
-             .matchRecruits:
+             .matchRecruits,
+             .matchRecommends:
             return .get
         case .communityRegisterRecruit:
             return .post
@@ -74,7 +78,8 @@ extension MoaAPI: TargetType {
             .homePopularRecruits,
             .communityRecruits,
             .communityDetailRecruit,
-            .matchRecruits:
+            .matchRecruits,
+            .matchRecommends:
             return .requestPlain
         
         case .communityRegisterRecruit(let formData):

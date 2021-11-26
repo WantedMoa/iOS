@@ -14,11 +14,17 @@ import Moya
 final class MatchViewModel: ViewModelType {
     struct Input {
         let fetchMyTeambuilds: Signal<Void>
+        let fetchRecommends: Signal<Int>
     }
     
     struct Output {
         let myTeambuilds: Driver<[MatchRecruit]>
         let myTeamTitle: Driver<String>
+        let recommendCount: Driver<Int>
+        let innerImageURL: Driver<String>
+        let outerFirstImageURL: Driver<String>
+        let outerSecondImageURL: Driver<String>
+        let outerThirdImageURL: Driver<String>
     }
     
     private let disposeBag = DisposeBag()
@@ -36,6 +42,15 @@ final class MatchViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let myTeamTitle = BehaviorRelay<String>(value: "나의 팀")
+        let recommendCount = BehaviorRelay<Int>(value: 0)
+        let innerImageURL = BehaviorRelay<String>(value: "")
+        let outerFirstImageURL = BehaviorRelay<String>(value: "")
+        let outerSecondImageURL = BehaviorRelay<String>(value: "")
+        let outerThirdImageURL = BehaviorRelay<String>(value: "")
+        
+        let imageDrivers = [innerImageURL, outerFirstImageURL, outerSecondImageURL, outerThirdImageURL]
+        
+        let fetchInitRecommends = PublishRelay<Int>()
 
         input.fetchMyTeambuilds.asObservable()
             .flatMap { [weak self] () -> Single<Response> in
@@ -50,7 +65,35 @@ final class MatchViewModel: ViewModelType {
                 
                 if let result = response.result {
                     self.myTeambuilds.accept(result)
-                    myTeamTitle.accept(result.first?.title ?? "나의 팀")
+                    
+                    if let firstItem = result.first {
+                        myTeamTitle.accept(firstItem.title)
+                        fetchInitRecommends.accept(firstItem.index)
+                    }
+                }
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        Signal.merge([fetchInitRecommends.asSignal(), input.fetchRecommends])
+            .asObservable()
+            .flatMap { [weak self] (index: Int) -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.matchRecommends(index: index))
+            }
+            .map(MatchRecommendsResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else {
+                    return
+                }
+                
+                if let result = response.result {
+                    recommendCount.accept(result.count)
+                    
+                    for (imageDriver, recommend) in zip(imageDrivers, result) {
+                        imageDriver.accept(recommend.profileImgURL)
+                    }
                 }
             }, onError: { error in
                 print(error)
@@ -59,7 +102,12 @@ final class MatchViewModel: ViewModelType {
         
         return Output(
             myTeambuilds: myTeambuilds.asDriver(),
-            myTeamTitle: myTeamTitle.asDriver()
+            myTeamTitle: myTeamTitle.asDriver(),
+            recommendCount: recommendCount.asDriver(),
+            innerImageURL: innerImageURL.asDriver(),
+            outerFirstImageURL: outerFirstImageURL.asDriver(),
+            outerSecondImageURL: outerSecondImageURL.asDriver(),
+            outerThirdImageURL: outerThirdImageURL.asDriver()
         )
     }
 }

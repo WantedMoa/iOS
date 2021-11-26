@@ -11,6 +11,7 @@ import UIKit
 import RxCocoa
 import RxGesture
 import RxSwift
+import Kingfisher
 
 struct MatchCircleContent {
     let view: UIView
@@ -117,11 +118,13 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
 
     // ViewModel
     private lazy var input = MatchViewModel.Input(
-        fetchMyTeambuilds: fetchMyTeambuilds.asSignal()
+        fetchMyTeambuilds: fetchMyTeambuilds.asSignal(),
+        fetchRecommends: fetchRecommends.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     private let fetchMyTeambuilds = PublishRelay<Void>()
+    private let fetchRecommends = PublishRelay<Int>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -164,6 +167,43 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         .disposed(by: disposeBag)
         
         output.myTeamTitle.drive(myTeamTitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.recommendCount
+            .map { "+\($0)" }
+            .drive(innerMatchCountLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.innerImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.innerFirstProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.outerFirstImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.outterFirstProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.outerSecondImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.outterSecondProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.outerThirdImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.outterThirdProfileImageView.kf.setImage(with: URL(string: url))
+            }
             .disposed(by: disposeBag)
     }
     
@@ -366,8 +406,10 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
             animated: true
         )
         
-        let title = viewModel.myTeambuilds.value[indexPath.item].title
+        let item = viewModel.myTeambuilds.value[indexPath.item]
+        let title = item.title
         myTeamTitleLabel.text = title
+        fetchRecommends.accept(item.index)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
