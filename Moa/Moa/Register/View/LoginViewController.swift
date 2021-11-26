@@ -55,7 +55,7 @@ final class LoginViewController: UIViewController, IdentifierType {
             .compactMap { $0 }
             .map { $0.isValidPassword()  }
         
-        let isButtonValid = Observable.combineLatest(isValidID, isValidPassword).map { $0 && $1 }
+        let isValidButton = Observable.combineLatest(isValidID, isValidPassword).map { $0 && $1 }
         
         isValidID
             .map { $0 ? UIColor.black : UIColor(rgb: 0xdddddd) }
@@ -79,7 +79,7 @@ final class LoginViewController: UIViewController, IdentifierType {
             .bind(to: passwordCheckImageView.rx.image)
             .disposed(by: disposeBag)
         
-        isButtonValid
+        isValidButton
             .subscribe { [weak self] (isValid: Bool) in
                 guard let self = self else { return }
                 let textColor: UIColor = isValid ? .white : .black

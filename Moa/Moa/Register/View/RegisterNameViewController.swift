@@ -58,8 +58,12 @@ final class RegisterNameViewController: UIViewController, IdentifierType {
         
         let isValidName = nameTextField.rx.text
             .compactMap { $0?.count }
+            .map { $0 >= 2 && $0 < 10 }
+                  
+        let isValidButton = nameTextField.rx.text
+            .compactMap { $0?.count }
             .map { $0 >= 2 && $0 < 10 && self.postionLabel.text != "직무를 선택해주세요" }
-                        
+        
         isValidName
             .map { $0 ? UIColor.black : UIColor(rgb: 0xdddddd) }
             .bind(to: nameBottomLineView.rx.backgroundColor)
@@ -71,7 +75,7 @@ final class RegisterNameViewController: UIViewController, IdentifierType {
             .bind(to: nameCheckImageView.rx.image)
             .disposed(by: disposeBag)
         
-        isValidName
+        isValidButton
             .subscribe { [weak self] (isValid: Bool) in
                 guard let self = self else { return }
                 let textColor: UIColor = isValid ? .white : .black
