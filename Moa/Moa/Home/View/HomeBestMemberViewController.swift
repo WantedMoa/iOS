@@ -16,9 +16,12 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
     @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
     
     // ViewModel
-    private lazy var input = HomeBestMemberViewModel.Input()
+    private lazy var input = HomeBestMemberViewModel.Input(
+        fetchHomePopularUsersDetail: fetchHomePopularUsersDetail.asSignal()
+    )
     private lazy var output = viewModel.transform(input: input)
     
+    private let fetchHomePopularUsersDetail = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -37,6 +40,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
         super.viewDidLoad()
         configureUI()
         bind()
+        fetchHomePopularUsersDetail.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +72,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
             forSupplementaryViewOfKind: HomeBestMemberReusableView.headerElementKind,
             withReuseIdentifier: HomeBestMemberReusableView.identifier
         )
+        bestMemberCollectionView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -116,7 +121,7 @@ extension HomeBestMemberViewController {
             section.boundarySupplementaryItems = [sectionHeader]
             section.orthogonalScrollingBehavior = .none
             // section.orthogonalScrollingBehavior = .groupPaging
-            section.contentInsets = .init(top: 16, leading: 16, bottom: 16, trailing: 16)
+            section.contentInsets = .init(top: 16, leading: 16, bottom: 50, trailing: 16)
             return section
         }
         

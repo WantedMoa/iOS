@@ -20,9 +20,12 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     @IBOutlet private weak var addButtonView: UIView!
     
     // ViewModel
-    private lazy var input = CommunityViewModel.Input()
+    private lazy var input = CommunityViewModel.Input(
+        fetchTeambuilds: fetchTeambuilds.asSignal()
+    )
     private lazy var output = viewModel.transform(input: input)
     
+    private let fetchTeambuilds = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -45,18 +48,23 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
         updateTagStackView(by: ["Figma", "인공지능", "해커톤", "기획능력", "UX/UI"])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchTeambuilds.accept(())
+    }
+    
     private func bind() {
         output.teambuilds
             .drive(teambuildCollectionView.rx.items(
                 cellIdentifier: CommunityTeamBuildCell.identifier,
                 cellType: CommunityTeamBuildCell.self)
             ) { _, item, cell in
-                cell.update(data: item)
+                cell.update(by: item)
             }
             .disposed(by: disposeBag)
         
         output.teambuilds
-            .drive { [weak self] (teambuilds: [TestbestMembers]) in
+            .drive { [weak self] (teambuilds: [CommunityRecruit]) in
                 guard let self = self else { return }
                 let height = CGFloat(30 + teambuilds.count * 110)
                 self.teambuildCollectionHeightLayout.constant = height

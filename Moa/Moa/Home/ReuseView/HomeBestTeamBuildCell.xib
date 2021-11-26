@@ -16,10 +16,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="HomeBestTeamBuildCell" customModule="Moa" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="510" height="118"/>
+            <rect key="frame" x="0.0" y="0.0" width="286" height="118"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="510" height="118"/>
+                <rect key="frame" x="0.0" y="0.0" width="286" height="118"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestPoster2" translatesAutoresizingMaskIntoConstraints="NO" id="May-vY-e1R">
@@ -30,7 +30,7 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6Gt-H0-JfR" userLabel="TeamInfo StackView">
-                        <rect key="frame" x="89" y="29" width="97" height="34"/>
+                        <rect key="frame" x="89" y="29" width="187" height="34"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/19~11/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5q-Rm-crd">
                                 <rect key="frame" x="0.0" y="0.0" width="53.5" height="13.5"/>
@@ -68,16 +68,17 @@
                 <constraint firstItem="Py9-e9-pb0" firstAttribute="bottom" secondItem="May-vY-e1R" secondAttribute="bottom" constant="-4" id="SYF-dY-ZeX"/>
                 <constraint firstItem="6Gt-H0-JfR" firstAttribute="leading" secondItem="May-vY-e1R" secondAttribute="trailing" constant="10" id="Ttk-Mh-eEU"/>
                 <constraint firstItem="6Gt-H0-JfR" firstAttribute="top" secondItem="May-vY-e1R" secondAttribute="top" constant="3" id="WM3-4F-ept"/>
+                <constraint firstAttribute="trailing" secondItem="6Gt-H0-JfR" secondAttribute="trailing" constant="10" id="ehe-L5-8hm"/>
                 <constraint firstItem="May-vY-e1R" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="13" id="qEo-Ag-FE5"/>
             </constraints>
-            <size key="customSize" width="510" height="118"/>
+            <size key="customSize" width="286" height="118"/>
             <connections>
                 <outlet property="competitionDateLabel" destination="k5q-Rm-crd" id="sQx-IT-vtM"/>
                 <outlet property="competitionImageView" destination="May-vY-e1R" id="uXb-UQ-5jj"/>
                 <outlet property="competitionTitleLabel" destination="i4P-tC-hp0" id="oGA-mx-1G2"/>
                 <outlet property="tagStackView" destination="Py9-e9-pb0" id="Sca-AR-6oA"/>
             </connections>
-            <point key="canvasLocation" x="471.01449275362324" y="113.16964285714285"/>
+            <point key="canvasLocation" x="308.69565217391306" y="113.16964285714285"/>
         </collectionViewCell>
     </objects>
     <resources>

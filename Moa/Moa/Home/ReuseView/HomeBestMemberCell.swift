@@ -7,7 +7,7 @@
 
 import UIKit
 
-typealias HomeBestMember = (profileImage: String, name: String)
+import Kingfisher
 
 final class HomeBestMemberCell: UICollectionViewCell, IdentifierType {
     @IBOutlet private weak var profileImageView: UIImageView!
@@ -17,6 +17,18 @@ final class HomeBestMemberCell: UICollectionViewCell, IdentifierType {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+    }
+    
+    func update(by homePopularUser: HomePopularUser, isHiddenStatus: Bool = true) {
+        profileImageView.kf.setImage(with: URL(string: homePopularUser.profileImageURL))
+        nameLabel.text = homePopularUser.name
+        profileStatusImageView.isHidden = isHiddenStatus
+    }
+    
+    func update(by homePopularUser: HomePopularUsersDetail, isHiddenStatus: Bool = true) {
+        profileImageView.kf.setImage(with: URL(string: homePopularUser.profileImageURL))
+        nameLabel.text = homePopularUser.name
+        profileStatusImageView.isHidden = isHiddenStatus
     }
     
     func update(by homeBestMember: HomeBestMember, isHiddenStatus: Bool = true) {

@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 final class MatchMyTeamBuildCell: UICollectionViewCell, IdentifierType {
     @IBOutlet private weak var competitionImageView: UIImageView!
     @IBOutlet private weak var competitionDateLabel: UILabel!
@@ -18,11 +20,11 @@ final class MatchMyTeamBuildCell: UICollectionViewCell, IdentifierType {
         configureUI()
     }
     
-    func update(data: TestbestMembers) {
-        competitionImageView.image = UIImage(named: data.image)
-        competitionDateLabel.text = data.date
-        competitionTitleLabel.text = data.title
-        updateTagStackView(by: data.tags)
+    func update(by communityRecruit: CommunityRecruit) {
+        competitionImageView.kf.setImage(with: URL(string: communityRecruit.pictureURL))
+        competitionDateLabel.text = communityRecruit.startDate
+        competitionTitleLabel.text = communityRecruit.title
+        // updateTagStackView(by: data.tags)
     }
     
     private func configureUI() {

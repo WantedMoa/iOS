@@ -11,6 +11,8 @@ import RxCocoa
 import RxFSPagerView
 import RxGesture
 import RxSwift
+import Kingfisher
+import SafariServices
 
 final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     // MARK: - IBOutlet
@@ -28,14 +30,30 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var bestTeamBuildDetailButtonLabel: UILabel!
     
+    private let splashView: UIView = {
+        let splashView = SplashView()
+        splashView.translatesAutoresizingMaskIntoConstraints = false
+        return splashView
+    }()
+    
+    private var tabVC: UITabBarController? {
+        return navigationController?.tabBarController
+    }
+    
     // ViewModel
     private lazy var input = HomeViewModel.Input(
-        pagerViewDidScrolled: pagerViewDidScrolled.asSignal()
+        pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
+        fetchPosters: fetchPosters.asSignal(),
+        fetchBestMembers: fetchBestMembers.asSignal(),
+        fetchPopularRecruits: fetchPopularRecruits.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     // Event
     private let pagerViewDidScrolled = PublishRelay<Int>()
+    private let fetchPosters = PublishRelay<Void>()
+    private let fetchBestMembers = PublishRelay<Void>()
+    private let fetchPopularRecruits = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -55,6 +73,11 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         configureUI()
         bindUI()
         bind()
+        
+        prepareSplashView()
+        fetchPosters.accept(())
+        fetchBestMembers.accept(())
+        fetchPopularRecruits.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +88,17 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     private func bind() {
         output.posters
             .drive(pagerView.rx.items(cellIdentifier: HomePagerCell.identifier)) {
-                _, item, cell in
-                cell.imageView?.image = UIImage(named: item)
+                _, poster, cell in
+                cell.imageView?.contentMode = .scaleToFill
+                cell.imageView?.kf.setImage(
+                    with: URL(string: poster.pictureURL),
+                    completionHandler: { [weak self] result in
+                        guard let self = self else { return }
+                        UIView.animate(withDuration: 0.15) {
+                            self.splashView.alpha = 0
+                        }
+                    }
+                )
             }
             .disposed(by: disposeBag)
         
@@ -88,12 +120,12 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 cellIdentifier: HomeBestTeamBuildCell.identifier,
                 cellType: HomeBestTeamBuildCell.self)
             ) { _, item, cell in
-                cell.update(data: item)
+                cell.update(by: item)
             }
             .disposed(by: disposeBag)
         
         output.bestTeamBuilds
-            .drive { [weak self] (posters: [TestbestMembers]) in
+            .drive { [weak self] (posters: [HomePopularRecruit]) in
                 guard let self = self else { return }
                 let height = CGFloat(30 + posters.count * 100)
                 self.bestTeamBuildCollectionViewHeight.constant = height
@@ -146,7 +178,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             forCellWithReuseIdentifier: HomePagerCell.identifier
         )
         pagerView.isInfinite = true
-        pagerView.automaticSlidingInterval = 3.0
+        pagerView.automaticSlidingInterval = 6.0
         pagerView.layer.masksToBounds = true
         pagerView.layer.cornerRadius = 10
     }
@@ -177,6 +209,18 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         )
         bestTeamBuildCollectionView.isScrollEnabled = false
     }
+    
+    private func prepareSplashView() {
+        guard let tabVC = tabVC else { return }
+        tabVC.view.addSubview(splashView)
+        
+        NSLayoutConstraint.activate([
+            splashView.leadingAnchor.constraint(equalTo: tabVC.view.leadingAnchor),
+            splashView.trailingAnchor.constraint(equalTo: tabVC.view.trailingAnchor),
+            splashView.topAnchor.constraint(equalTo: tabVC.view.topAnchor),
+            splashView.bottomAnchor.constraint(equalTo: tabVC.view.bottomAnchor)
+        ])
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -199,6 +243,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - FSPagerViewDelegate
 extension HomeViewController: FSPagerViewDelegate {
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+        let count = viewModel.homeContests.count
+        let currentIndex = index % count
+        guard currentIndex >= 0 && currentIndex < count else { return false }
+        guard let url = URL(string: viewModel.homeContests[currentIndex].linkURL) else { return false }
+        let safariVC = SFSafariViewController(url: url)
+        tabVC?.present(safariVC, animated: true)
         return false
     }
 }

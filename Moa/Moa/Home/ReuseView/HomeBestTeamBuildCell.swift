@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
     @IBOutlet private weak var competitionImageView: UIImageView!
     @IBOutlet private weak var competitionDateLabel: UILabel!
@@ -21,6 +23,8 @@ final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
     private func configureUI() {
         backgroundColor = .white
         contentView.layer.masksToBounds = false
+        competitionImageView.layer.masksToBounds = true
+        competitionImageView.layer.cornerRadius = 5
         layer.masksToBounds = false
         layer.cornerRadius = 10
         layer.shadowColor = UIColor.black.cgColor
@@ -29,11 +33,11 @@ final class HomeBestTeamBuildCell: UICollectionViewCell, IdentifierType {
         layer.shadowRadius = 4.0
     }
     
-    func update(data: TestbestMembers) {
-        competitionImageView.image = UIImage(named: data.image)
-        competitionDateLabel.text = data.date
-        competitionTitleLabel.text = data.title
-        updateTagStackView(by: data.tags)
+    func update(by homePopularRecruit: HomePopularRecruit) {
+        competitionImageView.kf.setImage(with: URL(string: homePopularRecruit.pictureURL))
+        competitionDateLabel.text = homePopularRecruit.startDate + "-" + homePopularRecruit.endDate
+        competitionTitleLabel.text = homePopularRecruit.title
+        updateTagStackView(by: homePopularRecruit.tags)
     }
     
     private func updateTagStackView(by tags: [String]) {

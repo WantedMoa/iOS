@@ -151,7 +151,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             cellIdentifier: MatchMyTeamBuildCell.identifier,
             cellType: MatchMyTeamBuildCell.self)
         ) { _, item, cell in
-            cell.update(data: item)
+            // cell.update(data: item)
         }
         .disposed(by: disposeBag)
     }
@@ -268,7 +268,7 @@ extension MatchViewController {
     }
     
     private func generateCircleContents() -> [MatchCircleContent] {
-        let duration: CGFloat = 8
+        let duration: CGFloat = 6
         
         let contents = [
             MatchCircleContent(

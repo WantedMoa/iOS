@@ -123,7 +123,7 @@ extension SettingTeamMemberViewController {
                 ),
                 subitems: [group, group, group, group]
             )
-            horizontalGroup.interItemSpacing = .flexible(10)
+            horizontalGroup.interItemSpacing = .flexible(0)
             
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.interGroupSpacing = 20

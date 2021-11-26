@@ -17,9 +17,9 @@ enum MoaTab: String, CaseIterable {
 final class MoaTabBarController: UITabBarController, BackgroundBlur {
     lazy var lineView: UIView = {
         let width = view.bounds.width
-        let height = 0.5
+        let height = 0.3
         let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor(rgb: 0xe1e1e1)
         return view
     }()
     

@@ -9,12 +9,14 @@ import UIKit
 
 import RxCocoa
 import RxGesture
+import RxKeyboard
 import RxSwift
 
 typealias PickerDelegate = UIImagePickerControllerDelegate & UINavigationControllerDelegate
 typealias MoaSupport = UnderLineNavBar & CustomAlert & IdentifierType
 
 final class CommunityRegisterTeambuildViewController: UIViewController, MoaSupport {
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var photoSelectView: UIView!
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var competitionTitleTextField: UITextField!
@@ -31,6 +33,7 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
     @IBOutlet private weak var competitionStartDateLabel: UILabel!
     @IBOutlet private weak var competitionEndDateStackView: UIStackView!
     @IBOutlet private weak var competitionEndDateLabel: UILabel!
+    @IBOutlet private weak var moaButtonView: MoaButtonView!
     
     private let imagePicker: UIImagePickerController = {
         let vc = UIImagePickerController()
@@ -44,8 +47,12 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         changeTeambuildEndDate: changeTeambuildEndDate.asSignal(),
         changeCompetitionStartDate: changeCompetitionStartDate.asSignal(),
         changeCompetitionEndDate: changeCompetitionEndDate.asSignal(),
+        changeImage: changeImage.asSignal(),
+        changeContent: changeContent.asSignal(),
+        changeTitle: changeTitle.asSignal(),
         addTag: addTag.asSignal(),
-        removeTag: removeTag.asSignal()
+        removeTag: removeTag.asSignal(),
+        moaButtonTapped: moaButtonTapped.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
@@ -53,8 +60,12 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
     private let changeTeambuildEndDate = PublishRelay<Date>()
     private let changeCompetitionStartDate = PublishRelay<Date>()
     private let changeCompetitionEndDate = PublishRelay<Date>()
+    private let changeImage = PublishRelay<UIImage>()
+    private let changeContent = PublishRelay<String>()
+    private let changeTitle = PublishRelay<String>()
     private let addTag = PublishRelay<String?>()
     private let removeTag = PublishRelay<String?>()
+    private let moaButtonTapped = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
 
     // DI
@@ -89,6 +100,14 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         output.competitionStartDateTitle
             .drive(competitionStartDateLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        output.alertMessage
+            .distinctUntilChanged()
+            .emit { [weak self] (message: String) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: message)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -101,7 +120,7 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
                 guard UIImagePickerController.isSourceTypeAvailable(type) else {
                     print("권한이 없음")
                     return
-                } // 현재 기기에서 가능한지 확인하는 부분
+                }
                 
                 self.present(self.imagePicker, animated: true)
             }
@@ -110,6 +129,16 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
         teambuildContentTextView.rx.text
             .map { !($0?.isEmpty ?? true) }
             .bind(to: teambuildContentPlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        teambuildContentTextView.rx.text
+            .compactMap { $0 }
+            .bind(to: changeContent)
+            .disposed(by: disposeBag)
+        
+        competitionTitleTextField.rx.text
+            .compactMap { $0 }
+            .bind(to: changeTitle)
             .disposed(by: disposeBag)
         
         teambuildEndDateStackView.rx.tapGesture()
@@ -142,6 +171,61 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
                 self.presentBottomDatePicker { date in
                     self.changeCompetitionEndDate.accept(date)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        view.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.view.endEditing(true)
+            }
+            .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+          .drive(onNext: { [weak self] keyboardVisibleHeight in
+              guard let self = self else { return }
+              guard self.teambuildContentTextView.isFirstResponder else { return }
+              
+              let scrollOffset: CGFloat = keyboardVisibleHeight > 0 ? 170 : -170
+              self.scrollView.contentOffset.y += scrollOffset
+              
+              UIView.animate(withDuration: 0.1) {
+                  self.view.layoutIfNeeded()
+              }
+          })
+          .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                
+                let placeText = "날짜를 선택하세요"
+            
+                guard self.competitionTitleTextField.text?.count ?? 0 >= 3 else {
+                    self.presentBottomAlert(message: "공모전 제목을 3자 이상 입력해주세요")
+                    return
+                }
+                
+                guard self.photoImageView.image != nil else {
+                    self.presentBottomAlert(message: "이미지를 선택해주세요")
+                    return
+                }
+                
+                guard self.teambuildEndDateLabel.text != placeText
+                && self.competitionStartDateLabel.text != placeText
+                && self.competitionEndDateLabel.text != placeText else {
+                    self.presentBottomAlert(message: "날짜를 모두 입력해주세요")
+                    return
+                }
+                
+                guard self.teambuildContentTextView.text.count >= 5 else {
+                    self.presentBottomAlert(message: "공모전 내용을 5자 이상 입력해주세요")
+                    return
+                }
+                
+                self.moaButtonTapped.accept(())
             }
             .disposed(by: disposeBag)
     }
@@ -201,7 +285,11 @@ extension CommunityRegisterTeambuildViewController: PickerDelegate {
             selectedImage = originalImage
         }
         
-        photoImageView.image = selectedImage
+        if let image = selectedImage {
+            photoImageView.image = selectedImage
+            changeImage.accept(image)
+        }
+        
         picker.dismiss(animated: true)
     }
 }
