@@ -15,6 +15,7 @@ final class MatchViewModel: ViewModelType {
     struct Input {
         let fetchMyTeambuilds: Signal<Void>
         let fetchRecommends: Signal<Int>
+        let fetchUserProfile: Signal<Void>
     }
     
     struct Output {
@@ -25,6 +26,8 @@ final class MatchViewModel: ViewModelType {
         let outerFirstImageURL: Driver<String>
         let outerSecondImageURL: Driver<String>
         let outerThirdImageURL: Driver<String>
+        let profileImageURL: Driver<String>
+        let name: Driver<String>
     }
     
     private let disposeBag = DisposeBag()
@@ -47,7 +50,9 @@ final class MatchViewModel: ViewModelType {
         let outerFirstImageURL = BehaviorRelay<String>(value: "")
         let outerSecondImageURL = BehaviorRelay<String>(value: "")
         let outerThirdImageURL = BehaviorRelay<String>(value: "")
-        
+        let profileImageURL = BehaviorRelay<String>(value: "")
+        let name = BehaviorRelay<String>(value: "")
+
         let imageDrivers = [innerImageURL, outerFirstImageURL, outerSecondImageURL, outerThirdImageURL]
         
         let fetchInitRecommends = PublishRelay<Int>()
@@ -100,6 +105,26 @@ final class MatchViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        input.fetchUserProfile.asObservable()
+            .flatMap { [weak self] () -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.settingUserProfile)
+            }
+            .map(SettingProfileResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else { return }
+                
+                if let user = response.result.first {
+                    profileImageURL.accept(user.profileImg)
+                    let names = user.name.map { $0 }
+                    name.accept(String(names.suffix(names.count - 1) + "님"))
+                }
+            
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
         return Output(
             myTeambuilds: myTeambuilds.asDriver(),
             myTeamTitle: myTeamTitle.asDriver(),
@@ -107,7 +132,9 @@ final class MatchViewModel: ViewModelType {
             innerImageURL: innerImageURL.asDriver(),
             outerFirstImageURL: outerFirstImageURL.asDriver(),
             outerSecondImageURL: outerSecondImageURL.asDriver(),
-            outerThirdImageURL: outerThirdImageURL.asDriver()
+            outerThirdImageURL: outerThirdImageURL.asDriver(),
+            profileImageURL: profileImageURL.asDriver(),
+            name: name.asDriver()
         )
     }
 }

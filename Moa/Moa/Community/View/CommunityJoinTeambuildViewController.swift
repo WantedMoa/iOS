@@ -18,7 +18,6 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
     @IBOutlet private weak var joinTitleTextField: UITextField!
     @IBOutlet private weak var joinMessageTextView: UITextView!
     @IBOutlet private weak var joinMessagePlaceholderLabel: UILabel!
-    @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var scrollViewBottomLayout: NSLayoutConstraint!
     @IBOutlet private weak var competitionImageView: UIImageView!
@@ -27,6 +26,10 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
     @IBOutlet private weak var startDateLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var deadLineLabel: UILabel!
+    
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var bioLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
 
     private var navVC: MoaNavigationController? {
         return navigationController as? MoaNavigationController
@@ -104,13 +107,26 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
             .disposed(by: disposeBag)
         
         output.profileImageURL
-            .emit { [weak self] (profileImageURL: String) in
+            .emit { [weak self] (url: String) in
                 guard let self = self else { return }
-                self.competitionImageView.kf.setImage(with: URL(string: profileImageURL))
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.pictureImageURL
+            .emit { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.competitionImageView.kf.setImage(with: URL(string: url))
             }
             .disposed(by: disposeBag)
         
         output.competitionTitle.drive(competitionTitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.bio.drive(bioLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        output.name.drive(nameLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

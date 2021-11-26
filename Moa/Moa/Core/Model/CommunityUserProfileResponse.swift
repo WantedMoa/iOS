@@ -18,4 +18,5 @@ struct CommunityUserProfile: Codable {
     let userIdx: Int
     let name, university, bio, experiance: String
     let portfolio: String
+    let profileImg: String
 }

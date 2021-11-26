@@ -190,10 +190,10 @@
                     <rect key="frame" x="0.0" y="338.5" width="424" height="1223.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn4-bJ-r07" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="424" height="1139"/>
+                            <rect key="frame" x="0.0" y="0.0" width="424" height="1089"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i95-ON-H86" userLabel="Profile View">
-                                    <rect key="frame" x="0.0" y="0.0" width="424" height="650"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="424" height="600"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자기 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSe-aM-K0p">
                                             <rect key="frame" x="16" y="30" width="51.5" height="19"/>
@@ -281,7 +281,7 @@
                                         <constraint firstItem="3pb-FQ-QHQ" firstAttribute="top" secondItem="Eyv-S4-qJX" secondAttribute="bottom" constant="50" id="kaf-Kd-G4u"/>
                                         <constraint firstItem="noA-R0-Iox" firstAttribute="top" secondItem="arP-55-3Ov" secondAttribute="bottom" constant="50" id="mn5-GO-K46"/>
                                         <constraint firstItem="3pb-FQ-QHQ" firstAttribute="leading" secondItem="i95-ON-H86" secondAttribute="leading" constant="16" id="nnX-gs-XCD"/>
-                                        <constraint firstAttribute="height" constant="650" id="nxi-A5-sda"/>
+                                        <constraint firstAttribute="height" constant="600" id="nxi-A5-sda"/>
                                         <constraint firstItem="zZY-sy-7ko" firstAttribute="leading" secondItem="i95-ON-H86" secondAttribute="leading" constant="16" id="pqq-ZL-O5i"/>
                                         <constraint firstAttribute="trailing" secondItem="Cmh-eM-Rrd" secondAttribute="trailing" constant="16" id="uMA-8w-44t"/>
                                         <constraint firstItem="wSe-aM-K0p" firstAttribute="top" secondItem="i95-ON-H86" secondAttribute="top" constant="30" id="vMf-jq-U0c"/>
@@ -291,14 +291,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p97-Kp-hwR" userLabel="Line View">
-                                    <rect key="frame" x="0.0" y="640" width="424" height="10"/>
+                                    <rect key="frame" x="0.0" y="590" width="424" height="10"/>
                                     <color key="backgroundColor" name="3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="tBP-lk-GKi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEZ-KL-Yd4" userLabel="Message View">
-                                    <rect key="frame" x="0.0" y="650" width="424" height="489"/>
+                                    <rect key="frame" x="0.0" y="600" width="424" height="489"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쪽지 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBJ-kt-Sr8">
                                             <rect key="frame" x="17" y="30" width="51.5" height="19"/>

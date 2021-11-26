@@ -23,7 +23,10 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
         let tags: Driver<[String]>
         let content: Driver<String>
         let profileImageURL: Signal<String>
+        let pictureImageURL: Signal<String>
         let competitionTitle: Driver<String>
+        let bio: Driver<String>
+        let name: Driver<String>
     }
     
     private let moaProvider: MoyaProvider<MoaAPI>
@@ -46,8 +49,11 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
         let tags = BehaviorRelay<[String]>(value: [])
         let content = BehaviorRelay<String>(value: "")
         let profileImageURL = PublishRelay<String>()
+        let pictureImageURL = PublishRelay<String>()
         let competitionTitle = BehaviorRelay<String>(value: "")
-
+        let name = BehaviorRelay<String>(value: "")
+        let bio = BehaviorRelay<String>(value: "")
+        
         input.fetchTeambuild.asObservable()
             .flatMap { [weak self] () -> Single<Response> in
                 guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
@@ -64,8 +70,11 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
                     deadlineDateTitle.accept(result.deadline)
                     tags.accept(result.position)
                     content.accept(result.content)
-                    profileImageURL.accept(result.pictureURL)
+                    pictureImageURL.accept(result.pictureURL)
+                    profileImageURL.accept(result.profileImg)
                     competitionTitle.accept(result.title)
+                    bio.accept(result.bio)
+                    name.accept(result.name)
                 }
             }, onError: { error in
                 print(error)
@@ -79,7 +88,10 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
             tags: tags.asDriver(),
             content: content.asDriver(),
             profileImageURL: profileImageURL.asSignal(),
-            competitionTitle: competitionTitle.asDriver()
+            pictureImageURL: pictureImageURL.asSignal(),
+            competitionTitle: competitionTitle.asDriver(),
+            bio: bio.asDriver(),
+            name: name.asDriver()
         )
     }
 }

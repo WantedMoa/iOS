@@ -29,6 +29,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     // MyTeamBuild
     @IBOutlet private weak var myTeamBuildCollectionView: UICollectionView!
     @IBOutlet private weak var myTeamTitleLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     /// innerFirstProfileView
     private let innerFirstProfileImageView: UIImageView = {
@@ -119,12 +120,14 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     // ViewModel
     private lazy var input = MatchViewModel.Input(
         fetchMyTeambuilds: fetchMyTeambuilds.asSignal(),
-        fetchRecommends: fetchRecommends.asSignal()
+        fetchRecommends: fetchRecommends.asSignal(),
+        fetchUserProfile: fetchUserProfile.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
     private let fetchMyTeambuilds = PublishRelay<Void>()
     private let fetchRecommends = PublishRelay<Int>()
+    private let fetchUserProfile = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -145,6 +148,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         bindUI()
         bind()
     
+        fetchUserProfile.accept(())
         fetchMyTeambuilds.accept(())
     }
     
@@ -204,6 +208,17 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
                 guard let self = self else { return }
                 self.outterThirdProfileImageView.kf.setImage(with: URL(string: url))
             }
+            .disposed(by: disposeBag)
+        
+        output.profileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.name.drive(nameLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

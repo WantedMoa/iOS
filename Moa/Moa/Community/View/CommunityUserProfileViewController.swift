@@ -78,7 +78,8 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
         configureUI()
         bindUI()
         bind()
-        updateTagStackView(by: ["일러스트", "포토샵", "XD", "Sketch"])
+        updateTagStackView(by: ["React", "JS", "HTML"])
+        fetchUserProfile.accept(())
     }
     
     private func bind() {
@@ -92,6 +93,22 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
             .disposed(by: disposeBag)
         
         output.experiance.drive(experienceLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.bio.drive(introduceLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.userProfileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.userRatingImageName
+            .map { UIImage(named: $0) }
+            .drive(ratingImageView.rx.image)
             .disposed(by: disposeBag)
     }
     

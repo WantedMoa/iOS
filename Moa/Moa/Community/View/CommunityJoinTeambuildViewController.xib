@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityJoinTeambuildViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="bioLabel" destination="Waj-bC-R5v" id="9ZD-ye-45Y"/>
                 <outlet property="competitionImageView" destination="vjr-eZ-50Q" id="Ei7-Vo-6bN"/>
                 <outlet property="competitionTitleLabel" destination="Kc8-sn-i0p" id="fPE-sx-4zX"/>
                 <outlet property="contentLabel" destination="wI2-2o-J4a" id="OGf-7i-5Hy"/>
@@ -28,6 +29,7 @@
                 <outlet property="joinMessagePlaceholderLabel" destination="zHa-2L-rjp" id="xPK-dB-dt2"/>
                 <outlet property="joinMessageTextView" destination="Gmj-yG-Dd5" id="meG-38-iUZ"/>
                 <outlet property="joinTitleTextField" destination="je7-PI-C2W" id="Cy7-cP-13I"/>
+                <outlet property="nameLabel" destination="qqK-AA-Sqd" id="Gl0-7D-hQc"/>
                 <outlet property="profileImageView" destination="1YZ-Bt-xgJ" id="1S6-c2-lsz"/>
                 <outlet property="scrollView" destination="UWF-pM-VUf" id="cw8-We-Cqr"/>
                 <outlet property="scrollViewBottomLayout" destination="ecD-2c-Bxc" id="qNp-hW-UNN"/>

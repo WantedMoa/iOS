@@ -110,7 +110,7 @@ final class HomeViewModel: ViewModelType {
                 guard response.isSuccess else { return }
                 
                 if let result = response.result {
-                    bestTeamBuilds.accept(result)
+                    bestTeamBuilds.accept(Array(result.prefix(4)))
                 }
         
             }, onError: { error in
