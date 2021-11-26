@@ -89,6 +89,10 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
             .emit(to: self.competitionEndDate)
             .disposed(by: disposeBag)
         
+        input.changeContent
+            .emit(to: self.competitionContent)
+            .disposed(by: disposeBag)
+        
         input.addTag
             .compactMap { $0 }
             .emit { [weak self] (tag: String) in
@@ -132,7 +136,6 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
             }
             .flatMap { [weak self] () -> Single<Response> in
                 guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
-                
                 var formData: [MultipartFormData] = []
                 
                 formData.append(MultipartFormData(
@@ -141,7 +144,7 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                 ))
                 
                 formData.append(MultipartFormData(
-                    provider: .data("\(self.competitionTitle.value)".data(using: .utf8)!),
+                    provider: .data("\(self.competitionTitle.value)dsadsaad".data(using: .utf8)!),
                     name: "title"
                 ))
                 
@@ -155,22 +158,28 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                     name: "endDate"
                 ))
                 
-//                for (index, tag) in self.tags.enumerated() {
-//                    formData.append(MultipartFormData(
-//                        provider: .data("\(tag)".data(using: .utf8)!),
-//                        name: "position[\(index)]"
-//                    ))
-//                }
+                formData.append(MultipartFormData(
+                    provider: .data("\(self.competitionContent.value)".data(using: .utf8)!),
+                    name: "content"
+                ))
+                
+                for (index, tag) in self.tags.enumerated() {
+                    formData.append(MultipartFormData(
+                        provider: .data("\(tag)".data(using: .utf8)!),
+                        name: "position"
+                    ))
+                }
                 
                 let imageData = self.competitionImage.value.pngData()!
                 
                 formData.append(MultipartFormData(
                     provider: .data(imageData),
-                    name: "image",
-                    fileName: "12321321.png",
-                    mimeType: "image/png"
+                    name: "image"// ,
+                    // fileName: "12321321.png",
+                    // mimeType: "image/png"
                 ))
                 
+                print(formData)
                 return self.moaProvider.rx.request(.communityRegisterRecruit(formData: formData))
             }
             .map(MoaResponse.self)

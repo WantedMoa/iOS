@@ -22,6 +22,9 @@ public enum MoaAPI {
     // Match
     case matchRecruits
     case matchRecommends(index: Int)
+    
+    // Setting
+    case settingUserProfile
 }
 
 extension MoaAPI: TargetType {
@@ -47,6 +50,8 @@ extension MoaAPI: TargetType {
             return "/recruits"
         case .matchRecommends(let index):
             return "/recruits/\(index)/recommends"
+        case .settingUserProfile:
+            return "/profiles"
         }
     }
     
@@ -59,7 +64,8 @@ extension MoaAPI: TargetType {
              .communityRecruits,
              .communityDetailRecruit,
              .matchRecruits,
-             .matchRecommends:
+             .matchRecommends,
+             .settingUserProfile:
             return .get
         case .communityRegisterRecruit:
             return .post
@@ -79,7 +85,8 @@ extension MoaAPI: TargetType {
             .communityRecruits,
             .communityDetailRecruit,
             .matchRecruits,
-            .matchRecommends:
+            .matchRecommends,
+            .settingUserProfile:
             return .requestPlain
         
         case .communityRegisterRecruit(let formData):
@@ -89,15 +96,15 @@ extension MoaAPI: TargetType {
     
     public var headers: [String : String]? {
         guard let jwt = TokenManager().jwt else { fatalError() }
-        
-        switch self {
-        case .communityRegisterRecruit:
-            return [
-                "x-access-token": jwt,
-                "Content-Type": "multipart / form-data"
-            ]
-        default:
+//
+//        switch self {
+//        case .communityRegisterRecruit:
+//            return [
+//                "x-access-token": jwt,
+//                "Content-Type": "multipart / form-data"
+//            ]
+//        default:
             return ["x-access-token": jwt]
-        }
+//         }
     }
 }

@@ -12,11 +12,11 @@ import RxCocoa
 import RxSwift
 
 enum HomeBestTeamBuildSectionModel {
-    case topten(items: [String])
+    case topten(items: [HomePopularRecruit])
 }
 
 extension HomeBestTeamBuildSectionModel: SectionModelType {
-    typealias Item = String
+    typealias Item = HomePopularRecruit
     
     var items: [Item] {
         switch self {

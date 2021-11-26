@@ -59,14 +59,14 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
     }
     
     private func bindUI() {
-        teamMemberCollectionView.rx.modelSelected(HomeBestMember.self)
-            .subscribe { [weak self] (_: HomeBestMember) in
-                guard let self = self else { return }
-                let vc = SettingReviewTeamMemberViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
-            }
-            .disposed(by: disposeBag)
+//        teamMemberCollectionView.rx.modelSelected(HomeBestMember.self)
+//            .subscribe { [weak self] (_: HomeBestMember) in
+//                guard let self = self else { return }
+//                let vc = SettingReviewTeamMemberViewController()
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true)
+//            }
+//            .disposed(by: disposeBag)
     }
     
     private func configureUI() {

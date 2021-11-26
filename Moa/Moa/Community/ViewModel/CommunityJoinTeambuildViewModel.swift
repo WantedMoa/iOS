@@ -24,6 +24,7 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
         let tags: Driver<[String]>
         let content: Driver<String>
         let profileImageURL: Signal<String>
+        let competitionTitle: Driver<String>
     }
     
     private let moaProvider: MoyaProvider<MoaAPI>
@@ -45,7 +46,8 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
         let tags = BehaviorRelay<[String]>(value: [])
         let content = BehaviorRelay<String>(value: "")
         let profileImageURL = PublishRelay<String>()
-        
+        let competitionTitle = BehaviorRelay<String>(value: "")
+
         input.fetchTeambuild.asObservable()
             .flatMap { [weak self] () -> Single<Response> in
                 guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
@@ -62,6 +64,7 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
                     tags.accept(result.position)
                     content.accept(result.content)
                     profileImageURL.accept(result.pictureURL)
+                    competitionTitle.accept(result.title)
                 }
             }, onError: { error in
                 print(error)
@@ -74,7 +77,8 @@ final class CommunityJoinTeambuildViewModel: ViewModelType {
             deadlineDateTitle: deadlineDateTitle.asDriver(),
             tags: tags.asDriver(),
             content: content.asDriver(),
-            profileImageURL: profileImageURL.asSignal()
+            profileImageURL: profileImageURL.asSignal(),
+            competitionTitle: competitionTitle.asDriver()
         )
     }
 }

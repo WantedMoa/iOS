@@ -25,10 +25,12 @@
                 <outlet property="bestTeamBuildCollectionView" destination="VXY-0u-2ih" id="dcr-ng-A0h"/>
                 <outlet property="bestTeamBuildCollectionViewHeight" destination="cGH-vg-z6A" id="9Zl-vo-bq9"/>
                 <outlet property="bestTeamBuildDetailButtonLabel" destination="KAP-rK-nfS" id="kdC-T9-NUO"/>
+                <outlet property="nameLabel" destination="Byq-LL-9wS" id="Vbl-Tw-ysN"/>
                 <outlet property="pageControlLabel" destination="x8Q-ko-GVf" id="45t-FH-wH1"/>
                 <outlet property="pageControlView" destination="kIj-3m-wxv" id="86B-kR-pak"/>
                 <outlet property="pagerView" destination="z2A-5I-9KI" id="7aL-XF-kLV"/>
                 <outlet property="profileImageView" destination="bxx-RH-Hqa" id="LAB-On-Z8p"/>
+                <outlet property="ratingImageView" destination="l7q-U2-28b" id="Kua-vb-JkO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

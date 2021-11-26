@@ -20,8 +20,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingMyPageViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="emailLabel" destination="hRQ-C4-g5c" id="Saq-VX-nCu"/>
                 <outlet property="myTeamBuildCollectionView" destination="rr3-xO-TYC" id="nrJ-4c-LiC"/>
                 <outlet property="myTeamBuildLabel" destination="HMY-fT-JrN" id="aoy-Rr-L8A"/>
+                <outlet property="nameLabel" destination="UyI-zz-nJK" id="Xft-s4-26X"/>
+                <outlet property="profileImageView" destination="yYC-Bs-5D9" id="RUY-u2-zHd"/>
+                <outlet property="ratingImageView" destination="Q7G-y2-gfD" id="7C2-O0-hnR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

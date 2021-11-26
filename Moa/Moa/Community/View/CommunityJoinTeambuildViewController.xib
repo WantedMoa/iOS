@@ -20,6 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityJoinTeambuildViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="competitionImageView" destination="vjr-eZ-50Q" id="Ei7-Vo-6bN"/>
+                <outlet property="competitionTitleLabel" destination="Kc8-sn-i0p" id="fPE-sx-4zX"/>
                 <outlet property="contentLabel" destination="wI2-2o-J4a" id="OGf-7i-5Hy"/>
                 <outlet property="deadLineLabel" destination="tTg-Rf-Kvv" id="3Yk-1L-xX2"/>
                 <outlet property="endDateLabel" destination="klf-N3-In1" id="f6b-0S-SLY"/>
@@ -53,7 +55,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="422" height="274.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="0wP-gq-1zT" userLabel="Title Stack View">
-                                    <rect key="frame" x="16" y="169" width="220.5" height="55.5"/>
+                                    <rect key="frame" x="16" y="169" width="390" height="55.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D - 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JY9-rt-OhQ">
                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="23.5"/>
@@ -141,6 +143,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="98U-Rt-eeQ" firstAttribute="trailing" secondItem="vjr-eZ-50Q" secondAttribute="trailing" id="78m-3L-bnL"/>
+                        <constraint firstAttribute="trailing" secondItem="0wP-gq-1zT" secondAttribute="trailing" constant="16" id="AsX-up-fWQ"/>
                         <constraint firstItem="vjr-eZ-50Q" firstAttribute="leading" secondItem="zXB-vd-Nd1" secondAttribute="leading" id="Bvt-TH-RkD"/>
                         <constraint firstItem="98U-Rt-eeQ" firstAttribute="leading" secondItem="vjr-eZ-50Q" secondAttribute="leading" id="HCk-2e-PYA"/>
                         <constraint firstAttribute="bottom" secondItem="CV2-bW-fOp" secondAttribute="bottom" id="Sae-EM-jBH"/>

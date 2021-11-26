@@ -21,7 +21,8 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var scrollViewBottomLayout: NSLayoutConstraint!
-    
+    @IBOutlet private weak var competitionImageView: UIImageView!
+    @IBOutlet private weak var competitionTitleLabel: UILabel!
     @IBOutlet private weak var endDateLabel: UILabel!
     @IBOutlet private weak var startDateLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
@@ -105,8 +106,11 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
         output.profileImageURL
             .emit { [weak self] (profileImageURL: String) in
                 guard let self = self else { return }
-                self.profileImageView.kf.setImage(with: URL(string: profileImageURL))
+                self.competitionImageView.kf.setImage(with: URL(string: profileImageURL))
             }
+            .disposed(by: disposeBag)
+        
+        output.competitionTitle.drive(competitionTitleLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

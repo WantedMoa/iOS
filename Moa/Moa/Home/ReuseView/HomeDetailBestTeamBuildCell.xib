@@ -37,7 +37,7 @@
                                 <color key="textColor" name="font2"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="눈바디 AI 챌린지 AI 모델링 도전!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOz-SH-Kuk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="눈바디 AI 챌린지 AI 모델링 도전!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOz-SH-Kuk">
                                 <rect key="frame" x="0.0" y="13.5" width="216.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                                 <color key="textColor" name="font1"/>
@@ -73,7 +73,9 @@
             <size key="customSize" width="260" height="361"/>
             <connections>
                 <outlet property="competitionImageView" destination="vDb-ll-8FX" id="c7A-hg-Yaz"/>
+                <outlet property="dateLabel" destination="ONM-Hz-yQq" id="8Gj-WL-P8A"/>
                 <outlet property="tagStackView" destination="KGk-0z-xx8" id="6bC-9f-pi0"/>
+                <outlet property="titleLabel" destination="IOz-SH-Kuk" id="QCP-mS-Ioe"/>
             </connections>
             <point key="canvasLocation" x="28.985507246376812" y="181.13839285714286"/>
         </collectionViewCell>

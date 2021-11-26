@@ -30,6 +30,9 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var bestTeamBuildDetailButtonLabel: UILabel!
     
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var ratingImageView: UIImageView!
+    
     private let splashView: UIView = {
         let splashView = SplashView()
         splashView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +48,8 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
         fetchPosters: fetchPosters.asSignal(),
         fetchBestMembers: fetchBestMembers.asSignal(),
-        fetchPopularRecruits: fetchPopularRecruits.asSignal()
+        fetchPopularRecruits: fetchPopularRecruits.asSignal(),
+        fetchUserProfile: fetchUserProfile.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
@@ -54,6 +58,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     private let fetchPosters = PublishRelay<Void>()
     private let fetchBestMembers = PublishRelay<Void>()
     private let fetchPopularRecruits = PublishRelay<Void>()
+    private let fetchUserProfile = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -78,6 +83,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         fetchPosters.accept(())
         fetchBestMembers.accept(())
         fetchPopularRecruits.accept(())
+        fetchUserProfile.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +136,23 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 let height = CGFloat(30 + posters.count * 100)
                 self.bestTeamBuildCollectionViewHeight.constant = height
             }
+            .disposed(by: disposeBag)
+        
+        output.userProfileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.userName
+            .drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.userRatingImageName
+            .map { UIImage(named: $0) }
+            .drive(ratingImageView.rx.image)
             .disposed(by: disposeBag)
     }
     

@@ -12,16 +12,21 @@ import RxGesture
 import RxSwift
 
 final class SettingMyPageViewController: UIViewController, IdentifierType {
-
     @IBOutlet private weak var myTeamBuildCollectionView: UICollectionView!
     @IBOutlet private weak var myTeamBuildLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var ratingImageView: UIImageView!
+    @IBOutlet private weak var emailLabel: UILabel!
     
     // ViewModel
     private lazy var input = SettingMyPageViewModel.Input(
-        
+        fetchUserProfile: fetchUserProfile.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
+    
+    private let fetchUserProfile = PublishRelay<Void>()
     
     private var currentIndexPath = IndexPath(item: 0, section: 0)
     
@@ -39,6 +44,8 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
         configureUI()
         bindUI()
         bind()
+        
+        fetchUserProfile.accept(())
     }
     
     required init?(coder: NSCoder) {
@@ -58,6 +65,27 @@ final class SettingMyPageViewController: UIViewController, IdentifierType {
             cell.subTitleLabel.text = item.1
         }
         .disposed(by: disposeBag)
+        
+        output.email
+            .drive(emailLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.name
+            .drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.profileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.ratingImageName
+            .map { UIImage(named: $0) }
+            .drive(ratingImageView.rx.image)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
