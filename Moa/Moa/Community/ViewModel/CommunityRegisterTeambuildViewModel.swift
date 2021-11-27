@@ -29,6 +29,7 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
         let competitionStartDateTitle: Driver<String>
         let competitionEndDateTitle: Driver<String>
         let alertMessage: Signal<String>
+        let nextProgress: Signal<Void>
     }
     
     private let dateFormatter: DateFormatter = {
@@ -61,6 +62,7 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
         let competitionStartDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let competitionEndDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let alertMessage = PublishRelay<String>()
+        let nextProgress = PublishRelay<Void>()
 
         input.changeTeambuildEndDate
             .map { self.dateFormatter.string(from: $0) }
@@ -138,8 +140,14 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                 guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
                 var formData: [MultipartFormData] = []
                 
+                print("teambuildEndDateTitle", teambuildEndDateTitle)
+                print("competitionTitle", self.competitionTitle.value)
+                print("competitionStartDateTitle", competitionStartDateTitle.value)
+                print("competitionEndDateTitle", competitionEndDateTitle.value)
+                print("title", self.competitionTitle.value)
+
                 formData.append(MultipartFormData(
-                    provider: .data("\(teambuildEndDateTitle)".data(using: .utf8)!),
+                    provider: .data("\(teambuildEndDateTitle.value)".data(using: .utf8)!),
                     name: "deadline"
                 ))
                 
@@ -163,14 +171,14 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                     name: "content"
                 ))
                 
-                for (index, tag) in self.tags.enumerated() {
-                    formData.append(MultipartFormData(
-                        provider: .data("\(tag)".data(using: .utf8)!),
-                        name: "position"
-                    ))
-                }
+//                for (index, tag) in self.tags.enumerated() {
+//                    formData.append(MultipartFormData(
+//                        provider: .data("\(tag)".data(using: .utf8)!),
+//                        name: "position"
+//                    ))
+//                }
                 
-                let imageData = self.competitionImage.value.pngData()!
+                let imageData = self.competitionImage.value.jpegData(compressionQuality: 0.2)!
                 
                 formData.append(MultipartFormData(
                     provider: .data(imageData),
@@ -179,13 +187,12 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                     // mimeType: "image/png"
                 ))
                 
-                print(formData)
                 return self.moaProvider.rx.request(.communityRegisterRecruit(formData: formData))
             }
             .map(MoaResponse.self)
             .subscribe(onNext: { response in
                 guard response.isSuccess else { return }
-                
+                nextProgress.accept(())
             }, onError: { error in
                 print(error)
             })
@@ -195,7 +202,8 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
             teambuildEndDateTitle: teambuildEndDateTitle.asDriver(),
             competitionStartDateTitle: competitionStartDateTitle.asDriver(),
             competitionEndDateTitle: competitionEndDateTitle.asDriver(),
-            alertMessage: alertMessage.asSignal()
+            alertMessage: alertMessage.asSignal(),
+            nextProgress: nextProgress.asSignal()
         )
     }
 }

@@ -125,6 +125,14 @@ final class RegisterNameViewController: UIViewController, IdentifierType, Custom
                 }
             }
             .disposed(by: disposeBag)
+        
+        view.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.view.endEditing(true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {

@@ -108,6 +108,16 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
                 self.presentBottomAlert(message: message)
             }
             .disposed(by: disposeBag)
+        
+        output.nextProgress
+            .emit { [weak self] (_: ()) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "등록이 완료되었습니다") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+        
     }
     
     private func bindUI() {

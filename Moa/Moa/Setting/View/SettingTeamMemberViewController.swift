@@ -16,6 +16,7 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
     @IBOutlet private weak var teamMemberCollectionView: UICollectionView!
     @IBOutlet private weak var teamMemberCollectionViewHeightLayout: NSLayoutConstraint!
     @IBOutlet private weak var teamView: UIView!
+    @IBOutlet private weak var moaButtonView: MoaButtonView!
     
     // ViewModel
 //    private lazy var input = SettingTeamMemberViewModel.Input(
@@ -56,6 +57,8 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
         bindUI()
         bind()
         
+        moaButtonView.contentView.backgroundColor = .init(rgb: 0xdddddd)
+        moaButtonView.titleLabel.textColor = .black
         // fetchSections.accept(())
     }
     
@@ -77,14 +80,14 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
     }
     
     private func bindUI() {
-//        teamMemberCollectionView.rx.modelSelected(HomeBestMember.self)
-//            .subscribe { [weak self] (_: HomeBestMember) in
-//                guard let self = self else { return }
-//                let vc = SettingReviewTeamMemberViewController()
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true)
-//            }
-//            .disposed(by: disposeBag)
+        teamMemberCollectionView.rx.modelSelected(HomePopularUsersDetail.self)
+            .subscribe { [weak self] (_: HomePopularUsersDetail) in
+                guard let self = self else { return }
+                let vc = SettingReviewTeamMemberViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {
@@ -92,6 +95,7 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
         addUnderLineOnNavBar()
         prepareTeamMemberCollectionView()
         prepareTeamView()
+        moaButtonView.isHidden = true
     }
     
     private func prepareTeamMemberCollectionView() {

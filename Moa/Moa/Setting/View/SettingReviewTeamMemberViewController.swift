@@ -12,7 +12,7 @@ import RxSwift
 import RxKeyboard
 import RxGesture
 
-final class SettingReviewTeamMemberViewController: UIViewController {
+final class SettingReviewTeamMemberViewController: UIViewController, CustomAlert {
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var reviewTextView: UITextView!
     @IBOutlet private weak var reviewPlaceholder: UILabel!
@@ -90,6 +90,16 @@ final class SettingReviewTeamMemberViewController: UIViewController {
               }
           })
           .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "리뷰가 완료되었습니다") {
+                    self.dismiss(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func prepareProfileImageView() {
