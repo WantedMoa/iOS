@@ -179,6 +179,23 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
+        
+        bestMemberCollectionView.rx.modelSelected(HomePopularUser.self)
+            .subscribe { [weak self] (item: HomePopularUser) in
+                guard let self = self else { return }
+                let vc = CommunityUserProfileViewController(index: item.index)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        bestTeamBuildCollectionView.rx.modelSelected(HomePopularRecruit.self)
+            .subscribe { [weak self] (item: HomePopularRecruit) in
+                guard let self = self else { return }
+                let vc = CommunityJoinTeambuildViewController(index: item.index)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureUI() {

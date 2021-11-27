@@ -147,7 +147,7 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         configureUI()
         bindUI()
         bind()
-    
+        
         fetchUserProfile.accept(())
         fetchMyTeambuilds.accept(())
     }

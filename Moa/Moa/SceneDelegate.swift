@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 

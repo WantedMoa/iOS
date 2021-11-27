@@ -73,6 +73,7 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navVC?.tintColor = .white
+        navigationController?.isNavigationBarHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

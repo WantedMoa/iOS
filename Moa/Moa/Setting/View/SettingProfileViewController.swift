@@ -8,6 +8,12 @@
 import UIKit
 
 final class SettingProfileViewController: UIViewController {
+    
+    @IBOutlet private weak var bio: UILabel!
+    @IBOutlet private weak var experience: UILabel!
+    @IBOutlet private weak var university: UILabel!
+    @IBOutlet private weak var portfolio: UILabel!
+    @IBOutlet private weak var tagStackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
