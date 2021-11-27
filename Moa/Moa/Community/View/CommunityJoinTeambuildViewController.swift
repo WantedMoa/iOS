@@ -13,7 +13,7 @@ import RxKeyboard
 import RxSwift
 import Kingfisher
 
-final class CommunityJoinTeambuildViewController: UIViewController, IdentifierType {
+final class CommunityJoinTeambuildViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var joinTitleTextField: UITextField!
     @IBOutlet private weak var joinMessageTextView: UITextView!
@@ -30,6 +30,7 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var bioLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var moaButtonView: MoaButtonView!
 
     private var navVC: MoaNavigationController? {
         return navigationController as? MoaNavigationController
@@ -167,6 +168,16 @@ final class CommunityJoinTeambuildViewController: UIViewController, IdentifierTy
               }
           })
           .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "지원이 완료되었습니다") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func prepareJoinTitleTextField() {

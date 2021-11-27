@@ -95,7 +95,7 @@ final class SettingReviewTeamMemberViewController: UIViewController, CustomAlert
             .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                self.presentBottomAlert(message: "리뷰가 완료되었습니다") {
+                self.presentBottomAlert(message: "평가가 완료되었습니다") {
                     self.dismiss(animated: true)
                 }
             }

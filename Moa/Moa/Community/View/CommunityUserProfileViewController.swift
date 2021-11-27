@@ -25,7 +25,7 @@ enum UserProfileExpand {
     }
 }
 
-final class CommunityUserProfileViewController: UIViewController, IdentifierType {
+final class CommunityUserProfileViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var dismissImageView: UIImageView!
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var profileViewHeightContraint: NSLayoutConstraint!
@@ -151,6 +151,16 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
         messageTextView.rx.text
             .map { !($0?.isEmpty ?? true) }
             .bind(to: messagePlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "쪽지가 전송되었습니다") {
+                    self.dismiss(animated: true)
+                }
+            }
             .disposed(by: disposeBag)
     }
     

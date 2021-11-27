@@ -29,6 +29,7 @@
                 <outlet property="joinMessagePlaceholderLabel" destination="zHa-2L-rjp" id="xPK-dB-dt2"/>
                 <outlet property="joinMessageTextView" destination="Gmj-yG-Dd5" id="meG-38-iUZ"/>
                 <outlet property="joinTitleTextField" destination="je7-PI-C2W" id="Cy7-cP-13I"/>
+                <outlet property="moaButtonView" destination="5s4-q1-OJc" id="Ju2-y9-N4i"/>
                 <outlet property="nameLabel" destination="qqK-AA-Sqd" id="Gl0-7D-hQc"/>
                 <outlet property="profileImageView" destination="1YZ-Bt-xgJ" id="1S6-c2-lsz"/>
                 <outlet property="scrollView" destination="UWF-pM-VUf" id="cw8-We-Cqr"/>
