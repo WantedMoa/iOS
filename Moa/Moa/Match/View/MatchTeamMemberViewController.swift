@@ -150,7 +150,7 @@ extension MatchTeamMemberViewController {
                 return UICollectionReusableView()
             }
             
-            let titles = ["인기 디자이너", "인기 개발자"]
+            let titles = ["디자이너", "개발자"]
             let title = titles[indexPath.section]
             reuseView.update(by: title)
             return reuseView

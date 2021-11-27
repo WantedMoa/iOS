@@ -91,7 +91,7 @@ final class SettingTeamMemberViewController: UIViewController, IdentifierType, U
     }
     
     private func configureUI() {
-        navigationItem.title = "나의 팀"
+        navigationItem.title = "나의 팀원 평가"
         addUnderLineOnNavBar()
         prepareTeamMemberCollectionView()
         prepareTeamView()

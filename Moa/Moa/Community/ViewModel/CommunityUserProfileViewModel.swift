@@ -67,27 +67,6 @@ final class CommunityUserProfileViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
-        
-//        input.fetchUserProfile.asObservable()
-//            .flatMap { [weak self] () -> Single<Response> in
-//                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
-//                return self.moaProvider.rx.request(.settingUserProfile)
-//            }
-//            .map(SettingProfileResponse.self)
-//            .subscribe(onNext: { response in
-//                guard response.isSuccess else { return }
-//
-//                if let user = response.result.first {
-//                    name.accept(user.name)
-//                    userProfileImageURL.accept(user.profileImg)
-//                    userRatingImageName.accept("\(user.rating)")
-//                }
-//
-//            }, onError: { error in
-//                print(error)
-//            })
-//            .disposed(by: disposeBag)
-        
         return Output(
             name: name.asDriver(),
             university: university.asDriver(),

@@ -92,7 +92,7 @@ final class HomeViewModel: ViewModelType {
                 guard response.isSuccess else { return }
                 
                 if let result = response.result {
-                    bestMembers.accept(result)
+                    bestMembers.accept(Array(result.prefix(5)))
                 }
         
             }, onError: { error in

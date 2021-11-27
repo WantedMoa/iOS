@@ -11,6 +11,7 @@ import SafariServices
 import RxCocoa
 import RxGesture
 import RxSwift
+import RxKeyboard
 
 enum UserProfileExpand {
     case open
@@ -46,6 +47,7 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
     @IBOutlet private weak var experienceLabel: UILabel!
     @IBOutlet private weak var portfolioLabel: UILabel!
     @IBOutlet private weak var universityLabel: UILabel!
+    @IBOutlet private weak var scrollView: UIScrollView!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -159,7 +161,7 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
                 self.presentBottomAlert(message: "쪽지가 전송되었습니다") {
-                    self.dismiss(animated: true)
+                    // self.dismiss(animated: true)
                 }
             }
             .disposed(by: disposeBag)
@@ -173,6 +175,28 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
                 let safariVC = SFSafariViewController(url: url)
                 safariVC.modalPresentationStyle = .fullScreen
                 self.present(safariVC, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+          .drive(onNext: { [weak self] keyboardVisibleHeight in
+              guard let self = self else { return }
+              guard self.messageTextView.isFirstResponder else { return }
+              
+              let scrollOffset: CGFloat = keyboardVisibleHeight > 0 ? 150 : -150
+              self.scrollView.contentOffset.y += scrollOffset
+              
+              UIView.animate(withDuration: 0.1) {
+                  self.view.layoutIfNeeded()
+              }
+          })
+          .disposed(by: disposeBag)
+        
+        view.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.view.endEditing(true)
             }
             .disposed(by: disposeBag)
     }

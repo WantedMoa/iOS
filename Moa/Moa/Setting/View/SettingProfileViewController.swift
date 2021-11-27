@@ -41,9 +41,9 @@ final class SettingProfileViewController: UIViewController {
         output.bio
             .drive(bio.rx.text)
             .disposed(by: disposeBag)
-        
+
         output.university
-            .drive(bio.rx.text)
+            .drive(university.rx.text)
             .disposed(by: disposeBag)
 
         output.experience

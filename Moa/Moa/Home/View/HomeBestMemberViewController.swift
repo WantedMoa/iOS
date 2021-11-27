@@ -67,7 +67,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
     }
     
     private func configureUI() {
-        navigationItem.title = "인기팀원"
+        navigationItem.title = "인기 팀원"
         addUnderLineOnNavBar()
         prepareBestMemberCollectionView()
     }

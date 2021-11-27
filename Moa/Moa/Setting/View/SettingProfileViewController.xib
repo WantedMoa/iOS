@@ -20,11 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingProfileViewController" customModule="Moa" customModuleProvider="target">
             <connections>
-                <outlet property="bio" destination="DvG-iv-bhg" id="Vad-wv-Hjq"/>
+                <outlet property="bio" destination="DvG-iv-bhg" id="HH9-TU-bup"/>
                 <outlet property="experience" destination="rMF-sw-SE6" id="A0z-3k-k38"/>
                 <outlet property="portfolio" destination="tta-t8-wTf" id="qAJ-TV-lAs"/>
                 <outlet property="tagStackView" destination="Yrh-6U-E7l" id="e70-4Q-ULE"/>
-                <outlet property="university" destination="qiS-Kf-BDo" id="RAv-s6-9TB"/>
+                <outlet property="university" destination="qiS-Kf-BDo" id="Ps0-IZ-kM6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
