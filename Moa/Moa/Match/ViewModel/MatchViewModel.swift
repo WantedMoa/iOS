@@ -32,7 +32,8 @@ final class MatchViewModel: ViewModelType {
     
     private let disposeBag = DisposeBag()
     let myTeambuilds = BehaviorRelay<[MatchRecruit]>(value: [])
-
+    var matchRecommends: [MatchRecommend] = []
+    
     private let moaProvider: MoyaProvider<MoaAPI>
     private let tokenManager: TokenManager
 
@@ -52,7 +53,7 @@ final class MatchViewModel: ViewModelType {
         let outerThirdImageURL = BehaviorRelay<String>(value: "")
         let profileImageURL = BehaviorRelay<String>(value: "")
         let name = BehaviorRelay<String>(value: "")
-
+        
         let imageDrivers = [innerImageURL, outerFirstImageURL, outerSecondImageURL, outerThirdImageURL]
         
         let fetchInitRecommends = PublishRelay<Int>()
@@ -88,14 +89,16 @@ final class MatchViewModel: ViewModelType {
                 return self.moaProvider.rx.request(.matchRecommends(index: index))
             }
             .map(MatchRecommendsResponse.self)
-            .subscribe(onNext: { response in
+            .subscribe(onNext: { [weak self] response in
+                guard let self = self else { return }
+
                 guard response.isSuccess else {
                     return
                 }
                 
                 if let result = response.result {
                     recommendCount.accept(result.count)
-                    
+                    self.matchRecommends = result
                     for (imageDriver, recommend) in zip(imageDrivers, result) {
                         imageDriver.accept(recommend.profileImgURL)
                     }

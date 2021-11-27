@@ -227,7 +227,17 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             .when(.recognized)
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                let vc = HomeBestMemberViewController()
+                
+                let members = self.viewModel.matchRecommends
+                
+                let start = 0
+                let mid = members.count / 2
+                let last = members.count
+                
+                let vc = MatchTeamMemberViewController(members: [
+                    .programmer(items: Array(members[start..<mid]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: "안뇽") }),
+                    .programmer(items: Array(members[mid..<last]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: "안뇽") })
+                ])
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)

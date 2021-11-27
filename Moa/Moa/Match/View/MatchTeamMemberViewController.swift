@@ -1,8 +1,8 @@
 //
-//  BestMemberViewController.swift
+//  MatchTeamMemberViewController.swift
 //  Moa
 //
-//  Created by won heo on 2021/11/16.
+//  Created by won heo on 2021/11/27.
 //
 
 import UIKit
@@ -11,25 +11,16 @@ import RxCocoa
 import RxDataSources
 import RxSwift
 
-final class HomeBestMemberViewController: UIViewController, IdentifierType, UnderLineNavBar {
-    // MARK: - IBOutlet
-    @IBOutlet private weak var bestMemberCollectionView: UICollectionView!
+final class MatchTeamMemberViewController: UIViewController, IdentifierType, UnderLineNavBar {
     
-    // ViewModel
-    private lazy var input = HomeBestMemberViewModel.Input(
-        fetchHomePopularUsersDetail: fetchHomePopularUsersDetail.asSignal()
-    )
-    private lazy var output = viewModel.transform(input: input)
+    @IBOutlet private weak var matchTeamMemberCollectionView: UICollectionView!
     
-    private let fetchHomePopularUsersDetail = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
+    private let sections: Driver<[BestMemberSectionModel]>
     
-    // DI
-    private let viewModel: HomeBestMemberViewModel
-
-    init() {
-        self.viewModel = HomeBestMemberViewModel()
-        super.init(nibName: HomeBestMemberViewController.identifier, bundle: nil)
+    init(members: [BestMemberSectionModel]) {
+        self.sections = Driver.of(members)
+        super.init(nibName: MatchTeamMemberViewController.identifier, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -41,22 +32,15 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
         configureUI()
         bindUI()
         bind()
-        fetchHomePopularUsersDetail.accept(())
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
     }
     
     private func bind() {
-        output.sections
-            .drive(bestMemberCollectionView.rx.items(dataSource: dataSource()))
+        sections.drive(matchTeamMemberCollectionView.rx.items(dataSource: dataSource()))
             .disposed(by: disposeBag)
     }
     
     private func bindUI() {
-        bestMemberCollectionView.rx.modelSelected(HomePopularUsersDetail.self)
+        matchTeamMemberCollectionView.rx.modelSelected(HomePopularUsersDetail.self)
             .subscribe { [weak self] (item: HomePopularUsersDetail) in
                 guard let self = self else { return }
                 let vc = CommunityUserProfileViewController(index: item.index)
@@ -67,29 +51,30 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
     }
     
     private func configureUI() {
-        navigationItem.title = "인기팀원"
+        navigationItem.title = "추천 팀원"
         addUnderLineOnNavBar()
         prepareBestMemberCollectionView()
     }
     
+    
     private func prepareBestMemberCollectionView() {
-        bestMemberCollectionView.collectionViewLayout = generateLayout()
-        bestMemberCollectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        bestMemberCollectionView.register(
+        matchTeamMemberCollectionView.collectionViewLayout = generateLayout()
+        matchTeamMemberCollectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        matchTeamMemberCollectionView.register(
             UINib(nibName: HomeBestMemberCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: HomeBestMemberCell.identifier
         )
-        bestMemberCollectionView.register(
+        matchTeamMemberCollectionView.register(
             UINib(nibName: HomeBestMemberReusableView.identifier, bundle: nil),
             forSupplementaryViewOfKind: HomeBestMemberReusableView.headerElementKind,
             withReuseIdentifier: HomeBestMemberReusableView.identifier
         )
-        bestMemberCollectionView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
+        matchTeamMemberCollectionView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
     }
 }
 
 // MAKR: - Generate CollectionView Layout
-extension HomeBestMemberViewController {
+extension MatchTeamMemberViewController {
     private func generateLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { _, _ in
             let itemSize = NSCollectionLayoutSize(
@@ -141,7 +126,7 @@ extension HomeBestMemberViewController {
     }
 }
 
-extension HomeBestMemberViewController {
+extension MatchTeamMemberViewController {
     private func dataSource() -> RxCollectionViewSectionedReloadDataSource<BestMemberSectionModel> {
         return RxCollectionViewSectionedReloadDataSource(configureCell: {
             dataSource, collectionView, indexPath, _ in
@@ -156,7 +141,6 @@ extension HomeBestMemberViewController {
             return cell
         }, configureSupplementaryView: {
             [weak self] dataSource, collectionView, kind, indexPath in
-            guard let self = self else { return UICollectionReusableView() }
             guard let reuseView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: HomeBestMemberReusableView.identifier,
@@ -166,7 +150,8 @@ extension HomeBestMemberViewController {
                 return UICollectionReusableView()
             }
             
-            let title = self.viewModel.sectionTitles[indexPath.section]
+            let titles = ["인기 디자이너", "인기 개발자"]
+            let title = titles[indexPath.section]
             reuseView.update(by: title)
             return reuseView
         })
