@@ -97,13 +97,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 _, poster, cell in
                 cell.imageView?.contentMode = .scaleToFill
                 cell.imageView?.kf.setImage(
-                    with: URL(string: poster.pictureURL),
-                    completionHandler: { [weak self] result in
-                        guard let self = self else { return }
-                        UIView.animate(withDuration: 0.15) {
-                            self.splashView.alpha = 0
-                        }
-                    }
+                    with: URL(string: poster.pictureURL)
                 )
             }
             .disposed(by: disposeBag)
@@ -142,7 +136,15 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             .filter { !$0.isEmpty }
             .drive { [weak self] (url: String) in
                 guard let self = self else { return }
-                self.profileImageView.kf.setImage(with: URL(string: url))
+                self.profileImageView.kf.setImage(
+                    with: URL(string: url),
+                    completionHandler: { [weak self] result in
+                        guard let self = self else { return }
+                        UIView.animate(withDuration: 0.15) {
+                            self.splashView.alpha = 0
+                        }
+                    }
+                )
             }
             .disposed(by: disposeBag)
         

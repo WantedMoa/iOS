@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-sz-buJ">
-                    <rect key="frame" x="102.5" y="390.5" width="209.5" height="125"/>
+                    <rect key="frame" x="102.5" y="372.5" width="209.5" height="125"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MoaIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5Lc-hD-eAN">
                             <rect key="frame" x="26.5" y="0.0" width="156" height="78"/>
@@ -74,7 +74,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="hWK-sz-buJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="AGF-Rw-eke"/>
+                <constraint firstItem="hWK-sz-buJ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.96" id="AGF-Rw-eke"/>
                 <constraint firstItem="M96-25-kZV" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Z5f-YI-jeS"/>
                 <constraint firstItem="hWK-sz-buJ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="cqF-3W-cRV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="M96-25-kZV" secondAttribute="bottom" constant="30" id="oKm-ay-xxj"/>

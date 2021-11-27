@@ -93,7 +93,7 @@ extension HomeBestTeamBuildViewController: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let width = (view.bounds.width - 12 - 16 * 2) / 2
-        let height = width * 1.56
+        let height = width * 1.64
         return CGSize(width: width, height: height)
     }
     

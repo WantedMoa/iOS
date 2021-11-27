@@ -94,7 +94,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii0-4i-7Z7" userLabel="Profile View">
                     <rect key="frame" x="170" y="411" width="74" height="74"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeeYu" translatesAutoresizingMaskIntoConstraints="NO" id="bvn-QM-C3p" userLabel="Profile Image View">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvn-QM-C3p" userLabel="Profile Image View">
                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="74" id="GJC-aR-LOZ"/>
@@ -157,7 +157,6 @@
     </objects>
     <resources>
         <image name="GreenStatus" width="16.5" height="16"/>
-        <image name="LeeYu" width="74" height="74"/>
         <namedColor name="font1">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
