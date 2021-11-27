@@ -230,13 +230,15 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
                 
                 let members = self.viewModel.matchRecommends
                 
+                guard members.count >= 2 else { return }
+                
                 let start = 0
                 let mid = members.count / 2
                 let last = members.count
                 
                 let vc = MatchTeamMemberViewController(members: [
-                    .programmer(items: Array(members[start..<mid]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: "안뇽") }),
-                    .programmer(items: Array(members[mid..<last]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: "안뇽") })
+                    .programmer(items: Array(members[start..<mid]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: $0.name) }),
+                    .programmer(items: Array(members[mid..<last]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: $0.name) })
                 ])
                 self.navigationController?.pushViewController(vc, animated: true)
             }

@@ -17,9 +17,11 @@ struct MatchRecommendsResponse: Codable {
 struct MatchRecommend: Codable {
     let index: Int
     let profileImgURL: String
+    let name: String
     
     enum CodingKeys: String, CodingKey {
         case index = "userIdx"
         case profileImgURL = "profileImg"
+        case name
     }
 }
