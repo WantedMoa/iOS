@@ -75,8 +75,8 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tta-t8-wTf">
-                                    <rect key="frame" x="16" y="413.5" width="368" height="23.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tta-t8-wTf">
+                                    <rect key="frame" x="16" y="413.5" width="382" height="23.5"/>
                                     <attributedString key="attributedText">
                                         <fragment content="https://www.notion.so/iOS-d74b7a5ce2794dc9b3d9140ca9b4fcf1">
                                             <attributes>
@@ -134,7 +134,7 @@
                                 <constraint firstItem="DvG-iv-bhg" firstAttribute="top" secondItem="ZuZ-7m-unb" secondAttribute="bottom" constant="16" id="fpD-GR-KcT"/>
                                 <constraint firstItem="Yrh-6U-E7l" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="g8u-M9-0Wc"/>
                                 <constraint firstItem="kV1-k2-Fcy" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="kX5-9D-WB5"/>
-                                <constraint firstAttribute="trailing" secondItem="tta-t8-wTf" secondAttribute="trailing" constant="30" id="mPa-Se-zEa"/>
+                                <constraint firstAttribute="trailing" secondItem="tta-t8-wTf" secondAttribute="trailing" constant="16" id="mPa-Se-zEa"/>
                                 <constraint firstItem="DvG-iv-bhg" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="pfh-fR-z5t"/>
                                 <constraint firstItem="tta-t8-wTf" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="rmk-9I-ayM"/>
                                 <constraint firstItem="kV1-k2-Fcy" firstAttribute="top" secondItem="tta-t8-wTf" secondAttribute="bottom" constant="50" id="t5e-YA-4ip"/>

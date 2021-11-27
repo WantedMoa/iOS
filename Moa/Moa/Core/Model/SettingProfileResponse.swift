@@ -20,4 +20,5 @@ struct SettingProfile: Codable {
     let name, email: String
     let rating: Int
     let portfolio, experiance, bio: String
+    let universityName: String
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 import RxCocoa
 import RxGesture
@@ -160,6 +161,18 @@ final class CommunityUserProfileViewController: UIViewController, IdentifierType
                 self.presentBottomAlert(message: "쪽지가 전송되었습니다") {
                     self.dismiss(animated: true)
                 }
+            }
+            .disposed(by: disposeBag)
+        
+        portfolioLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                guard let link = self.portfolioLabel.text else { return }
+                guard let url = URL(string: link) else { return }
+                let safariVC = SFSafariViewController(url: url)
+                safariVC.modalPresentationStyle = .fullScreen
+                self.present(safariVC, animated: true)
             }
             .disposed(by: disposeBag)
     }

@@ -65,6 +65,7 @@
 		3C2DD439274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */; };
 		3C6657AE275203990090E6DB /* MatchTeamMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6657AC275203990090E6DB /* MatchTeamMemberViewController.swift */; };
 		3C6657AF275203990090E6DB /* MatchTeamMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C6657AD275203990090E6DB /* MatchTeamMemberViewController.xib */; };
+		3C6657B1275212750090E6DB /* SettingProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6657B0275212750090E6DB /* SettingProfileViewModel.swift */; };
 		3C80B14C2741FAE700DDF82F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14B2741FAE700DDF82F /* AppDelegate.swift */; };
 		3C80B14E2741FAE700DDF82F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */; };
 		3C80B1552741FAE900DDF82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80B1542741FAE900DDF82F /* Assets.xcassets */; };
@@ -193,6 +194,7 @@
 		3C2DD437274CB125007DBC58 /* CommunityRegisterTeambuildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityRegisterTeambuildViewController.xib; sourceTree = "<group>"; };
 		3C6657AC275203990090E6DB /* MatchTeamMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTeamMemberViewController.swift; sourceTree = "<group>"; };
 		3C6657AD275203990090E6DB /* MatchTeamMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTeamMemberViewController.xib; sourceTree = "<group>"; };
+		3C6657B0275212750090E6DB /* SettingProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileViewModel.swift; sourceTree = "<group>"; };
 		3C80B1482741FAE700DDF82F /* Moa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C80B14B2741FAE700DDF82F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C80B14D2741FAE700DDF82F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 			children = (
 				3CC18A49274E916E007C02F4 /* SettingMyPageViewModel.swift */,
 				3CC18A5D274EA676007C02F4 /* SettingTeamMemberViewModel.swift */,
+				3C6657B0275212750090E6DB /* SettingProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				3C240445274FE6050011333C /* RegisterPasswordViewController.swift in Sources */,
 				3C1735882745E4BF00C9895E /* MatchViewModel.swift in Sources */,
 				3C80B1AB274350EC00DDF82F /* HomeBestMemberReusableView.swift in Sources */,
+				3C6657B1275212750090E6DB /* SettingProfileViewModel.swift in Sources */,
 				3C80B19C2743338E00DDF82F /* HomeBestMemberViewController.swift in Sources */,
 				3C240449274FE6CB0011333C /* RegisterNameViewController.swift in Sources */,
 				3C24044E274FE96B0011333C /* SplashView.swift in Sources */,

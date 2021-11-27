@@ -57,7 +57,7 @@ final class CommunityUserProfileViewModel: ViewModelType {
                 guard response.isSuccess else { return }
                 let result = response.result
                 name.accept(result.name)
-                university.accept(result.university)
+                university.accept(result.university + " 재학 중")
                 bio.accept(result.bio)
                 experiance.accept(result.experiance)
                 portfolio.accept(result.portfolio)
