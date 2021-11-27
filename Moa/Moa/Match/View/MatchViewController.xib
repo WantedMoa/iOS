@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Tyz-EK-fOj" userLabel="Header Title Stack View">
-                    <rect key="frame" x="16" y="74" width="258" height="83.5"/>
+                    <rect key="frame" x="16" y="88.5" width="258" height="83.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upP-cL-wTH" userLabel="First Stack View">
                             <rect key="frame" x="0.0" y="0.0" width="110" height="26.5"/>
@@ -148,7 +148,7 @@
                 <constraint firstItem="9A2-ZM-DW1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sur-cr-Gxu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9A2-ZM-DW1" secondAttribute="trailing" id="f3Z-ug-jTn"/>
                 <constraint firstItem="rN4-wl-z1u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="l6K-ku-VXr"/>
-                <constraint firstItem="Tyz-EK-fOj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="nVA-JP-Hga"/>
+                <constraint firstItem="Tyz-EK-fOj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44.5" id="nVA-JP-Hga"/>
                 <constraint firstItem="9A2-ZM-DW1" firstAttribute="top" secondItem="rN4-wl-z1u" secondAttribute="bottom" id="tbH-wt-xB1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9A2-ZM-DW1" secondAttribute="bottom" id="v69-cv-YqZ"/>
             </constraints>
