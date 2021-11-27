@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingTeamMemberViewController" customModule="Moa" customModuleProvider="target">
+            <connections>
+                <outlet property="moaButtonView" destination="cpe-vG-EIm" id="nSW-W0-2Hp"/>
+                <outlet property="teamMemberCollectionView" destination="kdc-of-yMh" id="Rec-xf-aZ0"/>
+                <outlet property="teamMemberCollectionViewHeightLayout" destination="55c-N2-OEu" id="N6n-x3-sCY"/>
+                <outlet property="teamView" destination="Zr2-cl-VLI" id="Q6t-Ji-jPY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zr2-cl-VLI" userLabel="Team View">
+                    <rect key="frame" x="16" y="89" width="382" height="207.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j5K-ae-33d" userLabel="TeamInfo StackView">
+                            <rect key="frame" x="15" y="13" width="214.5" height="44.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원티드 해커톤해, 커리어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3h-QY-ZMj">
+                                    <rect key="frame" x="0.0" y="0.0" width="160.5" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 15일에 공고 완료 되어 만들어진 팀입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-pi-IKE">
+                                    <rect key="frame" x="0.0" y="28.5" width="214.5" height="16"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="11"/>
+                                    <color key="textColor" name="font2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OptionsVertical" translatesAutoresizingMaskIntoConstraints="NO" id="Iwn-vN-cVy">
+                            <rect key="frame" x="349" y="13" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="G6g-Zb-A2D"/>
+                                <constraint firstAttribute="width" constant="24" id="qaA-5u-CWb"/>
+                            </constraints>
+                        </imageView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-of-yMh">
+                            <rect key="frame" x="0.0" y="77.5" width="382" height="120"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="55c-N2-OEu"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="g1f-Vh-XpM">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="j5K-ae-33d" firstAttribute="top" secondItem="Zr2-cl-VLI" secondAttribute="top" constant="13" id="0WS-W5-qzy"/>
+                        <constraint firstItem="kdc-of-yMh" firstAttribute="leading" secondItem="Zr2-cl-VLI" secondAttribute="leading" id="41K-kH-2ua"/>
+                        <constraint firstAttribute="trailing" secondItem="Iwn-vN-cVy" secondAttribute="trailing" constant="9" id="6JP-ey-7RB"/>
+                        <constraint firstItem="Iwn-vN-cVy" firstAttribute="top" secondItem="Zr2-cl-VLI" secondAttribute="top" constant="13" id="KWW-NF-4VQ"/>
+                        <constraint firstItem="j5K-ae-33d" firstAttribute="leading" secondItem="Zr2-cl-VLI" secondAttribute="leading" constant="15" id="PlT-JR-KIn"/>
+                        <constraint firstAttribute="trailing" secondItem="kdc-of-yMh" secondAttribute="trailing" id="TzP-lI-nMb"/>
+                        <constraint firstItem="kdc-of-yMh" firstAttribute="top" secondItem="mJL-pi-IKE" secondAttribute="bottom" constant="20" id="nS5-Pm-Xmn"/>
+                        <constraint firstAttribute="bottom" secondItem="kdc-of-yMh" secondAttribute="bottom" constant="10" id="yjp-Ry-LIf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpe-vG-EIm" customClass="MoaButtonView" customModule="Moa" customModuleProvider="target">
+                    <rect key="frame" x="28" y="782" width="358" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="u4n-gG-4l1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="cpe-vG-EIm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="0KR-Yx-eGk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cpe-vG-EIm" secondAttribute="trailing" constant="28" id="AEP-cb-X3U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zr2-cl-VLI" secondAttribute="trailing" constant="16" id="eyF-7k-qm6"/>
+                <constraint firstItem="Zr2-cl-VLI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45" id="fgo-PM-IFB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cpe-vG-EIm" secondAttribute="bottom" constant="20" id="job-1l-em3"/>
+                <constraint firstItem="Zr2-cl-VLI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kjA-bQ-cWG"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="OptionsVertical" width="24" height="24"/>
+        <namedColor name="font1">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font2">
+            <color red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

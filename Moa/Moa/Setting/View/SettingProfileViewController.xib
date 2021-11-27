@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+        <array key="NotoSansKR-Regular.otf">
+            <string>NotoSansKR-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingProfileViewController" customModule="Moa" customModuleProvider="target">
+            <connections>
+                <outlet property="bio" destination="DvG-iv-bhg" id="Vad-wv-Hjq"/>
+                <outlet property="experience" destination="rMF-sw-SE6" id="A0z-3k-k38"/>
+                <outlet property="portfolio" destination="tta-t8-wTf" id="qAJ-TV-lAs"/>
+                <outlet property="tagStackView" destination="Yrh-6U-E7l" id="e70-4Q-ULE"/>
+                <outlet property="university" destination="qiS-Kf-BDo" id="RAv-s6-9TB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdn-3r-Bp3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-fH-6hJ" userLabel="Profile View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자기 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuZ-7m-unb">
+                                    <rect key="frame" x="16" y="30" width="51.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="13"/>
+                                    <color key="textColor" name="font3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 개발자를 꿈꾸는 안정연입니다. UI/UX 에 무척 관심이 많습니다." lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DvG-iv-bhg">
+                                    <rect key="frame" x="16" y="65" width="382" height="46.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="각종 IT 공모전 참가 및 수상 경험" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMF-sw-SE6">
+                                    <rect key="frame" x="16" y="196.5" width="382" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경험" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMg-RX-f4w">
+                                    <rect key="frame" x="16" y="161.5" width="24" height="19"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="13"/>
+                                    <color key="textColor" name="font3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세종대학교 재학 중" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiS-Kf-BDo">
+                                    <rect key="frame" x="16" y="305" width="382" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
+                                    <color key="textColor" name="font1"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCr-WQ-Pq6">
+                                    <rect key="frame" x="16" y="270" width="24" height="19"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="13"/>
+                                    <color key="textColor" name="font3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tta-t8-wTf">
+                                    <rect key="frame" x="16" y="413.5" width="382" height="23.5"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="https://www.notion.so/iOS-d74b7a5ce2794dc9b3d9140ca9b4fcf1">
+                                            <attributes>
+                                                <color key="NSColor" name="font1"/>
+                                                <font key="NSFont" size="16" name="NotoSansKR-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포트폴리오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-ds-DW2">
+                                    <rect key="frame" x="16" y="378.5" width="60" height="19"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="13"/>
+                                    <color key="textColor" name="font3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기술 스택/스킬셋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kV1-k2-Fcy">
+                                    <rect key="frame" x="16" y="487" width="92.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="13"/>
+                                    <color key="textColor" name="font3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yrh-6U-E7l">
+                                    <rect key="frame" x="16" y="522" width="41.5" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oli-Lx-vxJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="rMF-sw-SE6" secondAttribute="trailing" constant="16" id="0OK-eq-RdL"/>
+                                <constraint firstItem="RMg-RX-f4w" firstAttribute="top" secondItem="DvG-iv-bhg" secondAttribute="bottom" constant="50" id="1d8-Kp-bgF"/>
+                                <constraint firstItem="rMF-sw-SE6" firstAttribute="top" secondItem="RMg-RX-f4w" secondAttribute="bottom" constant="16" id="5qb-Sg-mAJ"/>
+                                <constraint firstItem="OCr-WQ-Pq6" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="6Sc-7w-ZFP"/>
+                                <constraint firstItem="Yrh-6U-E7l" firstAttribute="top" secondItem="kV1-k2-Fcy" secondAttribute="bottom" constant="16" id="8Xu-ra-UJL"/>
+                                <constraint firstItem="7Bm-ds-DW2" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="8dH-ok-Gi8"/>
+                                <constraint firstItem="OCr-WQ-Pq6" firstAttribute="top" secondItem="rMF-sw-SE6" secondAttribute="bottom" constant="50" id="9gb-ww-5zN"/>
+                                <constraint firstItem="ZuZ-7m-unb" firstAttribute="top" secondItem="Bf5-fH-6hJ" secondAttribute="top" constant="30" id="EFw-GD-xwf"/>
+                                <constraint firstItem="qiS-Kf-BDo" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="FVl-RT-x9T"/>
+                                <constraint firstItem="rMF-sw-SE6" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="GZW-3h-U2c"/>
+                                <constraint firstAttribute="trailing" secondItem="DvG-iv-bhg" secondAttribute="trailing" constant="16" id="HVY-HS-vWw"/>
+                                <constraint firstItem="ZuZ-7m-unb" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="Tf0-5Q-7cn"/>
+                                <constraint firstItem="tta-t8-wTf" firstAttribute="top" secondItem="7Bm-ds-DW2" secondAttribute="bottom" constant="16" id="TvV-4a-Nd5"/>
+                                <constraint firstAttribute="trailing" secondItem="qiS-Kf-BDo" secondAttribute="trailing" constant="16" id="U61-c8-lt2"/>
+                                <constraint firstAttribute="height" constant="650" id="WIK-Y2-Vay"/>
+                                <constraint firstItem="RMg-RX-f4w" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="cWI-tB-zfJ"/>
+                                <constraint firstItem="DvG-iv-bhg" firstAttribute="top" secondItem="ZuZ-7m-unb" secondAttribute="bottom" constant="16" id="fpD-GR-KcT"/>
+                                <constraint firstItem="Yrh-6U-E7l" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="g8u-M9-0Wc"/>
+                                <constraint firstItem="kV1-k2-Fcy" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="kX5-9D-WB5"/>
+                                <constraint firstAttribute="trailing" secondItem="tta-t8-wTf" secondAttribute="trailing" constant="16" id="mPa-Se-zEa"/>
+                                <constraint firstItem="DvG-iv-bhg" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="pfh-fR-z5t"/>
+                                <constraint firstItem="tta-t8-wTf" firstAttribute="leading" secondItem="Bf5-fH-6hJ" secondAttribute="leading" constant="16" id="rmk-9I-ayM"/>
+                                <constraint firstItem="kV1-k2-Fcy" firstAttribute="top" secondItem="tta-t8-wTf" secondAttribute="bottom" constant="50" id="t5e-YA-4ip"/>
+                                <constraint firstItem="7Bm-ds-DW2" firstAttribute="top" secondItem="qiS-Kf-BDo" secondAttribute="bottom" constant="50" id="unA-HJ-bWo"/>
+                                <constraint firstItem="qiS-Kf-BDo" firstAttribute="top" secondItem="OCr-WQ-Pq6" secondAttribute="bottom" constant="16" id="xeX-zw-0p3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Bf5-fH-6hJ" secondAttribute="trailing" id="GT2-5W-ksg"/>
+                        <constraint firstAttribute="bottom" secondItem="Bf5-fH-6hJ" secondAttribute="bottom" priority="250" id="Gay-ZL-VYc"/>
+                        <constraint firstItem="Bf5-fH-6hJ" firstAttribute="leading" secondItem="qdn-3r-Bp3" secondAttribute="leading" id="Nns-nC-eWG"/>
+                        <constraint firstItem="Bf5-fH-6hJ" firstAttribute="top" secondItem="qdn-3r-Bp3" secondAttribute="top" id="Tfi-lr-In0"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qdn-3r-Bp3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5zy-1v-Hy7"/>
+                <constraint firstItem="qdn-3r-Bp3" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="QCl-mi-txT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="qdn-3r-Bp3" secondAttribute="top" id="RSc-yZ-siF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qdn-3r-Bp3" secondAttribute="trailing" id="Tkz-cW-oLJ"/>
+                <constraint firstItem="Bf5-fH-6hJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="VbW-tI-RdA"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="font1">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="font3">
+            <color red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
