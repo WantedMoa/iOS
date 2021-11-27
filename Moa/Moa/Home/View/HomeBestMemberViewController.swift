@@ -39,6 +39,7 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindUI()
         bind()
         fetchHomePopularUsersDetail.accept(())
     }
@@ -51,6 +52,17 @@ final class HomeBestMemberViewController: UIViewController, IdentifierType, Unde
     private func bind() {
         output.sections
             .drive(bestMemberCollectionView.rx.items(dataSource: dataSource()))
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        bestMemberCollectionView.rx.modelSelected(HomePopularUsersDetail.self)
+            .subscribe { [weak self] (item: HomePopularUsersDetail) in
+                guard let self = self else { return }
+                let vc = CommunityUserProfileViewController(index: item.index)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
             .disposed(by: disposeBag)
     }
     

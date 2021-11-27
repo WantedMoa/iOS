@@ -11,15 +11,26 @@ import RxCocoa
 import RxGesture
 import RxKeyboard
 import RxSwift
+import Kingfisher
 
-final class CommunityJoinTeambuildViewController: UIViewController {
+final class CommunityJoinTeambuildViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var joinTitleTextField: UITextField!
     @IBOutlet private weak var joinMessageTextView: UITextView!
     @IBOutlet private weak var joinMessagePlaceholderLabel: UILabel!
-    @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var scrollViewBottomLayout: NSLayoutConstraint!
+    @IBOutlet private weak var competitionImageView: UIImageView!
+    @IBOutlet private weak var competitionTitleLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    @IBOutlet private weak var startDateLabel: UILabel!
+    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet private weak var deadLineLabel: UILabel!
+    
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var bioLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var moaButtonView: MoaButtonView!
 
     private var navVC: MoaNavigationController? {
         return navigationController as? MoaNavigationController
@@ -28,19 +39,41 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    private let disposeBag = DisposeBag()
 
+    // ViewModel
+    private lazy var input = CommunityJoinTeambuildViewModel.Input(
+        fetchTeambuild: fetchTeambuild.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+    
+    private let fetchTeambuild = PublishRelay<Void>()
+    private let disposeBag = DisposeBag()
+    
+    // DI
+    private let viewModel: CommunityJoinTeambuildViewModel
+    
+    init(index: Int) {
+        self.viewModel = CommunityJoinTeambuildViewModel(index: index)
+        super.init(nibName: CommunityJoinTeambuildViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindUI()
-        updateTagStackView(by: ["개발자", "디자이너", "기획자"])
+        bind()
+        
+        fetchTeambuild.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navVC?.tintColor = .white
+        navigationController?.isNavigationBarHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,7 +89,47 @@ final class CommunityJoinTeambuildViewController: UIViewController {
     }
     
     private func bind() {
+        output.startDateTitle
+            .drive(startDateLabel.rx.text)
+            .disposed(by: disposeBag)
         
+        output.endDateTitle
+            .drive(endDateLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.content
+            .drive(contentLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.tags
+            .drive { [weak self] (tags: [String]) in
+                guard let self = self else { return }
+                self.updateTagStackView(by: tags)
+            }
+            .disposed(by: disposeBag)
+        
+        output.profileImageURL
+            .emit { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.pictureImageURL
+            .emit { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.competitionImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.competitionTitle.drive(competitionTitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.bio.drive(bioLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        output.name.drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -77,7 +150,7 @@ final class CommunityJoinTeambuildViewController: UIViewController {
             .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                let vc = CommunityUserProfileViewController()
+                let vc = CommunityUserProfileViewController(index: self.viewModel.userIndex)
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true)
             }
@@ -96,6 +169,16 @@ final class CommunityJoinTeambuildViewController: UIViewController {
               }
           })
           .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "지원이 완료되었습니다") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func prepareJoinTitleTextField() {

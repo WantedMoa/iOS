@@ -30,7 +30,7 @@ final class CommunityTeamBuildCell: UICollectionViewCell, IdentifierType {
         competitionImageView.kf.setImage(with: URL(string: communityRecruit.pictureURL))
         competitionDateLabel.text = communityRecruit.startDate + "-" + communityRecruit.endDate
         competitionTitleLabel.text = communityRecruit.title
-        // updateTagStackView(by: homePopularRecruit.tags)
+        updateTagStackView(by: communityRecruit.position)
     }
 
     private func updateTagStackView(by tags: [String]) {

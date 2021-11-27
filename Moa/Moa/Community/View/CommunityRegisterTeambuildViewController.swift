@@ -108,6 +108,15 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
                 self.presentBottomAlert(message: message)
             }
             .disposed(by: disposeBag)
+        
+        output.nextProgress
+            .emit { [weak self] (_: ()) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "등록이 완료되었습니다") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -196,36 +205,46 @@ final class CommunityRegisterTeambuildViewController: UIViewController, MoaSuppo
           })
           .disposed(by: disposeBag)
         
+//        moaButtonView.rx.tapGesture()
+//            .when(.recognized)
+//            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+//                guard let self = self else { return }
+//                
+//                let placeText = "날짜를 선택하세요"
+//            
+//                guard self.competitionTitleTextField.text?.count ?? 0 >= 3 else {
+//                    self.presentBottomAlert(message: "공모전 제목을 3자 이상 입력해주세요")
+//                    return
+//                }
+//                
+//                guard self.photoImageView.image != nil else {
+//                    self.presentBottomAlert(message: "이미지를 선택해주세요")
+//                    return
+//                }
+//                
+//                guard self.teambuildEndDateLabel.text != placeText
+//                && self.competitionStartDateLabel.text != placeText
+//                && self.competitionEndDateLabel.text != placeText else {
+//                    self.presentBottomAlert(message: "날짜를 모두 입력해주세요")
+//                    return
+//                }
+//                
+//                guard self.teambuildContentTextView.text.count >= 5 else {
+//                    self.presentBottomAlert(message: "공모전 내용을 5자 이상 입력해주세요")
+//                    return
+//                }
+//                
+//                self.moaButtonTapped.accept(())
+//            }
+//            .disposed(by: disposeBag)
+        
         moaButtonView.rx.tapGesture()
             .when(.recognized)
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                
-                let placeText = "날짜를 선택하세요"
-            
-                guard self.competitionTitleTextField.text?.count ?? 0 >= 3 else {
-                    self.presentBottomAlert(message: "공모전 제목을 3자 이상 입력해주세요")
-                    return
+                self.presentBottomAlert(message: "등록이 완료되었습니다") {
+                    self.navigationController?.popViewController(animated: true)
                 }
-                
-                guard self.photoImageView.image != nil else {
-                    self.presentBottomAlert(message: "이미지를 선택해주세요")
-                    return
-                }
-                
-                guard self.teambuildEndDateLabel.text != placeText
-                && self.competitionStartDateLabel.text != placeText
-                && self.competitionEndDateLabel.text != placeText else {
-                    self.presentBottomAlert(message: "날짜를 모두 입력해주세요")
-                    return
-                }
-                
-                guard self.teambuildContentTextView.text.count >= 5 else {
-                    self.presentBottomAlert(message: "공모전 내용을 5자 이상 입력해주세요")
-                    return
-                }
-                
-                self.moaButtonTapped.accept(())
             }
             .disposed(by: disposeBag)
     }

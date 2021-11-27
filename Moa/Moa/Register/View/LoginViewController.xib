@@ -27,6 +27,7 @@
                 <outlet property="passwordBottomLineView" destination="LDP-Xc-nsv" id="xhF-Th-yHN"/>
                 <outlet property="passwordCheckImageView" destination="MAU-wH-mAW" id="kJw-5h-1i6"/>
                 <outlet property="passwordTextField" destination="0Zr-kK-u3Z" id="Fmx-eL-MZe"/>
+                <outlet property="registerLabel" destination="5pp-3j-xTi" id="Hhf-Fy-w5z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -105,7 +106,7 @@
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Zr-kK-u3Z">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreyCircleCheck" translatesAutoresizingMaskIntoConstraints="NO" id="MAU-wH-mAW">
                                     <rect key="frame" x="358" y="5" width="24" height="24"/>

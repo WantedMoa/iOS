@@ -22,6 +22,7 @@ final class BottomAlertViewController: UIViewController {
     // DI
     var blurVC: BackgroundBlur?
     var message: String?
+    var completion: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ final class BottomAlertViewController: UIViewController {
             .subscribe { [weak self] (_: UITapGestureRecognizer) in
                 guard let self = self else { return }
                 self.dismissAndFadeOut()
+                self.completion?()
             }
             .disposed(by: disposeBag)
     }

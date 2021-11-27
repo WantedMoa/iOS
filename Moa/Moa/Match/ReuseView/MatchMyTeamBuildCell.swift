@@ -24,7 +24,13 @@ final class MatchMyTeamBuildCell: UICollectionViewCell, IdentifierType {
         competitionImageView.kf.setImage(with: URL(string: communityRecruit.pictureURL))
         competitionDateLabel.text = communityRecruit.startDate
         competitionTitleLabel.text = communityRecruit.title
-        // updateTagStackView(by: data.tags)
+    }
+    
+    func update(by matchRecruit: MatchRecruit) {
+        competitionImageView.kf.setImage(with: URL(string: matchRecruit.pictureURL))
+        competitionDateLabel.text = matchRecruit.startDate
+        competitionTitleLabel.text = matchRecruit.title
+        updateTagStackView(by: matchRecruit.tags)
     }
     
     private func configureUI() {
@@ -36,6 +42,8 @@ final class MatchMyTeamBuildCell: UICollectionViewCell, IdentifierType {
         layer.shadowOffset = CGSize(width: 0, height: 1.0)
         layer.shadowOpacity = 0.15
         layer.shadowRadius = 4.0
+        competitionImageView.layer.masksToBounds = true
+        competitionImageView.layer.cornerRadius = 5
     }
     
     private func updateTagStackView(by tags: [String]) {

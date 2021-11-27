@@ -21,15 +21,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityUserProfileViewController" customModule="Moa" customModuleProvider="target">
             <connections>
                 <outlet property="dismissImageView" destination="k2J-pG-gjE" id="5kh-bj-Hgf"/>
+                <outlet property="experienceLabel" destination="Cmh-eM-Rrd" id="I0w-ov-5ce"/>
+                <outlet property="introduceLabel" destination="Dq4-e8-utW" id="dwS-WC-AuZ"/>
                 <outlet property="messagePlaceholderLabel" destination="aXw-aj-gzr" id="aQY-kv-mYK"/>
                 <outlet property="messageTextView" destination="J7K-zU-Nt9" id="225-BK-EzY"/>
                 <outlet property="messageTitleTextField" destination="lhv-KP-3RJ" id="did-T5-agN"/>
                 <outlet property="moaButtonView" destination="Qpe-Af-1cL" id="sjD-vP-8fO"/>
+                <outlet property="nameLabel" destination="5kr-c7-CNi" id="iPm-hy-7gR"/>
+                <outlet property="portfolioLabel" destination="Eyv-S4-qJX" id="oYP-yh-5Iy"/>
                 <outlet property="profileExpandButtonImageView" destination="ObX-Ck-qgY" id="4lT-jr-Cjf"/>
                 <outlet property="profileImageView" destination="fQG-mF-euh" id="Sap-Z3-o2L"/>
                 <outlet property="profileView" destination="i95-ON-H86" id="i2n-5X-3yH"/>
                 <outlet property="profileViewHeightContraint" destination="nxi-A5-sda" id="NJc-Qc-M6u"/>
+                <outlet property="ratingImageView" destination="yEJ-Sq-s4r" id="WVA-Of-qcc"/>
                 <outlet property="tagStackView" destination="zZY-sy-7ko" id="192-Vk-BFi"/>
+                <outlet property="universityLabel" destination="arP-55-3Ov" id="lfZ-oM-Zkp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -184,10 +190,10 @@
                     <rect key="frame" x="0.0" y="338.5" width="424" height="1223.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nn4-bJ-r07" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="424" height="1139"/>
+                            <rect key="frame" x="0.0" y="0.0" width="424" height="1089"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i95-ON-H86" userLabel="Profile View">
-                                    <rect key="frame" x="0.0" y="0.0" width="424" height="650"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="424" height="600"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자기 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSe-aM-K0p">
                                             <rect key="frame" x="16" y="30" width="51.5" height="19"/>
@@ -225,10 +231,18 @@
                                             <color key="textColor" name="font3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.notion.so/iOS-d74b7a5ce2794dc9b3d9140ca9b4fcf1" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyv-S4-qJX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyv-S4-qJX">
                                             <rect key="frame" x="16" y="413.5" width="392" height="23.5"/>
-                                            <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
-                                            <color key="textColor" name="font1"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="https://www.notion.so/iOS-d74b7a5ce2794dc9b3d9140ca9b4fcf1">
+                                                    <attributes>
+                                                        <color key="NSColor" name="font1"/>
+                                                        <font key="NSFont" size="16" name="NotoSansKR-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포트폴리오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noA-R0-Iox">
@@ -275,7 +289,7 @@
                                         <constraint firstItem="3pb-FQ-QHQ" firstAttribute="top" secondItem="Eyv-S4-qJX" secondAttribute="bottom" constant="50" id="kaf-Kd-G4u"/>
                                         <constraint firstItem="noA-R0-Iox" firstAttribute="top" secondItem="arP-55-3Ov" secondAttribute="bottom" constant="50" id="mn5-GO-K46"/>
                                         <constraint firstItem="3pb-FQ-QHQ" firstAttribute="leading" secondItem="i95-ON-H86" secondAttribute="leading" constant="16" id="nnX-gs-XCD"/>
-                                        <constraint firstAttribute="height" constant="650" id="nxi-A5-sda"/>
+                                        <constraint firstAttribute="height" constant="600" id="nxi-A5-sda"/>
                                         <constraint firstItem="zZY-sy-7ko" firstAttribute="leading" secondItem="i95-ON-H86" secondAttribute="leading" constant="16" id="pqq-ZL-O5i"/>
                                         <constraint firstAttribute="trailing" secondItem="Cmh-eM-Rrd" secondAttribute="trailing" constant="16" id="uMA-8w-44t"/>
                                         <constraint firstItem="wSe-aM-K0p" firstAttribute="top" secondItem="i95-ON-H86" secondAttribute="top" constant="30" id="vMf-jq-U0c"/>
@@ -285,14 +299,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p97-Kp-hwR" userLabel="Line View">
-                                    <rect key="frame" x="0.0" y="640" width="424" height="10"/>
+                                    <rect key="frame" x="0.0" y="590" width="424" height="10"/>
                                     <color key="backgroundColor" name="3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="tBP-lk-GKi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEZ-KL-Yd4" userLabel="Message View">
-                                    <rect key="frame" x="0.0" y="650" width="424" height="489"/>
+                                    <rect key="frame" x="0.0" y="600" width="424" height="489"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쪽지 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBJ-kt-Sr8">
                                             <rect key="frame" x="17" y="30" width="51.5" height="19"/>

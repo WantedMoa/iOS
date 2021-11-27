@@ -30,6 +30,9 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var bestTeamBuildCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var bestTeamBuildDetailButtonLabel: UILabel!
     
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var ratingImageView: UIImageView!
+    
     private let splashView: UIView = {
         let splashView = SplashView()
         splashView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +48,8 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         pagerViewDidScrolled: pagerViewDidScrolled.asSignal(),
         fetchPosters: fetchPosters.asSignal(),
         fetchBestMembers: fetchBestMembers.asSignal(),
-        fetchPopularRecruits: fetchPopularRecruits.asSignal()
+        fetchPopularRecruits: fetchPopularRecruits.asSignal(),
+        fetchUserProfile: fetchUserProfile.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
@@ -54,6 +58,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
     private let fetchPosters = PublishRelay<Void>()
     private let fetchBestMembers = PublishRelay<Void>()
     private let fetchPopularRecruits = PublishRelay<Void>()
+    private let fetchUserProfile = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -78,6 +83,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
         fetchPosters.accept(())
         fetchBestMembers.accept(())
         fetchPopularRecruits.accept(())
+        fetchUserProfile.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,13 +97,7 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 _, poster, cell in
                 cell.imageView?.contentMode = .scaleToFill
                 cell.imageView?.kf.setImage(
-                    with: URL(string: poster.pictureURL),
-                    completionHandler: { [weak self] result in
-                        guard let self = self else { return }
-                        UIView.animate(withDuration: 0.15) {
-                            self.splashView.alpha = 0
-                        }
-                    }
+                    with: URL(string: poster.pictureURL)
                 )
             }
             .disposed(by: disposeBag)
@@ -131,6 +131,31 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
                 self.bestTeamBuildCollectionViewHeight.constant = height
             }
             .disposed(by: disposeBag)
+        
+        output.userProfileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(
+                    with: URL(string: url),
+                    completionHandler: { [weak self] result in
+                        guard let self = self else { return }
+                        UIView.animate(withDuration: 0.15) {
+                            self.splashView.alpha = 0
+                        }
+                    }
+                )
+            }
+            .disposed(by: disposeBag)
+        
+        output.userName
+            .drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.userRatingImageName
+            .map { UIImage(named: $0) }
+            .drive(ratingImageView.rx.image)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -153,6 +178,23 @@ final class HomeViewController: UIViewController, IdentifierType, CustomAlert {
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
                 guard let self = self else { return }
                 let vc = HomeBestTeamBuildViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        bestMemberCollectionView.rx.modelSelected(HomePopularUser.self)
+            .subscribe { [weak self] (item: HomePopularUser) in
+                guard let self = self else { return }
+                let vc = CommunityUserProfileViewController(index: item.index)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        bestTeamBuildCollectionView.rx.modelSelected(HomePopularRecruit.self)
+            .subscribe { [weak self] (item: HomePopularRecruit) in
+                guard let self = self else { return }
+                let vc = CommunityJoinTeambuildViewController(index: item.index)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)

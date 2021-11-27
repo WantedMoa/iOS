@@ -8,12 +8,25 @@
 import Moya
 
 public enum MoaAPI {
+    // Home
     case homeContests
     case homePopularUsers
     case homePopularUsersDetail
     case homePopularRecruits
+    
+    // Community
     case communityRecruits
     case communityRegisterRecruit(formData: [MultipartFormData])
+    case communityDetailRecruit(index: Int)
+    case communityUserProfile(index: Int)
+    
+    // Match
+    case matchRecruits
+    case matchRecommends(index: Int)
+    
+    // Setting
+    case settingUserProfile
+    case settingMyTeams
 }
 
 extension MoaAPI: TargetType {
@@ -33,6 +46,18 @@ extension MoaAPI: TargetType {
             return "/homes/popular-recruits"
         case .communityRecruits, .communityRegisterRecruit:
             return "/app/recruits"
+        case .communityDetailRecruit(let index):
+            return "/app/recruits/\(index)"
+        case .matchRecruits:
+            return "/recruits"
+        case .matchRecommends(let index):
+            return "/recruits/\(index)/recommends"
+        case .settingUserProfile:
+            return "/profiles"
+        case .settingMyTeams:
+            return "/teams"
+        case .communityUserProfile(let index):
+            return "/app/users/\(index)"
         }
     }
     
@@ -42,7 +67,13 @@ extension MoaAPI: TargetType {
              .homePopularUsers,
              .homePopularUsersDetail,
              .homePopularRecruits,
-             .communityRecruits:
+             .communityRecruits,
+             .communityDetailRecruit,
+             .matchRecruits,
+             .matchRecommends,
+             .settingUserProfile,
+             .settingMyTeams,
+             .communityUserProfile:
             return .get
         case .communityRegisterRecruit:
             return .post
@@ -59,14 +90,31 @@ extension MoaAPI: TargetType {
             .homePopularUsers,
             .homePopularUsersDetail,
             .homePopularRecruits,
-            .communityRecruits:
+            .communityRecruits,
+            .communityDetailRecruit,
+            .matchRecruits,
+            .matchRecommends,
+            .settingUserProfile,
+            .settingMyTeams,
+            .communityUserProfile:
             return .requestPlain
+        
         case .communityRegisterRecruit(let formData):
             return .uploadMultipart(formData)
         }
     }
     
     public var headers: [String : String]? {
-        return ["x-access-token": PrivateKey.testToken]
+        guard let jwt = TokenManager().jwt else { fatalError() }
+//
+//        switch self {
+//        case .communityRegisterRecruit:
+//            return [
+//                "x-access-token": jwt,
+//                "Content-Type": "multipart / form-data"
+//            ]
+//        default:
+            return ["x-access-token": jwt]
+//         }
     }
 }

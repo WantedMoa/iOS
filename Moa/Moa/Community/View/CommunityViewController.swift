@@ -73,10 +73,10 @@ final class CommunityViewController: UIViewController, IdentifierType, UnderLine
     }
     
     private func bindUI() {
-        teambuildCollectionView.rx.modelSelected(TestbestMembers.self)
-            .subscribe { [weak self] (model: TestbestMembers) in
+        teambuildCollectionView.rx.modelSelected(CommunityRecruit.self)
+            .subscribe { [weak self] (communityRecruit: CommunityRecruit) in
                 guard let self = self else { return }
-                let vc = CommunityJoinTeambuildViewController()
+                let vc = CommunityJoinTeambuildViewController(index: communityRecruit.index)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)

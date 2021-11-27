@@ -29,6 +29,7 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
         let competitionStartDateTitle: Driver<String>
         let competitionEndDateTitle: Driver<String>
         let alertMessage: Signal<String>
+        let nextProgress: Signal<Void>
     }
     
     private let dateFormatter: DateFormatter = {
@@ -55,12 +56,13 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
     
     private var selectedTags = [String]()
     var tags = ["개발자", "디자이너", "기획자", "기타"]
-    
+        
     func transform(input: Input) -> Output {
         let teambuildEndDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let competitionStartDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let competitionEndDateTitle = BehaviorRelay<String>(value: "날짜를 선택하세요")
         let alertMessage = PublishRelay<String>()
+        let nextProgress = PublishRelay<Void>()
 
         input.changeTeambuildEndDate
             .map { self.dateFormatter.string(from: $0) }
@@ -87,6 +89,10 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
         
         input.changeCompetitionEndDate
             .emit(to: self.competitionEndDate)
+            .disposed(by: disposeBag)
+        
+        input.changeContent
+            .emit(to: self.competitionContent)
             .disposed(by: disposeBag)
         
         input.addTag
@@ -132,16 +138,21 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
             }
             .flatMap { [weak self] () -> Single<Response> in
                 guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
-                
                 var formData: [MultipartFormData] = []
                 
+                print("teambuildEndDateTitle", teambuildEndDateTitle)
+                print("competitionTitle", self.competitionTitle.value)
+                print("competitionStartDateTitle", competitionStartDateTitle.value)
+                print("competitionEndDateTitle", competitionEndDateTitle.value)
+                print("title", self.competitionTitle.value)
+
                 formData.append(MultipartFormData(
-                    provider: .data("\(teambuildEndDateTitle)".data(using: .utf8)!),
+                    provider: .data("\(teambuildEndDateTitle.value)".data(using: .utf8)!),
                     name: "deadline"
                 ))
                 
                 formData.append(MultipartFormData(
-                    provider: .data("\(self.competitionTitle.value)".data(using: .utf8)!),
+                    provider: .data("\(self.competitionTitle.value)dsadsaad".data(using: .utf8)!),
                     name: "title"
                 ))
                 
@@ -155,20 +166,25 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
                     name: "endDate"
                 ))
                 
-                for (index, tag) in self.tags.enumerated() {
-                    formData.append(MultipartFormData(
-                        provider: .data("\(tag)".data(using: .utf8)!),
-                        name: "position[\(index)]"
-                    ))
-                }
+                formData.append(MultipartFormData(
+                    provider: .data("\(self.competitionContent.value)".data(using: .utf8)!),
+                    name: "content"
+                ))
                 
-                let imageData = self.competitionImage.value.jpegData(compressionQuality: 1)!
+//                for (index, tag) in self.tags.enumerated() {
+//                    formData.append(MultipartFormData(
+//                        provider: .data("\(tag)".data(using: .utf8)!),
+//                        name: "position"
+//                    ))
+//                }
+                
+                let imageData = self.competitionImage.value.jpegData(compressionQuality: 0.2)!
                 
                 formData.append(MultipartFormData(
                     provider: .data(imageData),
-                    name: "image",
-                    fileName: "\(UUID().uuidString).jpeg",
-                    mimeType: "image/jpeg"
+                    name: "image"// ,
+                    // fileName: "12321321.png",
+                    // mimeType: "image/png"
                 ))
                 
                 return self.moaProvider.rx.request(.communityRegisterRecruit(formData: formData))
@@ -176,7 +192,7 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
             .map(MoaResponse.self)
             .subscribe(onNext: { response in
                 guard response.isSuccess else { return }
-                
+                nextProgress.accept(())
             }, onError: { error in
                 print(error)
             })
@@ -186,7 +202,8 @@ final class CommunityRegisterTeambuildViewModel: ViewModelType {
             teambuildEndDateTitle: teambuildEndDateTitle.asDriver(),
             competitionStartDateTitle: competitionStartDateTitle.asDriver(),
             competitionEndDateTitle: competitionEndDateTitle.asDriver(),
-            alertMessage: alertMessage.asSignal()
+            alertMessage: alertMessage.asSignal(),
+            nextProgress: nextProgress.asSignal()
         )
     }
 }

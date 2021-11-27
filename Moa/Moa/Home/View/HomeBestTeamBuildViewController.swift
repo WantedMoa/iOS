@@ -16,9 +16,14 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, U
     @IBOutlet private weak var bestTeamBuildCollectionView: UICollectionView!
     
     // ViewModel
-    private lazy var input = HomeBestTeamBuildViewModel.Input()
+    private lazy var input = HomeBestTeamBuildViewModel.Input(
+        fetchTeamBuilds: fetchTeamBuilds.asSignal()
+    )
     private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
+    
+    
+    private let fetchTeamBuilds = PublishRelay<Void>()
     
     // DI
     private let viewModel: HomeBestTeamBuildViewModel
@@ -35,7 +40,10 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, U
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindUI()
         bind()
+        
+        fetchTeamBuilds.accept(())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +53,16 @@ final class HomeBestTeamBuildViewController: UIViewController, IdentifierType, U
     
     private func bind() {
         output.teamBuildes.drive(bestTeamBuildCollectionView.rx.items(dataSource: dataSource()))
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindUI() {
+        bestTeamBuildCollectionView.rx.modelSelected(HomePopularRecruit.self)
+            .subscribe { [weak self] (item: HomePopularRecruit) in
+                guard let self = self else { return }
+                let vc = CommunityJoinTeambuildViewController(index: item.index)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             .disposed(by: disposeBag)
     }
     
@@ -75,7 +93,7 @@ extension HomeBestTeamBuildViewController: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let width = (view.bounds.width - 12 - 16 * 2) / 2
-        let height = width * 1.56
+        let height = width * 1.64
         return CGSize(width: width, height: height)
     }
     
@@ -100,6 +118,7 @@ extension HomeBestTeamBuildViewController {
                 return UICollectionViewCell()
             }
             
+            cell.update(by: dataSource[indexPath])
             return cell
         }, configureSupplementaryView: { _, collectionView, kind, indexPath in
             let reuseView = collectionView.dequeueReusableSupplementaryView(

@@ -7,16 +7,25 @@
 
 import UIKit
 
+import Kingfisher
+
 final class HomeDetailBestTeamBuildCell: UICollectionViewCell, IdentifierType {
     @IBOutlet private weak var competitionImageView: UIImageView!
     @IBOutlet private weak var tagStackView: UIStackView!
-    
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         updateTagStackView(by: ["iOS 경험자", "꾸준히 참여"])
-        
         competitionImageView.layer.masksToBounds = true
         competitionImageView.layer.cornerRadius = 10
+    }
+    
+    func update(by homePopularRecruit: HomePopularRecruit) {
+        competitionImageView.kf.setImage(with: URL(string: homePopularRecruit.pictureURL))
+        dateLabel.text = homePopularRecruit.startDate + "-" + homePopularRecruit.endDate
+        titleLabel.text = homePopularRecruit.title
     }
     
     private func updateTagStackView(by tags: [String]) {

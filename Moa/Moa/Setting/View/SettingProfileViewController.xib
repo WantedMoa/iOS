@@ -20,6 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingProfileViewController" customModule="Moa" customModuleProvider="target">
             <connections>
+                <outlet property="bio" destination="DvG-iv-bhg" id="Vad-wv-Hjq"/>
+                <outlet property="experience" destination="rMF-sw-SE6" id="A0z-3k-k38"/>
+                <outlet property="portfolio" destination="tta-t8-wTf" id="qAJ-TV-lAs"/>
+                <outlet property="tagStackView" destination="Yrh-6U-E7l" id="e70-4Q-ULE"/>
+                <outlet property="university" destination="qiS-Kf-BDo" id="RAv-s6-9TB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,7 +45,7 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저는 UX/UI 디자인을 공부하고 있습니다. 뭐든 맡은 일은 성실하게 해내는 편입니다." lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DvG-iv-bhg">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 개발자를 꿈꾸는 안정연입니다. UI/UX 에 무척 관심이 많습니다." lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DvG-iv-bhg">
                                     <rect key="frame" x="16" y="65" width="382" height="46.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                     <color key="textColor" name="font1"/>
@@ -58,7 +63,7 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 대학교 재학 중" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiS-Kf-BDo">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세종대학교 재학 중" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiS-Kf-BDo">
                                     <rect key="frame" x="16" y="305" width="382" height="23.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                     <color key="textColor" name="font1"/>
@@ -70,10 +75,18 @@
                                     <color key="textColor" name="font3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.notion.so/iOS-d74b7a5ce2794dc9b3d9140ca9b4fcf1" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tta-t8-wTf">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tta-t8-wTf">
                                     <rect key="frame" x="16" y="413.5" width="382" height="23.5"/>
-                                    <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
-                                    <color key="textColor" name="font1"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="https://www.notion.so/iOS-d74b7a5ce2794dc9b3d9140ca9b4fcf1">
+                                            <attributes>
+                                                <color key="NSColor" name="font1"/>
+                                                <font key="NSFont" size="16" name="NotoSansKR-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포트폴리오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-ds-DW2">

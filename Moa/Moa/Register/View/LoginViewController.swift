@@ -11,7 +11,7 @@ import RxCocoa
 import RxGesture
 import RxSwift
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var idTextField: UITextField!
     @IBOutlet private weak var idBottomLineView: UIView!
     @IBOutlet private weak var idCheckImageView: UIImageView!
@@ -19,13 +19,46 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordBottomLineView: UIView!
     @IBOutlet private weak var passwordCheckImageView: UIImageView!
     @IBOutlet private weak var moaButtonView: MoaButtonView!
+    @IBOutlet private weak var registerLabel: UILabel!
+    
+    private lazy var input = LoginViewModel.Input(loginUser: loginUser.asSignal())
+    private lazy var output = viewModel.transform(input: input)
+    private let loginUser = PublishRelay<(String, String)>()
+    
+    private let viewModel: LoginViewModel
     
     private let disposeBag = DisposeBag()
+    
+    init() {
+        self.viewModel = LoginViewModel()
+        super.init(nibName: LoginViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindUI()
+        bind()
+    }
+    
+    private func bind() {
+        output.alertMessage
+            .emit { [weak self] (message: String) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: message)
+            }
+            .disposed(by: disposeBag)
+        
+        output.nextProgress
+            .emit { [weak self] email in
+                guard let self = self else { return }
+                self.moveHome()
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -42,10 +75,10 @@ final class LoginViewController: UIViewController {
             .map { $0.isValidEmail() }
 
         let isValidPassword = passwordTextField.rx.text
-            .compactMap { $0?.count }
-            .map { $0 > 6 && $0 < 20 }
+            .compactMap { $0 }
+            .map { $0.isValidPassword()  }
         
-        let isButtonValid = Observable.combineLatest(isValidID, isValidPassword).map { $0 && $1 }
+        let isValidButton = Observable.combineLatest(isValidID, isValidPassword).map { $0 && $1 }
         
         isValidID
             .map { $0 ? UIColor.black : UIColor(rgb: 0xdddddd) }
@@ -69,14 +102,37 @@ final class LoginViewController: UIViewController {
             .bind(to: passwordCheckImageView.rx.image)
             .disposed(by: disposeBag)
         
-        isButtonValid
-            .subscribeOn(MainScheduler.instance)
+        isValidButton
             .subscribe { [weak self] (isValid: Bool) in
                 guard let self = self else { return }
                 let textColor: UIColor = isValid ? .white : .black
                 let viewColor: UIColor = isValid ? .black : .init(rgb: 0xdddddd)
                 self.moaButtonView.titleLabel.textColor = textColor
                 self.moaButtonView.contentView.backgroundColor = viewColor
+            }
+            .disposed(by: disposeBag)
+        
+        registerLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                let vc = RegisterEmailViewController()
+                let nc = MoaNavigationController(rootViewController: vc)
+                nc.modalPresentationStyle = .fullScreen
+                self.present(nc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                
+                if self.moaButtonView.contentView.backgroundColor == .black,
+                   let email = self.idTextField.text,
+                   let password = self.passwordTextField.text {
+                    self.loginUser.accept((email, password))
+                }
             }
             .disposed(by: disposeBag)
     }
@@ -116,6 +172,23 @@ final class LoginViewController: UIViewController {
         passwordTextField.attributedPlaceholder = NSAttributedString(
             string: "비밀번호",
             attributes: attributes
+        )
+    }
+}
+
+extension LoginViewController {
+    private func moveHome() {
+        guard let window = UIApplication.shared.windows.first else { return }
+        let tabVC = MoaTabBarController()
+        
+        window.rootViewController = tabVC
+        window.makeKeyAndVisible()
+        UIView.transition(
+            with: window,
+            duration: 0.1,
+            options: .transitionCrossDissolve,
+            animations: nil,
+            completion: nil
         )
     }
 }

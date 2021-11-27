@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 import RxCocoa
 import RxGesture
@@ -25,8 +26,7 @@ enum UserProfileExpand {
     }
 }
 
-final class CommunityUserProfileViewController: UIViewController {
-    @IBOutlet private weak var profileImageView: UIImageView!
+final class CommunityUserProfileViewController: UIViewController, IdentifierType, CustomAlert {
     @IBOutlet private weak var dismissImageView: UIImageView!
     @IBOutlet private weak var tagStackView: UIStackView!
     @IBOutlet private weak var profileViewHeightContraint: NSLayoutConstraint!
@@ -38,6 +38,14 @@ final class CommunityUserProfileViewController: UIViewController {
     @IBOutlet private weak var messageTitleTextField: UITextField!
     @IBOutlet private weak var messageTextView: UITextView!
     @IBOutlet private weak var messagePlaceholderLabel: UILabel!
+    // user
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var ratingImageView: UIImageView!
+    @IBOutlet private weak var introduceLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var experienceLabel: UILabel!
+    @IBOutlet private weak var portfolioLabel: UILabel!
+    @IBOutlet private weak var universityLabel: UILabel!
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -47,12 +55,62 @@ final class CommunityUserProfileViewController: UIViewController {
     
     private let profileViewHeight: CGFloat = 650
     private var userProfileExpand = UserProfileExpand.open
+    
+    private let fetchUserProfile = PublishRelay<Void>()
      
+    private lazy var input = CommunityUserProfileViewModel.Input(
+        fetchUserProfile: fetchUserProfile.asSignal()
+    )
+    private lazy var output = viewModel.transform(input: input)
+     
+    private let viewModel: CommunityUserProfileViewModel
+     
+    init(index: Int) {
+        self.viewModel = CommunityUserProfileViewModel(index: index)
+        super.init(nibName: CommunityUserProfileViewController.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         bindUI()
-        updateTagStackView(by: ["일러스트", "포토샵", "XD", "Sketch"])
+        bind()
+        updateTagStackView(by: ["React", "JS", "HTML"])
+        fetchUserProfile.accept(())
+    }
+    
+    private func bind() {
+        output.name.drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.university.drive(universityLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.portfolio.drive(portfolioLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.experiance.drive(experienceLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.bio.drive(introduceLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.userProfileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.userRatingImageName
+            .map { UIImage(named: $0) }
+            .drive(ratingImageView.rx.image)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -94,6 +152,28 @@ final class CommunityUserProfileViewController: UIViewController {
         messageTextView.rx.text
             .map { !($0?.isEmpty ?? true) }
             .bind(to: messagePlaceholderLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        moaButtonView.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                self.presentBottomAlert(message: "쪽지가 전송되었습니다") {
+                    self.dismiss(animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        portfolioLabel.rx.tapGesture()
+            .when(.recognized)
+            .subscribe { [weak self] (_: UITapGestureRecognizer) in
+                guard let self = self else { return }
+                guard let link = self.portfolioLabel.text else { return }
+                guard let url = URL(string: link) else { return }
+                let safariVC = SFSafariViewController(url: url)
+                safariVC.modalPresentationStyle = .fullScreen
+                self.present(safariVC, animated: true)
+            }
             .disposed(by: disposeBag)
     }
     

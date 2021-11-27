@@ -11,6 +11,7 @@ import UIKit
 import RxCocoa
 import RxGesture
 import RxSwift
+import Kingfisher
 
 struct MatchCircleContent {
     let view: UIView
@@ -27,6 +28,8 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
     @IBOutlet private weak var profileView: UIView!
     // MyTeamBuild
     @IBOutlet private weak var myTeamBuildCollectionView: UICollectionView!
+    @IBOutlet private weak var myTeamTitleLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     
     /// innerFirstProfileView
     private let innerFirstProfileImageView: UIImageView = {
@@ -116,10 +119,15 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
 
     // ViewModel
     private lazy var input = MatchViewModel.Input(
-        
+        fetchMyTeambuilds: fetchMyTeambuilds.asSignal(),
+        fetchRecommends: fetchRecommends.asSignal(),
+        fetchUserProfile: fetchUserProfile.asSignal()
     )
     private lazy var output = viewModel.transform(input: input)
     
+    private let fetchMyTeambuilds = PublishRelay<Void>()
+    private let fetchRecommends = PublishRelay<Int>()
+    private let fetchUserProfile = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
     
     // DI
@@ -139,6 +147,13 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
         configureUI()
         bindUI()
         bind()
+        
+        fetchUserProfile.accept(())
+        fetchMyTeambuilds.accept(())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -151,9 +166,60 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             cellIdentifier: MatchMyTeamBuildCell.identifier,
             cellType: MatchMyTeamBuildCell.self)
         ) { _, item, cell in
-            // cell.update(data: item)
+            cell.update(by: item)
         }
         .disposed(by: disposeBag)
+        
+        output.myTeamTitle.drive(myTeamTitleLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.recommendCount
+            .map { "+\($0)" }
+            .drive(innerMatchCountLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.innerImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.innerFirstProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.outerFirstImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.outterFirstProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.outerSecondImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.outterSecondProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.outerThirdImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] url in
+                guard let self = self else { return }
+                self.outterThirdProfileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.profileImageURL
+            .filter { !$0.isEmpty }
+            .drive { [weak self] (url: String) in
+                guard let self = self else { return }
+                self.profileImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.name.drive(nameLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func bindUI() {
@@ -161,7 +227,19 @@ final class MatchViewController: UIViewController, IdentifierType, UnderLineNavB
             .when(.recognized)
             .subscribe { [weak self] (tapGesture: UITapGestureRecognizer) in
                 guard let self = self else { return }
-                let vc = HomeBestMemberViewController()
+                
+                let members = self.viewModel.matchRecommends
+                
+                guard members.count >= 2 else { return }
+                
+                let start = 0
+                let mid = members.count / 2
+                let last = members.count
+                
+                let vc = MatchTeamMemberViewController(members: [
+                    .programmer(items: Array(members[start..<mid]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: $0.name) }),
+                    .programmer(items: Array(members[mid..<last]).map { HomePopularUsersDetail.init(index: $0.index, profileImageURL: $0.profileImgURL, name: $0.name) })
+                ])
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
@@ -341,7 +419,7 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
         let heigth: CGFloat = 88
         return CGSize(width: width, height: heigth)
     }
-    
+        
     private func scrollItemToCenter(scrollView: UIScrollView) {
         let middlePoint = Int(scrollView.contentOffset.x + UIScreen.main.bounds.width / 2)
         let targetPoint = CGPoint(x: middlePoint, y: Int(myTeamBuildCollectionView.bounds.height) / 2)
@@ -354,6 +432,11 @@ extension MatchViewController: UICollectionViewDelegateFlowLayout {
             at: .centeredHorizontally,
             animated: true
         )
+        
+        let item = viewModel.myTeambuilds.value[indexPath.item]
+        let title = item.title
+        myTeamTitleLabel.text = title
+        fetchRecommends.accept(item.index)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

@@ -9,24 +9,135 @@ import Foundation
 
 import RxSwift
 import RxCocoa
+import Moya
 
 final class MatchViewModel: ViewModelType {
     struct Input {
-        
+        let fetchMyTeambuilds: Signal<Void>
+        let fetchRecommends: Signal<Int>
+        let fetchUserProfile: Signal<Void>
     }
     
     struct Output {
-        let myTeambuilds: Driver<[TestbestMembers]>
+        let myTeambuilds: Driver<[MatchRecruit]>
+        let myTeamTitle: Driver<String>
+        let recommendCount: Driver<Int>
+        let innerImageURL: Driver<String>
+        let outerFirstImageURL: Driver<String>
+        let outerSecondImageURL: Driver<String>
+        let outerThirdImageURL: Driver<String>
+        let profileImageURL: Driver<String>
+        let name: Driver<String>
+    }
+    
+    private let disposeBag = DisposeBag()
+    let myTeambuilds = BehaviorRelay<[MatchRecruit]>(value: [])
+    var matchRecommends: [MatchRecommend] = []
+    
+    private let moaProvider: MoyaProvider<MoaAPI>
+    private let tokenManager: TokenManager
+
+    init() {
+        let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
+        let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
+        self.moaProvider = MoyaProvider<MoaAPI>(plugins: [networkLogger])
+        self.tokenManager = TokenManager()
     }
     
     func transform(input: Input) -> Output {
-        let myTeambuilds = BehaviorRelay<[TestbestMembers]>(value: [
-            (image: "TestSquarePoster1", date: "09/27 - 11/30", title: "2021 인공지능 데이터 활용 경진대회", tags: ["개발자 급구"]),
-            (image: "TestSquarePoster2", date: "10/19 - 11/21", title: "눈바디 AI 챌린지", tags: ["개발자 급구", "iOS 개발 경험"]),
-            (image: "TestSquarePoster3", date: "11/05 - 11/07", title: "공공데이터 활용 문제해결 해커톤", tags: ["개발자", "기획자"]),
-            (image: "TestSquarePoster4", date: "10/11 - 11/08", title: "NPHD 2021 - DATATHON", tags: ["개발자", "인공지능"]),
-            (image: "TestSquarePoster5", date: "10/12 - 11/14", title: "원티드 해커톤해, 커리어", tags: ["개발자 급구", "iOS 개발 경험"])
-        ])
-        return Output(myTeambuilds: myTeambuilds.asDriver())
+        let myTeamTitle = BehaviorRelay<String>(value: "나의 팀")
+        let recommendCount = BehaviorRelay<Int>(value: 0)
+        let innerImageURL = BehaviorRelay<String>(value: "")
+        let outerFirstImageURL = BehaviorRelay<String>(value: "")
+        let outerSecondImageURL = BehaviorRelay<String>(value: "")
+        let outerThirdImageURL = BehaviorRelay<String>(value: "")
+        let profileImageURL = BehaviorRelay<String>(value: "")
+        let name = BehaviorRelay<String>(value: "")
+        
+        let imageDrivers = [innerImageURL, outerFirstImageURL, outerSecondImageURL, outerThirdImageURL]
+        
+        let fetchInitRecommends = PublishRelay<Int>()
+
+        input.fetchMyTeambuilds.asObservable()
+            .flatMap { [weak self] () -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.matchRecruits)
+            }
+            .map(MatchRecruitsResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else {
+                    return
+                }
+                
+                if let result = response.result {
+                    self.myTeambuilds.accept(result)
+                    
+                    if let firstItem = result.first {
+                        myTeamTitle.accept(firstItem.title)
+                        fetchInitRecommends.accept(firstItem.index)
+                    }
+                }
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        Signal.merge([fetchInitRecommends.asSignal(), input.fetchRecommends])
+            .asObservable()
+            .flatMap { [weak self] (index: Int) -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.matchRecommends(index: index))
+            }
+            .map(MatchRecommendsResponse.self)
+            .subscribe(onNext: { [weak self] response in
+                guard let self = self else { return }
+
+                guard response.isSuccess else {
+                    return
+                }
+                
+                if let result = response.result {
+                    recommendCount.accept(result.count)
+                    self.matchRecommends = result
+                    for (imageDriver, recommend) in zip(imageDrivers, result) {
+                        imageDriver.accept(recommend.profileImgURL)
+                    }
+                }
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        input.fetchUserProfile.asObservable()
+            .flatMap { [weak self] () -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.settingUserProfile)
+            }
+            .map(SettingProfileResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else { return }
+                
+                if let user = response.result.first {
+                    profileImageURL.accept(user.profileImg)
+                    let names = user.name.map { $0 }
+                    name.accept(String(names.suffix(names.count - 1) + "님"))
+                }
+            
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        return Output(
+            myTeambuilds: myTeambuilds.asDriver(),
+            myTeamTitle: myTeamTitle.asDriver(),
+            recommendCount: recommendCount.asDriver(),
+            innerImageURL: innerImageURL.asDriver(),
+            outerFirstImageURL: outerFirstImageURL.asDriver(),
+            outerSecondImageURL: outerSecondImageURL.asDriver(),
+            outerThirdImageURL: outerThirdImageURL.asDriver(),
+            profileImageURL: profileImageURL.asDriver(),
+            name: name.asDriver()
+        )
     }
 }

@@ -11,12 +11,27 @@ public protocol CustomAlert: BackgroundBlur {}
 
 extension CustomAlert {
     var blurVC: BackgroundBlur {
-        guard let vc = navigationController?.tabBarController as? BackgroundBlur else { return self }
-        return vc
+        if let tabVC = navigationController?.tabBarController as? BackgroundBlur {
+            return tabVC
+        }
+        
+        if let navVC = navigationController as? BackgroundBlur {
+            return navVC
+        }
+        
+        return self
     }
     
     var rootVC: UIViewController? {
-        return navigationController?.tabBarController
+        if let tabVC = navigationController?.tabBarController as? BackgroundBlur {
+            return tabVC
+        }
+        
+        if let navVC = navigationController as? BackgroundBlur {
+            return navVC
+        }
+        
+        return self
     }
     
     public func presentBottomDatePicker(datePickerHandler: ((Date) -> Void)? = nil) {
@@ -28,12 +43,22 @@ extension CustomAlert {
         rootVC?.present(vc, animated: true)
     }
     
-    public func presentBottomAlert(message: String) {
+    public func presentBottomAlert(message: String, completion: (() -> ())? = nil) {
         let vc = BottomAlertViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         vc.blurVC = blurVC
         vc.message = message
+        vc.completion = completion
+        rootVC?.present(vc, animated: true)
+    }
+    
+    public func presentBottomPosition(positionHandler: ((String, Int) -> Void)?) {
+        let vc = BottomPositionViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
+        vc.blurVC = blurVC
+        vc.positionHandler = positionHandler
         rootVC?.present(vc, animated: true)
     }
 }

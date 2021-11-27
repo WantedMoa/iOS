@@ -25,10 +25,12 @@
                 <outlet property="bestTeamBuildCollectionView" destination="VXY-0u-2ih" id="dcr-ng-A0h"/>
                 <outlet property="bestTeamBuildCollectionViewHeight" destination="cGH-vg-z6A" id="9Zl-vo-bq9"/>
                 <outlet property="bestTeamBuildDetailButtonLabel" destination="KAP-rK-nfS" id="kdC-T9-NUO"/>
+                <outlet property="nameLabel" destination="Byq-LL-9wS" id="Vbl-Tw-ysN"/>
                 <outlet property="pageControlLabel" destination="x8Q-ko-GVf" id="45t-FH-wH1"/>
                 <outlet property="pageControlView" destination="kIj-3m-wxv" id="86B-kR-pak"/>
                 <outlet property="pagerView" destination="z2A-5I-9KI" id="7aL-XF-kLV"/>
                 <outlet property="profileImageView" destination="bxx-RH-Hqa" id="LAB-On-Z8p"/>
+                <outlet property="ratingImageView" destination="l7q-U2-28b" id="Kua-vb-JkO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -85,7 +87,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-DO-dHC" userLabel="Profile View">
                                     <rect key="frame" x="16" y="19" width="382" height="56"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeeYu" translatesAutoresizingMaskIntoConstraints="NO" id="bxx-RH-Hqa">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxx-RH-Hqa">
                                             <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="56" id="eXw-Px-w0T"/>
@@ -109,7 +111,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenStatus" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-U2-28b">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-U2-28b">
                                             <rect key="frame" x="40" y="40" width="16" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="8gI-ry-Umy"/>
@@ -280,8 +282,7 @@
         </view>
     </objects>
     <resources>
-        <image name="GreenStatus" width="16.5" height="16"/>
-        <image name="LeeYu" width="74" height="74"/>
+        <image name="1" width="476" height="463"/>
         <image name="MoaIcon" width="76" height="40"/>
         <image name="MoaNotification" width="24" height="24"/>
         <image name="MoaSearch" width="24" height="24"/>

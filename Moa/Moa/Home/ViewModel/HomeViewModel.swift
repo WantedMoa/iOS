@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import Moya
 
-typealias TestbestMembers = (image: String, date: String, title: String, tags: [String])
+// typealias TestbestMembers = (image: String, date: String, title: String, tags: [String])
 typealias HomeBestMember = (profileImage: String, name: String)
 
 final class HomeViewModel: ViewModelType {
@@ -20,6 +20,7 @@ final class HomeViewModel: ViewModelType {
         let fetchPosters: Signal<Void>
         let fetchBestMembers: Signal<Void>
         let fetchPopularRecruits: Signal<Void>
+        let fetchUserProfile: Signal<Void>
     }
     
     struct Output {
@@ -27,6 +28,9 @@ final class HomeViewModel: ViewModelType {
         let pagerControlTitle: Driver<String>
         let bestMembers: Driver<[HomePopularUser]>
         let bestTeamBuilds: Driver<[HomePopularRecruit]>
+        let userName: Driver<String>
+        let userProfileImageURL: Driver<String>
+        let userRatingImageName: Driver<String>
     }
     
     var homeContests: [HomeContest] = []
@@ -46,6 +50,10 @@ final class HomeViewModel: ViewModelType {
         let pagerControlTitle = BehaviorRelay<String>(value: "1 / \(posters.value.count)")
         let bestMembers = BehaviorRelay<[HomePopularUser]>(value: [])
         let bestTeamBuilds = BehaviorRelay<[HomePopularRecruit]>(value: [])
+        
+        let userName = BehaviorRelay<String>(value: "")
+        let userProfileImageURL = BehaviorRelay<String>(value: "")
+        let userRatingImageName = BehaviorRelay<String>(value: "0")
         
         input.pagerViewDidScrolled.emit { (num: Int) in
             pagerControlTitle.accept("\(num + 1) / \(posters.value.count)")
@@ -92,7 +100,6 @@ final class HomeViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
-        
         input.fetchPopularRecruits.asObservable()
             .flatMap { [weak self] () -> Single<Response> in
                 guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
@@ -103,7 +110,27 @@ final class HomeViewModel: ViewModelType {
                 guard response.isSuccess else { return }
                 
                 if let result = response.result {
-                    bestTeamBuilds.accept(result)
+                    bestTeamBuilds.accept(Array(result.prefix(4)))
+                }
+        
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+    
+        input.fetchUserProfile.asObservable()
+            .flatMap { [weak self] () -> Single<Response> in
+                guard let self = self else { return Single<Response>.error(MoaError.flatMap) }
+                return self.moaProvider.rx.request(.settingUserProfile)
+            }
+            .map(SettingProfileResponse.self)
+            .subscribe(onNext: { response in
+                guard response.isSuccess else { return }
+                
+                if let user = response.result.first {
+                    userName.accept(user.name)
+                    userProfileImageURL.accept(user.profileImg)
+                    userRatingImageName.accept("\(user.rating)")
                 }
         
             }, onError: { error in
@@ -115,7 +142,10 @@ final class HomeViewModel: ViewModelType {
             posters: posters.asDriver(),
             pagerControlTitle: pagerControlTitle.asDriver(),
             bestMembers: bestMembers.asDriver(),
-            bestTeamBuilds: bestTeamBuilds.asDriver()
+            bestTeamBuilds: bestTeamBuilds.asDriver(),
+            userName: userName.asDriver(),
+            userProfileImageURL: userProfileImageURL.asDriver(),
+            userRatingImageName: userRatingImageName.asDriver()
         )
     }
 }
